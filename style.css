@@ -701,3 +701,115 @@ nav {
     border-color: rgba(255,255,255,0.05) !important;
     color: #fff !important;
 }
+/* Mobile Responsive Overrides */
+@media (max-width: 992px) {
+  /* Store & Products */
+  .product-item {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .product-info h2 {
+    font-size: 2.2rem;
+  }
+  
+  .buy-action {
+    align-items: center;
+  }
+  
+  .paypal-button-container {
+    max-width: 100%;
+  }
+
+  .store-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Journey & Timeline */
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .artifact-viewer {
+    position: relative;
+    top: 0;
+    height: 35vh;
+    margin-bottom: 2rem;
+  }
+
+  .journey-timeline {
+    padding-left: 2rem;
+  }
+
+  .milestone {
+    margin-bottom: 5rem;
+  }
+
+  .milestone h3 {
+    font-size: 1.8rem;
+  }
+
+  /* General Layout */
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Biography Page Mobile */
+  .biography-page {
+    padding: 60px 0 !important;
+  }
+
+  .bio-header-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    margin-bottom: 40px !important;
+  }
+
+  .bio-header-left h1 {
+    font-size: 3.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .bio-intro-lead {
+    font-size: 1.2rem !important;
+    padding-left: 1.5rem !important;
+  }
+
+  .bio-pillars {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 2rem !important;
+  }
+
+  .bio-footer-cta div {
+    flex-direction: column;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .side-tag {
+    letter-spacing: 2px;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
