@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronicles | Manuj Mittal Literary Archives</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #003366;
+            --gold: #c5a059;
+            --white: #ffffff;
+            --bg: #fcfcfc;
+            --text: #111111;
+            --muted: #666666;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
+        
+        body { 
+            font-family: var(--font-sans); 
+            background: var(--bg); 
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            border: 4px solid;
+            border-image: linear-gradient(to bottom, var(--blue), var(--gold)) 1;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 { font-family: var(--font-serif); font-weight: 700; }
+
+        /* Fountain Pen Cursor */
+        .cursor {
+            position: fixed; width: 40px; height: 40px; pointer-events: none; z-index: 9999;
+            transform: translate(-5%, -5%); display: flex; align-items: center; justify-content: center;
+        }
+        .pen-nib { width: 100%; height: 100%; fill: var(--gold); transform: rotate(-45deg); transition: 0.3s; }
+        .cursor.hovering .pen-nib { transform: rotate(-15deg) scale(1.1); fill: var(--blue); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 4rem; }
+
+        header { padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.03); margin-bottom: 5vh; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1rem; font-weight: 800; letter-spacing: 4px; color: var(--blue); text-decoration: none; text-transform: uppercase; }
+
+        /* Smooth Toggle */
+        .toggle-wrapper {
+            display: flex; justify-content: center; margin: 8vh 0;
+        }
+        .toggle-container {
+            background: rgba(0,0,0,0.03); padding: 5px; border-radius: 50px;
+            display: flex; position: relative; width: 300px;
+        }
+        .toggle-btn {
+            flex: 1; padding: 1rem; border-radius: 50px; border: none; background: transparent;
+            font-family: var(--font-sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--muted); position: relative; z-index: 2;
+            transition: var(--transition);
+        }
+        .toggle-btn.active { color: var(--white); }
+        .toggle-slider {
+            position: absolute; top: 5px; left: 5px; width: calc(50% - 5px); height: calc(100% - 10px);
+            background: var(--blue); border-radius: 50px; z-index: 1;
+            transition: var(--transition);
+        }
+        .toggle-container.switched .toggle-slider { transform: translateX(100%); }
+
+        /* Content Sections */
+        .chronicles-grid { position: relative; min-height: 80vh; }
+        .content-pane {
+            position: absolute; top: 0; left: 0; width: 100%;
+            opacity: 0; transform: translateY(20px); pointer-events: none;
+            transition: var(--transition);
+        }
+        .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: all; }
+
+        /* Blog Style */
+        .blog-post { margin-bottom: 10vh; padding-bottom: 5vh; border-bottom: 1px solid rgba(0,0,0,0.03); }
+        .post-date { font-size: 0.7rem; font-weight: 800; color: var(--gold); letter-spacing: 3px; margin-bottom: 1rem; text-transform: uppercase; }
+        .blog-post h2 { font-size: 3rem; margin-bottom: 1.5rem; color: var(--blue); }
+        .blog-post p { font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; font-weight: 300; }
+
+        /* Article Style */
+        .article-card {
+            background: white; padding: 3rem; border-radius: 10px; margin-bottom: 2rem;
+            border: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
+        }
+        .article-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.02); }
+        .article-meta { display: flex; gap: 2rem; font-size: 0.65rem; font-weight: 800; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+        .article-card h3 { font-size: 2rem; margin-bottom: 1rem; color: var(--blue); }
+        .article-card p { font-size: 0.95rem; color: var(--muted); }
+
+        .btn-read { font-size: 0.7rem; font-weight: 800; color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 5px; margin-top: 2rem; display: inline-block; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 2rem; }
+            .blog-post h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor">
+        <svg class="pen-nib" viewBox="0 0 100 100">
+            <path d="M50,10 L30,40 L30,70 L50,90 L70,70 L70,40 L50,10 Z M50,40 L50,70" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M50,10 L45,25 L55,25 Z" fill="currentColor"/>
+        </svg>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">M. MITTAL</a>
+                <a href="index.html" style="font-size: 0.7rem; font-weight: 800; color: var(--muted); text-decoration: none; letter-spacing: 2px; text-transform: uppercase;">← Back to Intro</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="toggle-wrapper">
+            <div class="toggle-container" id="toggle-container">
+                <div class="toggle-slider"></div>
+                <button class="toggle-btn active" onclick="switchPane('blogs')">Blogs</button>
+                <button class="toggle-btn" onclick="switchPane('articles')">Articles</button>
+            </div>
+        </div>
+
+        <div class="chronicles-grid">
+            <!-- Blogs Pane -->
+            <div class="content-pane active" id="pane-blogs">
+                <article class="blog-post">
+                    <div class="post-date">May 04, 2024 • Life & Ink</div>
+                    <h2>The Quiet Power of a First Draft.</h2>
+                    <p>There is a specific kind of magic in the mess. In this week's journal, I explore why your first 1,000 words don't need to be perfect—they just need to exist. The art of storytelling begins with the courage to be incomplete.</p>
+                    <a href="#" class="btn-read">READ FULL JOURNAL</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-date">April 28, 2024 • Wanderlust</div>
+                    <h2>Mountains, Maps, and Manuscripts.</h2>
+                    <p>Reflecting on my time in the Himalayas and how the silence of the high altitudes shaped the foundation of "Whispers of the Wind." Sometimes, you have to lose your way to find your voice.</p>
+                    <a href="#" class="btn-read">READ FULL JOURNAL</a>
+                </article>
+            </div>
+
+            <!-- Articles Pane -->
+            <div class="content-pane" id="pane-articles">
+                <div class="article-card">
+                    <div class="article-meta">
+                        <span>Technique</span>
+                        <span>12 Min Read</span>
+                    </div>
+                    <h3>The Architecture of Immersive Worlds.</h3>
+                    <p>A deep dive into the psychological principles behind building fictional worlds that feel as real as your own memory. From sensory mapping to cultural layering.</p>
+                    <a href="#" class="btn-read">EXPLORE ARTICLE</a>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-meta">
+                        <span>Philosophy</span>
+                        <span>8 Min Read</span>
+                    </div>
+                    <h3>Why We Still Tell Stories in the Digital Age.</h3>
+                    <p>Exploring the primal human need for narrative and how our brains process mythology differently than they process information. A study on the future of the written word.</p>
+                    <a href="#" class="btn-read">EXPLORE ARTICLE</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="padding: 10rem 0; text-align: center; opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px;">
+        &copy; 2024 THE CHRONICLES BY MANUJ MITTAL.
+    </footer>
+
+    <script>
+        function switchPane(type) {
+            const container = document.getElementById('toggle-container');
+            const btns = document.querySelectorAll('.toggle-btn');
+            const panes = document.querySelectorAll('.content-pane');
+
+            if (type === 'blogs') {
+                container.classList.remove('switched');
+                btns[0].classList.add('active');
+                btns[1].classList.remove('active');
+                panes[0].classList.add('active');
+                panes[1].classList.remove('active');
+            } else {
+                container.classList.add('switched');
+                btns[1].classList.add('active');
+                btns[0].classList.remove('active');
+                panes[1].classList.add('active');
+                panes[0].classList.remove('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.querySelector('.cursor');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
+        });
+    </script>
+</body>
+</html>

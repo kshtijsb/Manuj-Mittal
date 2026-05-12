@@ -1,0 +1,807 @@
+<?php
+require_once 'includes/data.php';
+$page_title = "Manuj Mittal | Narrative Architect";
+include 'components/header.php';
+
+// Check for subscriber status
+$status = $_GET['status'] ?? null;
+?>
+
+<style>
+    /* Split Hero Redesign */
+    .hero {
+        min-height: 100vh;
+        padding: 0;
+        display: flex;
+        align-items: stretch;
+        overflow: hidden;
+    }
+
+    .hero-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10% 8%;
+        position: relative;
+        transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .book-side {
+        background: var(--color-surface);
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 2;
+    }
+
+    .author-side {
+        background: #fff;
+        z-index: 1;
+    }
+
+    .book-visual {
+        position: relative;
+        margin-bottom: 3rem;
+        transform: perspective(1000px);
+        transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .book-visual:hover {
+        transform: translateY(-5px);
+    }
+
+    .hero-book-img {
+        width: 300px;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .author-visual {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80%;
+        opacity: 0.15;
+        pointer-events: none;
+        mask-image: linear-gradient(to top, black 50%, transparent 100%);
+    }
+
+    .hero-author-img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .side-tag {
+        font-size: 0.7rem;
+        font-weight: 800;
+        color: var(--color-gold);
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    .side h1,
+    .side h2 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
+
+    .side p {
+        font-size: 1.1rem;
+        color: var(--color-text-muted);
+        max-width: 450px;
+        margin-bottom: 2.5rem;
+    }
+
+    .floating-accent {
+        position: absolute;
+        font-size: 12rem;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.03);
+        z-index: -1;
+        pointer-events: none;
+        font-family: var(--font-serif);
+    }
+
+    .book-side .floating-accent {
+        top: 10%;
+        left: -5%;
+    }
+
+    .author-side .floating-accent {
+        bottom: 10%;
+        right: -5%;
+    }
+
+    /* Pillars Section */
+    .about-pillars {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 8vh 0;
+    }
+
+    .pillar-card {
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        transition: var(--transition-smooth);
+        border: 1px solid transparent;
+        background-image: linear-gradient(white, white), linear-gradient(to right, var(--color-primary), var(--color-gold));
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+    }
+
+    .pillar-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.03);
+    }
+
+    .pillar-tag {
+        font-size: 0.6rem;
+        font-weight: 800;
+        color: var(--color-gold);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+
+    .pillar-card h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--color-primary);
+    }
+
+    .pillar-card p {
+        font-size: 1rem;
+        color: var(--color-text-muted);
+        font-weight: 300;
+    }
+
+    .journey-section {
+        padding: 15vh 0;
+        position: relative;
+    }
+
+    .journey-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8rem;
+        align-items: start;
+    }
+
+    .artifact-viewer {
+        position: sticky;
+        top: 150px;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1000px;
+    }
+
+    .artifact-stack {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .artifact-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateZ(-100px);
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .artifact-image.active {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+
+    .journey-timeline {
+        position: relative;
+        padding-left: 4rem;
+    }
+
+    .ink-trail {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    .ink-progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 0%;
+        background: var(--color-gold);
+        transition: height 0.5s ease-out;
+    }
+
+    .milestone {
+        margin-bottom: 30vh;
+        position: relative;
+    }
+
+    .milestone-year {
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--color-gold);
+        letter-spacing: 4px;
+        margin-bottom: 1.5rem;
+    }
+
+    .books-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5rem;
+        padding-top: 10vh;
+    }
+
+    .book-card {
+        position: relative;
+        perspective: 1000px;
+        width: 100%;
+        aspect-ratio: 3/4.5;
+    }
+
+    .book-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.1s ease-out;
+        transform-style: preserve-3d;
+    }
+
+    .book-info-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
+        transform: translateY(20px);
+        opacity: 0;
+        transition: 0.6s;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .book-card:hover .book-info-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Custom Alert */
+    .status-alert {
+        padding: 1.5rem;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+
+    .alert-success {
+        background: rgba(197, 160, 89, 0.1);
+        color: var(--color-gold);
+        border: 1px solid var(--color-gold);
+    }
+
+    .alert-error {
+        background: rgba(255, 0, 0, 0.05);
+        color: #cc0000;
+        border: 1px solid #cc0000;
+    }
+
+    @media (max-width: 992px) {
+        .hero-split {
+            grid-template-columns: 1fr;
+        }
+
+        .hero {
+            min-height: auto;
+        }
+
+        .side {
+            padding: 8rem 2rem;
+        }
+
+        .about-pillars,
+        .books-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .journey-grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .artifact-viewer {
+            position: relative;
+            top: 0;
+            height: 40vh;
+        }
+    }
+
+    @keyframes slideInUp {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .animate-up {
+        animation: slideInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    }
+</style>
+
+<main>
+    <!-- Split Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-split">
+            <!-- Left Side: Book -->
+            <div class="side book-side">
+                <!-- Floating Background Accent -->
+                <div class="floating-accent" style="top: 10%; left: -5%; opacity: 0.05; font-size: 15rem;">BKS</div>
+
+                <div class="animate-up" style="animation-delay: 0.2s; position: relative; z-index: 10; width: 100%;">
+                    <div class="side-tag" style="margin-bottom: 3rem;">FEATURED WORK</div>
+
+                    <!-- Simple Elegant Book Visual -->
+                    <!-- Simple Elegant Book Visual -->
+                    <div class="immersive-book-container" style="margin-bottom: 5rem; display: flex; flex-direction: column; align-items: center;">
+                        <div class="book-simple-wrapper" style="position: relative; cursor: pointer; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); animation: float 6s ease-in-out infinite;">
+                            <!-- Aura Background -->
+                            <div class="book-aura" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: 120%; background: radial-gradient(circle, var(--gold) 0%, transparent 70%); opacity: 0.1; filter: blur(40px); z-index: -1;">
+                            </div>
+
+                            <!-- The Book -->
+                            <div class="book-main-visual" style="position: relative; width: 300px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border-radius: 5px; overflow: hidden;">
+                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
+                                <!-- Simple Shimmer on Hover -->
+                                <div class="book-shimmer" style="position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent); transform: skewX(-25deg); transition: 0.8s;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book-hero-info" style="text-align: left; max-width: 450px; margin: 0 auto;">
+                        <h2 style="font-size: 3.5rem; line-height: 1; margin-bottom: 1.5rem; color: var(--text);">
+                            <?php echo $books[0]['title']; ?></h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); opacity: 0.7; margin-bottom: 2.5rem;">
+                            <?php echo $books[0]['desc']; ?></p>
+
+                        <div style="display: flex; gap: 2rem; align-items: center;">
+                            <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; text-decoration: none;">PRE-ORDER NOW</a>
+                            <button onclick="openFlipbook()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 1.1rem 2.5rem; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 2px; font-size: 0.7rem;">PEEK INSIDE</button>
+                        </div>
+                    </div>
+
+                    <!-- In-Place 3D Flipbook -->
+                    <div id="inlineFlipbook" style="display: none; flex-direction: column; align-items: center; gap: 2rem; width: 100%; margin-bottom: 5rem;">
+                        <div class="flipbook-wrapper" style="perspective: 2000px; width: 600px; height: 400px; position: relative; transform: scale(0.8); transform-origin: center;">
+                            <div id="mainBook" style="width: 300px; height: 100%; position: absolute; left: 50%; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); transform: translateZ(0);">
+                                
+                                <!-- Back Cover -->
+                                <div class="page static-back" style="position: absolute; width: 100%; height: 100%; background: #002244; border-radius: 0 5px 5px 0; z-index: 1; left: 0; box-shadow: 5px 5px 20px rgba(0,0,0,0.2);"></div>
+
+                                <!-- Page 3 -->
+                                <div class="page-leaf" id="leaf3" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 3;">
+                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 2rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0; font-size: 0.8rem;">
+                                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 1rem;">Mastery</h4>
+                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333;">"The transition from student to architect is silent. It happens when you ask: What will I leave behind?"</p>
+                                    </div>
+                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 2rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
+                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333; font-size: 0.8rem;">"Each building is just a page, each city a book, and each life... a grand library."</p>
+                                    </div>
+                                </div>
+
+                                <!-- Page 2 -->
+                                <div class="page-leaf" id="leaf2" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 4;">
+                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 2rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0;">
+                                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 1rem;">Foundation</h4>
+                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333; font-size: 0.8rem;">"A foundation is the education of the heart and the discipline of the mind."</p>
+                                    </div>
+                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 2rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
+                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333; font-size: 0.8rem;">"In the silence of Mayo College, I heard the call of leadership. Not to command, but to serve."</p>
+                                    </div>
+                                </div>
+
+                                <!-- Page 1 (Cover) -->
+                                <div class="page-leaf" id="leaf1" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 5;">
+                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #003366; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 0 5px 5px 0; border-left: 5px solid rgba(0,0,0,0.2);">
+                                        <div style="color: #fff; text-align: center; padding: 1rem; border: 1px solid var(--gold); background: rgba(255,255,255,0.05);">
+                                            <div style="font-size: 0.4rem; letter-spacing: 3px; margin-bottom: 0.5rem;">MANUJ MITTAL</div>
+                                            <div style="font-family: var(--font-serif); font-size: 1rem;"><?php echo $books[0]['title']; ?></div>
+                                        </div>
+                                    </div>
+                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 2rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
+                                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 1rem;">Blueprint</h4>
+                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333; font-size: 0.8rem;">"Architecture is the art of how we waste space. Every arch tells a secret..."</p>
+                                    </div>
+                                </div>
+                                
+                                <div style="position: absolute; left: 0; top: 0; width: 15px; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.1), transparent); z-index: 100; pointer-events: none; transform: translateZ(1px);"></div>
+                            </div>
+                        </div>
+
+                        <div class="book-controls" style="display: flex; gap: 1.5rem;">
+                            <button onclick="prevPage()" id="prevBtn" style="background: none; border: 1px solid #ddd; color: #333; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.6rem; letter-spacing: 1px;">PREV</button>
+                            <button onclick="nextPage()" id="nextBtn" style="background: #000; border: none; color: #fff; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.6rem; letter-spacing: 1px;">NEXT</button>
+                            <button onclick="closeFlipbook()" style="background: none; border: none; color: #999; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.6rem; letter-spacing: 1px;">CLOSE</button>
+                        </div>
+                    </div>
+
+                    <script>
+                        let currentPage = 1;
+                        const totalPages = 3;
+
+                        function openFlipbook() {
+                            document.querySelector('.book-simple-wrapper').style.display = 'none';
+                            document.getElementById('inlineFlipbook').style.display = 'flex';
+                            updateControls();
+                        }
+
+                        function closeFlipbook() {
+                            document.querySelector('.book-simple-wrapper').style.display = 'block';
+                            document.getElementById('inlineFlipbook').style.display = 'none';
+                            // Reset book state
+                            for(let i = 1; i <= totalPages; i++) {
+                                document.getElementById('leaf' + i).style.transform = 'rotateY(0deg)';
+                                document.getElementById('leaf' + i).style.zIndex = (totalPages - i + 3);
+                            }
+                            currentPage = 1;
+                        }
+
+                        function nextPage() {
+                            if (currentPage <= totalPages) {
+                                document.getElementById('leaf' + currentPage).style.transform = 'rotateY(-180deg)';
+                                document.getElementById('leaf' + currentPage).style.zIndex = currentPage + 3;
+                                currentPage++;
+                                updateControls();
+                            }
+                        }
+
+                        function prevPage() {
+                            if (currentPage > 1) {
+                                currentPage--;
+                                document.getElementById('leaf' + currentPage).style.transform = 'rotateY(0deg)';
+                                document.getElementById('leaf' + currentPage).style.zIndex = (totalPages - currentPage + 3);
+                                updateControls();
+                            }
+                        }
+
+                        function updateControls() {
+                            document.getElementById('prevBtn').style.opacity = currentPage === 1 ? '0.3' : '1';
+                            document.getElementById('nextBtn').style.opacity = currentPage > totalPages ? '0.3' : '1';
+                        }
+                    </script>
+                </div>
+                </div>
+
+                </style>
+
+            <!-- Right Side: Author (Classic Simple Layout) -->
+            <div class="side author-side"
+                style="background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 5% 10%;">
+
+                <!-- Simple Portrait -->
+                <div class="simple-author-img"
+                    style="width: 220px; height: 220px; border-radius: 50%; overflow: hidden; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 4px solid #fff;">
+                    <img src="assets/author.png" alt="Manuj Mittal"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+                <!-- Text Content -->
+                <div class="author-content-simple">
+                    <div class="side-tag"
+                        style="color: var(--color-gold); font-weight: 800; letter-spacing: 5px; margin-bottom: 1rem; font-size: 0.7rem;">
+                        THE AUTHOR</div>
+                    <h1 style="font-size: 3.5rem; color: #000; margin-bottom: 1.5rem;">Manuj Mittal</h1>
+
+                    <p
+                        style="font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 450px; margin: 0 auto 2.5rem;">
+                        Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth development through
+                        modern management thinking. He distills complex challenges into thought-provoking narratives.
+                    </p>
+
+                    <div class="author-simple-stats"
+                        style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+                        <div class="stat">
+                            <h4
+                                style="font-size: 0.65rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">
+                                Expertise</h4>
+                            <p style="font-size: 0.9rem; font-weight: 700; color: #000;">Finance & Strategy</p>
+                        </div>
+                        <div class="stat">
+                            <h4
+                                style="font-size: 0.65rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">
+                                Academic</h4>
+                            <p style="font-size: 0.9rem; font-weight: 700; color: #000;">MBA | Ed.D Candidate</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
+                        <a href="biography.php" class="btn btn-primary"
+                            style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; font-size: 0.8rem; letter-spacing: 2px; text-decoration: none;">FULL
+                            BIOGRAPHY</a>
+                        <a href="mailto:author@manujmittal.com" class="btn-text"
+                            style="color: #000; font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--color-gold);">CONNECT
+                            →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Pillars Section (Color Coded) -->
+    <section id="about" class="container" style="padding-top: 15vh;">
+        <div class="section-header reveal">
+            <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Foundation of<br>the Visionary.</h2>
+        </div>
+
+        <div class="about-pillars" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+            <!-- Education: Blue -->
+            <div class="pillar-card reveal pillar-edu" style="border-top: 6px solid #0047AB; padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition);">
+                <div class="pillar-tag" style="color: #0047AB; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Education</div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Academic Excellence</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Alumnus of Mayo College, holding a Master's in Finance and an MBA from Simon Business School. Currently pursuing a Doctor of Education (Ed.D.) at the University of Rochester.</p>
+            </div>
+
+            <!-- Profession: Red -->
+            <div class="pillar-card reveal pillar-prof" style="border-top: 6px solid #C41E3A; padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition);">
+                <div class="pillar-tag" style="color: #C41E3A; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Professional</div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Strategic Leadership</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Expertise in finance, operations, and organizational strategy. Specializing in distilling complex management challenges into actionable narratives.</p>
+            </div>
+
+            <!-- Social Responsibility: Green -->
+            <div class="pillar-card reveal pillar-social" style="border-top: 6px solid var(--green); padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition);">
+                <div class="pillar-tag" style="color: var(--green); font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Social Responsibility</div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Global Impact</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Dedicated to empowering the next generation of leaders through modern management thinking and thought-provoking storytelling.</p>
+            </div>
+        </div>
+
+        <style>
+            .pillar-edu:hover { box-shadow: 0 30px 60px rgba(0, 71, 171, 0.1); transform: translateY(-10px); }
+            .pillar-prof:hover { box-shadow: 0 30px 60px rgba(196, 30, 58, 0.1); transform: translateY(-10px); }
+            .pillar-social:hover { box-shadow: 0 30px 60px rgba(46, 139, 87, 0.1); transform: translateY(-10px); }
+        </style>
+    </section>
+
+    <!-- Journey Section (Synced Timeline + Photo Stack) -->
+    <section id="journey" class="journey-section container" style="padding: 15vh 0;">
+        <div class="section-header reveal" style="margin-bottom: 8rem;">
+            <div class="side-tag" style="color: var(--gold); letter-spacing: 5px; margin-bottom: 2rem; display: block;">THE EVOLUTION</div>
+            <h2 style="font-size: clamp(3.5rem, 6vw, 5rem); line-height: 1; color: #000;">A Legacy in<br>the Making.</h2>
+        </div>
+
+        <div class="journey-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start;">
+            
+            <!-- Left: Artifact Viewer (Photo Stack) -->
+            <div class="artifact-viewer" style="position: sticky; top: 15vh;">
+                <div class="artifact-stack" style="position: relative; height: 600px; width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.1);">
+                    <!-- Education Images (Blue) -->
+                    <img src="https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Foundation" class="artifact-image active" data-phase="foundation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease;">
+                    
+                    <!-- Social Images (Green) -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Leadership" class="artifact-image" data-phase="leadership" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease;">
+                    
+                    <!-- Corporate Images (Red) -->
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Corporate" class="artifact-image" data-phase="corporate" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease;">
+                    
+                    <!-- Mastery/Future Images (Blue) -->
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Vision" class="artifact-image" data-phase="vision" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease;">
+
+                    <style>
+                        .artifact-image.active { opacity: 1 !important; }
+                    </style>
+                </div>
+            </div>
+
+            <!-- Right: Color-Coded Timeline -->
+            <div class="journey-timeline" style="position: relative; padding-left: 4rem; border-left: 2px solid #eee;">
+                
+                <!-- Education Phase -->
+                <div class="milestone-group" data-phase="foundation" style="margin-bottom: 10rem;">
+                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #0047AB; padding-top: 2rem;">
+                        <div class="m-year" style="color: #0047AB; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">1996 - 2011 • FOUNDATION</div>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Early Life & Mayo Heritage</h4>
+                        <p style="color: #666; line-height: 1.8;">Childhood in India (1996). Mayo College Boarding School (2008). Chess Champion & WazirChand Trophy winner (2011).</p>
+                    </div>
+                </div>
+
+                <!-- Social Phase -->
+                <div class="milestone-group" data-phase="leadership" style="margin-bottom: 10rem;">
+                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #2E8B57; padding-top: 2rem;">
+                        <div class="m-year" style="color: #2E8B57; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2013 - 2017 • GLOBAL SERVICE</div>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Rise in Rotary International</h4>
+                        <p style="color: #666; line-height: 1.8;">RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract Representative & RI Atlanta Convention (2017).</p>
+                    </div>
+                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #2E8B57; padding-top: 2rem;">
+                        <div class="m-year" style="color: #2E8B57; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2018 - 2020 • LEADERSHIP IMPACT</div>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">President, Rotaract South Asia</h4>
+                        <p style="color: #666; line-height: 1.8;">RI Toronto (2018). RI Hamburg & 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
+                    </div>
+                </div>
+
+                <!-- Academic/Mastery Phase -->
+                <div class="milestone-group" data-phase="vision" style="margin-bottom: 10rem;">
+                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #0047AB; padding-top: 2rem;">
+                        <div class="m-year" style="color: #0047AB; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2017 - 2021 • GLOBAL ACADEMICS</div>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Simon Business School & MBA</h4>
+                        <p style="color: #666; line-height: 1.8;">B.Com (2017). Left India at age 23 (2019). MS Finance (2020). MBA Finance (2021) - Dean's List & Networking Coach.</p>
+                    </div>
+                </div>
+
+                <!-- Corporate Phase -->
+                <div class="milestone-group" data-phase="corporate" style="margin-bottom: 10rem;">
+                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #C41E3A; padding-top: 2rem;">
+                        <div class="m-year" style="color: #C41E3A; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">CAREER • STRATEGY</div>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Professional Excellence</h4>
+                        <p style="color: #666; line-height: 1.8;">Experience at Grant Thornton, Morgan Stanley (Manhattan), and Boutique M&A firms in NY. Career Advisor & AD at University of Rochester.</p>
+                    </div>
+                </div>
+
+                <!-- Future Phase -->
+                <div class="milestone-group" data-phase="vision" style="margin-bottom: 10rem;">
+                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #0047AB; padding-top: 2rem;">
+                        <div class="m-year" style="color: #0047AB; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2027 • THE DOCTORAL VISION</div>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Education 2.0 & Beyond</h4>
+                        <p style="color: #666; line-height: 1.8;">Pursuing Ed.D. Award: Education 2.0 (Las Vegas). Co-Chair: HE Students Association. Alumni of Simon & Mayo College.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const milestones = document.querySelectorAll('.milestone');
+                const images = document.querySelectorAll('.artifact-image');
+                
+                const syncImages = () => {
+                    let activePhase = 'foundation';
+                    milestones.forEach(m => {
+                        const rect = m.getBoundingClientRect();
+                        if (rect.top < window.innerHeight * 0.6) {
+                            activePhase = m.closest('.milestone-group').dataset.phase;
+                        }
+                    });
+                    
+                    images.forEach(img => {
+                        if (img.dataset.phase === activePhase) {
+                            img.classList.add('active');
+                        } else {
+                            img.classList.remove('active');
+                        }
+                    });
+                };
+                
+                window.addEventListener('scroll', syncImages);
+            });
+        </script>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="container reveal" style="padding: 15vh 0;">
+        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start;">
+            <!-- Left Side: Info -->
+            <div class="contact-info">
+                <div class="side-tag" style="color: var(--gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block;">GET IN TOUCH</div>
+                <h2 style="font-size: clamp(3rem, 5vw, 5rem); line-height: 0.9; margin-bottom: 4rem; color: #000; letter-spacing: -3px;">Let's Write<br>the Next<br>Chapter.</h2>
+                <div class="contact-details" style="margin-top: 6rem;">
+                    <div class="contact-item" style="margin-bottom: 3rem;">
+                        <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">Direct Correspondence</h4>
+                        <a href="mailto:author@manujmittal.com" style="font-size: 1.5rem; color: #000; text-decoration: none; font-family: var(--font-serif); border-bottom: 1px solid #eee; padding-bottom: 5px;">author@manujmittal.com</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side: Form -->
+            <div class="contact-form-container" style="background: #f9f9f9; padding: 5rem; border-radius: 10px; box-shadow: 0 40px 80px rgba(0,0,0,0.05); border-top: 6px solid var(--gold);">
+                <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+                    <div style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
+                        Message sent successfully! We will get back to you soon.
+                    </div>
+                <?php endif; ?>
+
+                <form action="process-contact.php" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem;">
+                    <input type="text" name="name" placeholder="Full Name" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
+                    <input type="email" name="email" placeholder="Email Address" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
+                    <textarea name="message" rows="4" placeholder="Your Message" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none; resize: none;" required></textarea>
+                    <button type="submit" class="btn btn-primary" style="background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 3px; cursor: pointer;">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    <!-- Impact by the Numbers -->
+    <section class="stats-section container" style="padding: 15vh 0; text-align: center; border-top: 1px solid var(--border);">
+        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem;">
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="200000" style="font-size: 5rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem;">0</div>
+                <div class="stat-label" style="letter-spacing: 3px; font-size: 0.8rem; color: #999; text-transform: uppercase;">Global Members Led</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="8" style="font-size: 5rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem;">0</div>
+                <div class="stat-label" style="letter-spacing: 3px; font-size: 0.8rem; color: #999; text-transform: uppercase;">Countries Impacted</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="27" style="font-size: 5rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem;">0</div>
+                <div class="stat-label" style="letter-spacing: 3px; font-size: 0.8rem; color: #999; text-transform: uppercase;">Years of Evolution</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visionary Quotes -->
+    <section class="quotes-section" style="padding: 15vh 0; background: var(--surface); overflow: hidden;">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <div class="quote-slider">
+                <div class="quote-slide active">
+                    <p style="font-family: var(--font-serif); font-size: 2.5rem; font-style: italic; line-height: 1.4; margin-bottom: 3rem;">"Innovation is not about new things, it's about new ways of seeing the world."</p>
+                    <div class="quote-signature" style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3rem; color: var(--gold);">Manuj Mittal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .stat-number.plus::after { content: '+'; }
+    </style>
+</main>
+
+<script>
+    // Page-specific scroll sync
+    window.addEventListener('scroll', () => {
+        const timeline = document.querySelector('.journey-timeline');
+        if (timeline) {
+            const rect = timeline.getBoundingClientRect();
+            const progress = Math.max(0, Math.min(100, ((window.innerHeight / 2 - rect.top) / rect.height) * 100));
+            const inkProgress = document.querySelector('.ink-progress');
+            if (inkProgress) inkProgress.style.height = progress + '%';
+
+            document.querySelectorAll('.milestone').forEach(m => {
+                const mRect = m.getBoundingClientRect();
+                if (mRect.top < window.innerHeight / 2 && mRect.bottom > window.innerHeight / 2) {
+                    const year = m.getAttribute('data-year');
+                    document.querySelectorAll('.artifact-image').forEach(img => {
+                        img.classList.toggle('active', img.getAttribute('data-year') === year);
+                    });
+                }
+            });
+        }
+    });
+</script>
+
+<?php include 'components/footer.php'; ?>
