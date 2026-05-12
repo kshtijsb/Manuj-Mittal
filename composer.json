@@ -1,0 +1,7 @@
+{
+    "name": "kshtijsb/manuj-mittal",
+    "description": "Author Portfolio for Manuj Mittal",
+    "require": {
+        "php": ">=7.4"
+    }
+}
