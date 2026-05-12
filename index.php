@@ -322,34 +322,58 @@ $status = $_GET['status'] ?? null;
         }
 
         .hero {
-            min-height: auto;
+            min-height: 80vh; /* Reduced from 100vh */
             height: auto;
             overflow: visible;
         }
 
         .side {
-            padding: 5rem 1.5rem !important;
+            padding: 4rem 1.5rem !important;
             height: auto;
             min-height: auto;
             overflow: visible;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .about-pillars,
-        .books-grid {
-            grid-template-columns: 1fr;
+        .books-grid,
+        .contact-grid,
+        .stats-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+        }
+
+        .contact-form-container {
+            padding: 3rem 1.5rem !important;
+        }
+
+        .stat-number {
+            font-size: 3.5rem !important;
         }
 
         .journey-grid {
             grid-template-columns: 1fr;
-            gap: 4rem;
+            gap: 2rem;
             overflow: visible;
         }
 
         .artifact-viewer {
             position: relative;
             top: 0;
-            height: 40vh;
+            height: 35vh;
             overflow: visible;
+            margin-bottom: 2rem;
+        }
+
+        .journey-timeline {
+            padding-left: 1.5rem !important;
+            border-left: none !important;
+        }
+
+        .milestone-group {
+            margin-bottom: 4rem !important;
         }
     }
 
