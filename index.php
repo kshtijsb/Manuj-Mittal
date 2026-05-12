@@ -313,78 +313,62 @@ $status = $_GET['status'] ?? null;
         border: 1px solid #cc0000;
     }
 
+    /* Global Responsive Architecture */
+    .hero { min-height: 100vh; display: flex; align-items: stretch; overflow: visible; }
+    .hero-split { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+    .side { padding: 8rem 4rem; display: flex; flex-direction: column; justify-content: center; background: #fff; }
+    .author-side { background: var(--bg) !important; text-align: center; align-items: center; }
+    
+    .simple-author-img { 
+        width: 220px; height: 220px; border-radius: 50%; overflow: hidden; 
+        margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 4px solid #fff;
+    }
+    
+    .author-simple-stats { 
+        display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; 
+        padding-top: 2rem; border-top: 1px solid #eee; width: 100%;
+    }
+    
+    .author-actions { display: flex; justify-content: center; gap: 2rem; align-items: center; width: 100%; }
+
+    .about-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; }
+    .pillar-card { padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); border-top: 6px solid; }
+
+    .journey-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; }
+
     @media (max-width: 992px) {
-        .hero-split {
-            grid-template-columns: 1fr;
-            height: auto;
-            min-height: auto;
-            overflow: visible;
-        }
+        .hero { min-height: auto; padding: 0; display: block; }
+        .hero-split { grid-template-columns: 1fr; }
+        .side { padding: 4rem 1.5rem !important; width: 100% !important; text-align: center; }
+        .author-side { padding: 5rem 1.5rem !important; }
+        
+        .author-simple-stats { flex-direction: column; gap: 1.5rem; }
+        .author-actions { flex-direction: column; gap: 1.5rem; }
+        .author-actions .btn { width: 100%; text-align: center; }
 
-        .hero {
-            min-height: 80vh; 
-            height: auto;
-            overflow: visible;
+        .about-pillars, .journey-grid, .contact-grid, .stats-grid { 
+            grid-template-columns: 1fr !important; 
+            gap: 2.5rem !important; 
+            width: 100% !important;
         }
-
-        .side {
-            padding: 4rem 1.5rem !important;
-            height: auto;
-            min-height: auto;
-            overflow: visible;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Slash massive vertical gaps on mobile */
-        #about, #journey, #contact, .stats-section, .quotes-section {
-            padding: 4rem 0 !important;
-        }
-
-        .about-pillars,
-        .books-grid,
-        .contact-grid,
-        .stats-grid {
-            grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
-        }
-
-        .contact-form-container {
-            padding: 2.5rem 1.2rem !important;
-            margin-top: 2rem;
-        }
-
-        .stat-number {
-            font-size: 3rem !important;
-        }
-
-        .journey-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            overflow: visible;
-        }
-
-        .artifact-viewer {
-            position: relative;
-            top: 0;
-            height: 30vh;
-            overflow: visible;
-            margin-bottom: 2rem;
-        }
-
-        .journey-timeline {
-            padding-left: 1.5rem !important;
-            border-left: 1px solid #eee !important;
-        }
-
-        .milestone-group {
-            margin-bottom: 3rem !important;
-        }
-
-        .milestone h4 {
-            font-size: 1.5rem !important;
-        }
+        .pillar-card { padding: 2rem 1.5rem !important; }
+        
+        #about, #journey, #contact, .stats-section { padding: 4rem 0 !important; }
+        .side-tag { text-align: center; margin: 0 auto 2rem auto; }
+        h1 { font-size: 3rem !important; text-align: center; }
+        h2 { font-size: 2.2rem !important; text-align: center; }
+        
+        .book-main-visual { width: 220px !important; margin: 0 auto; }
+        .book-hero-info { text-align: center !important; }
+        .book-hero-info div { flex-direction: column !important; gap: 1rem !important; }
+        .book-hero-info .btn { width: 100%; }
+        
+        .artifact-viewer { position: relative; top: 0; height: 35vh; margin-bottom: 2rem; }
+        .journey-timeline { padding-left: 1.5rem !important; border-left: 1px solid #eee !important; text-align: left; }
+        .milestone { margin-bottom: 4rem !important; }
+        .contact-form-container { padding: 2.5rem 1.5rem !important; margin-top: 3rem; }
     }
 
     @keyframes slideInUp {
@@ -578,12 +562,10 @@ $status = $_GET['status'] ?? null;
                 </style>
 
             <!-- Right Side: Author (Classic Simple Layout) -->
-            <div class="side author-side"
-                style="background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 5% 10%;">
+            <div class="side author-side">
 
                 <!-- Simple Portrait -->
-                <div class="simple-author-img"
-                    style="width: 220px; height: 220px; border-radius: 50%; overflow: hidden; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 4px solid #fff;">
+                <div class="simple-author-img">
                     <img src="assets/author.png" alt="Manuj Mittal"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
@@ -601,8 +583,7 @@ $status = $_GET['status'] ?? null;
                         modern management thinking. He distills complex challenges into thought-provoking narratives.
                     </p>
 
-                    <div class="author-simple-stats"
-                        style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+                    <div class="author-simple-stats">
                         <div class="stat">
                             <h4
                                 style="font-size: 0.65rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">
@@ -617,8 +598,8 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
-                        <a href="biography.php" class="btn btn-primary"
+                    <div class="author-actions">
+                        <a href="biography.php" class="btn btn-primary">
                             style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; font-size: 0.8rem; letter-spacing: 2px; text-decoration: none;">FULL
                             BIOGRAPHY</a>
                         <a href="mailto:author@manujmittal.com" class="btn-text"
@@ -637,23 +618,23 @@ $status = $_GET['status'] ?? null;
             <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Foundation of<br>the Visionary.</h2>
         </div>
 
-        <div class="about-pillars" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+        <div class="about-pillars">
             <!-- Education: Blue -->
-            <div class="pillar-card reveal pillar-edu" style="border-top: 6px solid #0047AB; padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition);">
+            <div class="pillar-card reveal pillar-edu" style="border-top: 6px solid #0047AB;">
                 <div class="pillar-tag" style="color: #0047AB; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Education</div>
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Academic Excellence</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Alumnus of Mayo College, holding a Master's in Finance and an MBA from Simon Business School. Currently pursuing a Doctor of Education (Ed.D.) at the University of Rochester.</p>
             </div>
 
             <!-- Profession: Red -->
-            <div class="pillar-card reveal pillar-prof" style="border-top: 6px solid #C41E3A; padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition);">
+            <div class="pillar-card reveal pillar-prof" style="border-top: 6px solid #C41E3A;">
                 <div class="pillar-tag" style="color: #C41E3A; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Professional</div>
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Strategic Leadership</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Expertise in finance, operations, and organizational strategy. Specializing in distilling complex management challenges into actionable narratives.</p>
             </div>
 
             <!-- Social Responsibility: Green -->
-            <div class="pillar-card reveal pillar-social" style="border-top: 6px solid var(--green); padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition);">
+            <div class="pillar-card reveal pillar-social" style="border-top: 6px solid var(--green);">
                 <div class="pillar-tag" style="color: var(--green); font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Social Responsibility</div>
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Global Impact</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Dedicated to empowering the next generation of leaders through modern management thinking and thought-provoking storytelling.</p>
@@ -674,7 +655,7 @@ $status = $_GET['status'] ?? null;
             <h2 style="font-size: clamp(3.5rem, 6vw, 5rem); line-height: 1; color: #000;">A Legacy in<br>the Making.</h2>
         </div>
 
-        <div class="journey-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start;">
+        <div class="journey-grid">
             
             <!-- Left: Artifact Viewer (Photo Stack) -->
             <div class="artifact-viewer" style="position: sticky; top: 15vh;">
@@ -789,7 +770,7 @@ $status = $_GET['status'] ?? null;
 
     <!-- Contact Section -->
     <section id="contact" class="container reveal" style="padding: 15vh 0;">
-        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start;">
+        <div class="contact-grid">
             <!-- Left Side: Info -->
             <div class="contact-info">
                 <div class="side-tag" style="color: var(--gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block;">GET IN TOUCH</div>
@@ -819,7 +800,7 @@ $status = $_GET['status'] ?? null;
         </div>
     <!-- Impact by the Numbers -->
     <section class="stats-section container" style="padding: 15vh 0; text-align: center; border-top: 1px solid var(--border);">
-        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem;">
+        <div class="stats-grid">
             <div class="stat-item reveal">
                 <div class="stat-number" data-target="200000" style="font-size: 5rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem;">0</div>
                 <div class="stat-label" style="letter-spacing: 3px; font-size: 0.8rem; color: #999; text-transform: uppercase;">Global Members Led</div>
