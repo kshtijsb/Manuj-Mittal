@@ -13,7 +13,7 @@ include 'components/header.php';
     .toggle-btn.active { background: var(--blue); color: white; border-color: var(--blue); box-shadow: 0 10px 30px rgba(0,51,102,0.2); }
 
     .content-area { position: relative; min-height: 60vh; }
-    .content-pane { display: none; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; animation: fadeIn 0.8s forwards; }
+    .content-pane { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; animation: fadeIn 0.8s forwards; }
     .content-pane.active { display: grid; }
 
     .article-card { background: white; padding: 3rem; border-radius: 15px; border: 1px solid rgba(0,0,0,0.03); transition: 0.5s; display: flex; flex-direction: column; justify-content: space-between; }
@@ -23,6 +23,16 @@ include 'components/header.php';
     .article-excerpt { font-size: 1rem; color: var(--muted); margin-bottom: 2.5rem; font-weight: 300; }
 
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+        .inkwell-hero { padding: 6vh 0; }
+        .inkwell-hero h1 { font-size: 3rem; }
+        .toggle-container { flex-direction: column; gap: 1rem; padding: 0 1rem; }
+        .toggle-btn { width: 100%; padding: 0.8rem 2rem; }
+        .content-pane { grid-template-columns: 1fr; gap: 2rem; }
+        .article-card { padding: 2rem 1.5rem; }
+        .article-card h3 { font-size: 1.6rem; }
+    }
 </style>
 
 <main class="container">

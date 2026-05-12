@@ -322,7 +322,7 @@ $status = $_GET['status'] ?? null;
         }
 
         .hero {
-            min-height: 80vh; /* Reduced from 100vh */
+            min-height: 80vh; 
             height: auto;
             overflow: visible;
         }
@@ -337,20 +337,26 @@ $status = $_GET['status'] ?? null;
             justify-content: center;
         }
 
+        /* Slash massive vertical gaps on mobile */
+        #about, #journey, #contact, .stats-section, .quotes-section {
+            padding: 4rem 0 !important;
+        }
+
         .about-pillars,
         .books-grid,
         .contact-grid,
         .stats-grid {
             grid-template-columns: 1fr !important;
-            gap: 2rem !important;
+            gap: 2.5rem !important;
         }
 
         .contact-form-container {
-            padding: 3rem 1.5rem !important;
+            padding: 2.5rem 1.2rem !important;
+            margin-top: 2rem;
         }
 
         .stat-number {
-            font-size: 3.5rem !important;
+            font-size: 3rem !important;
         }
 
         .journey-grid {
@@ -362,18 +368,22 @@ $status = $_GET['status'] ?? null;
         .artifact-viewer {
             position: relative;
             top: 0;
-            height: 35vh;
+            height: 30vh;
             overflow: visible;
             margin-bottom: 2rem;
         }
 
         .journey-timeline {
             padding-left: 1.5rem !important;
-            border-left: none !important;
+            border-left: 1px solid #eee !important;
         }
 
         .milestone-group {
-            margin-bottom: 4rem !important;
+            margin-bottom: 3rem !important;
+        }
+
+        .milestone h4 {
+            font-size: 1.5rem !important;
         }
     }
 

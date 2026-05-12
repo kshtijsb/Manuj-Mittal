@@ -143,6 +143,19 @@ include 'components/header.php';
         background: var(--gold);
         transform: translateY(-3px);
     }
+
+    @media (max-width: 992px) {
+        .store-hero { padding: 6vh 0; }
+        .store-hero h1 { font-size: 2.5rem; }
+        .product-grid { gap: 8vh; padding-bottom: 8vh; }
+        .product-item { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+        .product-info h2 { font-size: 2.5rem; }
+        .product-desc { margin-bottom: 2rem; font-size: 1rem; }
+        .buy-action { align-items: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 2rem; }
+        .price-tag { justify-content: center; margin-bottom: 2rem !important; }
+        .paypal-button-container { max-width: 100%; }
+        .book-spotlight { max-width: 300px; margin: 0 auto; }
+    }
 </style>
 
 <main class="container">
