@@ -316,14 +316,22 @@ $status = $_GET['status'] ?? null;
     @media (max-width: 992px) {
         .hero-split {
             grid-template-columns: 1fr;
+            height: auto;
+            min-height: auto;
+            overflow: visible;
         }
 
         .hero {
             min-height: auto;
+            height: auto;
+            overflow: visible;
         }
 
         .side {
-            padding: 8rem 2rem;
+            padding: 5rem 1.5rem !important;
+            height: auto;
+            min-height: auto;
+            overflow: visible;
         }
 
         .about-pillars,
@@ -334,12 +342,14 @@ $status = $_GET['status'] ?? null;
         .journey-grid {
             grid-template-columns: 1fr;
             gap: 4rem;
+            overflow: visible;
         }
 
         .artifact-viewer {
             position: relative;
             top: 0;
             height: 40vh;
+            overflow: visible;
         }
     }
 

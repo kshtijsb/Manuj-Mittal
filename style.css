@@ -574,6 +574,13 @@ nav {
   transition: var(--transition-spring);
 }
 
+@media (max-width: 480px) {
+  .testimonial-card {
+    min-width: calc(100vw - 3rem);
+    padding: 2rem;
+  }
+}
+
 .testimonial-card:hover {
   transform: scale(1.02);
   border-color: var(--color-secondary);

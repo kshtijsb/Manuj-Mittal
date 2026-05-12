@@ -71,6 +71,10 @@
             min-height: 100vh;
         }
 
+        @media (max-width: 768px) {
+            body { border-width: 2px; }
+        }
+
         h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; }
 
         /* Fountain Pen Cursor */
