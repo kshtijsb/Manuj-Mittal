@@ -339,7 +339,7 @@ $status = $_GET['status'] ?? null;
     .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; }
 
     @media (max-width: 992px) {
-        .hero { min-height: auto; padding: 0; display: block; }
+        .hero { height: auto !important; min-height: auto; padding: 0; display: block; }
         .hero-split { grid-template-columns: 1fr; }
         .side { padding: 4rem 1.5rem !important; width: 100% !important; text-align: center; }
         .author-side { padding: 5rem 1.5rem !important; }
@@ -365,7 +365,8 @@ $status = $_GET['status'] ?? null;
         .book-hero-info div { flex-direction: column !important; gap: 1rem !important; }
         .book-hero-info .btn { width: 100%; }
         
-        .artifact-viewer { position: relative; top: 0; height: 35vh; margin-bottom: 2rem; }
+        .artifact-viewer { position: relative; top: 0; height: auto; margin-bottom: 2rem; overflow: hidden; }
+        .artifact-stack { height: 35vh !important; }
         .journey-timeline { padding-left: 1.5rem !important; border-left: 1px solid #eee !important; text-align: left; }
         .milestone { margin-bottom: 4rem !important; }
         .contact-form-container { padding: 2.5rem 1.5rem !important; margin-top: 3rem; }
