@@ -372,23 +372,27 @@ $status = $_GET['status'] ?? null;
                 <div class="animate-up" style="animation-delay: 0.2s; position: relative; z-index: 10; width: 100%;">
                     <div class="side-tag" style="margin-bottom: 3rem;">FEATURED WORK</div>
 
-                    <!-- Simple Elegant Book Visual -->
-                    <!-- Simple Elegant Book Visual -->
+                    <!-- Elegant Breathing Book Visual -->
                     <div class="immersive-book-container" style="margin-bottom: 5rem; display: flex; flex-direction: column; align-items: center;">
-                        <div class="book-simple-wrapper" style="position: relative; cursor: pointer; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); animation: float 6s ease-in-out infinite;">
-                            <!-- Aura Background -->
-                            <div class="book-aura" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: 120%; background: radial-gradient(circle, var(--gold) 0%, transparent 70%); opacity: 0.1; filter: blur(40px); z-index: -1;">
+                        <div class="book-simple-wrapper" style="position: relative; cursor: pointer; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); animation: breathe 4s ease-in-out infinite;">
+                            <!-- Subtle Aura -->
+                            <div class="book-aura" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; height: 110%; background: radial-gradient(circle, var(--gold) 0%, transparent 70%); opacity: 0.05; filter: blur(30px); z-index: -1;">
                             </div>
 
                             <!-- The Book -->
-                            <div class="book-main-visual" style="position: relative; width: 300px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border-radius: 5px; overflow: hidden;">
+                            <div class="book-main-visual" style="position: relative; width: 280px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-radius: 5px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
-                                <!-- Simple Shimmer on Hover -->
-                                <div class="book-shimmer" style="position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent); transform: skewX(-25deg); transition: 0.8s;">
-                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <style>
+                        @keyframes breathe {
+                            0% { transform: scale(1); }
+                            50% { transform: scale(1.03); }
+                            100% { transform: scale(1); }
+                        }
+                    </style>
 
                     <div class="book-hero-info" style="text-align: left; max-width: 450px; margin: 0 auto;">
                         <h2 style="font-size: 3.5rem; line-height: 1; margin-bottom: 1.5rem; color: var(--text);">
@@ -396,7 +400,7 @@ $status = $_GET['status'] ?? null;
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); opacity: 0.7; margin-bottom: 2.5rem;">
                             <?php echo $books[0]['desc']; ?></p>
 
-                        <div style="display: flex; gap: 2rem; align-items: center;">
+                        <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
                             <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; text-decoration: none;">PRE-ORDER NOW</a>
                             <button onclick="openFlipbook()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 1.1rem 2.5rem; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 2px; font-size: 0.7rem;">PEEK INSIDE</button>
                         </div>
