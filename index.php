@@ -390,7 +390,7 @@ $status = $_GET['status'] ?? null;
                             </div>
 
                             <!-- The Book -->
-                            <div class="book-main-visual" style="position: relative; width: 280px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-radius: 5px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+                            <div class="book-main-visual" style="position: relative; width: 300px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-radius: 5px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
                             </div>
                         </div>
@@ -399,8 +399,20 @@ $status = $_GET['status'] ?? null;
                     <style>
                         @keyframes breathe {
                             0% { transform: scale(1); }
-                            50% { transform: scale(1.03); }
+                            50% { transform: scale(1.05); }
                             100% { transform: scale(1); }
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .book-main-visual { width: 220px !important; }
+                            @keyframes breathe {
+                                0% { transform: scale(1); }
+                                50% { transform: scale(1.03); }
+                                100% { transform: scale(1); }
+                            }
+                            .hero-book-info h2 { font-size: 2.5rem !important; }
+                            .hero-book-info div { flex-direction: column; gap: 1rem !important; }
+                            .hero-book-info .btn { width: 100%; text-align: center; }
                         }
                     </style>
 
@@ -410,7 +422,7 @@ $status = $_GET['status'] ?? null;
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); opacity: 0.7; margin-bottom: 2.5rem;">
                             <?php echo $books[0]['desc']; ?></p>
 
-                        <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                        <div style="display: flex; gap: 2rem; align-items: center;">
                             <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; text-decoration: none;">PRE-ORDER NOW</a>
                             <button onclick="openFlipbook()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 1.1rem 2.5rem; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 2px; font-size: 0.7rem;">PEEK INSIDE</button>
                         </div>
