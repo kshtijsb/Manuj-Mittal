@@ -343,6 +343,7 @@ $status = $_GET['status'] ?? null;
         .hero-split { grid-template-columns: 1fr; }
         .side { padding: 4rem 1.5rem !important; width: 100% !important; text-align: center; }
         .author-side { padding: 5rem 1.5rem !important; }
+        .floating-accent { display: none !important; }
         
         .author-simple-stats { flex-direction: column; gap: 1.5rem; }
         .author-actions { flex-direction: column; gap: 1.5rem; }

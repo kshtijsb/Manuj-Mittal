@@ -2,7 +2,11 @@
         <div class="container">
             <!-- Self-Writing Signature -->
             <div class="signature-container" style="margin-bottom: 4rem;">
-                <div class="author-signature" style="font-family: 'Mrs Saint Delafield', cursive; font-size: 5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease;">Manuj Mittal</div>
+                <style>
+                    .author-signature { font-family: 'Mrs Saint Delafield', cursive; font-size: 5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease; }
+                    @media (max-width: 768px) { .author-signature { font-size: 3rem; } }
+                </style>
+                <div class="author-signature">Manuj Mittal</div>
             </div>
 
             <div class="logo" style="margin-bottom: 2rem;">M. MITTAL</div>

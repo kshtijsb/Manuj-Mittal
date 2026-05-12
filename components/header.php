@@ -114,6 +114,7 @@
                 background: #000; flex-direction: column; justify-content: center; 
                 align-items: center; transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); 
                 z-index: 1001; 
+                display: flex !important;
             }
             .nav-links.active { right: 0; }
             .menu-toggle { display: block; z-index: 1002; }
