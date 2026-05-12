@@ -340,7 +340,7 @@ $status = $_GET['status'] ?? null;
 
     @media (max-width: 992px) {
         .hero { height: auto !important; min-height: auto; padding: 0; display: block; }
-        .hero-split { grid-template-columns: 1fr; }
+        .hero-split { display: none !important; }
         .side { padding: 4rem 1.5rem !important; width: 100% !important; text-align: center; }
         .author-side { padding: 5rem 1.5rem !important; }
         .floating-accent { display: none !important; }
@@ -606,6 +606,36 @@ $status = $_GET['status'] ?? null;
                     </div>
                 </div>
 
+            </div>
+        </div>
+        
+        <!-- Mobile Hero -->
+        <div class="hero-mobile">
+            <style>
+                .hero-mobile { display: none; }
+                @media (max-width: 992px) {
+                    .hero-mobile { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6rem 1.5rem 4rem; text-align: center; width: 100%; min-height: 100vh; background: var(--bg); }
+                    .hero-mobile .author-portrait { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 3px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+                    .hero-mobile h1 { font-size: 3.2rem !important; line-height: 1.1; margin-bottom: 0.5rem; color: #000; font-family: var(--font-serif); }
+                    .hero-mobile p { font-size: 1rem; color: #555; margin-bottom: 3rem; max-width: 90%; }
+                    .hero-mobile .book-cover { width: 200px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border-radius: 4px; margin-bottom: 2rem; }
+                    .hero-mobile .actions { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 300px; }
+                    .hero-mobile .btn { width: 100%; text-align: center; padding: 1.2rem; }
+                }
+            </style>
+
+            <div class="author-portrait">
+                <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <h1>Manuj Mittal</h1>
+            <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
+            
+            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover">
+            
+            <div class="actions">
+                <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; font-size: 0.9rem; letter-spacing: 2px; text-decoration: none;">PRE-ORDER NOW</a>
+                <a href="biography.php" class="btn" style="background: transparent; color: #000; border: 1px solid var(--gold); font-size: 0.9rem; letter-spacing: 2px; text-decoration: none;">FULL BIOGRAPHY</a>
             </div>
         </div>
     </section>
