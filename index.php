@@ -559,8 +559,6 @@ $status = $_GET['status'] ?? null;
                 </div>
                 </div>
 
-                </style>
-
             <!-- Right Side: Author (Classic Simple Layout) -->
             <div class="side author-side">
 
@@ -599,9 +597,7 @@ $status = $_GET['status'] ?? null;
                     </div>
 
                     <div class="author-actions">
-                        <a href="biography.php" class="btn btn-primary">
-                            style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; font-size: 0.8rem; letter-spacing: 2px; text-decoration: none;">FULL
-                            BIOGRAPHY</a>
+                        <a href="biography.php" class="btn btn-primary" style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; font-size: 0.8rem; letter-spacing: 2px; text-decoration: none;">FULL BIOGRAPHY</a>
                         <a href="mailto:author@manujmittal.com" class="btn-text"
                             style="color: #000; font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--color-gold);">CONNECT
                             →</a>
