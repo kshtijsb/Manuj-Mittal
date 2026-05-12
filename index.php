@@ -404,45 +404,45 @@ $status = $_GET['status'] ?? null;
 
                     <!-- In-Place 3D Flipbook -->
                     <div id="inlineFlipbook" style="display: none; flex-direction: column; align-items: center; gap: 2rem; width: 100%; margin-bottom: 5rem;">
-                        <div class="flipbook-wrapper" style="perspective: 2000px; width: 600px; height: 400px; position: relative; transform: scale(0.8); transform-origin: center;">
-                            <div id="mainBook" style="width: 300px; height: 100%; position: absolute; left: 50%; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); transform: translateZ(0);">
+                        <div class="flipbook-wrapper" style="perspective: 2000px; width: 100%; max-width: 600px; height: 400px; position: relative; transform-origin: center;">
+                            <div id="mainBook" style="width: 50%; height: 100%; position: absolute; left: 50%; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); transform: translateZ(0);">
                                 
                                 <!-- Back Cover -->
                                 <div class="page static-back" style="position: absolute; width: 100%; height: 100%; background: #002244; border-radius: 0 5px 5px 0; z-index: 1; left: 0; box-shadow: 5px 5px 20px rgba(0,0,0,0.2);"></div>
 
                                 <!-- Page 3 -->
                                 <div class="page-leaf" id="leaf3" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 3;">
-                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 2rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0; font-size: 0.8rem;">
-                                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 1rem;">Mastery</h4>
-                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333;">"The transition from student to architect is silent. It happens when you ask: What will I leave behind?"</p>
+                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 1.5rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0; font-size: 0.75rem;">
+                                        <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Mastery</h4>
+                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333;">"The transition from student to architect is silent. It happens when you ask: What will I leave behind?"</p>
                                     </div>
-                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 2rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
-                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333; font-size: 0.8rem;">"Each building is just a page, each city a book, and each life... a grand library."</p>
+                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
+                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.75rem;">"Each building is just a page, each city a book, and each life... a grand library."</p>
                                     </div>
                                 </div>
 
                                 <!-- Page 2 -->
                                 <div class="page-leaf" id="leaf2" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 4;">
-                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 2rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0;">
-                                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 1rem;">Foundation</h4>
-                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333; font-size: 0.8rem;">"A foundation is the education of the heart and the discipline of the mind."</p>
+                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 1.5rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0;">
+                                        <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Foundation</h4>
+                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.75rem;">"A foundation is the education of the heart and the discipline of the mind."</p>
                                     </div>
-                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 2rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
-                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333; font-size: 0.8rem;">"In the silence of Mayo College, I heard the call of leadership. Not to command, but to serve."</p>
+                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
+                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.75rem;">"In the silence of Mayo College, I heard the call of leadership. Not to command, but to serve."</p>
                                     </div>
                                 </div>
 
                                 <!-- Page 1 (Cover) -->
                                 <div class="page-leaf" id="leaf1" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 5;">
                                     <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #003366; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 0 5px 5px 0; border-left: 5px solid rgba(0,0,0,0.2);">
-                                        <div style="color: #fff; text-align: center; padding: 1rem; border: 1px solid var(--gold); background: rgba(255,255,255,0.05);">
-                                            <div style="font-size: 0.4rem; letter-spacing: 3px; margin-bottom: 0.5rem;">MANUJ MITTAL</div>
-                                            <div style="font-family: var(--font-serif); font-size: 1rem;"><?php echo $books[0]['title']; ?></div>
+                                        <div style="color: #fff; text-align: center; padding: 0.5rem; border: 1px solid var(--gold); background: rgba(255,255,255,0.05);">
+                                            <div style="font-size: 0.3rem; letter-spacing: 3px; margin-bottom: 0.5rem;">MANUJ MITTAL</div>
+                                            <div style="font-family: var(--font-serif); font-size: 0.8rem;"><?php echo $books[0]['title']; ?></div>
                                         </div>
                                     </div>
-                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 2rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
-                                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 1rem;">Blueprint</h4>
-                                        <p style="font-family: var(--font-serif); line-height: 1.6; color: #333; font-size: 0.8rem;">"Architecture is the art of how we waste space. Every arch tells a secret..."</p>
+                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
+                                        <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Blueprint</h4>
+                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.75rem;">"Architecture is the art of how we waste space. Every arch tells a secret..."</p>
                                     </div>
                                 </div>
                                 
@@ -450,10 +450,10 @@ $status = $_GET['status'] ?? null;
                             </div>
                         </div>
 
-                        <div class="book-controls" style="display: flex; gap: 1.5rem;">
-                            <button onclick="prevPage()" id="prevBtn" style="background: none; border: 1px solid #ddd; color: #333; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.6rem; letter-spacing: 1px;">PREV</button>
-                            <button onclick="nextPage()" id="nextBtn" style="background: #000; border: none; color: #fff; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.6rem; letter-spacing: 1px;">NEXT</button>
-                            <button onclick="closeFlipbook()" style="background: none; border: none; color: #999; padding: 0.5rem 1rem; cursor: pointer; font-size: 0.6rem; letter-spacing: 1px;">CLOSE</button>
+                        <div class="book-controls" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                            <button onclick="prevPage()" id="prevBtn" style="background: none; border: 1px solid #ddd; color: #333; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px;">PREV</button>
+                            <button onclick="nextPage()" id="nextBtn" style="background: #000; border: none; color: #fff; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px;">NEXT</button>
+                            <button onclick="closeFlipbook()" style="background: none; border: none; color: #999; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px;">CLOSE</button>
                         </div>
                     </div>
 
@@ -464,6 +464,17 @@ $status = $_GET['status'] ?? null;
                         function openFlipbook() {
                             document.querySelector('.book-simple-wrapper').style.display = 'none';
                             document.getElementById('inlineFlipbook').style.display = 'flex';
+                            
+                            // Handle mobile scaling
+                            const wrapper = document.querySelector('.flipbook-wrapper');
+                            if(window.innerWidth < 768) {
+                                wrapper.style.transform = 'scale(' + (window.innerWidth / 700) + ')';
+                                wrapper.style.height = (400 * (window.innerWidth / 700)) + 'px';
+                            } else {
+                                wrapper.style.transform = 'scale(1)';
+                                wrapper.style.height = '400px';
+                            }
+                            
                             updateControls();
                         }
 

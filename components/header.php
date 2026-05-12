@@ -47,8 +47,18 @@
             --gold: #E5C07B;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        /* Only show custom cursor on desktops */
+        @media (hover: hover) {
+            * { cursor: none !important; }
+            .cursor { display: flex !important; }
+        }
+        
+        @media (hover: none) {
+            .cursor { display: none !important; }
+        }
+
         body { 
             font-family: var(--font-sans); 
             background: var(--bg); 
@@ -67,12 +77,17 @@
         .cursor {
             position: fixed; width: 40px; height: 40px; pointer-events: none; z-index: 9999;
             transform: translate(-5%, -5%) rotate(0deg); transition: transform 0.1s ease-out;
-            display: flex; align-items: center; justify-content: center;
+            display: none; align-items: center; justify-content: center;
         }
         .pen-nib { width: 100%; height: 100%; fill: var(--gold); filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); transform: rotate(-45deg); transition: transform 0.3s ease; }
         .cursor.hovering .pen-nib { transform: rotate(-15deg) scale(1.1); fill: var(--blue); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
+
+        /* Responsive Container */
+        @media (max-width: 768px) {
+            .container { padding: 0 1.5rem; }
+        }
 
         /* Navigation */
         header {
@@ -81,11 +96,25 @@
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
         nav { padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; }
+        .logo { font-size: 1rem; font-weight: 800; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; }
+        
         .nav-links { display: flex; gap: 3rem; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--gold); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; }
-        .nav-links a::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 1px; background: var(--gold); transition: var(--transition); }
-        .nav-links a:hover::after { width: 100%; }
+        
+        /* Mobile Menu Toggle */
+        .menu-toggle { display: none; background: none; border: none; color: var(--gold); cursor: pointer; padding: 5px; }
+
+        @media (max-width: 992px) {
+            .nav-links { 
+                position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; 
+                background: #000; flex-direction: column; justify-content: center; 
+                align-items: center; transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); 
+                z-index: 1001; 
+            }
+            .nav-links.active { right: 0; }
+            .menu-toggle { display: block; z-index: 1002; }
+            .nav-links a { font-size: 1.2rem; }
+        }
 
         /* Common Book Components */
         .book-aura { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--gold); filter: blur(80px); opacity: 0; transition: 0.8s; z-index: -1; }
@@ -100,8 +129,8 @@
         /* Theme Toggle Fix */
         .theme-toggle {
             position: fixed !important;
-            bottom: 30px !important;
-            right: 30px !important;
+            bottom: 20px !important;
+            right: 20px !important;
             width: 44px !important;
             height: 44px !important;
             background: #000 !important;
@@ -115,6 +144,12 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
             transition: all 0.3s ease !important;
             border: 1px solid rgba(255,255,255,0.1) !important;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle { bottom: 15px !important; right: 15px !important; width: 38px !important; height: 38px !important; }
+            h1 { font-size: 2.5rem !important; }
+            h2 { font-size: 2rem !important; }
         }
 
         .theme-toggle:hover {
@@ -227,6 +262,13 @@
         <div class="container">
             <nav>
                 <a href="index.php" class="logo">M. MITTAL</a>
+                <button class="menu-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
                 <ul class="nav-links">
                     <li><a href="index.php#home">Intro</a></li>
                     <li><a href="inkwell.php">Blogs and Articles</a></li>
@@ -236,3 +278,21 @@
             </nav>
         </div>
     </header>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if(menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+        
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
