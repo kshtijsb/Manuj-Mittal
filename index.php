@@ -314,25 +314,28 @@ $status = $_GET['status'] ?? null;
     }
 
     /* Global Responsive Architecture */
-    .hero { min-height: 100vh; display: flex; align-items: stretch; overflow: visible; }
-    .hero-split { display: grid; grid-template-columns: 1fr 1fr; width: 100%; min-height: 100vh; }
+    .hero { min-height: 100vh; width: 100%; position: relative; overflow: hidden; background: #fff; }
+    .hero-split { display: flex; width: 100%; min-height: 100vh; }
     .side { 
-        padding: 4rem 2rem; display: flex; flex-direction: column; justify-content: center; 
-        align-items: center; position: relative; overflow: visible;
-        width: 100%; min-height: 100vh;
+        flex: 1;
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        position: relative;
+        padding: 4rem;
+        transition: all 0.5s ease;
     }
     .author-side { background: var(--bg) !important; }
     .book-side { background: #fff !important; }
 
-    /* Hero 3D Flip Architecture */
+    /* Hero 3D Flip Card System */
     .hero-flip-container {
         perspective: 2000px;
-        width: 95%;
-        max-width: 450px;
-        height: 680px;
-        position: relative;
-        z-index: 10;
-        margin: 0 auto;
+        width: 100%;
+        max-width: 460px;
+        height: 620px;
+        cursor: pointer;
     }
     .hero-flip-inner {
         position: relative;
@@ -353,27 +356,27 @@ $status = $_GET['status'] ?? null;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 4rem 3rem;
+        padding: 3rem;
         background: #fff;
-        border-radius: 15px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-        border: 1px solid rgba(0,0,0,0.03);
+        border-radius: 20px;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+        border: 1px solid rgba(0,0,0,0.05);
     }
     .hero-flip-back {
         transform: rotateY(180deg);
-        background: #fcfcfc;
+        background: #fafafa;
         border: 1px solid var(--gold);
     }
 
-    .author-side .hero-flip-front, .author-side .hero-flip-back { background: var(--bg); }
-    .book-side .hero-flip-front, .book-side .hero-flip-back { background: #fff; }
+    .author-side .hero-flip-front, .author-side .hero-flip-back { background: #fff; } /* Keep cards white for contrast */
 
     .author-simple-stats { 
-        display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;
-        padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05); width: 100%;
+        display: flex; justify-content: center; gap: 2.5rem; margin-top: 2.5rem;
+        padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05); width: 100%;
     }
     
     .author-actions { display: flex; justify-content: center; gap: 2rem; align-items: center; width: 100%; margin-top: 2rem; }
+
 
 
     .about-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; }
@@ -587,10 +590,10 @@ $status = $_GET['status'] ?? null;
                         <!-- Front: Photo, Name, Stats -->
                         <div class="hero-flip-front">
                             <div class="side-tag" style="margin-bottom: 2.5rem;">THE AUTHOR</div>
-                            <div class="simple-author-img" style="width: 250px; height: 320px; margin-bottom: 2.5rem; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.5);">
-                                <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="simple-author-img" style="width: 220px; height: 280px; margin-bottom: 2.5rem; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.12);">
+                                <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
                             </div>
-                            <h1 style="font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1.5rem; letter-spacing: -1px; white-space: nowrap;">Manuj Mittal</h1>
+                            <h1 style="font-size: 2.8rem; margin-bottom: 1.5rem; letter-spacing: -1px; color: #000;">Manuj Mittal</h1>
                             <div class="author-simple-stats">
                                 <div class="stat">
                                     <h4 style="font-size: 0.7rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">Expertise</h4>
