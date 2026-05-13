@@ -315,14 +315,22 @@ $status = $_GET['status'] ?? null;
 
     /* Global Responsive Architecture */
     .hero { min-height: 100vh; display: flex; align-items: stretch; overflow: visible; }
-    .hero-split { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+    .hero-split { display: grid; grid-template-columns: 1fr 1fr; width: 100%; min-height: 100vh; }
+    .side { 
+        padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; 
+        align-items: center; position: relative; overflow: hidden;
+    }
+    .author-side { background: var(--bg); }
+    .book-side { background: #fff; }
+
     /* Hero 3D Flip Architecture */
     .hero-flip-container {
         perspective: 2000px;
         width: 100%;
-        max-width: 500px;
-        height: 650px;
-        margin: 0 auto;
+        max-width: 480px;
+        height: 680px;
+        position: relative;
+        z-index: 10;
     }
     .hero-flip-inner {
         position: relative;
@@ -436,15 +444,15 @@ $status = $_GET['status'] ?? null;
                     <div class="hero-flip-inner">
                         <!-- Front: Title & Order Button -->
                         <div class="hero-flip-front">
-                            <div class="side-tag" style="margin-bottom: 2rem;">FEATURED WORK</div>
-                            <div class="immersive-book-container" style="margin-bottom: 2.5rem;">
-                                <div class="book-simple-wrapper" style="width: 220px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-radius: 5px; overflow: hidden; animation: breathe 4s ease-in-out infinite;">
+                            <div class="side-tag" style="margin-bottom: 2.5rem;">FEATURED WORK</div>
+                            <div class="immersive-book-container" style="margin-bottom: 3rem;">
+                                <div class="book-simple-wrapper" style="width: 280px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); border-radius: 5px; overflow: hidden; animation: breathe 4s ease-in-out infinite;">
                                     <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
                                 </div>
                             </div>
-                            <h2 style="font-size: 2.2rem; margin-bottom: 2rem;"><?php echo $books[0]['title']; ?></h2>
-                            <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; padding: 1.2rem 3rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px;">PRE-ORDER NOW</a>
-                            <div style="margin-top: 2rem; font-size: 0.7rem; color: #999; letter-spacing: 2px;">HOVER TO LEARN MORE</div>
+                            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;"><?php echo $books[0]['title']; ?></h2>
+                            <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; padding: 1.5rem 4rem; text-decoration: none; font-size: 0.9rem; letter-spacing: 2px; font-weight: 800;">PRE-ORDER NOW</a>
+                            <div style="margin-top: 3rem; font-size: 0.75rem; color: #999; letter-spacing: 3px; font-weight: 700;">HOVER TO LEARN MORE</div>
                         </div>
                         <!-- Back: Description & Peek -->
                         <div class="hero-flip-back">
@@ -576,22 +584,22 @@ $status = $_GET['status'] ?? null;
                     <div class="hero-flip-inner">
                         <!-- Front: Photo, Name, Stats -->
                         <div class="hero-flip-front">
-                            <div class="side-tag" style="margin-bottom: 2rem;">THE AUTHOR</div>
-                            <div class="simple-author-img" style="width: 180px; height: 230px; margin-bottom: 2rem; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <div class="side-tag" style="margin-bottom: 2.5rem;">THE AUTHOR</div>
+                            <div class="simple-author-img" style="width: 250px; height: 320px; margin-bottom: 2.5rem; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.5);">
                                 <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <h1 style="font-size: 2.8rem; margin-bottom: 1rem;">Manuj Mittal</h1>
+                            <h1 style="font-size: 3.2rem; margin-bottom: 1.5rem; letter-spacing: -1px;">Manuj Mittal</h1>
                             <div class="author-simple-stats">
                                 <div class="stat">
-                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">Expertise</h4>
-                                    <p style="font-size: 0.8rem; font-weight: 700; color: #000;">Finance & Strategy</p>
+                                    <h4 style="font-size: 0.7rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">Expertise</h4>
+                                    <p style="font-size: 1rem; font-weight: 800; color: #000;">Finance & Strategy</p>
                                 </div>
                                 <div class="stat">
-                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">Academic</h4>
-                                    <p style="font-size: 0.8rem; font-weight: 700; color: #000;">MBA | Ed.D Candidate</p>
+                                    <h4 style="font-size: 0.7rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">Academic</h4>
+                                    <p style="font-size: 1rem; font-weight: 800; color: #000;">MBA | Ed.D Candidate</p>
                                 </div>
                             </div>
-                            <div style="margin-top: 2rem; font-size: 0.7rem; color: #999; letter-spacing: 2px;">HOVER TO DISCOVER</div>
+                            <div style="margin-top: 3rem; font-size: 0.75rem; color: #999; letter-spacing: 3px; font-weight: 700;">HOVER TO DISCOVER</div>
                         </div>
                         <!-- Back: Description & Bio Link -->
                         <div class="hero-flip-back">
