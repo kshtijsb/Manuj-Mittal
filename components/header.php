@@ -77,23 +77,16 @@
 
         h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; }
 
-        /* Creative Opaque Pencil Cursor */
+        /* Creative Opaque Feather Quill Cursor */
         .cursor {
             position: fixed; width: 35px; height: 35px; pointer-events: none; z-index: 9999;
-            transform: translate(-12.5%, -87.5%); transition: transform 0.1s ease-out;
+            transform: translate(-8%, -92%); transition: transform 0.1s ease-out;
             display: none; align-items: center; justify-content: center;
             mix-blend-mode: difference; color: #fff;
         }
         .pen-nib { width: 100%; height: 100%; transform: rotate(0deg); transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
         
-        @keyframes sketch {
-            0% { transform: rotate(-15deg) scale(1.2) translate(0, 0); }
-            25% { transform: rotate(-10deg) scale(1.2) translate(2px, -2px); }
-            50% { transform: rotate(-20deg) scale(1.2) translate(4px, 0); }
-            75% { transform: rotate(-12deg) scale(1.2) translate(2px, 2px); }
-            100% { transform: rotate(-15deg) scale(1.2) translate(0, 0); }
-        }
-        .cursor.hovering .pen-nib { animation: sketch 0.6s infinite ease-in-out; }
+        .cursor.hovering .pen-nib { transform: rotate(-15deg) scale(1.2); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
 
@@ -186,8 +179,8 @@
 <body>
     <div id="ambient-canvas"></div>
     <div class="cursor">
-        <svg class="pen-nib" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25Z M20.71 7.04C21.1 6.65 21.1 6.02 20.71 5.63L18.37 3.29C17.98 2.9 17.35 2.9 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04Z" fill="currentColor"/>
+        <svg class="pen-nib" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 2C22 2 14.36 3.03 9.47 7.92C5.9 11.5 4.31 16.57 4 18L2 22L6 20C7.43 19.69 12.5 18.1 16.08 14.53C20.97 9.64 22 2 22 2 M14.34 13.92C12.39 15.87 9.5 17 9.5 17C9.5 17 10.63 14.11 12.58 12.16C13.56 11.18 14.5 10.5 14.5 10.5C14.5 10.5 15.32 12.94 14.34 13.92Z" />
         </svg>
     </div>
 

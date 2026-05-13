@@ -731,6 +731,15 @@ $status = $_GET['status'] ?? null;
                     </div>
                 </div>
 
+                <!-- Early Career Phase -->
+                <div class="milestone-group" data-phase="corporate" style="margin-bottom: 10rem;">
+                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #C41E3A; padding-top: 2rem;">
+                        <div class="m-year" style="color: #C41E3A; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2015 • CAREER BEGINNINGS</div>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Early Professional Life</h4>
+                        <p style="color: #666; line-height: 1.8;">Entered the workforce and began his professional journey, establishing the foundation of his career alongside his ongoing studies and service.</p>
+                    </div>
+                </div>
+
                 <!-- Academic/Mastery Phase -->
                 <div class="milestone-group" data-phase="vision" style="margin-bottom: 10rem;">
                     <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #0047AB; padding-top: 2rem;">
