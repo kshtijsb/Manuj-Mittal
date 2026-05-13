@@ -835,7 +835,14 @@ $status = $_GET['status'] ?? null;
                     <input type="text" name="name" placeholder="Full Name" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
                     <input type="email" name="email" placeholder="Email Address" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
                     <textarea name="message" rows="4" placeholder="Your Message" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none; resize: none;" required></textarea>
-                    <button type="submit" class="btn btn-primary" style="background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 3px; cursor: pointer;">SEND MESSAGE</button>
+                    <style>
+                        .contact-actions { display: flex; gap: 1rem; width: 100%; margin-top: 1rem; }
+                        @media (max-width: 768px) { .contact-actions { flex-direction: column; } }
+                    </style>
+                    <div class="contact-actions">
+                        <button type="submit" class="btn btn-primary" style="flex: 1; background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">SEND MESSAGE</button>
+                        <button type="button" class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/PLACEHOLDER_LINK'});return false;" style="flex: 1; background: transparent; color: #000; border: 2px solid var(--gold); padding: 1.5rem; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">SCHEDULE MEETING</button>
+                    </div>
                 </form>
             </div>
         </div>
