@@ -316,12 +316,39 @@ $status = $_GET['status'] ?? null;
     /* Global Responsive Architecture */
     .hero { min-height: 100vh; display: flex; align-items: stretch; overflow: visible; }
     .hero-split { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
-    .side { padding: 8rem 4rem; display: flex; flex-direction: column; justify-content: center; background: #fff; }
-    .author-side { background: var(--bg) !important; text-align: center; align-items: center; }
+    .side { 
+        padding: 8rem 4rem; display: flex; flex-direction: column; justify-content: center; 
+        background: #fff; text-align: center; align-items: center;
+        transition: background 0.5s ease;
+    }
+    .author-side { background: var(--bg) !important; }
     
     .simple-author-img { 
         width: 280px; height: 350px; border-radius: 8px; overflow: hidden; 
         margin-bottom: 2.5rem; box-shadow: 0 15px 45px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05);
+        transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .author-content-simple, .book-hero-info {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        pointer-events: none;
+        width: 100%;
+    }
+
+    .side:hover .author-content-simple,
+    .side:hover .book-hero-info {
+        max-height: 800px;
+        opacity: 1;
+        pointer-events: auto;
+        margin-top: 2rem;
+    }
+
+    .side:hover .simple-author-img,
+    .side:hover .immersive-book-container {
+        transform: translateY(-20px);
     }
     
     .author-simple-stats { 
@@ -403,7 +430,7 @@ $status = $_GET['status'] ?? null;
                     <div class="side-tag" style="margin-bottom: 3rem;">FEATURED WORK</div>
 
                     <!-- Elegant Breathing Book Visual -->
-                    <div class="immersive-book-container" style="margin-bottom: 5rem; display: flex; flex-direction: column; align-items: center;">
+                    <div class="immersive-book-container" style="display: flex; flex-direction: column; align-items: center; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);">
                         <div class="book-simple-wrapper" style="position: relative; cursor: pointer; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); animation: breathe 4s ease-in-out infinite;">
                             <!-- Subtle Aura -->
                             <div class="book-aura" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; height: 110%; background: radial-gradient(circle, var(--gold) 0%, transparent 70%); opacity: 0.05; filter: blur(30px); z-index: -1;">
@@ -436,7 +463,7 @@ $status = $_GET['status'] ?? null;
                         }
                     </style>
 
-                    <div class="book-hero-info" style="text-align: left; max-width: 450px; margin: 0 auto;">
+                    <div class="book-hero-info" style="text-align: center; max-width: 450px; margin: 0 auto;">
                         <h2 style="font-size: 3.5rem; line-height: 1; margin-bottom: 1.5rem; color: var(--text);">
                             <?php echo $books[0]['title']; ?></h2>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); opacity: 0.7; margin-bottom: 2.5rem;">
