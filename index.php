@@ -459,22 +459,20 @@ $status = $_GET['status'] ?? null;
                 <div class="flip-card">
                     <div class="flip-card-inner">
 
-                        <!-- FRONT: Book cover + title + order -->
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 1.5rem;">FEATURED WORK</div>
                             <div style="width: 260px; border-radius: 6px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
                             </div>
-                            <h2 style="font-size: 2rem; font-family: var(--font-serif); margin-bottom: 2rem; color: #111;"><?php echo $books[0]['title']; ?></h2>
-                            <a href="store.php" style="background: #000; color: #fff; padding: 1rem 2.5rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; font-weight: 700; display: inline-block;">PRE-ORDER NOW</a>
+                            <h2 style="font-size: 2rem; font-family: var(--font-serif); margin-bottom: 0; color: #111;"><?php echo $books[0]['title']; ?></h2>
                             <p style="margin-top: 2rem; font-size: 0.65rem; letter-spacing: 3px; color: #bbb;">HOVER TO READ MORE</p>
                         </div>
 
-                        <!-- BACK: Synopsis + Peek Inside -->
+                        <!-- BACK: Synopsis + Order Now -->
                         <div class="flip-card-back">
                             <div class="side-tag" style="margin-bottom: 1.5rem; color: var(--color-gold);">SYNOPSIS</div>
                             <p style="font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 2.5rem;">A book on upskilling personal life management, featuring thought-provoking quotations that address four core pillars essential for success: <strong>Vision</strong>, <strong>Leadership</strong>, <strong>Growth</strong>, and <strong>Integrity</strong>.</p>
-                            <button onclick="openFlipbook()" style="background: none; border: 1px solid var(--color-gold); color: var(--color-gold); padding: 1rem 2rem; cursor: pointer; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700;">PEEK INSIDE →</button>
+                            <a href="store.php" style="background: #000; color: #fff; padding: 1rem 2.5rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; font-weight: 700; display: inline-block;">ORDER NOW</a>
                         </div>
 
                     </div>
