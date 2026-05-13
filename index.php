@@ -341,8 +341,8 @@ $status = $_GET['status'] ?? null;
     /* Flip Card */
     .flip-card {
         width: 100%;
-        max-width: 400px;
-        height: 580px;
+        max-width: 480px;
+        height: 700px;
         perspective: 1200px;
         cursor: pointer;
     }
@@ -462,7 +462,7 @@ $status = $_GET['status'] ?? null;
                         <!-- FRONT: Book cover + title + order -->
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 1.5rem;">FEATURED WORK</div>
-                            <div style="width: 200px; border-radius: 6px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
+                            <div style="width: 260px; border-radius: 6px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
                             </div>
                             <h2 style="font-size: 2rem; font-family: var(--font-serif); margin-bottom: 2rem; color: #111;"><?php echo $books[0]['title']; ?></h2>
@@ -489,7 +489,7 @@ $status = $_GET['status'] ?? null;
                         <!-- FRONT: Photo + name + stats -->
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 1.5rem;">THE AUTHOR</div>
-                            <div style="width: 200px; height: 260px; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                            <div style="width: 240px; height: 310px; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-bottom: 2rem;">
                                 <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
                             </div>
                             <h1 style="font-size: 2.4rem; font-family: var(--font-serif); color: #111; margin-bottom: 0.5rem;">Manuj Mittal</h1>
