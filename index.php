@@ -473,7 +473,7 @@ $status = $_GET['status'] ?? null;
                         <!-- BACK: Synopsis + Peek Inside -->
                         <div class="flip-card-back">
                             <div class="side-tag" style="margin-bottom: 1.5rem; color: var(--color-gold);">SYNOPSIS</div>
-                            <p style="font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 2.5rem;"><?php echo $books[0]['desc']; ?></p>
+                            <p style="font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 2.5rem;">A book on upskilling personal life management, featuring thought-provoking quotations that address four core pillars essential for success: <strong>Vision</strong>, <strong>Leadership</strong>, <strong>Growth</strong>, and <strong>Integrity</strong>.</p>
                             <button onclick="openFlipbook()" style="background: none; border: 1px solid var(--color-gold); color: var(--color-gold); padding: 1rem 2rem; cursor: pointer; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700;">PEEK INSIDE →</button>
                         </div>
 
