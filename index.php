@@ -317,20 +317,22 @@ $status = $_GET['status'] ?? null;
     .hero { min-height: 100vh; display: flex; align-items: stretch; overflow: visible; }
     .hero-split { display: grid; grid-template-columns: 1fr 1fr; width: 100%; min-height: 100vh; }
     .side { 
-        padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; 
-        align-items: center; position: relative; overflow: hidden;
+        padding: 4rem 2rem; display: flex; flex-direction: column; justify-content: center; 
+        align-items: center; position: relative; overflow: visible;
+        width: 100%; min-height: 100vh;
     }
-    .author-side { background: var(--bg); }
-    .book-side { background: #fff; }
+    .author-side { background: var(--bg) !important; }
+    .book-side { background: #fff !important; }
 
     /* Hero 3D Flip Architecture */
     .hero-flip-container {
         perspective: 2000px;
-        width: 100%;
-        max-width: 480px;
+        width: 95%;
+        max-width: 450px;
         height: 680px;
         position: relative;
         z-index: 10;
+        margin: 0 auto;
     }
     .hero-flip-inner {
         position: relative;
@@ -588,7 +590,7 @@ $status = $_GET['status'] ?? null;
                             <div class="simple-author-img" style="width: 250px; height: 320px; margin-bottom: 2.5rem; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.5);">
                                 <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <h1 style="font-size: 3.2rem; margin-bottom: 1.5rem; letter-spacing: -1px;">Manuj Mittal</h1>
+                            <h1 style="font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1.5rem; letter-spacing: -1px; white-space: nowrap;">Manuj Mittal</h1>
                             <div class="author-simple-stats">
                                 <div class="stat">
                                     <h4 style="font-size: 0.7rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">Expertise</h4>
