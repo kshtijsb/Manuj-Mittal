@@ -313,72 +313,81 @@ $status = $_GET['status'] ?? null;
         border: 1px solid #cc0000;
     }
 
-    /* Global Responsive Architecture */
-    .hero { min-height: 100vh; width: 100%; position: relative; overflow: hidden; background: #fff; }
-    .hero-split { display: grid; grid-template-columns: 50% 50%; width: 100%; min-height: 100vh; }
-    .side { 
+    /* ===== SPLIT HERO ===== */
+    .hero {
         width: 100%;
-        height: 100%;
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        position: relative;
-        padding: 0;
-        margin: 0;
+        min-height: 100vh;
     }
-    .author-side { background: var(--bg) !important; }
-    .book-side { background: #fff !important; }
+    .hero-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+    }
+    .book-side {
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 4rem;
+    }
+    .author-side {
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 4rem;
+    }
 
-    /* Hero 3D Flip Card System */
-    .hero-flip-container {
-        perspective: 2000px;
-        width: min(90%, 420px);
-        height: 620px;
+    /* Flip Card */
+    .flip-card {
+        width: 100%;
+        max-width: 400px;
+        height: 580px;
+        perspective: 1200px;
         cursor: pointer;
-        margin: 0 auto;
     }
-    .hero-flip-inner {
+    .flip-card-inner {
         position: relative;
         width: 100%;
         height: 100%;
-        transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: transform 0.75s ease;
         transform-style: preserve-3d;
     }
-    .hero-flip-container:hover .hero-flip-inner {
+    .flip-card:hover .flip-card-inner {
         transform: rotateY(180deg);
     }
-    .hero-flip-front, .hero-flip-back {
+    .flip-card-front,
+    .flip-card-back {
         position: absolute;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         backface-visibility: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 3rem;
+        text-align: center;
+        padding: 2.5rem;
+        border-radius: 16px;
+    }
+    .flip-card-front {
         background: #fff;
-        border-radius: 20px;
-        box-shadow: 0 40px 100px rgba(0,0,0,0.08);
-        border: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        border: 1px solid rgba(0,0,0,0.06);
     }
-    .hero-flip-back {
+    .book-side .flip-card-front { background: #fff; }
+    .author-side .flip-card-front { background: #fff; }
+    .flip-card-back {
+        background: #fff;
         transform: rotateY(180deg);
-        background: #fafafa;
-        border: 1px solid var(--gold);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        border: 2px solid var(--color-gold);
     }
-
-    .author-side .hero-flip-front, .author-side .hero-flip-back { background: #fff; } /* Keep cards white for contrast */
 
     .author-simple-stats { 
-        display: flex; justify-content: center; gap: 2.5rem; margin-top: 2.5rem;
-        padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05); width: 100%;
+        display: flex; justify-content: center; gap: 2.5rem; margin-top: 2rem;
+        padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.07); width: 100%;
     }
-    
-    .author-actions { display: flex; justify-content: center; gap: 2rem; align-items: center; width: 100%; margin-top: 2rem; }
-
-
+    .author-actions { display: flex; justify-content: center; gap: 2rem; align-items: center; width: 100%; }
 
     .about-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; }
     .pillar-card { padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); border-top: 6px solid; }
@@ -444,184 +453,153 @@ $status = $_GET['status'] ?? null;
     <!-- Split Hero Section -->
     <section id="home" class="hero">
         <div class="hero-split">
-            <!-- Left Side: Book -->
-            <div class="side book-side">
-                <div class="hero-flip-container">
-                    <div class="hero-flip-inner">
-                        <!-- Front: Title & Order Button -->
-                        <div class="hero-flip-front">
-                            <div class="side-tag" style="margin-bottom: 2.5rem;">FEATURED WORK</div>
-                            <div class="immersive-book-container" style="margin-bottom: 3rem;">
-                                <div class="book-simple-wrapper" style="width: 280px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); border-radius: 5px; overflow: hidden; animation: breathe 4s ease-in-out infinite;">
-                                    <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
-                                </div>
+
+            <!-- LEFT: Book Side -->
+            <div class="book-side">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <!-- FRONT: Book cover + title + order -->
+                        <div class="flip-card-front">
+                            <div class="side-tag" style="margin-bottom: 1.5rem;">FEATURED WORK</div>
+                            <div style="width: 200px; border-radius: 6px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
+                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
                             </div>
-                            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;"><?php echo $books[0]['title']; ?></h2>
-                            <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; padding: 1.5rem 4rem; text-decoration: none; font-size: 0.9rem; letter-spacing: 2px; font-weight: 800;">PRE-ORDER NOW</a>
-                            <div style="margin-top: 3rem; font-size: 0.75rem; color: #999; letter-spacing: 3px; font-weight: 700;">HOVER TO LEARN MORE</div>
+                            <h2 style="font-size: 2rem; font-family: var(--font-serif); margin-bottom: 2rem; color: #111;"><?php echo $books[0]['title']; ?></h2>
+                            <a href="store.php" style="background: #000; color: #fff; padding: 1rem 2.5rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; font-weight: 700; display: inline-block;">PRE-ORDER NOW</a>
+                            <p style="margin-top: 2rem; font-size: 0.65rem; letter-spacing: 3px; color: #bbb;">HOVER TO READ MORE</p>
                         </div>
-                        <!-- Back: Description & Peek -->
-                        <div class="hero-flip-back">
-                            <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--gold);">SYNOPSIS</h3>
-                            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 3rem;">
-                                <?php echo $books[0]['desc']; ?>
-                            </p>
-                            <button onclick="openFlipbook()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 1.1rem 2.5rem; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 2px; font-size: 0.7rem;">PEEK INSIDE</button>
+
+                        <!-- BACK: Synopsis + Peek Inside -->
+                        <div class="flip-card-back">
+                            <div class="side-tag" style="margin-bottom: 1.5rem; color: var(--color-gold);">SYNOPSIS</div>
+                            <p style="font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 2.5rem;"><?php echo $books[0]['desc']; ?></p>
+                            <button onclick="openFlipbook()" style="background: none; border: 1px solid var(--color-gold); color: var(--color-gold); padding: 1rem 2rem; cursor: pointer; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700;">PEEK INSIDE →</button>
                         </div>
+
                     </div>
                 </div>
+            </div>
 
-                <!-- In-Place 3D Flipbook Viewer -->
-                <div id="inlineFlipbook" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.98); z-index: 10000; flex-direction: column; align-items: center; justify-content: center; gap: 3rem;">
+            <!-- RIGHT: Author Side -->
+            <div class="author-side">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
 
-                        <div class="flipbook-wrapper" style="perspective: 2000px; width: 100%; max-width: 600px; height: 400px; position: relative; transform-origin: center;">
-                            <div id="mainBook" style="width: 50%; height: 100%; position: absolute; left: 50%; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); transform: translateZ(0);">
-                                
-                                <!-- Back Cover -->
-                                <div class="page static-back" style="position: absolute; width: 100%; height: 100%; background: #002244; border-radius: 0 5px 5px 0; z-index: 1; left: 0; box-shadow: 5px 5px 20px rgba(0,0,0,0.2);"></div>
-
-                                <!-- Page 3 -->
-                                <div class="page-leaf" id="leaf3" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 3;">
-                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 1.5rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0; font-size: 0.75rem;">
-                                        <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Mastery</h4>
-                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333;">"The transition from student to architect is silent. It happens when you ask: What will I leave behind?"</p>
-                                    </div>
-                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
-                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.75rem;">"Each building is just a page, each city a book, and each life... a grand library."</p>
-                                    </div>
-                                </div>
-
-                                <!-- Page 2 -->
-                                <div class="page-leaf" id="leaf2" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 4;">
-                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 1.5rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0;">
-                                        <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Foundation</h4>
-                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.75rem;">"A foundation is the education of the heart and the discipline of the mind."</p>
-                                    </div>
-                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
-                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.75rem;">"In the silence of Mayo College, I heard the call of leadership. Not to command, but to serve."</p>
-                                    </div>
-                                </div>
-
-                                <!-- Page 1 (Cover) -->
-                                <div class="page-leaf" id="leaf1" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); z-index: 5;">
-                                    <div class="face front" style="position: absolute; width: 100%; height: 100%; background: #003366; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 0 5px 5px 0; border-left: 5px solid rgba(0,0,0,0.2);">
-                                        <div style="color: #fff; text-align: center; padding: 0.5rem; border: 1px solid var(--gold); background: rgba(255,255,255,0.05);">
-                                            <div style="font-size: 0.3rem; letter-spacing: 3px; margin-bottom: 0.5rem;">MANUJ MITTAL</div>
-                                            <div style="font-family: var(--font-serif); font-size: 0.8rem;"><?php echo $books[0]['title']; ?></div>
-                                        </div>
-                                    </div>
-                                    <div class="face back" style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem; border-right: 1px solid #eee; border-radius: 5px 0 0 5px;">
-                                        <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Blueprint</h4>
-                                        <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.75rem;">"Architecture is the art of how we waste space. Every arch tells a secret..."</p>
-                                    </div>
-                                </div>
-                                
-                                <div style="position: absolute; left: 0; top: 0; width: 15px; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.1), transparent); z-index: 100; pointer-events: none; transform: translateZ(1px);"></div>
+                        <!-- FRONT: Photo + name + stats -->
+                        <div class="flip-card-front">
+                            <div class="side-tag" style="margin-bottom: 1.5rem;">THE AUTHOR</div>
+                            <div style="width: 200px; height: 260px; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                                <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
                             </div>
-                        </div>
-
-                        <div class="book-controls" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                            <button onclick="prevPage()" id="prevBtn" style="background: none; border: 1px solid #ddd; color: #333; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px;">PREV</button>
-                            <button onclick="nextPage()" id="nextBtn" style="background: #000; border: none; color: #fff; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px;">NEXT</button>
-                            <button onclick="closeFlipbook()" style="background: none; border: none; color: #999; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.7rem; letter-spacing: 1px;">CLOSE</button>
-                        </div>
-                    </div>
-
-                    <script>
-                        let currentPage = 1;
-                        const totalPages = 3;
-
-                        function openFlipbook() {
-                            document.querySelector('.book-simple-wrapper').style.display = 'none';
-                            document.getElementById('inlineFlipbook').style.display = 'flex';
-                            
-                            // Handle mobile scaling
-                            const wrapper = document.querySelector('.flipbook-wrapper');
-                            if(window.innerWidth < 768) {
-                                wrapper.style.transform = 'scale(' + (window.innerWidth / 700) + ')';
-                                wrapper.style.height = (400 * (window.innerWidth / 700)) + 'px';
-                            } else {
-                                wrapper.style.transform = 'scale(1)';
-                                wrapper.style.height = '400px';
-                            }
-                            
-                            updateControls();
-                        }
-
-                        function closeFlipbook() {
-                            document.querySelector('.book-simple-wrapper').style.display = 'block';
-                            document.getElementById('inlineFlipbook').style.display = 'none';
-                            // Reset book state
-                            for(let i = 1; i <= totalPages; i++) {
-                                document.getElementById('leaf' + i).style.transform = 'rotateY(0deg)';
-                                document.getElementById('leaf' + i).style.zIndex = (totalPages - i + 3);
-                            }
-                            currentPage = 1;
-                        }
-
-                        function nextPage() {
-                            if (currentPage <= totalPages) {
-                                document.getElementById('leaf' + currentPage).style.transform = 'rotateY(-180deg)';
-                                document.getElementById('leaf' + currentPage).style.zIndex = currentPage + 3;
-                                currentPage++;
-                                updateControls();
-                            }
-                        }
-
-                        function prevPage() {
-                            if (currentPage > 1) {
-                                currentPage--;
-                                document.getElementById('leaf' + currentPage).style.transform = 'rotateY(0deg)';
-                                document.getElementById('leaf' + currentPage).style.zIndex = (totalPages - currentPage + 3);
-                                updateControls();
-                            }
-                        }
-
-                        function updateControls() {
-                            document.getElementById('prevBtn').style.opacity = currentPage === 1 ? '0.3' : '1';
-                            document.getElementById('nextBtn').style.opacity = currentPage > totalPages ? '0.3' : '1';
-                        }
-                    </script>
-                </div>
-                </div>
-
-            <div class="side author-side">
-                <div class="hero-flip-container">
-                    <div class="hero-flip-inner">
-                        <!-- Front: Photo, Name, Stats -->
-                        <div class="hero-flip-front">
-                            <div class="side-tag" style="margin-bottom: 2.5rem;">THE AUTHOR</div>
-                            <div class="simple-author-img" style="width: 220px; height: 280px; margin-bottom: 2.5rem; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.12);">
-                                <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
-                            </div>
-                            <h1 style="font-size: 2.8rem; margin-bottom: 1.5rem; letter-spacing: -1px; color: #000;">Manuj Mittal</h1>
+                            <h1 style="font-size: 2.4rem; font-family: var(--font-serif); color: #111; margin-bottom: 0.5rem;">Manuj Mittal</h1>
                             <div class="author-simple-stats">
                                 <div class="stat">
-                                    <h4 style="font-size: 0.7rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">Expertise</h4>
-                                    <p style="font-size: 1rem; font-weight: 800; color: #000;">Finance & Strategy</p>
+                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">Expertise</h4>
+                                    <p style="font-size: 0.9rem; font-weight: 800; color: #000;">Finance & Strategy</p>
                                 </div>
                                 <div class="stat">
-                                    <h4 style="font-size: 0.7rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">Academic</h4>
-                                    <p style="font-size: 1rem; font-weight: 800; color: #000;">MBA | Ed.D Candidate</p>
+                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">Academic</h4>
+                                    <p style="font-size: 0.9rem; font-weight: 800; color: #000;">MBA | Ed.D</p>
                                 </div>
                             </div>
-                            <div style="margin-top: 3rem; font-size: 0.75rem; color: #999; letter-spacing: 3px; font-weight: 700;">HOVER TO DISCOVER</div>
+                            <p style="margin-top: 2rem; font-size: 0.65rem; letter-spacing: 3px; color: #bbb;">HOVER TO DISCOVER</p>
                         </div>
-                        <!-- Back: Description & Bio Link -->
-                        <div class="hero-flip-back">
-                            <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--gold);">THE NARRATIVE</h3>
-                            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 3rem;">
-                                Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth development through modern management thinking. He distills complex challenges into thought-provoking narratives.
-                            </p>
-                            <div class="author-actions">
-                                <a href="biography.php" class="btn btn-primary" style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; font-size: 0.8rem; letter-spacing: 2px; text-decoration: none;">FULL BIOGRAPHY</a>
+
+                        <!-- BACK: Bio + biography link -->
+                        <div class="flip-card-back">
+                            <div class="side-tag" style="margin-bottom: 1.5rem; color: var(--color-gold);">THE NARRATIVE</div>
+                            <p style="font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 2.5rem;">Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth development through modern management thinking. He distills complex challenges into thought-provoking narratives.</p>
+                            <a href="biography.php" style="background: #000; color: #fff; padding: 1rem 2.5rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; font-weight: 700; display: inline-block;">FULL BIOGRAPHY</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Flipbook Viewer Overlay -->
+        <div id="inlineFlipbook" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.98); z-index: 10000; flex-direction: column; align-items: center; justify-content: center; gap: 3rem;">
+            <div style="perspective: 2000px; width: 100%; max-width: 600px; height: 400px; position: relative;">
+                <div id="mainBook" style="width: 50%; height: 100%; position: absolute; left: 50%; transform-style: preserve-3d; transition: transform 1.2s ease; transform: translateZ(0);">
+                    <div style="position: absolute; width: 100%; height: 100%; background: #002244; border-radius: 0 5px 5px 0; z-index: 1; left: 0;"></div>
+                    <div class="page-leaf" id="leaf3" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s ease; z-index: 3;">
+                        <div style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 1.5rem; border-left: 1px solid #eee; border-radius: 0 5px 5px 0;">
+                            <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Mastery</h4>
+                            <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.85rem;">"The transition from student to architect is silent. It happens when you ask: What will I leave behind?"</p>
+                        </div>
+                        <div style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem;">
+                            <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.85rem;">"Each building is just a page, each city a book, and each life... a grand library."</p>
+                        </div>
+                    </div>
+                    <div class="page-leaf" id="leaf2" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s ease; z-index: 4;">
+                        <div style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; backface-visibility: hidden; padding: 1.5rem;">
+                            <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Foundation</h4>
+                            <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.85rem;">"A foundation is the education of the heart and the discipline of the mind."</p>
+                        </div>
+                        <div style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem;">
+                            <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.85rem;">"In the silence of Mayo College, I heard the call of leadership. Not to command, but to serve."</p>
+                        </div>
+                    </div>
+                    <div class="page-leaf" id="leaf1" style="position: absolute; width: 100%; height: 100%; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.2s ease; z-index: 5;">
+                        <div style="position: absolute; width: 100%; height: 100%; background: #003366; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 0 5px 5px 0;">
+                            <div style="color: #fff; text-align: center; padding: 1rem; border: 1px solid var(--color-gold);">
+                                <div style="font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 0.5rem;">MANUJ MITTAL</div>
+                                <div style="font-family: var(--font-serif); font-size: 1rem;"><?php echo $books[0]['title']; ?></div>
                             </div>
+                        </div>
+                        <div style="position: absolute; width: 100%; height: 100%; background: #fdfdfd; transform: rotateY(180deg); backface-visibility: hidden; padding: 1.5rem;">
+                            <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem;">Blueprint</h4>
+                            <p style="font-family: var(--font-serif); line-height: 1.5; color: #333; font-size: 0.85rem;">"Architecture is the art of how we waste space. Every arch tells a secret..."</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <div style="display: flex; gap: 1rem;">
+                <button onclick="prevPage()" id="prevBtn" style="background: none; border: 1px solid #ddd; color: #333; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.8rem; letter-spacing: 1px;">PREV</button>
+                <button onclick="nextPage()" id="nextBtn" style="background: #000; border: none; color: #fff; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.8rem; letter-spacing: 1px;">NEXT</button>
+                <button onclick="closeFlipbook()" style="background: none; border: none; color: #999; padding: 0.8rem 1.5rem; cursor: pointer; font-size: 0.8rem; letter-spacing: 1px;">CLOSE x</button>
+            </div>
         </div>
-        
+
+        <script>
+            let currentPage = 1;
+            const totalPages = 3;
+            function openFlipbook() {
+                document.getElementById('inlineFlipbook').style.display = 'flex';
+                updateControls();
+            }
+            function closeFlipbook() {
+                document.getElementById('inlineFlipbook').style.display = 'none';
+                for(let i = 1; i <= totalPages; i++) {
+                    document.getElementById('leaf' + i).style.transform = 'rotateY(0deg)';
+                    document.getElementById('leaf' + i).style.zIndex = (totalPages - i + 3);
+                }
+                currentPage = 1;
+            }
+            function nextPage() {
+                if (currentPage <= totalPages) {
+                    document.getElementById('leaf' + currentPage).style.transform = 'rotateY(-180deg)';
+                    document.getElementById('leaf' + currentPage).style.zIndex = currentPage + 3;
+                    currentPage++;
+                    updateControls();
+                }
+            }
+            function prevPage() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    document.getElementById('leaf' + currentPage).style.transform = 'rotateY(0deg)';
+                    document.getElementById('leaf' + currentPage).style.zIndex = (totalPages - currentPage + 3);
+                    updateControls();
+                }
+            }
+            function updateControls() {
+                document.getElementById('prevBtn').style.opacity = currentPage === 1 ? '0.3' : '1';
+                document.getElementById('nextBtn').style.opacity = currentPage > totalPages ? '0.3' : '1';
+            }
+        </script>
+
         <!-- Mobile Hero -->
         <div class="hero-mobile" onclick="this.classList.toggle('revealed')">
             <style>
