@@ -667,137 +667,161 @@ $status = $_GET['status'] ?? null;
         </style>
     </section>
 
-    <!-- Journey Section (Synced Timeline + Photo Stack) -->
-    <section id="journey" class="journey-section container" style="padding: 15vh 0;">
-        <div class="section-header reveal" style="margin-bottom: 8rem;">
-            <div class="side-tag" style="color: var(--gold); letter-spacing: 5px; margin-bottom: 2rem; display: block;">THE EVOLUTION</div>
-            <h2 style="font-size: clamp(3.5rem, 6vw, 5rem); line-height: 1; color: #000;">A Legacy in<br>the Making.</h2>
+    <!-- Journey Section: Vertical Timeline -->
+    <section id="journey" class="container" style="padding: 15vh 0;">
+        <div class="section-header reveal" style="margin-bottom: 5rem; text-align: center;">
+            <div class="side-tag" style="color: var(--gold); letter-spacing: 5px; margin-bottom: 1.5rem; display: block;">THE EVOLUTION</div>
+            <h2 style="font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: #000;">A Legacy in<br>the Making.</h2>
         </div>
 
-        <div class="journey-grid">
-            
-            <!-- Left: Artifact Viewer (Photo Stack) -->
-            <div class="artifact-viewer" style="position: sticky; top: 15vh;">
-                <div class="artifact-stack" style="position: relative; height: 600px; width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.1);">
-                    <!-- Education Images (Blue) -->
-                    <img src="https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=1000" 
-                         alt="Foundation" class="artifact-image active" data-phase="foundation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease;">
-                    
-                    <!-- Social Images (Green) -->
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" 
-                         alt="Leadership" class="artifact-image" data-phase="leadership" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease;">
-                    
-                    <!-- Corporate Images (Red) -->
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" 
-                         alt="Corporate" class="artifact-image" data-phase="corporate" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease;">
-                    
-                    <!-- Mastery/Future Images (Blue) -->
-                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1000" 
-                         alt="Vision" class="artifact-image" data-phase="vision" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease;">
+        <style>
+            .timeline {
+                position: relative;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0; bottom: 0;
+                width: 2px;
+                background: linear-gradient(to bottom, #0047AB, #2E8B57, #C41E3A, #0047AB);
+                opacity: 0.15;
+            }
+            .tl-item {
+                display: flex;
+                gap: 3rem;
+                margin-bottom: 4rem;
+                align-items: flex-start;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            .tl-item.visible { opacity: 1; transform: translateY(0); }
+            .tl-item:nth-child(even) { flex-direction: row-reverse; }
+            .tl-dot {
+                flex-shrink: 0;
+                width: 14px; height: 14px;
+                border-radius: 50%;
+                margin-top: 0.5rem;
+                position: relative;
+                z-index: 2;
+                box-shadow: 0 0 0 4px #fff, 0 0 0 6px currentColor;
+            }
+            .tl-card {
+                flex: 1;
+                background: #fff;
+                border-radius: 12px;
+                padding: 2rem 2.5rem;
+                box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+                border-left: 4px solid;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .tl-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 16px 50px rgba(0,0,0,0.1);
+            }
+            .tl-year {
+                font-size: 0.7rem;
+                font-weight: 800;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-bottom: 0.75rem;
+            }
+            .tl-card h4 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #111; }
+            .tl-card p  { font-size: 0.95rem; color: #666; line-height: 1.8; margin: 0; }
 
-                    <style>
-                        .artifact-image.active { opacity: 1 !important; }
-                    </style>
+            @media (max-width: 768px) {
+                .timeline::before { left: 1rem; }
+                .tl-item, .tl-item:nth-child(even) { flex-direction: row; gap: 1.5rem; }
+                .tl-dot { margin-top: 0.4rem; }
+                .tl-card { padding: 1.5rem; }
+                .tl-card h4 { font-size: 1.2rem; }
+            }
+        </style>
+
+        <div class="timeline">
+
+            <div class="tl-item">
+                <div class="tl-dot" style="color: #0047AB; background: #0047AB;"></div>
+                <div class="tl-card" style="border-color: #0047AB;">
+                    <div class="tl-year" style="color: #0047AB;">1996 – 2011 · Foundation</div>
+                    <h4>Early Life & Schooling</h4>
+                    <p>Born in India (1996). Proud alumnus of Mayo College boarding school (2008) — one of India's most prestigious institutions with a rich heritage. Chess Champion &amp; WazirChand Trophy winner (2011).</p>
                 </div>
             </div>
 
-            <!-- Right: Color-Coded Timeline -->
-            <div class="journey-timeline" style="position: relative; padding-left: 4rem; border-left: 2px solid #eee;">
-                
-                <!-- Education Phase -->
-                <div class="milestone-group" data-phase="foundation" style="margin-bottom: 10rem;">
-                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #0047AB; padding-top: 2rem;">
-                        <div class="m-year" style="color: #0047AB; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">1996 - 2011 • FOUNDATION</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Early life and schooling</h4>
-                        <p style="color: #666; line-height: 1.8;">Childhood in India (1996). Proud Mayo Heritage at Mayo College Boarding School (2008). Chess Champion & WazirChand Trophy winner (2011).</p>
-                    </div>
+            <div class="tl-item">
+                <div class="tl-dot" style="color: #2E8B57; background: #2E8B57;"></div>
+                <div class="tl-card" style="border-color: #2E8B57;">
+                    <div class="tl-year" style="color: #2E8B57;">2013 – 2017 · Global Service</div>
+                    <h4>Rise in Rotary International</h4>
+                    <p>RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract Representative &amp; RI Atlanta Convention (2017).</p>
                 </div>
-
-                <!-- Social Phase Part 1 -->
-                <div class="milestone-group" data-phase="leadership" style="margin-bottom: 10rem;">
-                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #2E8B57; padding-top: 2rem;">
-                        <div class="m-year" style="color: #2E8B57; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2013 - 2017 • GLOBAL SERVICE</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Rise in Rotary International</h4>
-                        <p style="color: #666; line-height: 1.8;">RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract Representative & RI Atlanta Convention (2017).</p>
-                    </div>
-                </div>
-
-                <!-- Early Career Phase -->
-                <div class="milestone-group" data-phase="corporate" style="margin-bottom: 10rem;">
-                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #C41E3A; padding-top: 2rem;">
-                        <div class="m-year" style="color: #C41E3A; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2015 • CAREER BEGINNINGS</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Early Professional Life</h4>
-                        <p style="color: #666; line-height: 1.8;">Entered the workforce and began his professional journey, establishing the foundation of his career alongside his ongoing studies and service.</p>
-                    </div>
-                </div>
-
-                <!-- Academic/Mastery Phase -->
-                <div class="milestone-group" data-phase="vision" style="margin-bottom: 10rem;">
-                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #0047AB; padding-top: 2rem;">
-                        <div class="m-year" style="color: #0047AB; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2017 - 2021 • GLOBAL ACADEMICS</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Simon Business School & MBA</h4>
-                        <p style="color: #666; line-height: 1.8;">B.Com (2017). Left India at age 23 (2019). MS Finance (2020). MBA Finance (2021) - Dean's List & Networking Coach.</p>
-                    </div>
-                </div>
-
-                <!-- Social Phase Part 2 -->
-                <div class="milestone-group" data-phase="leadership" style="margin-bottom: 10rem;">
-                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #2E8B57; padding-top: 2rem;">
-                        <div class="m-year" style="color: #2E8B57; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2018 - 2020 • LEADERSHIP IMPACT</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">President, Rotaract South Asia</h4>
-                        <p style="color: #666; line-height: 1.8;">RI Toronto (2018). RI Hamburg & 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
-                    </div>
-                </div>
-
-                <!-- Corporate Phase -->
-                <div class="milestone-group" data-phase="corporate" style="margin-bottom: 10rem;">
-                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #C41E3A; padding-top: 2rem;">
-                        <div class="m-year" style="color: #C41E3A; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2021 ONWARD • STRATEGY</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Professional Excellence</h4>
-                        <p style="color: #666; line-height: 1.8;">Experience at Grant Thornton, Morgan Stanley (Manhattan), and Boutique M&A firms in NY. Career Advisor & AD at University of Rochester.</p>
-                    </div>
-                </div>
-
-                <!-- Future Phase -->
-                <div class="milestone-group" data-phase="vision" style="margin-bottom: 10rem;">
-                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #0047AB; padding-top: 2rem;">
-                        <div class="m-year" style="color: #0047AB; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2027 • THE DOCTORAL VISION</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Education 2.0 & Beyond</h4>
-                        <p style="color: #666; line-height: 1.8;">Pursuing Ed.D. Award: Education 2.0 (Las Vegas). Co-Chair: HE Students Association. Alumni of Simon & Mayo College.</p>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="tl-item">
+                <div class="tl-dot" style="color: #C41E3A; background: #C41E3A;"></div>
+                <div class="tl-card" style="border-color: #C41E3A;">
+                    <div class="tl-year" style="color: #C41E3A;">2015 · Career Beginnings</div>
+                    <h4>Early Professional Life</h4>
+                    <p>Entered the workforce and began his professional journey, establishing the foundation of his career alongside ongoing studies and service commitments.</p>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-dot" style="color: #0047AB; background: #0047AB;"></div>
+                <div class="tl-card" style="border-color: #0047AB;">
+                    <div class="tl-year" style="color: #0047AB;">2017 – 2021 · Global Academics</div>
+                    <h4>Simon Business School & MBA</h4>
+                    <p>B.Com (2017). Left India at age 23 (2019). MS Finance (2020). MBA Finance (2021) — Dean's List &amp; Networking Coach.</p>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-dot" style="color: #2E8B57; background: #2E8B57;"></div>
+                <div class="tl-card" style="border-color: #2E8B57;">
+                    <div class="tl-year" style="color: #2E8B57;">2018 – 2020 · Leadership Impact</div>
+                    <h4>President, Rotaract South Asia</h4>
+                    <p>RI Toronto (2018). RI Hamburg &amp; 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-dot" style="color: #C41E3A; background: #C41E3A;"></div>
+                <div class="tl-card" style="border-color: #C41E3A;">
+                    <div class="tl-year" style="color: #C41E3A;">2021 Onward · Strategy</div>
+                    <h4>Professional Excellence</h4>
+                    <p>Experience at Grant Thornton, Morgan Stanley (Manhattan), and Boutique M&amp;A firms in NY. Career Advisor &amp; AD at University of Rochester.</p>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-dot" style="color: #0047AB; background: #0047AB;"></div>
+                <div class="tl-card" style="border-color: #0047AB;">
+                    <div class="tl-year" style="color: #0047AB;">2027 · The Doctoral Vision</div>
+                    <h4>Education 2.0 & Beyond</h4>
+                    <p>Pursuing Ed.D. Award: Education 2.0 (Las Vegas). Co-Chair: HE Students Association. Alumni of Simon &amp; Mayo College.</p>
+                </div>
+            </div>
+
         </div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const milestones = document.querySelectorAll('.milestone');
-                const images = document.querySelectorAll('.artifact-image');
-                
-                const syncImages = () => {
-                    let activePhase = 'foundation';
-                    milestones.forEach(m => {
-                        const rect = m.getBoundingClientRect();
-                        if (rect.top < window.innerHeight * 0.6) {
-                            activePhase = m.closest('.milestone-group').dataset.phase;
-                        }
+            (function() {
+                const items = document.querySelectorAll('.tl-item');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
                     });
-                    
-                    images.forEach(img => {
-                        if (img.dataset.phase === activePhase) {
-                            img.classList.add('active');
-                        } else {
-                            img.classList.remove('active');
-                        }
-                    });
-                };
-                
-                window.addEventListener('scroll', syncImages);
-            });
+                }, { threshold: 0.15 });
+                items.forEach(el => observer.observe(el));
+            })();
         </script>
     </section>
-
 
 
     <!-- Contact Section -->
