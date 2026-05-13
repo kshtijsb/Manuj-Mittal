@@ -27,6 +27,12 @@
                 cursor.style.top = e.clientY + 'px';
             });
 
+            // Cursor Hover Effect
+            document.querySelectorAll('a, button, .pillar-card, .book-simple-wrapper, .interactive').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
+
             // Self-Writing Headlines
             const writeText = (el) => {
                 const text = el.innerText;

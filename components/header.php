@@ -77,14 +77,14 @@
 
         h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; }
 
-        /* Fountain Pen Cursor */
+        /* Creative Opaque Cursor */
         .cursor {
-            position: fixed; width: 40px; height: 40px; pointer-events: none; z-index: 9999;
-            transform: translate(-5%, -5%) rotate(0deg); transition: transform 0.1s ease-out;
-            display: none; align-items: center; justify-content: center;
+            position: fixed; width: 25px; height: 25px; background: #fff; border-radius: 50%;
+            pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%); transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), height 0.3s cubic-bezier(0.19, 1, 0.22, 1), transform 0.1s linear;
+            display: none; mix-blend-mode: difference;
         }
-        .pen-nib { width: 100%; height: 100%; fill: var(--gold); filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); transform: rotate(-45deg); transition: transform 0.3s ease; }
-        .cursor.hovering .pen-nib { transform: rotate(-15deg) scale(1.1); fill: var(--blue); }
+        .cursor.hovering { width: 50px; height: 50px; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
 
@@ -176,12 +176,7 @@
 </head>
 <body>
     <div id="ambient-canvas"></div>
-    <div class="cursor">
-        <svg class="pen-nib" viewBox="0 0 100 100">
-            <path d="M50,10 L30,40 L30,70 L50,90 L70,70 L70,40 L50,10 Z M50,40 L50,70" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-            <path d="M50,10 L45,25 L55,25 Z" fill="currentColor"/>
-        </svg>
-    </div>
+    <div class="cursor"></div>
 
     <!-- Gold Dust Particles Canvas -->
     <canvas id="goldDust" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.6;"></canvas>
