@@ -717,22 +717,17 @@ $status = $_GET['status'] ?? null;
                 <div class="milestone-group" data-phase="foundation" style="margin-bottom: 10rem;">
                     <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #0047AB; padding-top: 2rem;">
                         <div class="m-year" style="color: #0047AB; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">1996 - 2011 • FOUNDATION</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Early Life & Mayo Heritage</h4>
-                        <p style="color: #666; line-height: 1.8;">Childhood in India (1996). Mayo College Boarding School (2008). Chess Champion & WazirChand Trophy winner (2011).</p>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Early life and schooling</h4>
+                        <p style="color: #666; line-height: 1.8;">Childhood in India (1996). Proud Mayo Heritage at Mayo College Boarding School (2008). Chess Champion & WazirChand Trophy winner (2011).</p>
                     </div>
                 </div>
 
-                <!-- Social Phase -->
+                <!-- Social Phase Part 1 -->
                 <div class="milestone-group" data-phase="leadership" style="margin-bottom: 10rem;">
                     <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #2E8B57; padding-top: 2rem;">
                         <div class="m-year" style="color: #2E8B57; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2013 - 2017 • GLOBAL SERVICE</div>
                         <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Rise in Rotary International</h4>
                         <p style="color: #666; line-height: 1.8;">RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract Representative & RI Atlanta Convention (2017).</p>
-                    </div>
-                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #2E8B57; padding-top: 2rem;">
-                        <div class="m-year" style="color: #2E8B57; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2018 - 2020 • LEADERSHIP IMPACT</div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">President, Rotaract South Asia</h4>
-                        <p style="color: #666; line-height: 1.8;">RI Toronto (2018). RI Hamburg & 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
                     </div>
                 </div>
 
@@ -745,10 +740,19 @@ $status = $_GET['status'] ?? null;
                     </div>
                 </div>
 
+                <!-- Social Phase Part 2 -->
+                <div class="milestone-group" data-phase="leadership" style="margin-bottom: 10rem;">
+                    <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #2E8B57; padding-top: 2rem;">
+                        <div class="m-year" style="color: #2E8B57; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2018 - 2020 • LEADERSHIP IMPACT</div>
+                        <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">President, Rotaract South Asia</h4>
+                        <p style="color: #666; line-height: 1.8;">RI Toronto (2018). RI Hamburg & 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
+                    </div>
+                </div>
+
                 <!-- Corporate Phase -->
                 <div class="milestone-group" data-phase="corporate" style="margin-bottom: 10rem;">
                     <div class="milestone reveal" style="margin-bottom: 6rem; border-top: 4px solid #C41E3A; padding-top: 2rem;">
-                        <div class="m-year" style="color: #C41E3A; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">CAREER • STRATEGY</div>
+                        <div class="m-year" style="color: #C41E3A; font-weight: 800; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 1rem;">2021 ONWARD • STRATEGY</div>
                         <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Professional Excellence</h4>
                         <p style="color: #666; line-height: 1.8;">Experience at Grant Thornton, Morgan Stanley (Manhattan), and Boutique M&A firms in NY. Career Advisor & AD at University of Rochester.</p>
                     </div>
@@ -849,7 +853,7 @@ $status = $_GET['status'] ?? null;
         <div class="container" style="text-align: center; max-width: 800px;">
             <div class="quote-slider">
                 <div class="quote-slide active">
-                    <p style="font-family: var(--font-serif); font-size: 2.5rem; font-style: italic; line-height: 1.4; margin-bottom: 3rem;">"Innovation is not about new things, it's about new ways of seeing the world."</p>
+                    <p style="font-family: var(--font-serif); font-size: 2.5rem; font-style: italic; line-height: 1.4; margin-bottom: 3rem;">"Purpose defines strategy."</p>
                     <div class="quote-signature" style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3rem; color: var(--gold);">Manuj Mittal</div>
                 </div>
             </div>
