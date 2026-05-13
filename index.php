@@ -315,16 +315,17 @@ $status = $_GET['status'] ?? null;
 
     /* Global Responsive Architecture */
     .hero { min-height: 100vh; width: 100%; position: relative; overflow: hidden; background: #fff; }
-    .hero-split { display: flex; width: 100%; min-height: 100vh; }
+    .hero-split { display: grid; grid-template-columns: 50% 50%; width: 100%; min-height: 100vh; }
     .side { 
-        flex: 1;
+        width: 100%;
+        height: 100%;
         display: flex; 
         flex-direction: column; 
         justify-content: center; 
         align-items: center; 
         position: relative;
-        padding: 4rem;
-        transition: all 0.5s ease;
+        padding: 0;
+        margin: 0;
     }
     .author-side { background: var(--bg) !important; }
     .book-side { background: #fff !important; }
@@ -332,10 +333,10 @@ $status = $_GET['status'] ?? null;
     /* Hero 3D Flip Card System */
     .hero-flip-container {
         perspective: 2000px;
-        width: 100%;
-        max-width: 460px;
+        width: min(90%, 420px);
         height: 620px;
         cursor: pointer;
+        margin: 0 auto;
     }
     .hero-flip-inner {
         position: relative;
