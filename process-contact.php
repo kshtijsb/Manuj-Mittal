@@ -19,6 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content = "Name: $name\n";
     $email_content .= "Email: $email\n";
     $email_content .= "Inquiry Type: $type\n\n";
+
+    if ($type === 'Meeting Request') {
+        $date = strip_tags(trim($_POST["meeting_date"]));
+        $time = strip_tags(trim($_POST["meeting_time"]));
+        $email_content .= "Requested Date: $date\n";
+        $email_content .= "Requested Time: $time\n\n";
+    }
+    
     $email_content .= "Message:\n$message\n";
 
     $email_headers = "From: $name <$email>";

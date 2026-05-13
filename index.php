@@ -827,23 +827,75 @@ $status = $_GET['status'] ?? null;
             <div class="contact-form-container" style="background: #f9f9f9; padding: 5rem; border-radius: 10px; box-shadow: 0 40px 80px rgba(0,0,0,0.05); border-top: 6px solid var(--gold);">
                 <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
                     <div style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
-                        Message sent successfully! We will get back to you soon.
+                        Request sent successfully! We will get back to you soon.
                     </div>
                 <?php endif; ?>
 
-                <form action="process-contact.php" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem;">
-                    <input type="text" name="name" placeholder="Full Name" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
-                    <input type="email" name="email" placeholder="Email Address" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
-                    <textarea name="message" rows="4" placeholder="Your Message" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none; resize: none;" required></textarea>
-                    <style>
-                        .contact-actions { display: flex; gap: 1rem; width: 100%; margin-top: 1rem; }
-                        @media (max-width: 768px) { .contact-actions { flex-direction: column; } }
-                    </style>
-                    <div class="contact-actions">
-                        <button type="submit" class="btn btn-primary" style="flex: 1; background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">SEND MESSAGE</button>
-                        <button type="button" class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/PLACEHOLDER_LINK'});return false;" style="flex: 1; background: transparent; color: #000; border: 2px solid var(--gold); padding: 1.5rem; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">SCHEDULE MEETING</button>
-                    </div>
-                </form>
+                <div class="contact-tabs" style="display: flex; gap: 2rem; margin-bottom: 3rem; border-bottom: 1px solid #ddd;">
+                    <button class="tab-btn active" data-tab="message" style="background: none; border: none; padding: 1rem 0; font-weight: 800; letter-spacing: 2px; cursor: pointer; border-bottom: 2px solid var(--gold); color: #000; transition: 0.3s;">SEND MESSAGE</button>
+                    <button class="tab-btn" data-tab="meeting" style="background: none; border: none; padding: 1rem 0; font-weight: 800; letter-spacing: 2px; cursor: pointer; border-bottom: 2px solid transparent; color: #999; transition: 0.3s;">REQUEST MEETING</button>
+                </div>
+
+                <!-- Message Form -->
+                <div id="message-tab" class="tab-content active">
+                    <form action="process-contact.php" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem;">
+                        <input type="hidden" name="type" value="Message">
+                        <input type="text" name="name" placeholder="Full Name" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
+                        <input type="email" name="email" placeholder="Email Address" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
+                        <textarea name="message" rows="4" placeholder="Your Message" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none; resize: none;" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">SEND MESSAGE</button>
+                    </form>
+                </div>
+
+                <!-- Meeting Form -->
+                <div id="meeting-tab" class="tab-content" style="display: none;">
+                    <form action="process-contact.php" method="POST" style="display: flex; flex-direction: column; gap: 2rem;">
+                        <input type="hidden" name="type" value="Meeting Request">
+                        <input type="text" name="name" placeholder="Full Name" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
+                        <input type="email" name="email" placeholder="Email Address" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <label style="font-size: 0.7rem; color: var(--gold); font-weight: 800; letter-spacing: 1px;">PREFERRED DATE</label>
+                                <input type="date" name="meeting_date" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <label style="font-size: 0.7rem; color: var(--gold); font-weight: 800; letter-spacing: 1px;">PREFERRED TIME</label>
+                                <input type="time" name="meeting_time" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
+                            </div>
+                        </div>
+
+                        <textarea name="message" rows="3" placeholder="What would you like to discuss?" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none; resize: none;" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="background: var(--gold); color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">REQUEST MEETING</button>
+                    </form>
+                </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const tabs = document.querySelectorAll('.tab-btn');
+                        const contents = document.querySelectorAll('.tab-content');
+
+                        tabs.forEach(tab => {
+                            tab.addEventListener('click', () => {
+                                const target = tab.dataset.tab;
+                                
+                                tabs.forEach(t => {
+                                    t.classList.remove('active');
+                                    t.style.borderBottom = '2px solid transparent';
+                                    t.style.color = '#999';
+                                });
+                                tab.classList.add('active');
+                                tab.style.borderBottom = '2px solid var(--gold)';
+                                tab.style.color = '#000';
+
+                                contents.forEach(c => {
+                                    c.style.display = 'none';
+                                    if(c.id === target + '-tab') c.style.display = 'block';
+                                });
+                            });
+                        });
+                    });
+                </script>
             </div>
         </div>
     <!-- Impact by the Numbers -->
