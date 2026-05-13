@@ -320,8 +320,8 @@ $status = $_GET['status'] ?? null;
     .author-side { background: var(--bg) !important; text-align: center; align-items: center; }
     
     .simple-author-img { 
-        width: 220px; height: 220px; border-radius: 50%; overflow: hidden; 
-        margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 4px solid #fff;
+        width: 280px; height: 350px; border-radius: 8px; overflow: hidden; 
+        margin-bottom: 2.5rem; box-shadow: 0 15px 45px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05);
     }
     
     .author-simple-stats { 
@@ -615,7 +615,7 @@ $status = $_GET['status'] ?? null;
                 .hero-mobile { display: none; }
                 @media (max-width: 992px) {
                     .hero-mobile { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6rem 1.5rem 4rem; text-align: center; width: 100%; min-height: 100vh; background: var(--bg); }
-                    .hero-mobile .author-portrait { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 3px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+                    .hero-mobile .author-portrait { width: 150px; height: 180px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
                     .hero-mobile h1 { font-size: 3.2rem !important; line-height: 1.1; margin-bottom: 0.5rem; color: #000; font-family: var(--font-serif); }
                     .hero-mobile p { font-size: 1rem; color: #555; margin-bottom: 3rem; max-width: 90%; }
                     .hero-mobile .book-cover { width: 200px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border-radius: 4px; margin-bottom: 2rem; }
