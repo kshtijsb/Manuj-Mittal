@@ -340,7 +340,7 @@ $status = $_GET['status'] ?? null;
 
     .side:hover .author-content-simple,
     .side:hover .book-hero-info {
-        max-height: 800px;
+        max-height: 1200px;
         opacity: 1;
         pointer-events: auto;
         margin-top: 2rem;
@@ -389,7 +389,8 @@ $status = $_GET['status'] ?? null;
         h2 { font-size: 2.2rem !important; text-align: center; }
         
         .book-main-visual { width: 220px !important; margin: 0 auto; }
-        .book-hero-info { text-align: center !important; }
+        .book-hero-info { text-align: center !important; max-height: none !important; opacity: 1 !important; margin-top: 2rem; pointer-events: auto !important; }
+        .author-content-simple { max-height: none !important; opacity: 1 !important; margin-top: 2rem; pointer-events: auto !important; }
         .book-hero-info div { flex-direction: column !important; gap: 1rem !important; }
         .book-hero-info .btn { width: 100%; }
         
@@ -637,7 +638,7 @@ $status = $_GET['status'] ?? null;
         </div>
         
         <!-- Mobile Hero -->
-        <div class="hero-mobile">
+        <div class="hero-mobile" onclick="this.classList.toggle('revealed')">
             <style>
                 .hero-mobile { display: none; }
                 @media (max-width: 992px) {
@@ -648,6 +649,8 @@ $status = $_GET['status'] ?? null;
                     .hero-mobile .book-cover { width: 200px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border-radius: 4px; margin-bottom: 2rem; }
                     .hero-mobile .actions { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 300px; }
                     .hero-mobile .btn { width: 100%; text-align: center; padding: 1.2rem; }
+                    .hero-mobile h1, .hero-mobile p, .hero-mobile .actions { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.8s ease; }
+                    .hero-mobile.revealed h1, .hero-mobile.revealed p, .hero-mobile.revealed .actions { max-height: 500px; opacity: 1; margin-top: 1rem; }
                 }
             </style>
 
