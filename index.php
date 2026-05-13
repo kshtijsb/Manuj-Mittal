@@ -316,47 +316,55 @@ $status = $_GET['status'] ?? null;
     /* Global Responsive Architecture */
     .hero { min-height: 100vh; display: flex; align-items: stretch; overflow: visible; }
     .hero-split { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
-    .side { 
-        padding: 8rem 4rem; display: flex; flex-direction: column; justify-content: center; 
-        background: #fff; text-align: center; align-items: center;
-        transition: background 0.5s ease;
-    }
-    .author-side { background: var(--bg) !important; }
-    
-    .simple-author-img { 
-        width: 280px; height: 350px; border-radius: 8px; overflow: hidden; 
-        margin-bottom: 2.5rem; box-shadow: 0 15px 45px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05);
-        transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    .author-content-simple, .book-hero-info {
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-        pointer-events: none;
+    /* Hero 3D Flip Architecture */
+    .hero-flip-container {
+        perspective: 2000px;
         width: 100%;
+        max-width: 500px;
+        height: 650px;
+        margin: 0 auto;
+    }
+    .hero-flip-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        transform-style: preserve-3d;
+    }
+    .hero-flip-container:hover .hero-flip-inner {
+        transform: rotateY(180deg);
+    }
+    .hero-flip-front, .hero-flip-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 3rem;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        border: 1px solid rgba(0,0,0,0.03);
+    }
+    .hero-flip-back {
+        transform: rotateY(180deg);
+        background: #fcfcfc;
+        border: 1px solid var(--gold);
     }
 
-    .side:hover .author-content-simple,
-    .side:hover .book-hero-info {
-        max-height: 1200px;
-        opacity: 1;
-        pointer-events: auto;
-        margin-top: 2rem;
-    }
+    .author-side .hero-flip-front, .author-side .hero-flip-back { background: var(--bg); }
+    .book-side .hero-flip-front, .book-side .hero-flip-back { background: #fff; }
 
-    .side:hover .simple-author-img,
-    .side:hover .immersive-book-container {
-        transform: translateY(-20px);
-    }
-    
     .author-simple-stats { 
-        display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; 
-        padding-top: 2rem; border-top: 1px solid #eee; width: 100%;
+        display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;
+        padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05); width: 100%;
     }
     
-    .author-actions { display: flex; justify-content: center; gap: 2rem; align-items: center; width: 100%; }
+    .author-actions { display: flex; justify-content: center; gap: 2rem; align-items: center; width: 100%; margin-top: 2rem; }
+
 
     .about-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; }
     .pillar-card { padding: 3rem; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); border-top: 6px solid; }
@@ -424,60 +432,34 @@ $status = $_GET['status'] ?? null;
         <div class="hero-split">
             <!-- Left Side: Book -->
             <div class="side book-side">
-                <!-- Floating Background Accent -->
-                <div class="floating-accent" style="top: 10%; left: -5%; opacity: 0.05; font-size: 15rem;">BKS</div>
-
-                <div class="animate-up" style="animation-delay: 0.2s; position: relative; z-index: 10; width: 100%;">
-                    <div class="side-tag" style="margin-bottom: 3rem;">FEATURED WORK</div>
-
-                    <!-- Elegant Breathing Book Visual -->
-                    <div class="immersive-book-container" style="display: flex; flex-direction: column; align-items: center; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);">
-                        <div class="book-simple-wrapper" style="position: relative; cursor: pointer; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); animation: breathe 4s ease-in-out infinite;">
-                            <!-- Subtle Aura -->
-                            <div class="book-aura" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; height: 110%; background: radial-gradient(circle, var(--gold) 0%, transparent 70%); opacity: 0.05; filter: blur(30px); z-index: -1;">
+                <div class="hero-flip-container">
+                    <div class="hero-flip-inner">
+                        <!-- Front: Title & Order Button -->
+                        <div class="hero-flip-front">
+                            <div class="side-tag" style="margin-bottom: 2rem;">FEATURED WORK</div>
+                            <div class="immersive-book-container" style="margin-bottom: 2.5rem;">
+                                <div class="book-simple-wrapper" style="width: 220px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-radius: 5px; overflow: hidden; animation: breathe 4s ease-in-out infinite;">
+                                    <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
+                                </div>
                             </div>
-
-                            <!-- The Book -->
-                            <div class="book-main-visual" style="position: relative; width: 300px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-radius: 5px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
-                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
-                            </div>
+                            <h2 style="font-size: 2.2rem; margin-bottom: 2rem;"><?php echo $books[0]['title']; ?></h2>
+                            <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; padding: 1.2rem 3rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px;">PRE-ORDER NOW</a>
+                            <div style="margin-top: 2rem; font-size: 0.7rem; color: #999; letter-spacing: 2px;">HOVER TO LEARN MORE</div>
                         </div>
-                    </div>
-
-                    <style>
-                        @keyframes breathe {
-                            0% { transform: scale(1); }
-                            50% { transform: scale(1.05); }
-                            100% { transform: scale(1); }
-                        }
-                        
-                        @media (max-width: 768px) {
-                            .book-main-visual { width: 220px !important; }
-                            @keyframes breathe {
-                                0% { transform: scale(1); }
-                                50% { transform: scale(1.03); }
-                                100% { transform: scale(1); }
-                            }
-                            .hero-book-info h2 { font-size: 2.5rem !important; }
-                            .hero-book-info div { flex-direction: column; gap: 1rem !important; }
-                            .hero-book-info .btn { width: 100%; text-align: center; }
-                        }
-                    </style>
-
-                    <div class="book-hero-info" style="text-align: center; max-width: 450px; margin: 0 auto;">
-                        <h2 style="font-size: 3.5rem; line-height: 1; margin-bottom: 1.5rem; color: var(--text);">
-                            <?php echo $books[0]['title']; ?></h2>
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); opacity: 0.7; margin-bottom: 2.5rem;">
-                            <?php echo $books[0]['desc']; ?></p>
-
-                        <div style="display: flex; gap: 2rem; align-items: center;">
-                            <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; text-decoration: none;">PRE-ORDER NOW</a>
+                        <!-- Back: Description & Peek -->
+                        <div class="hero-flip-back">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--gold);">SYNOPSIS</h3>
+                            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 3rem;">
+                                <?php echo $books[0]['desc']; ?>
+                            </p>
                             <button onclick="openFlipbook()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 1.1rem 2.5rem; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 2px; font-size: 0.7rem;">PEEK INSIDE</button>
                         </div>
                     </div>
+                </div>
 
-                    <!-- In-Place 3D Flipbook -->
-                    <div id="inlineFlipbook" style="display: none; flex-direction: column; align-items: center; gap: 2rem; width: 100%; margin-bottom: 5rem;">
+                <!-- In-Place 3D Flipbook Viewer -->
+                <div id="inlineFlipbook" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.98); z-index: 10000; flex-direction: column; align-items: center; justify-content: center; gap: 3rem;">
+
                         <div class="flipbook-wrapper" style="perspective: 2000px; width: 100%; max-width: 600px; height: 400px; position: relative; transform-origin: center;">
                             <div id="mainBook" style="width: 50%; height: 100%; position: absolute; left: 50%; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); transform: translateZ(0);">
                                 
@@ -589,51 +571,40 @@ $status = $_GET['status'] ?? null;
                 </div>
                 </div>
 
-            <!-- Right Side: Author (Classic Simple Layout) -->
             <div class="side author-side">
-
-                <!-- Simple Portrait -->
-                <div class="simple-author-img">
-                    <img src="assets/author.png" alt="Manuj Mittal"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-
-                <!-- Text Content -->
-                <div class="author-content-simple">
-                    <div class="side-tag"
-                        style="color: var(--color-gold); font-weight: 800; letter-spacing: 5px; margin-bottom: 1rem; font-size: 0.7rem;">
-                        THE AUTHOR</div>
-                    <h1 style="font-size: 3.5rem; color: #000; margin-bottom: 1.5rem;">Manuj Mittal</h1>
-
-                    <p
-                        style="font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 450px; margin: 0 auto 2.5rem;">
-                        Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth development through
-                        modern management thinking. He distills complex challenges into thought-provoking narratives.
-                    </p>
-
-                    <div class="author-simple-stats">
-                        <div class="stat">
-                            <h4
-                                style="font-size: 0.65rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">
-                                Expertise</h4>
-                            <p style="font-size: 0.9rem; font-weight: 700; color: #000;">Finance & Strategy</p>
+                <div class="hero-flip-container">
+                    <div class="hero-flip-inner">
+                        <!-- Front: Photo, Name, Stats -->
+                        <div class="hero-flip-front">
+                            <div class="side-tag" style="margin-bottom: 2rem;">THE AUTHOR</div>
+                            <div class="simple-author-img" style="width: 180px; height: 230px; margin-bottom: 2rem; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                                <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h1 style="font-size: 2.8rem; margin-bottom: 1rem;">Manuj Mittal</h1>
+                            <div class="author-simple-stats">
+                                <div class="stat">
+                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">Expertise</h4>
+                                    <p style="font-size: 0.8rem; font-weight: 700; color: #000;">Finance & Strategy</p>
+                                </div>
+                                <div class="stat">
+                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">Academic</h4>
+                                    <p style="font-size: 0.8rem; font-weight: 700; color: #000;">MBA | Ed.D Candidate</p>
+                                </div>
+                            </div>
+                            <div style="margin-top: 2rem; font-size: 0.7rem; color: #999; letter-spacing: 2px;">HOVER TO DISCOVER</div>
                         </div>
-                        <div class="stat">
-                            <h4
-                                style="font-size: 0.65rem; color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.3rem;">
-                                Academic</h4>
-                            <p style="font-size: 0.9rem; font-weight: 700; color: #000;">MBA | Ed.D Candidate</p>
+                        <!-- Back: Description & Bio Link -->
+                        <div class="hero-flip-back">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--gold);">THE NARRATIVE</h3>
+                            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 3rem;">
+                                Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth development through modern management thinking. He distills complex challenges into thought-provoking narratives.
+                            </p>
+                            <div class="author-actions">
+                                <a href="biography.php" class="btn btn-primary" style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; font-size: 0.8rem; letter-spacing: 2px; text-decoration: none;">FULL BIOGRAPHY</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="author-actions">
-                        <a href="biography.php" class="btn btn-primary" style="background: #000; color: #fff; border-radius: 0; padding: 1.2rem 3rem; font-size: 0.8rem; letter-spacing: 2px; text-decoration: none;">FULL BIOGRAPHY</a>
-                        <a href="mailto:author@manujmittal.com" class="btn-text"
-                            style="color: #000; font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--color-gold);">CONNECT
-                            →</a>
-                    </div>
                 </div>
-
             </div>
         </div>
         
