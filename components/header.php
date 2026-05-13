@@ -77,14 +77,15 @@
 
         h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; }
 
-        /* Creative Opaque Cursor */
+        /* Creative Opaque Ink Pen Cursor */
         .cursor {
-            position: fixed; width: 25px; height: 25px; background: #fff; border-radius: 50%;
-            pointer-events: none; z-index: 9999;
-            transform: translate(-50%, -50%); transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), height 0.3s cubic-bezier(0.19, 1, 0.22, 1), transform 0.1s linear;
-            display: none; mix-blend-mode: difference;
+            position: fixed; width: 35px; height: 35px; pointer-events: none; z-index: 9999;
+            transform: translate(-10%, -10%); transition: transform 0.1s ease-out;
+            display: none; align-items: center; justify-content: center;
+            mix-blend-mode: difference; color: #fff;
         }
-        .cursor.hovering { width: 50px; height: 50px; }
+        .pen-nib { width: 100%; height: 100%; transform: rotate(-45deg); transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+        .cursor.hovering .pen-nib { transform: rotate(-15deg) scale(1.2); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
 
@@ -176,7 +177,14 @@
 </head>
 <body>
     <div id="ambient-canvas"></div>
-    <div class="cursor"></div>
+    <div class="cursor">
+        <svg class="pen-nib" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2 C13 5 16 8 18 11 L16 22 C14 23 10 23 8 22 L6 11 C8 8 11 5 12 2 Z" fill="currentColor" />
+            <path d="M12 11 L12 17" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="12" cy="18" r="1.5" fill="#000"/>
+            <path d="M7 13 Q12 16 17 13" stroke="#000" stroke-width="1" fill="none"/>
+        </svg>
+    </div>
 
     <!-- Gold Dust Particles Canvas -->
     <canvas id="goldDust" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.6;"></canvas>
