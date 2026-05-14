@@ -777,9 +777,9 @@ $status = $_GET['status'] ?? null;
             }
 
             .timeline-card.active .timeline-dot {
-                border-color: var(--gold);
-                background: var(--gold);
-                box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.2);
+                border-color: var(--theme-color, var(--gold));
+                background: var(--theme-color, var(--gold));
+                box-shadow: 0 0 0 8px rgba(0,0,0,0.05);
             }
 
             /* Card Content Styling */
@@ -820,7 +820,7 @@ $status = $_GET['status'] ?? null;
                 font-weight: 800;
                 letter-spacing: 4px;
                 text-transform: uppercase;
-                color: var(--gold);
+                color: var(--theme-color, var(--gold));
                 margin-bottom: 1rem;
             }
             .timeline-text h4 {
@@ -869,7 +869,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-progress"></div>
             </div>
 
-            <div class="timeline-card">
+            <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
@@ -883,7 +883,7 @@ $status = $_GET['status'] ?? null;
                 </div>
             </div>
 
-            <div class="timeline-card">
+            <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
@@ -897,7 +897,7 @@ $status = $_GET['status'] ?? null;
                 </div>
             </div>
 
-            <div class="timeline-card">
+            <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
@@ -911,7 +911,7 @@ $status = $_GET['status'] ?? null;
                 </div>
             </div>
 
-            <div class="timeline-card">
+            <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
@@ -925,7 +925,7 @@ $status = $_GET['status'] ?? null;
                 </div>
             </div>
 
-            <div class="timeline-card">
+            <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
@@ -939,7 +939,7 @@ $status = $_GET['status'] ?? null;
                 </div>
             </div>
 
-            <div class="timeline-card">
+            <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
@@ -953,7 +953,7 @@ $status = $_GET['status'] ?? null;
                 </div>
             </div>
 
-            <div class="timeline-card">
+            <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
