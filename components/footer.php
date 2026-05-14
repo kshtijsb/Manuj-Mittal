@@ -9,7 +9,7 @@
                 <div class="author-signature">Manuj Mittal</div>
             </div>
 
-            <div class="logo" style="margin-bottom: 2rem;">M. MITTAL</div>
+            <div class="logo" style="margin-bottom: 2rem;">MANUJ MITTAL</div>
             <div style="margin-bottom: 3rem;">
                 <a href="store.php" style="color: var(--gold); text-decoration: none; font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; border: 1px solid var(--gold); padding: 1rem 3rem; transition: 0.3s; display: inline-block;">THE LIBRARY</a>
             </div>

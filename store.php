@@ -8,96 +8,58 @@ include 'components/header.php';
 <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
 
 <style>
-    .store-hero {
-        text-align: center;
-        padding: 10vh 0;
+    .store-hero { text-align: center; padding: 15vh 0; background: #fff; }
+    .store-hero h1 { font-size: clamp(3.5rem, 8vw, 5.5rem); margin-bottom: 1.5rem; letter-spacing: -3px; color: #000; }
+    
+    .product-grid { display: flex; flex-direction: column; gap: 10vh; padding-bottom: 15vh; }
+    .product-item { 
+        display: grid; 
+        grid-template-columns: 0.8fr 1.2fr; 
+        gap: 8rem; 
+        align-items: center; 
+        padding: 6rem;
+        background: #fafafa;
+        border-radius: 4px;
+        transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     }
+    .product-item:hover { transform: scale(1.01); background: #fff; box-shadow: 0 40px 100px rgba(0,0,0,0.05); }
 
-    .store-hero h1 {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-    }
-
-    .product-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 15vh;
-        padding-bottom: 15vh;
-    }
-
-    .product-item {
-        display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 8rem;
-        align-items: center;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: 1s;
-    }
-
-    .product-item.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .book-spotlight {
-        position: relative;
-        perspective: 1000px;
-        width: 100%;
-        aspect-ratio: 3/4.5;
-    }
-
-    .book-tilt-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.1s ease-out;
-        transform-style: preserve-3d;
-    }
-
-    .book-art {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        border-radius: 8px;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+    .book-spotlight { 
+        position: relative; 
+        width: 100%; 
+        max-width: 320px;
+        margin: 0 auto;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        border-radius: 4px;
         overflow: hidden;
-        position: relative;
     }
+    .book-art { width: 100%; height: auto; display: block; }
 
-    .cs-seal {
-        font-family: var(--font-serif);
-        font-size: 1.8rem;
-        text-transform: uppercase;
-        letter-spacing: 6px;
-        transform: rotate(-15deg);
-        border: 3px solid var(--gold);
-        padding: 1.5rem;
-        box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
-    }
+    .product-info h2 { font-size: 3.5rem; margin-bottom: 1.5rem; color: #000; font-family: var(--font-serif); letter-spacing: -1px; }
+    .product-meta { font-size: 0.75rem; font-weight: 800; color: var(--color-gold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 2rem; }
+    .product-desc { font-size: 1.1rem; color: #666; margin-bottom: 3.5rem; line-height: 1.8; }
 
-    .product-info h2 {
-        font-size: 3.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--blue);
+    .btn-buy { 
+        background: #000; 
+        color: #fff; 
+        padding: 1.5rem 4rem; 
+        border: none; 
+        font-weight: 800; 
+        letter-spacing: 3px; 
+        text-transform: uppercase; 
+        font-size: 0.85rem; 
+        cursor: pointer; 
+        transition: 0.4s;
+        display: inline-block;
     }
+    .btn-buy:hover { background: var(--color-gold); transform: translateY(-5px); }
 
-    .product-meta {
-        font-size: 0.75rem;
-        font-weight: 800;
-        color: var(--gold);
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
+    @media (max-width: 1024px) {
+        .product-item { grid-template-columns: 1fr; gap: 4rem; padding: 3rem; text-align: center; }
+        .book-spotlight { max-width: 250px; }
+        .product-info h2 { font-size: 2.5rem; }
     }
-
-    .product-desc {
-        font-size: 1.1rem;
-        color: var(--muted);
-        margin-bottom: 3rem;
-    }
+</style>
 
     .buy-action {
         display: flex;
@@ -167,17 +129,14 @@ include 'components/header.php';
     <div class="product-grid">
         <?php foreach ($books as $book): ?>
             <div class="product-item reveal">
-                <div class="book-spotlight">
-                    <div class="book-glow"></div>
-                    <div class="book-tilt-inner">
-                        <?php if ($book['status'] === 'coming-soon'): ?>
-                            <div class="book-art book-coming-soon">
-                                <div class="cs-seal">COMING SOON</div>
-                            </div>
-                        <?php else: ?>
-                            <div class="book-art" style="background-image: url('<?php echo $book['image']; ?>');"></div>
-                        <?php endif; ?>
-                    </div>
+                <div class="book-spotlight shimmer">
+                    <?php if ($book['status'] === 'coming-soon'): ?>
+                        <div style="background: #000; height: 450px; display: flex; align-items: center; justify-content: center;">
+                            <div style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-gold); letter-spacing: 4px; border: 2px solid var(--color-gold); padding: 1.5rem; transform: rotate(-10deg);">COMING SOON</div>
+                        </div>
+                    <?php else: ?>
+                        <img src="<?php echo $book['image']; ?>" alt="<?php echo $book['title']; ?>" class="book-art" style="width: 100%; height: 450px; object-fit: cover;">
+                    <?php endif; ?>
                 </div>
                 <div class="product-info">
                     <div class="product-meta"><?php echo $book['tag']; ?> • <?php echo $book['meta']; ?></div>

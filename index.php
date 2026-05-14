@@ -432,18 +432,35 @@ $status = $_GET['status'] ?? null;
         .contact-form-container { padding: 2.5rem 1.5rem !important; margin-top: 3rem; }
     }
 
-    @keyframes slideInUp {
-        from {
-            transform: translateY(50px);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
+    @keyframes shimmer {
+        0% { background-position: -468px 0; }
+        100% { background-position: 468px 0; }
+    }
+    .shimmer {
+        position: relative;
+        overflow: hidden;
+    }
+    .shimmer::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+        background-size: 468px 100%;
+        animation: shimmer 2s infinite linear;
+        z-index: 1;
+        pointer-events: none;
     }
 
+    @keyframes breathe {
+        0%, 100% { transform: scale(1); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
+        50% { transform: scale(1.02); box-shadow: 0 35px 70px rgba(0,0,0,0.2); }
+    }
+
+    @keyframes slideInUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
     .animate-up {
         animation: slideInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
     }
@@ -461,8 +478,8 @@ $status = $_GET['status'] ?? null;
 
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 1.5rem;">FEATURED WORK</div>
-                            <div style="width: 260px; border-radius: 6px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
-                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: auto; display: block;">
+                            <div class="shimmer" style="width: 280px; height: 380px; border-radius: 8px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
+                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             </div>
                             <h2 style="font-size: 2rem; font-family: var(--font-serif); margin-bottom: 0; color: #111;"><?php echo $books[0]['title']; ?></h2>
                             <p style="margin-top: 2rem; font-size: 0.65rem; letter-spacing: 3px; color: #bbb;">HOVER TO READ MORE</p>
@@ -487,7 +504,7 @@ $status = $_GET['status'] ?? null;
                         <!-- FRONT: Photo + name + stats -->
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 1.5rem;">THE AUTHOR</div>
-                            <div style="width: 240px; height: 310px; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                            <div class="shimmer" style="width: 280px; height: 380px; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-bottom: 2rem;">
                                 <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
                             </div>
                             <h1 style="font-size: 2.4rem; font-family: var(--font-serif); color: #111; margin-bottom: 0.5rem;">Manuj Mittal</h1>
@@ -604,10 +621,10 @@ $status = $_GET['status'] ?? null;
                 .hero-mobile { display: none; }
                 @media (max-width: 992px) {
                     .hero-mobile { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6rem 1.5rem 4rem; text-align: center; width: 100%; min-height: 100vh; background: var(--bg); }
-                    .hero-mobile .author-portrait { width: 150px; height: 180px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+                    .hero-mobile .author-portrait { width: 200px; height: 280px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
                     .hero-mobile h1 { font-size: 3.2rem !important; line-height: 1.1; margin-bottom: 0.5rem; color: #000; font-family: var(--font-serif); }
                     .hero-mobile p { font-size: 1rem; color: #555; margin-bottom: 3rem; max-width: 90%; }
-                    .hero-mobile .book-cover { width: 200px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border-radius: 4px; margin-bottom: 2rem; }
+                    .hero-mobile .book-cover { width: 200px; height: 280px; object-fit: cover; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border-radius: 4px; margin-bottom: 2rem; }
                     .hero-mobile .actions { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 300px; }
                     .hero-mobile .btn { width: 100%; text-align: center; padding: 1.2rem; }
                     .hero-mobile h1, .hero-mobile p, .hero-mobile .actions { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.8s ease; }
@@ -615,14 +632,14 @@ $status = $_GET['status'] ?? null;
                 }
             </style>
 
-            <div class="author-portrait">
+            <div class="author-portrait shimmer">
                 <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             
             <h1>Manuj Mittal</h1>
             <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
             
-            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover">
+            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover shimmer">
             
             <div class="actions">
                 <a href="store.php" class="btn btn-primary" style="background: #000; color: #fff; font-size: 0.9rem; letter-spacing: 2px; text-decoration: none;">PRE-ORDER NOW</a>
@@ -639,22 +656,25 @@ $status = $_GET['status'] ?? null;
 
         <div class="about-pillars">
             <!-- Education: Blue -->
-            <div class="pillar-card reveal pillar-edu" style="border-top: 6px solid #0047AB;">
+            <div class="pillar-card reveal pillar-edu" style="border-top: 6px solid #0047AB; position: relative; overflow: hidden;">
+                <div style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(0,71,171,0.03); font-family: var(--font-sans); pointer-events: none;">01</div>
                 <div class="pillar-tag" style="color: #0047AB; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Education</div>
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Academic Excellence</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Alumnus of Mayo College, holding a Master's in Finance and an MBA from Simon Business School. Currently pursuing a Doctor of Education (Ed.D.) at the University of Rochester.</p>
             </div>
 
             <!-- Profession: Red -->
-            <div class="pillar-card reveal pillar-prof" style="border-top: 6px solid #C41E3A;">
+            <div class="pillar-card reveal pillar-prof" style="border-top: 6px solid #C41E3A; position: relative; overflow: hidden;">
+                <div style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(196,30,58,0.03); font-family: var(--font-sans); pointer-events: none;">02</div>
                 <div class="pillar-tag" style="color: #C41E3A; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Professional</div>
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Strategic Leadership</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Expertise in finance, operations, and organizational strategy. Specializing in distilling complex management challenges into actionable narratives.</p>
             </div>
 
             <!-- Social Responsibility: Green -->
-            <div class="pillar-card reveal pillar-social" style="border-top: 6px solid var(--green);">
-                <div class="pillar-tag" style="color: var(--green); font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Social Responsibility</div>
+            <div class="pillar-card reveal pillar-social" style="border-top: 6px solid #2E8B57; position: relative; overflow: hidden;">
+                <div style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(46,139,87,0.03); font-family: var(--font-sans); pointer-events: none;">03</div>
+                <div class="pillar-tag" style="color: #2E8B57; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">Social Responsibility</div>
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Global Impact</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Dedicated to empowering the next generation of leaders through modern management thinking and thought-provoking storytelling.</p>
             </div>
@@ -667,161 +687,294 @@ $status = $_GET['status'] ?? null;
         </style>
     </section>
 
-    <!-- Journey Section: Vertical Timeline -->
-    <section id="journey" class="container" style="padding: 15vh 0;">
-        <div class="section-header reveal" style="margin-bottom: 5rem; text-align: center;">
-            <div class="side-tag" style="color: var(--gold); letter-spacing: 5px; margin-bottom: 1.5rem; display: block;">THE EVOLUTION</div>
-            <h2 style="font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: #000;">A Legacy in<br>the Making.</h2>
+    <!-- Journey Section: Dynamic Photo Timeline -->
+    <section id="journey" style="padding: 15vh 0; overflow: hidden; background: #fff;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 8rem;" class="reveal">
+                <div class="side-tag" style="color: var(--gold); letter-spacing: 5px; margin-bottom: 1.5rem; display: block;">THE EVOLUTION</div>
+                <h2 style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; color: #000; letter-spacing: -2px;">A Legacy in<br>the Making.</h2>
+            </div>
         </div>
 
         <style>
-            .timeline {
-                position: relative;
-                max-width: 800px;
+            /* ── Photo Timeline Layout ── */
+            .evo-wrap {
+                display: grid;
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 0;
+                max-width: 1300px;
                 margin: 0 auto;
-                padding: 0 1rem;
+                padding: 0 4rem;
+                align-items: start;
             }
-            .timeline::before {
+
+            /* Left: sticky photo panel */
+            .evo-photo-panel {
+                position: sticky;
+                top: 12vh;
+                height: 75vh;
+                border-radius: 24px;
+                overflow: hidden;
+                box-shadow: 0 50px 100px rgba(0,0,0,0.15);
+                margin-right: 6rem;
+                background: #f0f0f0;
+            }
+            .evo-photo-container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            .evo-photo {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+                transform: scale(1.1);
+                filter: brightness(0.9);
+            }
+            .evo-photo.active {
+                opacity: 1;
+                transform: scale(1);
+            }
+            
+            /* Photo Overlay Gradient */
+            .evo-photo-panel::after {
                 content: '';
                 position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top: 0; bottom: 0;
-                width: 2px;
-                background: linear-gradient(to bottom, #0047AB, #2E8B57, #C41E3A, #0047AB);
-                opacity: 0.15;
+                inset: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 40%);
+                pointer-events: none;
             }
-            .tl-item {
-                display: flex;
-                gap: 3rem;
-                margin-bottom: 4rem;
-                align-items: flex-start;
-                opacity: 0;
-                transform: translateY(30px);
-                transition: opacity 0.6s ease, transform 0.6s ease;
-            }
-            .tl-item.visible { opacity: 1; transform: translateY(0); }
-            .tl-item:nth-child(even) { flex-direction: row-reverse; }
-            .tl-dot {
-                flex-shrink: 0;
-                width: 14px; height: 14px;
-                border-radius: 50%;
-                margin-top: 0.5rem;
-                position: relative;
-                z-index: 2;
-                box-shadow: 0 0 0 4px #fff, 0 0 0 6px currentColor;
-            }
-            .tl-card {
-                flex: 1;
-                background: #fff;
-                border-radius: 12px;
-                padding: 2rem 2.5rem;
-                box-shadow: 0 8px 40px rgba(0,0,0,0.07);
-                border-left: 4px solid;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-            .tl-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 16px 50px rgba(0,0,0,0.1);
-            }
-            .tl-year {
-                font-size: 0.7rem;
-                font-weight: 800;
-                letter-spacing: 3px;
-                text-transform: uppercase;
-                margin-bottom: 0.75rem;
-            }
-            .tl-card h4 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #111; }
-            .tl-card p  { font-size: 0.95rem; color: #666; line-height: 1.8; margin: 0; }
 
-            @media (max-width: 768px) {
-                .timeline::before { left: 1rem; }
-                .tl-item, .tl-item:nth-child(even) { flex-direction: row; gap: 1.5rem; }
-                .tl-dot { margin-top: 0.4rem; }
-                .tl-card { padding: 1.5rem; }
-                .tl-card h4 { font-size: 1.2rem; }
+            /* Right: scrollable milestones */
+            .evo-milestones { 
+                padding: 5vh 0 20vh; 
+                position: relative;
+            }
+
+            /* The Vertical Progress Line */
+            .evo-progress-line {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: #eee;
+                z-index: 1;
+            }
+            .evo-progress-fill {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 0%;
+                background: var(--gold);
+                transition: height 0.3s ease-out;
+            }
+
+            .evo-milestone {
+                padding: 0 0 10rem 4rem;
+                position: relative;
+                opacity: 0.3;
+                transform: translateY(20px);
+                transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+                z-index: 2;
+            }
+            .evo-milestone.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Dot on the line */
+            .evo-milestone::before {
+                content: '';
+                position: absolute;
+                left: -5px;
+                top: 5px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #fff;
+                border: 2px solid #ddd;
+                z-index: 3;
+                transition: all 0.4s ease;
+            }
+            .evo-milestone.active::before {
+                background: var(--gold);
+                border-color: var(--gold);
+                box-shadow: 0 0 0 6px rgba(184, 134, 11, 0.2);
+                transform: scale(1.2);
+            }
+
+            .evo-year {
+                font-size: 0.75rem;
+                font-weight: 800;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                margin-bottom: 1.5rem;
+                color: #999;
+                transition: color 0.4s ease;
+            }
+            .evo-milestone.active .evo-year { color: var(--gold); }
+
+            .evo-milestone h4 { 
+                font-size: 2.2rem; 
+                color: #111; 
+                margin-bottom: 1.5rem;
+                font-family: var(--font-serif);
+                line-height: 1.2;
+            }
+            .evo-milestone p { 
+                font-size: 1.05rem; 
+                color: #666; 
+                line-height: 1.8; 
+                margin: 0;
+                max-width: 450px;
+            }
+
+            /* Mobile optimization */
+            @media (max-width: 1024px) {
+                .evo-wrap { grid-template-columns: 1fr; padding: 0 2rem; }
+                .evo-photo-panel { display: none; }
+                .evo-milestones { padding-left: 1rem; }
+                .evo-milestone { padding-bottom: 6rem; }
+                
+                /* Mobile Photo Cards */
+                .evo-mobile-img {
+                    display: block;
+                    width: 100%;
+                    height: 250px;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    margin-bottom: 2rem;
+                    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+                }
+                .evo-mobile-img img {
+                    width: 100%; height: 100%; object-fit: cover;
+                }
+            }
+            @media (min-width: 1025px) {
+                .evo-mobile-img { display: none; }
             }
         </style>
 
-        <div class="timeline">
+        <div class="evo-wrap">
+            <!-- LEFT: Sticky Photo Panel (Desktop) -->
+            <div class="evo-photo-panel">
+                <div class="evo-photo-container">
+                    <img class="evo-photo active" data-idx="0" src="https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=1000" alt="Foundation">
+                    <img class="evo-photo" data-idx="1" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" alt="Global Service">
+                    <img class="evo-photo" data-idx="2" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000" alt="Career Beginnings">
+                    <img class="evo-photo" data-idx="3" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1000" alt="Global Academics">
+                    <img class="evo-photo" data-idx="4" src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?auto=format&fit=crop&q=80&w=1000" alt="Leadership Impact">
+                    <img class="evo-photo" data-idx="5" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" alt="Professional Strategy">
+                    <img class="evo-photo" data-idx="6" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1000" alt="The Vision">
+                </div>
+            </div>
 
-            <div class="tl-item">
-                <div class="tl-dot" style="color: #0047AB; background: #0047AB;"></div>
-                <div class="tl-card" style="border-color: #0047AB;">
-                    <div class="tl-year" style="color: #0047AB;">1996 – 2011 · Foundation</div>
+            <!-- RIGHT: Milestones -->
+            <div class="evo-milestones">
+                <div class="evo-progress-line">
+                    <div class="evo-progress-fill"></div>
+                </div>
+
+                <div class="evo-milestone active" data-idx="0">
+                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=1000"></div>
+                    <div class="evo-year">1996 – 2011 · Foundation</div>
                     <h4>Early Life & Schooling</h4>
-                    <p>Born in India (1996). Proud alumnus of Mayo College boarding school (2008) — one of India's most prestigious institutions with a rich heritage. Chess Champion &amp; WazirChand Trophy winner (2011).</p>
+                    <p>Born in India (1996). Proud alumnus of Mayo College boarding school (2008) — one of India's most prestigious institutions. Chess Champion & WazirChand Trophy winner (2011).</p>
                 </div>
-            </div>
 
-            <div class="tl-item">
-                <div class="tl-dot" style="color: #2E8B57; background: #2E8B57;"></div>
-                <div class="tl-card" style="border-color: #2E8B57;">
-                    <div class="tl-year" style="color: #2E8B57;">2013 – 2017 · Global Service</div>
+                <div class="evo-milestone" data-idx="1">
+                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"></div>
+                    <div class="evo-year">2013 – 2017 · Global Service</div>
                     <h4>Rise in Rotary International</h4>
-                    <p>RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract Representative &amp; RI Atlanta Convention (2017).</p>
+                    <p>RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract Representative & RI Atlanta Convention (2017).</p>
                 </div>
-            </div>
 
-            <div class="tl-item">
-                <div class="tl-dot" style="color: #C41E3A; background: #C41E3A;"></div>
-                <div class="tl-card" style="border-color: #C41E3A;">
-                    <div class="tl-year" style="color: #C41E3A;">2015 · Career Beginnings</div>
+                <div class="evo-milestone" data-idx="2">
+                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000"></div>
+                    <div class="evo-year">2015 · Career Beginnings</div>
                     <h4>Early Professional Life</h4>
                     <p>Entered the workforce and began his professional journey, establishing the foundation of his career alongside ongoing studies and service commitments.</p>
                 </div>
-            </div>
 
-            <div class="tl-item">
-                <div class="tl-dot" style="color: #0047AB; background: #0047AB;"></div>
-                <div class="tl-card" style="border-color: #0047AB;">
-                    <div class="tl-year" style="color: #0047AB;">2017 – 2021 · Global Academics</div>
+                <div class="evo-milestone" data-idx="3">
+                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1000"></div>
+                    <div class="evo-year">2017 – 2021 · Global Academics</div>
                     <h4>Simon Business School & MBA</h4>
-                    <p>B.Com (2017). Left India at age 23 (2019). MS Finance (2020). MBA Finance (2021) — Dean's List &amp; Networking Coach.</p>
+                    <p>B.Com (2017). Left India at age 23 (2019). MS Finance (2020). MBA Finance (2021) — Dean's List & Networking Coach.</p>
                 </div>
-            </div>
 
-            <div class="tl-item">
-                <div class="tl-dot" style="color: #2E8B57; background: #2E8B57;"></div>
-                <div class="tl-card" style="border-color: #2E8B57;">
-                    <div class="tl-year" style="color: #2E8B57;">2018 – 2020 · Leadership Impact</div>
+                <div class="evo-milestone" data-idx="4">
+                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?auto=format&fit=crop&q=80&w=1000"></div>
+                    <div class="evo-year">2018 – 2020 · Leadership Impact</div>
                     <h4>President, Rotaract South Asia</h4>
-                    <p>RI Toronto (2018). RI Hamburg &amp; 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
+                    <p>RI Toronto (2018). RI Hamburg & 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
                 </div>
-            </div>
 
-            <div class="tl-item">
-                <div class="tl-dot" style="color: #C41E3A; background: #C41E3A;"></div>
-                <div class="tl-card" style="border-color: #C41E3A;">
-                    <div class="tl-year" style="color: #C41E3A;">2021 Onward · Strategy</div>
+                <div class="evo-milestone" data-idx="5">
+                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"></div>
+                    <div class="evo-year">2021 Onward · Strategy</div>
                     <h4>Professional Excellence</h4>
-                    <p>Experience at Grant Thornton, Morgan Stanley (Manhattan), and Boutique M&amp;A firms in NY. Career Advisor &amp; AD at University of Rochester.</p>
+                    <p>Experience at Grant Thornton, Morgan Stanley (Manhattan), and Boutique M&A firms in NY. Career Advisor & AD at University of Rochester.</p>
                 </div>
-            </div>
 
-            <div class="tl-item">
-                <div class="tl-dot" style="color: #0047AB; background: #0047AB;"></div>
-                <div class="tl-card" style="border-color: #0047AB;">
-                    <div class="tl-year" style="color: #0047AB;">2027 · The Doctoral Vision</div>
+                <div class="evo-milestone" data-idx="6">
+                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1000"></div>
+                    <div class="evo-year">2027 · The Doctoral Vision</div>
                     <h4>Education 2.0 & Beyond</h4>
-                    <p>Pursuing Ed.D. Award: Education 2.0 (Las Vegas). Co-Chair: HE Students Association. Alumni of Simon &amp; Mayo College.</p>
+                    <p>Pursuing Ed.D. Award: Education 2.0 (Las Vegas). Co-Chair: HE Students Association. Alumni of Simon & Mayo College.</p>
                 </div>
             </div>
-
         </div>
 
         <script>
-            (function() {
-                const items = document.querySelectorAll('.tl-item');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(e => {
-                        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-                    });
-                }, { threshold: 0.15 });
-                items.forEach(el => observer.observe(el));
-            })();
+        (function() {
+            const milestones = document.querySelectorAll('.evo-milestone');
+            const photos = document.querySelectorAll('.evo-photo');
+            const progressFill = document.querySelector('.evo-progress-fill');
+            const wrap = document.querySelector('.evo-wrap');
+
+            const updateActive = () => {
+                let activeIdx = 0;
+                const scrollPos = window.scrollY + window.innerHeight / 2;
+
+                milestones.forEach((m, idx) => {
+                    const rect = m.getBoundingClientRect();
+                    const absTop = rect.top + window.scrollY;
+                    if (scrollPos >= absTop) {
+                        activeIdx = idx;
+                    }
+                });
+
+                milestones.forEach((m, idx) => {
+                    m.classList.toggle('active', idx === activeIdx);
+                });
+                photos.forEach((p, idx) => {
+                    p.classList.toggle('active', idx === activeIdx);
+                });
+
+                // Update Progress Fill
+                const wrapRect = document.querySelector('.evo-milestones').getBoundingClientRect();
+                const totalHeight = wrapRect.height;
+                const relativeScroll = Math.max(0, Math.min(totalHeight, scrollPos - (wrapRect.top + window.scrollY)));
+                const pct = (relativeScroll / totalHeight) * 100;
+                progressFill.style.height = pct + '%';
+            };
+
+            window.addEventListener('scroll', updateActive);
+            updateActive(); // Initial state
+        })();
         </script>
     </section>
+
+
+
 
 
     <!-- Contact Section -->
@@ -914,61 +1067,71 @@ $status = $_GET['status'] ?? null;
             </div>
         </div>
     <!-- Impact by the Numbers -->
-    <section class="stats-section container" style="padding: 15vh 0; text-align: center; border-top: 1px solid var(--border);">
-        <div class="stats-grid">
+    <section class="stats-section container" style="padding: 15vh 0; text-align: center; border-top: 1px solid #eee;">
+        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
             <div class="stat-item reveal">
-                <div class="stat-number" data-target="200000" style="font-size: 5rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem;">0</div>
-                <div class="stat-label" style="letter-spacing: 3px; font-size: 0.8rem; color: #999; text-transform: uppercase;">Global Members Led</div>
+                <div class="stat-number plus" data-target="200000" style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">0</div>
+                <div class="stat-label" style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">Global Members Led</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-number" data-target="8" style="font-size: 5rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem;">0</div>
-                <div class="stat-label" style="letter-spacing: 3px; font-size: 0.8rem; color: #999; text-transform: uppercase;">Countries Impacted</div>
+                <div class="stat-number" data-target="8" style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">0</div>
+                <div class="stat-label" style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">Countries Impacted</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-number" data-target="27" style="font-size: 5rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem;">0</div>
-                <div class="stat-label" style="letter-spacing: 3px; font-size: 0.8rem; color: #999; text-transform: uppercase;">Years of Evolution</div>
+                <div class="stat-number" data-target="27" style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">0</div>
+                <div class="stat-label" style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">Years of Evolution</div>
             </div>
         </div>
     </section>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section" style="padding: 15vh 0; background: var(--surface); overflow: hidden;">
-        <div class="container" style="text-align: center; max-width: 800px;">
-            <div class="quote-slider">
-                <div class="quote-slide active">
-                    <p style="font-family: var(--font-serif); font-size: 2.5rem; font-style: italic; line-height: 1.4; margin-bottom: 3rem;">"Purpose defines strategy."</p>
-                    <div class="quote-signature" style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3rem; color: var(--gold);">Manuj Mittal</div>
+    <section class="quotes-section" style="padding: 20vh 0; background: #fafafa; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+        <div class="container" style="text-align: center; max-width: 900px; position: relative; z-index: 2;">
+            <div class="quote-slider" style="position: relative; min-height: 300px;">
+                <div class="quote-slide active" style="transition: all 1s ease; opacity: 1; position: absolute; width: 100%;">
+                    <p style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">"Purpose defines strategy."</p>
+                    <div class="quote-signature" style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">Manuj Mittal</div>
+                </div>
+                <div class="quote-slide" style="transition: all 1s ease; opacity: 0; position: absolute; width: 100%; transform: translateY(20px); pointer-events: none;">
+                    <p style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">"Leadership is the art of giving people a platform for spread their own wings."</p>
+                    <div class="quote-signature" style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">Manuj Mittal</div>
+                </div>
+                <div class="quote-slide" style="transition: all 1s ease; opacity: 0; position: absolute; width: 100%; transform: translateY(20px); pointer-events: none;">
+                    <p style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">"Vision is not seeing things as they are, but as they will be."</p>
+                    <div class="quote-signature" style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">Manuj Mittal</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Quote Slider Animation
+        const slides = document.querySelectorAll('.quote-slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].style.opacity = '0';
+            slides[currentSlide].style.transform = 'translateY(-20px)';
+            slides[currentSlide].style.pointerEvents = 'none';
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            slides[currentSlide].style.opacity = '1';
+            slides[currentSlide].style.transform = 'translateY(0)';
+            slides[currentSlide].style.pointerEvents = 'auto';
+        }, 5000);
+    });
+    </script>
+
     <style>
-        .stat-number.plus::after { content: '+'; }
+        .stat-number.plus::after { content: '+'; font-size: 3rem; vertical-align: top; margin-left: 5px; color: var(--gold); }
     </style>
+
 </main>
 
-<script>
-    // Page-specific scroll sync
-    window.addEventListener('scroll', () => {
-        const timeline = document.querySelector('.journey-timeline');
-        if (timeline) {
-            const rect = timeline.getBoundingClientRect();
-            const progress = Math.max(0, Math.min(100, ((window.innerHeight / 2 - rect.top) / rect.height) * 100));
-            const inkProgress = document.querySelector('.ink-progress');
-            if (inkProgress) inkProgress.style.height = progress + '%';
 
-            document.querySelectorAll('.milestone').forEach(m => {
-                const mRect = m.getBoundingClientRect();
-                if (mRect.top < window.innerHeight / 2 && mRect.bottom > window.innerHeight / 2) {
-                    const year = m.getAttribute('data-year');
-                    document.querySelectorAll('.artifact-image').forEach(img => {
-                        img.classList.toggle('active', img.getAttribute('data-year') === year);
-                    });
-                }
-            });
-        }
-    });
-</script>
+
 
 <?php include 'components/footer.php'; ?>
