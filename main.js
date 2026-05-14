@@ -1,19 +1,68 @@
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1
-};
+// --- 1. Initialize Lenis Smooth Scrolling ---
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard ease-out
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+})
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+
+// --- 2. GSAP ScrollTrigger Integration ---
+gsap.registerPlugin(ScrollTrigger);
+
+// Sync ScrollTrigger with Lenis
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => { lenis.raf(time * 1000) });
+gsap.ticker.lagSmoothing(0, 0);
+
+// --- 3. Cinematic Typography (SplitType) & Reveal ---
+document.addEventListener("DOMContentLoaded", () => {
+    // Reveal simple fade-up elements
+    gsap.utils.toArray('.fade-up').forEach(el => {
+        gsap.to(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: "top 85%",
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+    });
+
+    // Split and animate H1 and H2
+    const headings = document.querySelectorAll('h1:not(.no-split), h2:not(.no-split)');
+    headings.forEach(heading => {
+        // Only split if not already split
+        if (!heading.classList.contains('split-processed')) {
+            heading.classList.add('split-processed');
+            const splitText = new SplitType(heading, { types: 'words, chars' });
+            
+            gsap.from(splitText.chars, {
+                scrollTrigger: {
+                    trigger: heading,
+                    start: "top 90%",
+                },
+                opacity: 0,
+                y: 20,
+                rotationX: 90,
+                stagger: 0.02,
+                duration: 0.8,
+                ease: "back.out(1.7)"
+            });
         }
     });
-}, observerOptions);
-
-document.querySelectorAll('.fade-up').forEach(el => {
-    observer.observe(el);
 });
 
 // Smooth scroll for navigation links
@@ -85,15 +134,50 @@ if (newsletterForm) {
         
         btn.textContent = 'Awesome! 🚀';
         btn.style.background = '#fff';
-        btn.style.color = 'var(--color-primary)';
+        btn.style.color = '#000';
         
         setTimeout(() => {
             newsletterForm.reset();
             btn.textContent = 'Subscribe';
-            btn.style.background = 'var(--color-secondary)';
-            btn.style.color = 'var(--color-text)';
+            btn.style.background = '';
+            btn.style.color = '';
         }, 3000);
     });
 }
 
-console.log('Vibrant Portfolio Loaded! Have fun! 🚀');
+// --- 4. Image Parallax & Cinematic Reveals ---
+document.addEventListener("DOMContentLoaded", () => {
+    // Elegant Image Reveal
+    gsap.utils.toArray('img:not(.no-reveal)').forEach(img => {
+        gsap.fromTo(img, 
+            { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", filter: "grayscale(100%) blur(10px)", scale: 1.1 },
+            { 
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", 
+                filter: "grayscale(0%) blur(0px)",
+                scale: 1,
+                duration: 1.5, 
+                ease: "power4.inOut",
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top 85%"
+                }
+            }
+        );
+    });
+
+    // Subtly Parallax Backgrounds/Elements
+    gsap.utils.toArray('.parallax').forEach(elem => {
+        gsap.to(elem, {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: elem,
+                start: "top bottom", 
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    });
+});
+
+console.log('Immersive Features Loaded! ✨');
