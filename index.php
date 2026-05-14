@@ -689,7 +689,13 @@ $status = $_GET['status'] ?? null;
 
     <!-- Journey Section: Dynamic Photo Timeline -->
     <section id="journey" style="padding: 15vh 0; overflow: hidden; background: #fff;">
-        <div class="container">
+        <style>
+            @media (max-width: 1024px) {
+                #journey .journey-header { padding: 8rem 1.5rem 4rem !important; background: #000; }
+                #journey .journey-header h2 { color: #fff !important; }
+            }
+        </style>
+        <div class="container journey-header">
             <div style="text-align: center; margin-bottom: 8rem;" class="reveal">
                 <div class="side-tag" style="color: var(--gold); letter-spacing: 5px; margin-bottom: 1.5rem; display: block;">THE EVOLUTION</div>
                 <h2 style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; color: #000; letter-spacing: -2px;">A Legacy in<br>the Making.</h2>
@@ -738,7 +744,7 @@ $status = $_GET['status'] ?? null;
             }
             .evo-photo.active {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1.05); /* Subtle zoom in */
             }
             
             /* Photo Overlay Gradient */
@@ -836,26 +842,74 @@ $status = $_GET['status'] ?? null;
                 max-width: 450px;
             }
 
-            /* Mobile optimization */
+            /* Mobile optimization - Premium Sticky Background Flow */
             @media (max-width: 1024px) {
-                .evo-wrap { grid-template-columns: 1fr; padding: 0 2rem; }
-                .evo-photo-panel { display: none; }
-                .evo-milestones { padding-left: 1rem; }
-                .evo-milestone { padding-bottom: 6rem; }
+                #journey { padding: 0 !important; background: #000 !important; }
+                .evo-wrap { grid-template-columns: 1fr; padding: 0; }
                 
-                /* Mobile Photo Cards */
-                .evo-mobile-img {
+                /* Make photo panel sticky on mobile too */
+                .evo-photo-panel { 
                     display: block;
+                    position: sticky;
+                    top: 0;
                     width: 100%;
-                    height: 250px;
-                    border-radius: 16px;
-                    overflow: hidden;
-                    margin-bottom: 2rem;
-                    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+                    height: 55vh; /* Half screen height for photo */
+                    margin-right: 0;
+                    border-radius: 0;
+                    z-index: 1;
                 }
-                .evo-mobile-img img {
-                    width: 100%; height: 100%; object-fit: cover;
+                .evo-photo-container { border-radius: 0 0 30px 30px; }
+                
+                .evo-milestones { 
+                    padding: 0 1rem 15vh; 
+                    z-index: 2;
+                    position: relative;
+                    margin-top: -8vh; /* Deeper overlap for depth */
                 }
+                
+                /* Mobile Vertical Connector Line */
+                .evo-milestones::after {
+                    content: '';
+                    position: absolute;
+                    left: 2rem;
+                    top: 0;
+                    bottom: 15vh;
+                    width: 2px;
+                    background: rgba(255, 255, 255, 0.1);
+                    z-index: -1;
+                }
+
+                .evo-milestone {
+                    padding: 3rem 2rem 3rem 3.5rem;
+                    background: rgba(255, 255, 255, 0.98);
+                    backdrop-filter: blur(20px);
+                    border-radius: 20px;
+                    margin-bottom: 2.5rem;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+                    opacity: 0.15;
+                    transform: scale(0.92);
+                    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+                    border: 1px solid rgba(255,255,255,0.1);
+                }
+                .evo-milestone.active {
+                    opacity: 1;
+                    transform: scale(1);
+                    box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 1px var(--gold);
+                }
+                
+                .evo-milestone::before { 
+                    left: -8px; 
+                    top: 3.8rem; 
+                    width: 16px; 
+                    height: 16px;
+                    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+                }
+                .evo-milestone h4 { font-size: 1.7rem; letter-spacing: -0.5px; }
+                .evo-year { margin-bottom: 0.8rem; font-size: 0.7rem; }
+                .evo-milestone p { font-size: 0.95rem; line-height: 1.7; }
+                
+                .evo-mobile-img { display: none !important; }
+                .evo-progress-line { display: none; } /* Use simple connector line instead */
             }
             @media (min-width: 1025px) {
                 .evo-mobile-img { display: none; }
