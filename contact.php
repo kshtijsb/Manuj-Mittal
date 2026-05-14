@@ -19,11 +19,7 @@ include 'components/header.php';
         letter-spacing: -3px;
     }
     .contact-form-box {
-        background: #f9f9f9;
-        padding: 5rem;
-        border-radius: 10px;
-        box-shadow: 0 40px 80px rgba(0,0,0,0.05);
-        border-top: 6px solid var(--gold);
+        padding: 0;
     }
 
     @media (max-width: 992px) {

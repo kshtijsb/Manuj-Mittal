@@ -92,7 +92,7 @@
 
         /* Navigation */
         header {
-            position: sticky; top: 4px; z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
             background: #000000;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }

@@ -907,10 +907,6 @@ $status = $_GET['status'] ?? null;
                         align-items: center;
                         gap: 1rem;
                         margin-bottom: 2rem;
-                        background: rgba(0,0,0,0.03);
-                        padding: 0.5rem 1.5rem 0.5rem 0.5rem;
-                        border-radius: 50px;
-                        border: 1px solid rgba(0,0,0,0.05);
                     }
 
                     .mobile-author-badge img {
