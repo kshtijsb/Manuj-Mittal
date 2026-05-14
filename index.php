@@ -742,7 +742,7 @@ $status = $_GET['status'] ?? null;
                                 </div>
                             </div>
                             <p
-                                style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 0.5rem;">
+                                style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 0.1rem;">
                                 HOVER TO DISCOVER</p>
                         </div>
 
