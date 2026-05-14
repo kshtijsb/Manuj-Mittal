@@ -683,7 +683,7 @@ $status = $_GET['status'] ?? null;
 
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 2rem;">FEATURED WORK</div>
-                            <div class="hero-image-box shimmer" style="animation: breathe 4s ease-in-out infinite;">
+                            <div class="hero-image-box" style="animation: breathe 4s ease-in-out infinite;">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>">
                             </div>
                             <h2
@@ -721,7 +721,7 @@ $status = $_GET['status'] ?? null;
                         <!-- FRONT: Photo + name + stats -->
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 2rem;">THE AUTHOR</div>
-                            <div class="hero-image-box shimmer">
+                            <div class="hero-image-box">
                                 <img src="assets/author.png" alt="Manuj Mittal" style="object-position: center;">
                             </div>
                             <h2
