@@ -382,6 +382,22 @@ $status = $_GET['status'] ?? null;
         border: 1px solid rgba(0, 0, 0, 0.06);
     }
 
+    /* Standardized Hero Images */
+    .hero-image-box {
+        width: 320px !important;
+        height: 450px !important;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .hero-image-box img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
     .book-side .flip-card-front {
         background: #fff;
     }
@@ -654,16 +670,13 @@ $status = $_GET['status'] ?? null;
                     <div class="flip-card-inner">
 
                         <div class="flip-card-front">
-                            <div class="side-tag" style="margin-bottom: 1.5rem;">FEATURED WORK</div>
-                            <div class="shimmer"
-                                style="width: 310px; height: 420px; border-radius: 8px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
-                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>"
-                                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <div class="side-tag" style="margin-bottom: 2rem;">FEATURED WORK</div>
+                            <div class="hero-image-box shimmer" style="animation: breathe 4s ease-in-out infinite;">
+                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>">
                             </div>
-                            <h2 style="font-size: 2rem; font-family: var(--font-serif); margin-bottom: 0; color: #111;">
+                            <h2 style="font-size: 2.2rem; font-family: var(--font-serif); margin-bottom: 0; color: #111; line-height: 1.1;">
                                 <?php echo $books[0]['title']; ?></h2>
-                            <p style="margin-top: 2rem; font-size: 0.65rem; letter-spacing: 3px; color: #bbb;">HOVER TO
-                                READ MORE</p>
+                            <p style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 2rem;">HOVER TO READ MORE</p>
                         </div>
 
                         <!-- BACK: Synopsis + Order Now -->
@@ -691,31 +704,23 @@ $status = $_GET['status'] ?? null;
 
                         <!-- FRONT: Photo + name + stats -->
                         <div class="flip-card-front">
-                            <div class="side-tag" style="margin-bottom: 1.5rem;">THE AUTHOR</div>
-                            <div class="shimmer"
-                                style="width: 310px; height: 420px; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-                                <img src="assets/author.png" alt="Manuj Mittal"
-                                    style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                            <div class="side-tag" style="margin-bottom: 2rem;">THE AUTHOR</div>
+                            <div class="hero-image-box shimmer">
+                                <img src="assets/author.png" alt="Manuj Mittal" style="object-position: top center;">
                             </div>
-                            <h1
-                                style="font-size: 2.4rem; font-family: var(--font-serif); color: #111; margin-bottom: 0.5rem;">
-                                Manuj Mittal</h1>
-                            <div class="author-simple-stats">
+                            <h2 style="font-size: 2.2rem; font-family: var(--font-serif); color: #111; margin-bottom: 0; line-height: 1.1;">
+                                Manuj Mittal</h2>
+                            <div class="author-simple-stats" style="margin-top: 1.5rem; padding-top: 1.5rem;">
                                 <div class="stat">
-                                    <h4
-                                        style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">
-                                        Expertise</h4>
+                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">Expertise</h4>
                                     <p style="font-size: 0.9rem; font-weight: 800; color: #000;">Finance & Strategy</p>
                                 </div>
                                 <div class="stat">
-                                    <h4
-                                        style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">
-                                        Academic</h4>
+                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">Academic</h4>
                                     <p style="font-size: 0.9rem; font-weight: 800; color: #000;">MBA | Ed.D</p>
                                 </div>
                             </div>
-                            <p style="margin-top: 2rem; font-size: 0.65rem; letter-spacing: 3px; color: #bbb;">HOVER TO
-                                DISCOVER</p>
+                            <p style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 2rem;">HOVER TO DISCOVER</p>
                         </div>
 
                         <!-- BACK: Bio + biography link -->
