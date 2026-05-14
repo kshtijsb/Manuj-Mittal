@@ -59,7 +59,6 @@ include 'components/header.php';
         .book-spotlight { max-width: 250px; }
         .product-info h2 { font-size: 2.5rem; }
     }
-</style>
 
     .buy-action {
         display: flex;

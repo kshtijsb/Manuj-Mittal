@@ -929,14 +929,16 @@ $status = $_GET['status'] ?? null;
                     }
 
                     .hero-mobile .book-cover {
-                        width: 100%;
-                        max-width: 260px;
+                        width: 100vw;
+                        max-width: none;
                         height: auto;
                         aspect-ratio: 2/3;
                         object-fit: cover;
-                        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-                        border-radius: 6px;
+                        box-shadow: none;
+                        border-radius: 0;
                         margin-bottom: 2rem;
+                        margin-left: -1.5rem; /* Bleed past container padding */
+                        margin-right: -1.5rem;
                     }
 
                     .hero-mobile p {
@@ -1011,6 +1013,15 @@ $status = $_GET['status'] ?? null;
         <!-- Sticky Action Bar (Global Mobile Only) -->
         <a href="store.php" class="mobile-sticky-action">PRE-ORDER NOW</a>
     </section>
+
+    <!-- Executive Mobile Layout Logic -->
+    <style>
+        @media (max-width: 992px) {
+            #about, #journey {
+                display: none !important;
+            }
+        }
+    </style>
 
     <!-- About Pillars Section (Color Coded) -->
     <section id="about" class="container" style="padding-top: 15vh;">
