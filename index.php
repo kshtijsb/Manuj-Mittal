@@ -883,7 +883,7 @@ $status = $_GET['status'] ?? null;
         </script>
 
         <!-- Mobile Hero -->
-        <div class="hero-mobile" onclick="this.classList.toggle('revealed')">
+        <div class="hero-mobile">
             <style>
                 .hero-mobile {
                     display: none;
@@ -936,56 +936,29 @@ $status = $_GET['status'] ?? null;
                         margin-bottom: 2rem;
                     }
 
-                    .hero-mobile .actions {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1rem;
-                        width: 100%;
-                        max-width: 300px;
-                    }
-
                     .hero-mobile .btn {
                         width: 100%;
+                        max-width: 300px;
                         text-align: center;
                         padding: 1.2rem;
-                    }
-
-                    .hero-mobile h1,
-                    .hero-mobile p,
-                    .hero-mobile .actions {
-                        max-height: 0;
-                        opacity: 0;
-                        overflow: hidden;
-                        transition: all 0.8s ease;
-                    }
-
-                    .hero-mobile.revealed h1,
-                    .hero-mobile.revealed p,
-                    .hero-mobile.revealed .actions {
-                        max-height: 500px;
-                        opacity: 1;
-                        margin-top: 1rem;
+                        display: block;
+                        margin: 0 auto;
                     }
                 }
             </style>
 
-            <div class="author-portrait shimmer">
-                <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-
             <h1>Manuj Mittal</h1>
-            <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
+            <p style="margin-bottom: 2rem;">Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
+            
+            <a href="biography.php" class="btn"
+                style="background: transparent; color: #000; border: 1px solid var(--gold); font-size: 0.9rem; letter-spacing: 2px; text-decoration: none; margin-bottom: 3rem;">FULL
+                BIOGRAPHY</a>
 
-            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover shimmer">
+            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover">
 
-            <div class="actions">
-                <a href="store.php" class="btn btn-primary"
-                    style="background: #000; color: #fff; font-size: 0.9rem; letter-spacing: 2px; text-decoration: none;">PRE-ORDER
-                    NOW</a>
-                <a href="biography.php" class="btn"
-                    style="background: transparent; color: #000; border: 1px solid var(--gold); font-size: 0.9rem; letter-spacing: 2px; text-decoration: none;">FULL
-                    BIOGRAPHY</a>
-            </div>
+            <a href="store.php" class="btn"
+                style="background: #000; color: #fff; font-size: 0.9rem; letter-spacing: 2px; text-decoration: none;">PRE-ORDER
+                NOW</a>
         </div>
     </section>
 
