@@ -656,7 +656,7 @@ $status = $_GET['status'] ?? null;
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 1.5rem;">FEATURED WORK</div>
                             <div class="shimmer"
-                                style="width: 280px; height: 380px; border-radius: 8px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
+                                style="width: 310px; height: 440px; border-radius: 8px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); margin-bottom: 2rem; animation: breathe 4s ease-in-out infinite;">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>"
                                     style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             </div>
@@ -693,7 +693,7 @@ $status = $_GET['status'] ?? null;
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 1.5rem;">THE AUTHOR</div>
                             <div class="shimmer"
-                                style="width: 280px; height: 380px; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                                style="width: 310px; height: 440px; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-bottom: 2rem;">
                                 <img src="assets/author.png" alt="Manuj Mittal"
                                     style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
                             </div>
@@ -874,8 +874,8 @@ $status = $_GET['status'] ?? null;
                     }
 
                     .hero-mobile .author-portrait {
-                        width: 200px;
-                        height: 280px;
+                        width: 240px;
+                        height: 340px;
                         border-radius: 8px;
                         overflow: hidden;
                         border: 1px solid rgba(0, 0, 0, 0.05);
@@ -899,8 +899,8 @@ $status = $_GET['status'] ?? null;
                     }
 
                     .hero-mobile .book-cover {
-                        width: 200px;
-                        height: 280px;
+                        width: 240px;
+                        height: 340px;
                         object-fit: cover;
                         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
                         border-radius: 4px;
