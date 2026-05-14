@@ -903,8 +903,8 @@ $status = $_GET['status'] ?? null;
                     }
 
                     .hero-mobile .author-portrait {
-                        width: 240px;
-                        height: 340px;
+                        width: 200px;
+                        height: 280px;
                         border-radius: 8px;
                         overflow: hidden;
                         border: 1px solid rgba(0, 0, 0, 0.05);
@@ -913,8 +913,8 @@ $status = $_GET['status'] ?? null;
                     }
 
                     .hero-mobile h1 {
-                        font-size: 3.2rem !important;
-                        line-height: 1.1;
+                        font-size: 2.4rem !important;
+                        line-height: 1.2;
                         margin-bottom: 0.5rem;
                         color: #000;
                         font-family: var(--font-serif);
@@ -928,8 +928,8 @@ $status = $_GET['status'] ?? null;
                     }
 
                     .hero-mobile .book-cover {
-                        width: 240px;
-                        height: 340px;
+                        width: 200px;
+                        height: 280px;
                         object-fit: cover;
                         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
                         border-radius: 4px;
