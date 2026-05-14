@@ -882,146 +882,134 @@ $status = $_GET['status'] ?? null;
             }
         </script>
 
-        <!-- Mobile Hero (Cinematic Scroll) -->
-        <div class="hero-mobile-container" id="mobileHeroScroll">
+        <!-- Mobile Hero (Sticky Action Concept) -->
+        <div class="hero-mobile">
             <style>
-                .hero-mobile-container { display: none; }
+                .hero-mobile { display: none; }
+                .mobile-sticky-action { display: none; }
                 
                 @media (max-width: 992px) {
-                    .hero-mobile-container {
-                        display: block;
-                        height: 250vh;
-                        position: relative;
-                        background: var(--bg);
-                        z-index: 10;
-                    }
-                    
-                    .mobile-sticky-frame {
-                        position: sticky;
-                        top: 0;
-                        height: 100vh;
-                        width: 100%;
-                        overflow: hidden;
+                    .hero-mobile {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        justify-content: center;
-                    }
-
-                    .scene-author, .scene-book {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 2rem;
+                        justify-content: flex-start;
+                        padding: 3rem 1.5rem 8rem; /* Extra bottom padding for the sticky bar */
                         text-align: center;
-                        will-change: transform, opacity;
+                        width: 100%;
+                        min-height: 100vh;
+                        background: var(--bg);
+                        position: relative;
                     }
 
-                    .scene-author h1 {
-                        font-size: 3rem !important;
+                    .mobile-author-badge {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 2rem;
+                        background: rgba(0,0,0,0.03);
+                        padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+                        border-radius: 50px;
+                        border: 1px solid rgba(0,0,0,0.05);
+                    }
+
+                    .mobile-author-badge img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        object-position: center top;
+                    }
+
+                    .mobile-author-badge span {
                         font-family: var(--font-serif);
+                        font-weight: 700;
+                        font-size: 1.1rem;
                         color: #111;
-                        margin-bottom: 1rem;
                     }
 
-                    .scene-author p {
-                        font-size: 1.1rem;
+                    .hero-mobile .book-cover {
+                        width: 100%;
+                        max-width: 260px;
+                        height: auto;
+                        aspect-ratio: 2/3;
+                        object-fit: cover;
+                        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+                        border-radius: 6px;
+                        margin-bottom: 2rem;
+                    }
+
+                    .hero-mobile p {
+                        font-size: 1.05rem;
                         color: #555;
                         margin-bottom: 2rem;
                         line-height: 1.6;
+                        max-width: 90%;
                     }
 
-                    .scene-book {
-                        opacity: 0;
-                        transform: translateY(100px) scale(0.85);
-                        pointer-events: none; /* prevents clicking until visible */
-                    }
-
-                    .scene-book img {
-                        width: 220px;
-                        height: 310px;
-                        object-fit: cover;
-                        border-radius: 4px;
-                        box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-                        margin-bottom: 1.5rem;
-                    }
-
-                    .mobile-btn {
-                        width: 100%;
-                        max-width: 280px;
-                        padding: 1.2rem;
+                    .mobile-sticky-action {
+                        display: block;
+                        position: fixed;
+                        bottom: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: calc(100% - 40px);
+                        max-width: 400px;
+                        background: #000;
+                        color: #fff;
                         text-align: center;
+                        padding: 1.2rem;
+                        border-radius: 8px;
+                        font-size: 0.9rem;
+                        font-weight: 800;
+                        letter-spacing: 2px;
+                        text-decoration: none;
+                        z-index: 1000;
+                        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+                        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    }
+
+                    .mobile-sticky-action:active {
+                        transform: translateX(-50%) scale(0.95);
+                    }
+
+                    .mobile-btn-secondary {
+                        background: transparent;
+                        color: #000;
+                        border: 1px solid var(--gold);
+                        padding: 1rem;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        font-size: 0.85rem;
                         letter-spacing: 2px;
                         font-weight: 700;
-                        font-size: 0.85rem;
-                        text-decoration: none;
+                        width: 100%;
+                        max-width: 260px;
                         display: block;
                         margin: 0 auto;
-                        transition: 0.3s;
                     }
                 }
             </style>
 
-            <div class="mobile-sticky-frame">
-                
-                <!-- Scene 1: The Author -->
-                <div class="scene-author" id="sceneAuthor">
-                    <h1>Manuj Mittal</h1>
-                    <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
-                    <a href="biography.php" class="mobile-btn" style="border: 1px solid var(--gold); color: #000;">FULL BIOGRAPHY</a>
-                </div>
-
-                <!-- Scene 2: The Book -->
-                <div class="scene-book" id="sceneBook">
-                    <div style="font-size: 0.65rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Featured Work</div>
-                    <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>">
-                    <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 2rem; color: #111;"><?php echo $books[0]['title']; ?></h2>
-                    <a href="store.php" class="mobile-btn" style="background: #000; color: #fff;">PRE-ORDER NOW</a>
-                </div>
-
+            <!-- Small elegant author badge -->
+            <div class="mobile-author-badge">
+                <img src="assets/author.png" alt="Manuj Mittal">
+                <span>Manuj Mittal</span>
             </div>
+
+            <!-- Author Bio -->
+            <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
+            <a href="biography.php" class="mobile-btn-secondary" style="margin-bottom: 4rem;">FULL BIOGRAPHY</a>
+
+            <!-- Book Section -->
+            <div style="font-size: 0.65rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Featured Work</div>
+            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 2rem; color: #111; line-height: 1.1;"><?php echo $books[0]['title']; ?></h2>
+            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover">
+
         </div>
 
-        <script>
-            // Initialize the Cinematic Scroll exclusively for mobile
-            document.addEventListener("DOMContentLoaded", () => {
-                if(window.innerWidth <= 992) {
-                    gsap.registerPlugin(ScrollTrigger);
-
-                    // Fade out and move up the Author
-                    gsap.to("#sceneAuthor", {
-                        opacity: 0,
-                        y: -80,
-                        scrollTrigger: {
-                            trigger: "#mobileHeroScroll",
-                            start: "top top",
-                            end: "35% top",
-                            scrub: 1
-                        }
-                    });
-
-                    // Scale up and fade in the Book
-                    gsap.to("#sceneBook", {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        pointerEvents: "auto",
-                        scrollTrigger: {
-                            trigger: "#mobileHeroScroll",
-                            start: "20% top",
-                            end: "65% top",
-                            scrub: 1.5
-                        }
-                    });
-                }
-            });
-        </script>
+        <!-- Sticky Action Bar (Global Mobile Only) -->
+        <a href="store.php" class="mobile-sticky-action">PRE-ORDER NOW</a>
     </section>
 
     <!-- About Pillars Section (Color Coded) -->
