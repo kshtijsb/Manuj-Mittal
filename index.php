@@ -390,6 +390,8 @@ $status = $_GET['status'] ?? null;
         overflow: hidden;
         margin-bottom: 2rem;
         position: relative;
+        flex-shrink: 0; /* Prevents shrinking if content exceeds card height */
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     }
 
     .hero-image-box img {
@@ -706,7 +708,7 @@ $status = $_GET['status'] ?? null;
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 2rem;">THE AUTHOR</div>
                             <div class="hero-image-box shimmer">
-                                <img src="assets/author.png" alt="Manuj Mittal" style="object-position: top center;">
+                                <img src="assets/author.png" alt="Manuj Mittal" style="object-position: center;">
                             </div>
                             <h2 style="font-size: 2.2rem; font-family: var(--font-serif); color: #111; margin-bottom: 0; line-height: 1.1;">
                                 Manuj Mittal</h2>
