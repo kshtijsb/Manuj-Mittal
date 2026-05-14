@@ -882,84 +882,146 @@ $status = $_GET['status'] ?? null;
             }
         </script>
 
-        <!-- Mobile Hero -->
-        <div class="hero-mobile">
+        <!-- Mobile Hero (Cinematic Scroll) -->
+        <div class="hero-mobile-container" id="mobileHeroScroll">
             <style>
-                .hero-mobile {
-                    display: none;
-                }
-
+                .hero-mobile-container { display: none; }
+                
                 @media (max-width: 992px) {
-                    .hero-mobile {
+                    .hero-mobile-container {
+                        display: block;
+                        height: 250vh;
+                        position: relative;
+                        background: var(--bg);
+                        z-index: 10;
+                    }
+                    
+                    .mobile-sticky-frame {
+                        position: sticky;
+                        top: 0;
+                        height: 100vh;
+                        width: 100%;
+                        overflow: hidden;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        padding: 6rem 1.5rem 4rem;
-                        text-align: center;
-                        width: 100%;
-                        min-height: 100vh;
-                        background: var(--bg);
                     }
 
-                    .hero-mobile .author-portrait {
-                        width: 200px;
-                        height: 280px;
-                        border-radius: 8px;
-                        overflow: hidden;
-                        border: 1px solid rgba(0, 0, 0, 0.05);
-                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    .scene-author, .scene-book {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 2rem;
+                        text-align: center;
+                        will-change: transform, opacity;
+                    }
+
+                    .scene-author h1 {
+                        font-size: 3rem !important;
+                        font-family: var(--font-serif);
+                        color: #111;
+                        margin-bottom: 1rem;
+                    }
+
+                    .scene-author p {
+                        font-size: 1.1rem;
+                        color: #555;
+                        margin-bottom: 2rem;
+                        line-height: 1.6;
+                    }
+
+                    .scene-book {
+                        opacity: 0;
+                        transform: translateY(100px) scale(0.85);
+                        pointer-events: none; /* prevents clicking until visible */
+                    }
+
+                    .scene-book img {
+                        width: 220px;
+                        height: 310px;
+                        object-fit: cover;
+                        border-radius: 4px;
+                        box-shadow: 0 30px 60px rgba(0,0,0,0.2);
                         margin-bottom: 1.5rem;
                     }
 
-                    .hero-mobile h1 {
-                        font-size: 2.4rem !important;
-                        line-height: 1.2;
-                        margin-bottom: 0.5rem;
-                        color: #000;
-                        font-family: var(--font-serif);
-                    }
-
-                    .hero-mobile p {
-                        font-size: 1rem;
-                        color: #555;
-                        margin-bottom: 3rem;
-                        max-width: 90%;
-                    }
-
-                    .hero-mobile .book-cover {
-                        width: 200px;
-                        height: 280px;
-                        object-fit: cover;
-                        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                        border-radius: 4px;
-                        margin-bottom: 2rem;
-                    }
-
-                    .hero-mobile .btn {
+                    .mobile-btn {
                         width: 100%;
-                        max-width: 300px;
-                        text-align: center;
+                        max-width: 280px;
                         padding: 1.2rem;
+                        text-align: center;
+                        letter-spacing: 2px;
+                        font-weight: 700;
+                        font-size: 0.85rem;
+                        text-decoration: none;
                         display: block;
                         margin: 0 auto;
+                        transition: 0.3s;
                     }
                 }
             </style>
 
-            <h1>Manuj Mittal</h1>
-            <p style="margin-bottom: 2rem;">Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
-            
-            <a href="biography.php" class="btn"
-                style="background: transparent; color: #000; border: 1px solid var(--gold); font-size: 0.9rem; letter-spacing: 2px; text-decoration: none; margin-bottom: 3rem;">FULL
-                BIOGRAPHY</a>
+            <div class="mobile-sticky-frame">
+                
+                <!-- Scene 1: The Author -->
+                <div class="scene-author" id="sceneAuthor">
+                    <h1>Manuj Mittal</h1>
+                    <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
+                    <a href="biography.php" class="mobile-btn" style="border: 1px solid var(--gold); color: #000;">FULL BIOGRAPHY</a>
+                </div>
 
-            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover">
+                <!-- Scene 2: The Book -->
+                <div class="scene-book" id="sceneBook">
+                    <div style="font-size: 0.65rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Featured Work</div>
+                    <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>">
+                    <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 2rem; color: #111;"><?php echo $books[0]['title']; ?></h2>
+                    <a href="store.php" class="mobile-btn" style="background: #000; color: #fff;">PRE-ORDER NOW</a>
+                </div>
 
-            <a href="store.php" class="btn"
-                style="background: #000; color: #fff; font-size: 0.9rem; letter-spacing: 2px; text-decoration: none;">PRE-ORDER
-                NOW</a>
+            </div>
         </div>
+
+        <script>
+            // Initialize the Cinematic Scroll exclusively for mobile
+            document.addEventListener("DOMContentLoaded", () => {
+                if(window.innerWidth <= 992) {
+                    gsap.registerPlugin(ScrollTrigger);
+
+                    // Fade out and move up the Author
+                    gsap.to("#sceneAuthor", {
+                        opacity: 0,
+                        y: -80,
+                        scrollTrigger: {
+                            trigger: "#mobileHeroScroll",
+                            start: "top top",
+                            end: "35% top",
+                            scrub: 1
+                        }
+                    });
+
+                    // Scale up and fade in the Book
+                    gsap.to("#sceneBook", {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        pointerEvents: "auto",
+                        scrollTrigger: {
+                            trigger: "#mobileHeroScroll",
+                            start: "20% top",
+                            end: "65% top",
+                            scrub: 1.5
+                        }
+                    });
+                }
+            });
+        </script>
     </section>
 
     <!-- About Pillars Section (Color Coded) -->
