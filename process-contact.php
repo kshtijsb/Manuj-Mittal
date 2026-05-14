@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // 3. Prepare Email Details
-    $recipient = "author@manujmittal.com"; // Your Email
+    $recipient = "kshitijbhilare10@gmail.com"; // Your Email
     $subject = "New Inquiry from ManujMittal.com: $type";
     
     $email_content = "Name: $name\n";
