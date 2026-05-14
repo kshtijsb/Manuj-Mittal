@@ -4,18 +4,56 @@ $page_title = "Contact | Manuj Mittal";
 include 'components/header.php';
 ?>
 
+<style>
+    .contact-page-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8rem;
+        align-items: start;
+    }
+    .contact-page-h1 {
+        font-size: clamp(3rem, 10vw, 5rem);
+        line-height: 0.9;
+        margin-bottom: 4rem;
+        color: #000;
+        letter-spacing: -3px;
+    }
+    .contact-form-box {
+        background: #f9f9f9;
+        padding: 5rem;
+        border-radius: 10px;
+        box-shadow: 0 40px 80px rgba(0,0,0,0.05);
+        border-top: 6px solid var(--gold);
+    }
+
+    @media (max-width: 992px) {
+        .contact-page {
+            padding: 60px 0 !important;
+        }
+        .contact-page-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        .contact-form-box {
+            padding: 2.5rem 1.5rem;
+        }
+        .contact-page-h1 {
+            margin-bottom: 2rem;
+        }
+    }
+</style>
+
 <section class="contact-page" style="padding: 120px 0; background: #fff; min-height: 100vh;">
     <div class="container" style="max-width: 1000px;">
 
-        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start;">
+        <div class="contact-page-grid">
 
             <!-- Left Side: Info -->
             <div class="contact-info reveal">
                 <div class="side-tag"
                     style="color: var(--gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block;">
                     GET IN TOUCH</div>
-                <h1 style="font-size: 5rem; line-height: 0.9; margin-bottom: 4rem; color: #000; letter-spacing: -3px;">
-                    Let's Write<br>the Next<br>Chapter.</h1>
+                <h1 class="contact-page-h1">Let's Write<br>the Next<br>Chapter.</h1>
 
                 <div class="contact-details" style="margin-top: 6rem;">
                     <div class="contact-item" style="margin-bottom: 3rem;">
@@ -48,8 +86,7 @@ include 'components/header.php';
             </div>
 
             <!-- Right Side: Form -->
-            <div class="contact-form-container reveal"
-                style="background: #f9f9f9; padding: 5rem; border-radius: 10px; box-shadow: 0 40px 80px rgba(0,0,0,0.05); border-top: 6px solid var(--gold);">
+            <div class="contact-form-box reveal">
                 <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
                     <div
                         style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
