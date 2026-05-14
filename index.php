@@ -1025,6 +1025,10 @@ $status = $_GET['status'] ?? null;
                     <div style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
                         Request sent successfully! We will get back to you soon.
                     </div>
+                <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
+                    <div style="background: #f8d7da; color: #721c24; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
+                        Error: Your local development server cannot send emails. This will work once hosted online!
+                    </div>
                 <?php endif; ?>
 
                 <div class="contact-tabs" style="display: flex; gap: 2rem; margin-bottom: 3rem; border-bottom: 1px solid #ddd;">
@@ -1034,7 +1038,9 @@ $status = $_GET['status'] ?? null;
 
                 <!-- Message Form -->
                 <div id="message-tab" class="tab-content active">
-                    <form action="process-contact.php" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem;">
+                    <form action="https://formsubmit.co/kshitijbhilare10@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem;">
+                        <input type="hidden" name="_subject" value="New Message from ManujMittal.com">
+                        <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="type" value="Message">
                         <input type="text" name="name" placeholder="Full Name" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
                         <input type="email" name="email" placeholder="Email Address" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
@@ -1045,7 +1051,9 @@ $status = $_GET['status'] ?? null;
 
                 <!-- Meeting Form -->
                 <div id="meeting-tab" class="tab-content" style="display: none;">
-                    <form action="process-contact.php" method="POST" style="display: flex; flex-direction: column; gap: 2rem;">
+                    <form action="https://formsubmit.co/kshitijbhilare10@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 2rem;">
+                        <input type="hidden" name="_subject" value="New Meeting Request from ManujMittal.com">
+                        <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="type" value="Meeting Request">
                         <input type="text" name="name" placeholder="Full Name" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>
                         <input type="email" name="email" placeholder="Email Address" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;" required>

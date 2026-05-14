@@ -43,7 +43,9 @@ include 'components/header.php';
                     </div>
                 <?php endif; ?>
 
-                <form action="process-contact.php" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem;">
+                <form action="https://formsubmit.co/kshitijbhilare10@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 2.5rem;">
+                    <input type="hidden" name="_subject" value="New Inquiry from Contact Page">
+                    <input type="hidden" name="_captcha" value="false">
                     <div class="input-group" style="display: flex; flex-direction: column; gap: 0.8rem;">
                         <label style="font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; color: #999; text-transform: uppercase;">Full Name</label>
                         <input type="text" name="name" placeholder="John Doe" style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none; transition: 0.3s;" required>

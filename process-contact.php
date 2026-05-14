@@ -32,12 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_headers = "From: $name <$email>";
 
     // 4. Send Email
-    if (mail($recipient, $subject, $email_content, $email_headers)) {
+    $mail_sent = @mail($recipient, $subject, $email_content, $email_headers);
+    
+    if ($mail_sent) {
         header("Location: index.php?status=success#contact");
     } else {
-        header("Location: contact.php?status=error");
+        header("Location: index.php?status=error#contact");
     }
 } else {
-    header("Location: contact.php");
+    header("Location: index.php#contact");
 }
 ?>
