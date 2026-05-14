@@ -703,327 +703,301 @@ $status = $_GET['status'] ?? null;
         </div>
 
         <style>
-            /* ── Photo Timeline Layout ── */
-            .evo-wrap {
-                display: grid;
-                grid-template-columns: 1.1fr 0.9fr;
-                gap: 0;
-                max-width: 1300px;
+            .timeline-container {
+                position: relative;
+                max-width: 1200px;
                 margin: 0 auto;
-                padding: 0 4rem;
-                align-items: start;
+                padding: 4rem 2rem;
             }
 
-            /* Left: sticky photo panel */
-            .evo-photo-panel {
-                position: sticky;
-                top: 12vh;
-                height: 75vh;
-                border-radius: 24px;
-                overflow: hidden;
-                box-shadow: 0 50px 100px rgba(0,0,0,0.15);
-                margin-right: 6rem;
-                background: #f0f0f0;
-            }
-            .evo-photo-container {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-            }
-            .evo-photo {
+            /* Central Line */
+            .timeline-line {
                 position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                opacity: 0;
-                transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-                transform: scale(1.1);
-                filter: brightness(0.9);
-            }
-            .evo-photo.active {
-                opacity: 1;
-                transform: scale(1.05); /* Subtle zoom in */
-            }
-            
-            /* Photo Overlay Gradient */
-            .evo-photo-panel::after {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 40%);
-                pointer-events: none;
-            }
-
-            /* Right: scrollable milestones */
-            .evo-milestones { 
-                padding: 5vh 0 20vh; 
-                position: relative;
-            }
-
-            /* The Vertical Progress Line */
-            .evo-progress-line {
-                position: absolute;
-                left: 0;
+                left: 50%;
                 top: 0;
                 bottom: 0;
                 width: 2px;
-                background: #eee;
+                background: rgba(0,0,0,0.1);
+                transform: translateX(-50%);
                 z-index: 1;
             }
-            .evo-progress-fill {
+            .timeline-progress {
                 position: absolute;
-                left: 0;
                 top: 0;
+                left: 0;
                 width: 100%;
-                height: 0%;
                 background: var(--gold);
+                height: 0%;
                 transition: height 0.3s ease-out;
             }
 
-            .evo-milestone {
-                padding: 0 0 10rem 4rem;
+            /* Milestone Card */
+            .timeline-card {
                 position: relative;
-                opacity: 0.3;
-                transform: translateY(20px);
+                width: 45%;
+                margin-bottom: 6rem;
+                opacity: 0;
+                transform: translateY(50px);
                 transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
                 z-index: 2;
             }
-            .evo-milestone.active {
+            .timeline-card.active {
                 opacity: 1;
                 transform: translateY(0);
             }
-            
-            /* Dot on the line */
-            .evo-milestone::before {
-                content: '';
+
+            /* Left Side Cards */
+            .timeline-card:nth-child(odd) {
+                left: 0;
+            }
+            /* Right Side Cards */
+            .timeline-card:nth-child(even) {
+                left: 55%;
+            }
+
+            /* The Dot on the Line */
+            .timeline-dot {
                 position: absolute;
-                left: -5px;
-                top: 5px;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
+                top: 40px;
+                width: 20px;
+                height: 20px;
                 background: #fff;
-                border: 2px solid #ddd;
+                border: 3px solid #ddd;
+                border-radius: 50%;
                 z-index: 3;
                 transition: all 0.4s ease;
             }
-            .evo-milestone.active::before {
-                background: var(--gold);
-                border-color: var(--gold);
-                box-shadow: 0 0 0 6px rgba(184, 134, 11, 0.2);
-                transform: scale(1.2);
+            .timeline-card:nth-child(odd) .timeline-dot {
+                right: -11.5%; /* Position exactly on the center line */
+                transform: translateX(50%);
+            }
+            .timeline-card:nth-child(even) .timeline-dot {
+                left: -11.5%; /* Position exactly on the center line */
+                transform: translateX(-50%);
             }
 
-            .evo-year {
-                font-size: 0.75rem;
+            .timeline-card.active .timeline-dot {
+                border-color: var(--gold);
+                background: var(--gold);
+                box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.2);
+            }
+
+            /* Card Content Styling */
+            .timeline-content {
+                background: #fff;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+                border: 1px solid rgba(0,0,0,0.03);
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
+            }
+            .timeline-content:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            }
+
+            .timeline-img {
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                position: relative;
+            }
+            .timeline-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease;
+            }
+            .timeline-content:hover .timeline-img img {
+                transform: scale(1.05);
+            }
+
+            .timeline-text {
+                padding: 3rem;
+            }
+            .timeline-year {
+                font-size: 0.8rem;
                 font-weight: 800;
                 letter-spacing: 4px;
                 text-transform: uppercase;
-                margin-bottom: 1.5rem;
-                color: #999;
-                transition: color 0.4s ease;
+                color: var(--gold);
+                margin-bottom: 1rem;
             }
-            .evo-milestone.active .evo-year { color: var(--gold); }
-
-            .evo-milestone h4 { 
-                font-size: 2.2rem; 
-                color: #111; 
+            .timeline-text h4 {
+                font-size: 2.2rem;
+                color: #000;
                 margin-bottom: 1.5rem;
                 font-family: var(--font-serif);
                 line-height: 1.2;
             }
-            .evo-milestone p { 
-                font-size: 1.05rem; 
-                color: #666; 
-                line-height: 1.8; 
+            .timeline-text p {
+                font-size: 1.1rem;
+                color: #666;
+                line-height: 1.8;
                 margin: 0;
-                max-width: 450px;
             }
 
-            /* Mobile optimization - Premium Sticky Background Flow */
-            @media (max-width: 1024px) {
-                #journey { padding: 0 !important; background: #000 !important; }
-                .evo-wrap { grid-template-columns: 1fr; padding: 0; }
-                
-                /* Make photo panel sticky on mobile too */
-                .evo-photo-panel { 
-                    display: block;
-                    position: sticky;
-                    top: 0;
-                    width: 100%;
-                    height: 55vh; /* Half screen height for photo */
-                    margin-right: 0;
-                    border-radius: 0;
-                    z-index: 1;
+            /* Mobile Optimization */
+            @media (max-width: 992px) {
+                .timeline-line {
+                    left: 20px;
+                    transform: none;
                 }
-                .evo-photo-container { border-radius: 0 0 30px 30px; }
-                
-                .evo-milestones { 
-                    padding: 0 1rem 15vh; 
-                    z-index: 2;
-                    position: relative;
-                    margin-top: -8vh; /* Deeper overlap for depth */
+                .timeline-card {
+                    width: calc(100% - 60px);
+                    left: 60px !important;
+                    margin-bottom: 4rem;
                 }
-                
-                /* Mobile Vertical Connector Line */
-                .evo-milestones::after {
-                    content: '';
-                    position: absolute;
-                    left: 2rem;
-                    top: 0;
-                    bottom: 15vh;
-                    width: 2px;
-                    background: rgba(255, 255, 255, 0.1);
-                    z-index: -1;
+                .timeline-dot {
+                    left: -50px !important;
+                    transform: none !important;
                 }
-
-                .evo-milestone {
-                    padding: 3rem 2rem 3rem 3.5rem;
-                    background: rgba(255, 255, 255, 0.98);
-                    backdrop-filter: blur(20px);
-                    border-radius: 20px;
-                    margin-bottom: 2.5rem;
-                    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-                    opacity: 0.15;
-                    transform: scale(0.92);
-                    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-                    border: 1px solid rgba(255,255,255,0.1);
+                .timeline-img {
+                    height: 250px;
                 }
-                .evo-milestone.active {
-                    opacity: 1;
-                    transform: scale(1);
-                    box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 1px var(--gold);
+                .timeline-text {
+                    padding: 2rem;
                 }
-                
-                .evo-milestone::before { 
-                    left: -8px; 
-                    top: 3.8rem; 
-                    width: 16px; 
-                    height: 16px;
-                    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+                .timeline-text h4 {
+                    font-size: 1.8rem;
                 }
-                .evo-milestone h4 { font-size: 1.7rem; letter-spacing: -0.5px; }
-                .evo-year { margin-bottom: 0.8rem; font-size: 0.7rem; }
-                .evo-milestone p { font-size: 0.95rem; line-height: 1.7; }
-                
-                .evo-mobile-img { display: none !important; }
-                .evo-progress-line { display: none; } /* Use simple connector line instead */
-            }
-            @media (min-width: 1025px) {
-                .evo-mobile-img { display: none; }
             }
         </style>
 
-        <div class="evo-wrap">
-            <!-- LEFT: Sticky Photo Panel (Desktop) -->
-            <div class="evo-photo-panel">
-                <div class="evo-photo-container">
-                    <img class="evo-photo active" data-idx="0" src="https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=1000" alt="Foundation">
-                    <img class="evo-photo" data-idx="1" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" alt="Global Service">
-                    <img class="evo-photo" data-idx="2" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000" alt="Career Beginnings">
-                    <img class="evo-photo" data-idx="3" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1000" alt="Global Academics">
-                    <img class="evo-photo" data-idx="4" src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?auto=format&fit=crop&q=80&w=1000" alt="Leadership Impact">
-                    <img class="evo-photo" data-idx="5" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" alt="Professional Strategy">
-                    <img class="evo-photo" data-idx="6" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1000" alt="The Vision">
+        <div class="timeline-container">
+            <div class="timeline-line">
+                <div class="timeline-progress"></div>
+            </div>
+
+            <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <img src="https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=1000" alt="Foundation">
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">1996 – 2011 · Foundation</div>
+                        <h4>Early Life & Schooling</h4>
+                        <p>Born in India (1996). Proud alumnus of Mayo College boarding school (2008). Chess Champion & WazirChand Trophy winner (2011).</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- RIGHT: Milestones -->
-            <div class="evo-milestones">
-                <div class="evo-progress-line">
-                    <div class="evo-progress-fill"></div>
+            <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" alt="Global Service">
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2013 – 2017 · Global Service</div>
+                        <h4>Rise in Rotary International</h4>
+                        <p>RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract Representative & RI Atlanta Convention (2017).</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="evo-milestone active" data-idx="0">
-                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=1000"></div>
-                    <div class="evo-year">1996 – 2011 · Foundation</div>
-                    <h4>Early Life & Schooling</h4>
-                    <p>Born in India (1996). Proud alumnus of Mayo College boarding school (2008) — one of India's most prestigious institutions. Chess Champion & WazirChand Trophy winner (2011).</p>
+            <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000" alt="Career Beginnings">
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2015 · Career Beginnings</div>
+                        <h4>Early Professional Life</h4>
+                        <p>Entered the workforce and began his professional journey, establishing the foundation of his career alongside ongoing studies and service commitments.</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="evo-milestone" data-idx="1">
-                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"></div>
-                    <div class="evo-year">2013 – 2017 · Global Service</div>
-                    <h4>Rise in Rotary International</h4>
-                    <p>RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract Representative & RI Atlanta Convention (2017).</p>
+            <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1000" alt="Global Academics">
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2017 – 2021 · Global Academics</div>
+                        <h4>Simon Business School & MBA</h4>
+                        <p>B.Com (2017). Left India at age 23 (2019). MS Finance (2020). MBA Finance (2021) — Dean's List & Networking Coach.</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="evo-milestone" data-idx="2">
-                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000"></div>
-                    <div class="evo-year">2015 · Career Beginnings</div>
-                    <h4>Early Professional Life</h4>
-                    <p>Entered the workforce and began his professional journey, establishing the foundation of his career alongside ongoing studies and service commitments.</p>
+            <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <img src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?auto=format&fit=crop&q=80&w=1000" alt="Leadership Impact">
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2018 – 2020 · Leadership Impact</div>
+                        <h4>President, Rotaract South Asia</h4>
+                        <p>RI Toronto (2018). RI Hamburg & 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="evo-milestone" data-idx="3">
-                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1000"></div>
-                    <div class="evo-year">2017 – 2021 · Global Academics</div>
-                    <h4>Simon Business School & MBA</h4>
-                    <p>B.Com (2017). Left India at age 23 (2019). MS Finance (2020). MBA Finance (2021) — Dean's List & Networking Coach.</p>
+            <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" alt="Professional Strategy">
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2021 Onward · Strategy</div>
+                        <h4>Professional Excellence</h4>
+                        <p>Experience at Grant Thornton, Morgan Stanley, and Boutique M&A firms in NY. Career Advisor & AD at University of Rochester.</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="evo-milestone" data-idx="4">
-                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?auto=format&fit=crop&q=80&w=1000"></div>
-                    <div class="evo-year">2018 – 2020 · Leadership Impact</div>
-                    <h4>President, Rotaract South Asia</h4>
-                    <p>RI Toronto (2018). RI Hamburg & 'Best DRR' Award (2019). Led 200,000+ members across 8 countries. Chairman, Rotasia Delhi 2020.</p>
-                </div>
-
-                <div class="evo-milestone" data-idx="5">
-                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"></div>
-                    <div class="evo-year">2021 Onward · Strategy</div>
-                    <h4>Professional Excellence</h4>
-                    <p>Experience at Grant Thornton, Morgan Stanley (Manhattan), and Boutique M&A firms in NY. Career Advisor & AD at University of Rochester.</p>
-                </div>
-
-                <div class="evo-milestone" data-idx="6">
-                    <div class="evo-mobile-img"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1000"></div>
-                    <div class="evo-year">2027 · The Doctoral Vision</div>
-                    <h4>Education 2.0 & Beyond</h4>
-                    <p>Pursuing Ed.D. Award: Education 2.0 (Las Vegas). Co-Chair: HE Students Association. Alumni of Simon & Mayo College.</p>
+            <div class="timeline-card">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1000" alt="The Vision">
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2027 · The Doctoral Vision</div>
+                        <h4>Education 2.0 & Beyond</h4>
+                        <p>Pursuing Ed.D. Award: Education 2.0 (Las Vegas). Co-Chair: HE Students Association. Alumni of Simon & Mayo College.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <script>
-        (function() {
-            const milestones = document.querySelectorAll('.evo-milestone');
-            const photos = document.querySelectorAll('.evo-photo');
-            const progressFill = document.querySelector('.evo-progress-fill');
-            const wrap = document.querySelector('.evo-wrap');
-
-            const updateActive = () => {
-                let activeIdx = 0;
-                const scrollPos = window.scrollY + window.innerHeight / 2;
-
-                milestones.forEach((m, idx) => {
-                    const rect = m.getBoundingClientRect();
-                    const absTop = rect.top + window.scrollY;
-                    if (scrollPos >= absTop) {
-                        activeIdx = idx;
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.timeline-card');
+            const progress = document.querySelector('.timeline-progress');
+            const timelineContainer = document.querySelector('.timeline-container');
+            
+            const updateTimeline = () => {
+                if (!timelineContainer) return;
+                const scrollPos = window.scrollY + window.innerHeight * 0.8;
+                const containerRect = timelineContainer.getBoundingClientRect();
+                const absoluteTop = containerRect.top + window.scrollY;
+                
+                cards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top + window.scrollY;
+                    if (scrollPos > cardTop + 100) {
+                        card.classList.add('active');
                     }
                 });
 
-                milestones.forEach((m, idx) => {
-                    m.classList.toggle('active', idx === activeIdx);
-                });
-                photos.forEach((p, idx) => {
-                    p.classList.toggle('active', idx === activeIdx);
-                });
-
-                // Update Progress Fill
-                const wrapRect = document.querySelector('.evo-milestones').getBoundingClientRect();
-                const totalHeight = wrapRect.height;
-                const relativeScroll = Math.max(0, Math.min(totalHeight, scrollPos - (wrapRect.top + window.scrollY)));
-                const pct = (relativeScroll / totalHeight) * 100;
-                progressFill.style.height = pct + '%';
+                const relativeScroll = window.scrollY + window.innerHeight / 2 - absoluteTop;
+                let pct = (relativeScroll / containerRect.height) * 100;
+                pct = Math.max(0, Math.min(100, pct));
+                if (progress) {
+                    progress.style.height = pct + '%';
+                }
             };
 
-            window.addEventListener('scroll', updateActive);
-            updateActive(); // Initial state
-        })();
+            window.addEventListener('scroll', updateTimeline);
+            updateTimeline();
+        });
         </script>
     </section>
 
