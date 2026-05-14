@@ -1065,19 +1065,27 @@ $status = $_GET['status'] ?? null;
         </div>
 
         <style>
-            .pillar-edu:hover {
-                box-shadow: 0 30px 60px rgba(0, 71, 171, 0.1);
-                transform: translateY(-10px);
-            }
+            .pillar-edu:hover { box-shadow: 0 30px 60px rgba(0, 71, 171, 0.1); transform: translateY(-10px); }
+            .pillar-prof:hover { box-shadow: 0 30px 60px rgba(196, 30, 58, 0.1); transform: translateY(-10px); }
+            .pillar-social:hover { box-shadow: 0 30px 60px rgba(46, 139, 87, 0.1); transform: translateY(-10px); }
 
-            .pillar-prof:hover {
-                box-shadow: 0 30px 60px rgba(196, 30, 58, 0.1);
-                transform: translateY(-10px);
-            }
-
-            .pillar-social:hover {
-                box-shadow: 0 30px 60px rgba(46, 139, 87, 0.1);
-                transform: translateY(-10px);
+            @media (max-width: 992px) {
+                .about-pillars {
+                    display: flex !important;
+                    flex-wrap: nowrap;
+                    overflow-x: auto;
+                    scroll-snap-type: x mandatory;
+                    gap: 1.5rem !important;
+                    padding-bottom: 2rem;
+                    -webkit-overflow-scrolling: touch;
+                    scrollbar-width: none;
+                }
+                .about-pillars::-webkit-scrollbar { display: none; }
+                .pillar-card {
+                    min-width: 85vw;
+                    scroll-snap-align: center;
+                    margin: 0 !important;
+                }
             }
         </style>
     </section>
@@ -1255,33 +1263,66 @@ $status = $_GET['status'] ?? null;
             }
 
             /* Mobile Optimization */
+            /* Mobile Optimization (Accordion Timeline) */
             @media (max-width: 992px) {
-                .timeline-line {
-                    left: 20px;
-                    transform: none;
-                }
+                .timeline-line { display: none; }
 
                 .timeline-card {
-                    width: calc(100% - 60px);
-                    left: 60px !important;
-                    margin-bottom: 4rem;
+                    width: 100%;
+                    left: 0 !important;
+                    margin-bottom: 1rem;
                 }
 
-                .timeline-dot {
-                    left: -50px !important;
-                    transform: none !important;
+                .timeline-dot { display: none !important; }
+
+                .timeline-content {
+                    border: 1px solid rgba(0,0,0,0.05);
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+                    border-radius: 8px;
+                    overflow: hidden;
+                    background: #fff;
+                    cursor: pointer;
+                    position: relative;
+                    transition: all 0.3s ease;
                 }
 
-                .timeline-img {
-                    height: 250px;
+                .timeline-img,
+                .timeline-text p {
+                    display: none;
                 }
 
                 .timeline-text {
-                    padding: 2rem;
+                    padding: 1.5rem 3rem 1.5rem 1.5rem;
+                    position: relative;
                 }
 
-                .timeline-text h4 {
-                    font-size: 1.8rem;
+                .timeline-text::after {
+                    content: '+';
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 2rem;
+                    color: var(--theme-color);
+                    transition: 0.3s;
+                }
+
+                .timeline-card.accordion-open .timeline-text::after {
+                    content: '−';
+                }
+
+                .timeline-card.accordion-open .timeline-img,
+                .timeline-card.accordion-open .timeline-text p {
+                    display: block;
+                    animation: fadeInAccordion 0.4s ease forwards;
+                }
+
+                .timeline-year { margin-bottom: 0.5rem; font-size: 0.7rem; }
+                .timeline-text h4 { margin-bottom: 0; font-size: 1.4rem; padding-right: 10px; }
+
+                @keyframes fadeInAccordion {
+                    from { opacity: 0; transform: translateY(-10px); }
+                    to { opacity: 1; transform: translateY(0); }
                 }
             }
         </style>
@@ -1433,6 +1474,20 @@ $status = $_GET['status'] ?? null;
 
                 window.addEventListener('scroll', updateTimeline);
                 updateTimeline();
+
+                // Mobile Accordion Logic
+                if (window.innerWidth <= 992) {
+                    cards.forEach(card => {
+                        card.addEventListener('click', function() {
+                            // Close others
+                            cards.forEach(c => {
+                                if(c !== this) c.classList.remove('accordion-open');
+                            });
+                            // Toggle current
+                            this.classList.toggle('accordion-open');
+                        });
+                    });
+                }
             });
         </script>
     </section>

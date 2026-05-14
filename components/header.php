@@ -76,7 +76,10 @@
             body { border-width: 2px; }
         }
 
-        h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; }
+        h1 { font-family: var(--font-serif); font-weight: 700; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }
+        h2 { font-family: var(--font-serif); font-weight: 700; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.2; }
+        h3 { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.5rem, 3vw, 2.5rem); }
+        h4 { font-family: var(--font-serif); font-weight: 700; }
 
 
 
@@ -104,15 +107,39 @@
 
         @media (max-width: 992px) {
             .nav-links { 
-                position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; 
-                background: #000; flex-direction: column; justify-content: center; 
-                align-items: center; transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); 
+                position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
+                background: rgba(0, 0, 0, 0.7); 
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                flex-direction: column; justify-content: center; 
+                align-items: center; transition: opacity 0.4s ease; 
                 z-index: 1001; 
                 display: flex !important;
+                opacity: 0;
+                pointer-events: none;
             }
-            .nav-links.active { right: 0; }
-            .menu-toggle { display: block; z-index: 1002; }
-            .nav-links a { font-size: 1.2rem; }
+            .nav-links.active { 
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .nav-links li {
+                margin: 1.5rem 0;
+                transform: translateY(20px);
+                opacity: 0;
+                transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+            .nav-links.active li {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+
+            .menu-toggle { display: block; z-index: 1002; position: relative; }
+            .menu-toggle.active svg { stroke: #fff; }
+            .nav-links a { font-size: 2.2rem; font-family: var(--font-serif); text-transform: none; letter-spacing: 0px; color: #fff; font-weight: 400; }
         }
 
         /* Common Book Components */
@@ -280,6 +307,7 @@
         if(menuToggle) {
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
             });
         }
         
@@ -287,6 +315,7 @@
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
             });
         });
     </script>
