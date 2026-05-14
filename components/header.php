@@ -49,15 +49,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Only show custom cursor on desktops */
-        @media (hover: hover) {
-            * { cursor: none !important; }
-            .cursor { display: flex !important; }
-        }
-        
-        @media (hover: none) {
-            .cursor { display: none !important; }
-        }
+
 
         body { 
             font-family: var(--font-sans); 
@@ -77,16 +69,7 @@
 
         h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; }
 
-        /* Creative Opaque Feather Quill Cursor */
-        .cursor {
-            position: fixed; width: 35px; height: 35px; pointer-events: none; z-index: 9999;
-            transform: translate(-8%, -92%); transition: transform 0.1s ease-out;
-            display: none; align-items: center; justify-content: center;
-            mix-blend-mode: difference; color: #fff;
-        }
-        .pen-nib { width: 100%; height: 100%; transform: rotate(0deg); transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
-        
-        .cursor.hovering .pen-nib { transform: rotate(-15deg) scale(1.2); }
+
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
 
@@ -178,19 +161,7 @@
 </head>
 <body>
     <div id="ambient-canvas"></div>
-    <div class="cursor">
-        <svg class="pen-nib peacock-feather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 22 Q10 14 21 3" stroke-width="1.5"/>
-            <path d="M21 3 C24 8 19 14 13 14 C10 10 15 4 21 3 Z" fill="currentColor" fill-opacity="0.2"/>
-            <circle cx="17" cy="7" r="1.5" fill="currentColor" stroke="none"/>
-            <path d="M16 8 Q12 10 8 15" />
-            <path d="M13 11 Q9 13 5 18" />
-            <path d="M10 14 Q7 16 3 20" />
-            <path d="M16 8 Q14 4 9 0" />
-            <path d="M13 11 Q11 7 6 3" />
-            <path d="M10 14 Q8 11 4 8" />
-        </svg>
-    </div>
+
 
     <!-- Gold Dust Particles Canvas -->
     <canvas id="goldDust" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.6;"></canvas>

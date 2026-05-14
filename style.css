@@ -432,18 +432,7 @@ nav {
   transform: translateY(0);
 }
 
-/* Custom Cursor (Optional Fun Element) */
-.custom-cursor {
-  width: 20px;
-  height: 20px;
-  background: var(--color-secondary);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-  mix-blend-mode: difference;
-}
+
 
 /* Responsive */
 @media (max-width: 992px) {

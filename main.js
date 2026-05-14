@@ -73,20 +73,7 @@ buttons.forEach(btn => {
     });
 });
 
-// Custom Cursor
-const cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-document.body.appendChild(cursor);
 
-window.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(3)');
-    el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
-});
 
 // Newsletter form handling
 const newsletterForm = document.querySelector('.newsletter-form');
