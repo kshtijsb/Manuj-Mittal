@@ -345,7 +345,8 @@ $status = $_GET['status'] ?? null;
     .flip-card {
         width: 100%;
         max-width: 480px;
-        height: 780px; /* Increased height to give breathing room */
+        height: 780px;
+        /* Increased height to give breathing room */
         perspective: 1200px;
         cursor: pointer;
     }
@@ -390,7 +391,8 @@ $status = $_GET['status'] ?? null;
         overflow: hidden;
         margin-bottom: 2rem;
         position: relative;
-        flex-shrink: 0; /* Prevents shrinking if content exceeds card height */
+        flex-shrink: 0;
+        /* Prevents shrinking if content exceeds card height */
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     }
 
@@ -684,9 +686,13 @@ $status = $_GET['status'] ?? null;
                             <div class="hero-image-box shimmer" style="animation: breathe 4s ease-in-out infinite;">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>">
                             </div>
-                            <h2 style="font-size: 2.2rem; font-family: var(--font-serif); margin-bottom: 0; color: #111; line-height: 1.1;">
-                                <?php echo $books[0]['title']; ?></h2>
-                            <p style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 2rem;">HOVER TO READ MORE</p>
+                            <h2
+                                style="font-size: 2.2rem; font-family: var(--font-serif); margin-bottom: 0; color: #111; line-height: 1.1;">
+                                <?php echo $books[0]['title']; ?>
+                            </h2>
+                            <p
+                                style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 2rem;">
+                                HOVER TO READ MORE</p>
                         </div>
 
                         <!-- BACK: Synopsis + Order Now -->
@@ -718,19 +724,26 @@ $status = $_GET['status'] ?? null;
                             <div class="hero-image-box shimmer">
                                 <img src="assets/author.png" alt="Manuj Mittal" style="object-position: center;">
                             </div>
-                            <h2 style="font-size: 2.2rem; font-family: var(--font-serif); color: #111; margin-bottom: 0; line-height: 1.1;">
+                            <h2
+                                style="font-size: 2.2rem; font-family: var(--font-serif); color: #111; margin-bottom: 0; line-height: 1.1;">
                                 Manuj Mittal</h2>
                             <div class="author-simple-stats">
                                 <div class="stat">
-                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">Expertise</h4>
+                                    <h4
+                                        style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">
+                                        Expertise</h4>
                                     <p style="font-size: 0.9rem; font-weight: 800; color: #000;">Finance & Strategy</p>
                                 </div>
                                 <div class="stat">
-                                    <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">Academic</h4>
+                                    <h4
+                                        style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">
+                                        Academic</h4>
                                     <p style="font-size: 0.9rem; font-weight: 800; color: #000;">MBA | Ed.D</p>
                                 </div>
                             </div>
-                            <p style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 2rem;">HOVER TO DISCOVER</p>
+                            <p
+                                style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 1rem;">
+                                HOVER TO DISCOVER</p>
                         </div>
 
                         <!-- BACK: Bio + biography link -->
@@ -806,7 +819,8 @@ $status = $_GET['status'] ?? null;
                                 <div style="font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 0.5rem;">MANUJ MITTAL
                                 </div>
                                 <div style="font-family: var(--font-serif); font-size: 1rem;">
-                                    <?php echo $books[0]['title']; ?></div>
+                                    <?php echo $books[0]['title']; ?>
+                                </div>
                             </div>
                         </div>
                         <div
