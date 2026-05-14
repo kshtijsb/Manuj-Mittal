@@ -345,7 +345,7 @@ $status = $_GET['status'] ?? null;
     .flip-card {
         width: 100%;
         max-width: 480px;
-        height: 700px;
+        height: 780px; /* Increased height to give breathing room */
         perspective: 1200px;
         cursor: pointer;
     }
@@ -416,13 +416,21 @@ $status = $_GET['status'] ?? null;
     }
 
     .author-simple-stats {
-        display: flex;
-        justify-content: center;
-        gap: 2.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
         margin-top: 2rem;
-        padding-top: 2rem;
+        padding-top: 1.5rem;
         border-top: 1px solid rgba(0, 0, 0, 0.07);
         width: 100%;
+    }
+
+    .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .author-actions {
@@ -712,7 +720,7 @@ $status = $_GET['status'] ?? null;
                             </div>
                             <h2 style="font-size: 2.2rem; font-family: var(--font-serif); color: #111; margin-bottom: 0; line-height: 1.1;">
                                 Manuj Mittal</h2>
-                            <div class="author-simple-stats" style="margin-top: 1.5rem; padding-top: 1.5rem;">
+                            <div class="author-simple-stats">
                                 <div class="stat">
                                     <h4 style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">Expertise</h4>
                                     <p style="font-size: 0.9rem; font-weight: 800; color: #000;">Finance & Strategy</p>
