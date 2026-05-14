@@ -179,8 +179,16 @@
 <body>
     <div id="ambient-canvas"></div>
     <div class="cursor">
-        <svg class="pen-nib" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 2C22 2 14.36 3.03 9.47 7.92C5.9 11.5 4.31 16.57 4 18L2 22L6 20C7.43 19.69 12.5 18.1 16.08 14.53C20.97 9.64 22 2 22 2 M14.34 13.92C12.39 15.87 9.5 17 9.5 17C9.5 17 10.63 14.11 12.58 12.16C13.56 11.18 14.5 10.5 14.5 10.5C14.5 10.5 15.32 12.94 14.34 13.92Z" />
+        <svg class="pen-nib peacock-feather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 22 Q10 14 21 3" stroke-width="1.5"/>
+            <path d="M21 3 C24 8 19 14 13 14 C10 10 15 4 21 3 Z" fill="currentColor" fill-opacity="0.2"/>
+            <circle cx="17" cy="7" r="1.5" fill="currentColor" stroke="none"/>
+            <path d="M16 8 Q12 10 8 15" />
+            <path d="M13 11 Q9 13 5 18" />
+            <path d="M10 14 Q7 16 3 20" />
+            <path d="M16 8 Q14 4 9 0" />
+            <path d="M13 11 Q11 7 6 3" />
+            <path d="M10 14 Q8 11 4 8" />
         </svg>
     </div>
 
