@@ -882,36 +882,85 @@ $status = $_GET['status'] ?? null;
             }
         </script>
 
-        <!-- Mobile Hero (Sticky Action Concept) -->
+        <!-- Simple Mobile Hero -->
         <div class="hero-mobile">
             <style>
                 .hero-mobile { display: none; }
-                .mobile-sticky-action { display: none; }
                 
                 @media (max-width: 992px) {
                     .hero-mobile {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        justify-content: flex-start;
-                        padding: 3rem 1.5rem 8rem; /* Extra bottom padding for the sticky bar */
+                        padding: 3rem 1.5rem 4rem;
                         text-align: center;
                         width: 100%;
-                        min-height: 100vh;
                         background: var(--bg);
-                        position: relative;
+                    }
+
+                    .hero-mobile .featured-tag {
+                        font-size: 0.65rem;
+                        letter-spacing: 4px;
+                        color: var(--gold);
+                        margin-bottom: 1.5rem;
+                        text-transform: uppercase;
+                        font-weight: 800;
+                    }
+
+                    .hero-mobile .book-cover {
+                        width: 100%;
+                        max-width: 240px;
+                        height: auto;
+                        aspect-ratio: 2/3;
+                        object-fit: cover;
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+                        border-radius: 4px;
+                        margin-bottom: 2rem;
+                    }
+
+                    .hero-mobile h2 {
+                        font-family: var(--font-serif);
+                        font-size: 2.2rem;
+                        margin-bottom: 1.5rem;
+                        color: #111;
+                        line-height: 1.1;
+                    }
+
+                    .mobile-primary-btn {
+                        background: #000;
+                        color: #fff;
+                        text-align: center;
+                        padding: 1.2rem;
+                        border-radius: 4px;
+                        font-size: 0.85rem;
+                        font-weight: 800;
+                        letter-spacing: 2px;
+                        text-decoration: none;
+                        width: 100%;
+                        max-width: 260px;
+                        display: block;
+                        margin: 0 auto 4rem auto;
+                    }
+
+                    .mobile-author-section {
+                        border-top: 1px solid rgba(0,0,0,0.05);
+                        padding-top: 3rem;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
                     }
 
                     .mobile-author-badge {
                         display: flex;
                         align-items: center;
                         gap: 1rem;
-                        margin-bottom: 2rem;
+                        margin-bottom: 1.5rem;
                     }
 
                     .mobile-author-badge img {
-                        width: 40px;
-                        height: 40px;
+                        width: 50px;
+                        height: 50px;
                         border-radius: 50%;
                         object-fit: cover;
                         object-position: center top;
@@ -920,21 +969,8 @@ $status = $_GET['status'] ?? null;
                     .mobile-author-badge span {
                         font-family: var(--font-serif);
                         font-weight: 700;
-                        font-size: 1.1rem;
+                        font-size: 1.2rem;
                         color: #111;
-                    }
-
-                    .hero-mobile .book-cover {
-                        width: 100vw;
-                        max-width: none;
-                        height: auto;
-                        aspect-ratio: 2/3;
-                        object-fit: cover;
-                        box-shadow: none;
-                        border-radius: 0;
-                        margin-bottom: 2rem;
-                        margin-left: -1.5rem; /* Bleed past container padding */
-                        margin-right: -1.5rem;
                     }
 
                     .hero-mobile p {
@@ -945,38 +981,12 @@ $status = $_GET['status'] ?? null;
                         max-width: 90%;
                     }
 
-                    .mobile-sticky-action {
-                        display: block;
-                        position: fixed;
-                        bottom: 20px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        width: calc(100% - 40px);
-                        max-width: 400px;
-                        background: #000;
-                        color: #fff;
-                        text-align: center;
-                        padding: 1.2rem;
-                        border-radius: 8px;
-                        font-size: 0.9rem;
-                        font-weight: 800;
-                        letter-spacing: 2px;
-                        text-decoration: none;
-                        z-index: 1000;
-                        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-                        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                    }
-
-                    .mobile-sticky-action:active {
-                        transform: translateX(-50%) scale(0.95);
-                    }
-
-                    .mobile-btn-secondary {
+                    .mobile-secondary-btn {
                         background: transparent;
                         color: #000;
                         border: 1px solid var(--gold);
                         padding: 1rem;
-                        border-radius: 8px;
+                        border-radius: 4px;
                         text-decoration: none;
                         font-size: 0.85rem;
                         letter-spacing: 2px;
@@ -989,25 +999,23 @@ $status = $_GET['status'] ?? null;
                 }
             </style>
 
-            <!-- Small elegant author badge -->
-            <div class="mobile-author-badge">
-                <img src="assets/author.png" alt="Manuj Mittal">
-                <span>Manuj Mittal</span>
+            <!-- Book Focus Section -->
+            <div class="featured-tag">Featured Work</div>
+            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover">
+            <h2><?php echo $books[0]['title']; ?></h2>
+            <a href="store.php" class="mobile-primary-btn">PRE-ORDER NOW</a>
+
+            <!-- Author Intro Section -->
+            <div class="mobile-author-section">
+                <div class="mobile-author-badge">
+                    <img src="assets/author.png" alt="Manuj Mittal">
+                    <span>Manuj Mittal</span>
+                </div>
+                <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
+                <a href="biography.php" class="mobile-secondary-btn">FULL BIOGRAPHY</a>
             </div>
 
-            <!-- Author Bio -->
-            <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
-            <a href="biography.php" class="mobile-btn-secondary" style="margin-bottom: 4rem;">FULL BIOGRAPHY</a>
-
-            <!-- Book Section -->
-            <div style="font-size: 0.65rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Featured Work</div>
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 2rem; color: #111; line-height: 1.1;"><?php echo $books[0]['title']; ?></h2>
-            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover">
-
         </div>
-
-        <!-- Sticky Action Bar (Global Mobile Only) -->
-        <a href="store.php" class="mobile-sticky-action">PRE-ORDER NOW</a>
     </section>
 
     <!-- Executive Mobile Layout Logic -->
