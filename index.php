@@ -882,7 +882,7 @@ $status = $_GET['status'] ?? null;
             }
         </script>
 
-        <!-- Simple Mobile Hero -->
+        <!-- Apple Executive Mobile Hero -->
         <div class="hero-mobile">
             <style>
                 .hero-mobile { display: none; }
@@ -891,130 +891,86 @@ $status = $_GET['status'] ?? null;
                     .hero-mobile {
                         display: flex;
                         flex-direction: column;
-                        align-items: center;
-                        padding: 3rem 1.5rem 4rem;
-                        text-align: center;
+                        align-items: flex-start;
+                        padding: 4rem 2rem 5rem;
+                        text-align: left;
                         width: 100%;
-                        background: var(--bg);
+                        background: #f5f5f7;
                     }
 
-                    .hero-mobile .featured-tag {
-                        font-size: 0.65rem;
-                        letter-spacing: 4px;
-                        color: var(--gold);
-                        margin-bottom: 1.5rem;
-                        text-transform: uppercase;
+                    .hero-mobile-title {
+                        font-family: var(--font-sans);
+                        font-size: 3.8rem;
                         font-weight: 800;
-                    }
-
-                    .hero-mobile .book-cover {
-                        width: 100%;
-                        max-width: 240px;
-                        height: auto;
-                        aspect-ratio: 2/3;
-                        object-fit: cover;
-                        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-                        border-radius: 4px;
+                        letter-spacing: -2px;
+                        color: #111;
+                        line-height: 1;
                         margin-bottom: 2rem;
                     }
 
-                    .hero-mobile h2 {
-                        font-family: var(--font-serif);
-                        font-size: 2.2rem;
-                        margin-bottom: 1.5rem;
-                        color: #111;
-                        line-height: 1.1;
+                    .hero-mobile-portrait {
+                        width: 100%;
+                        height: 400px;
+                        object-fit: cover;
+                        object-position: center 20%;
+                        border-radius: 24px;
+                        margin-bottom: 2rem;
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
                     }
 
-                    .mobile-primary-btn {
+                    .hero-mobile-desc {
+                        font-family: var(--font-sans);
+                        font-size: 1.15rem;
+                        color: #444;
+                        font-weight: 400;
+                        line-height: 1.6;
+                        margin-bottom: 3rem;
+                    }
+
+                    .hero-mobile-buttons {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        gap: 1rem;
+                    }
+
+                    .btn-apple-primary {
                         background: #000;
                         color: #fff;
                         text-align: center;
                         padding: 1.2rem;
-                        border-radius: 4px;
-                        font-size: 0.85rem;
-                        font-weight: 800;
-                        letter-spacing: 2px;
+                        border-radius: 50px;
+                        font-size: 1rem;
+                        font-weight: 600;
                         text-decoration: none;
                         width: 100%;
-                        max-width: 260px;
-                        display: block;
-                        margin: 0 auto 4rem auto;
+                        letter-spacing: 0;
                     }
 
-                    .mobile-author-section {
-                        border-top: 1px solid rgba(0,0,0,0.05);
-                        padding-top: 3rem;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                    }
-
-                    .mobile-author-badge {
-                        display: flex;
-                        align-items: center;
-                        gap: 1rem;
-                        margin-bottom: 1.5rem;
-                    }
-
-                    .mobile-author-badge img {
-                        width: 50px;
-                        height: 50px;
-                        border-radius: 50%;
-                        object-fit: cover;
-                        object-position: center top;
-                    }
-
-                    .mobile-author-badge span {
-                        font-family: var(--font-serif);
-                        font-weight: 700;
-                        font-size: 1.2rem;
-                        color: #111;
-                    }
-
-                    .hero-mobile p {
-                        font-size: 1.05rem;
-                        color: #555;
-                        margin-bottom: 2rem;
-                        line-height: 1.6;
-                        max-width: 90%;
-                    }
-
-                    .mobile-secondary-btn {
+                    .btn-apple-secondary {
                         background: transparent;
                         color: #000;
-                        border: 1px solid var(--gold);
-                        padding: 1rem;
-                        border-radius: 4px;
+                        border: 2px solid #ddd;
+                        text-align: center;
+                        padding: 1.2rem;
+                        border-radius: 50px;
+                        font-size: 1rem;
+                        font-weight: 600;
                         text-decoration: none;
-                        font-size: 0.85rem;
-                        letter-spacing: 2px;
-                        font-weight: 700;
                         width: 100%;
-                        max-width: 260px;
-                        display: block;
-                        margin: 0 auto;
+                        letter-spacing: 0;
                     }
                 }
             </style>
 
-            <!-- Book Focus Section -->
-            <div class="featured-tag">Featured Work</div>
-            <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="book-cover">
-            <h2><?php echo $books[0]['title']; ?></h2>
-            <a href="store.php" class="mobile-primary-btn">PRE-ORDER NOW</a>
-
-            <!-- Author Intro Section -->
-            <div class="mobile-author-section">
-                <div class="mobile-author-badge">
-                    <img src="assets/author.png" alt="Manuj Mittal">
-                    <span>Manuj Mittal</span>
-                </div>
-                <p>Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
-                <a href="biography.php" class="mobile-secondary-btn">FULL BIOGRAPHY</a>
+            <h1 class="hero-mobile-title">Manuj<br>Mittal.</h1>
+            <img src="assets/author.png" alt="Manuj Mittal" class="hero-mobile-portrait">
+            <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
+            
+            <div class="hero-mobile-buttons">
+                <a href="biography.php" class="btn-apple-primary">Read Full Story</a>
+                <a href="store.php" class="btn-apple-secondary">The New Book</a>
             </div>
-
         </div>
     </section>
 

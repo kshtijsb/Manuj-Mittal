@@ -38,76 +38,102 @@ include 'components/header.php';
                 </p>
             </div>
 
-            <!-- Professional & Academic Pillars -->
-            <div class="bio-pillars" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 8rem; padding: 5rem; background: #fafafa; border-radius: 4px; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.02; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+            <!-- Apple Bento Box Layout -->
+            <style>
+                .bento-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.5rem;
+                    margin-bottom: 6rem;
+                }
+                .bento-item {
+                    background: #f5f5f7;
+                    border-radius: 24px;
+                    padding: 2.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: relative;
+                    overflow: hidden;
+                }
+                .bento-wide { grid-column: span 2; }
+                .bento-title {
+                    font-size: 0.8rem;
+                    font-weight: 800;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: var(--gold);
+                    margin-bottom: 1.5rem;
+                }
+                .bento-text {
+                    font-size: 1.15rem;
+                    color: #111;
+                    line-height: 1.6;
+                    font-weight: 600;
+                }
+                .bento-list { list-style: none; padding: 0; margin: 0; }
+                .bento-list li {
+                    font-size: 1.05rem;
+                    color: #444;
+                    margin-bottom: 0.8rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                .bento-list li::before {
+                    content: '';
+                    display: inline-block;
+                    width: 6px;
+                    height: 6px;
+                    background: var(--gold);
+                    border-radius: 50%;
+                }
                 
-                <div class="pillar" style="position: relative; z-index: 2;">
-                    <h3 style="color: var(--color-gold); margin-bottom: 2rem; text-transform: uppercase; font-size: 0.75rem; font-weight: 800; letter-spacing: 4px;">Experience</h3>
-                    <ul style="list-style: none; font-size: 1.05rem; color: #333; padding: 0;">
-                        <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--color-gold);">•</span> Grant Thornton
-                        </li>
-                        <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--color-gold);">•</span> Morgan Stanley
-                        </li>
-                        <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--color-gold);">•</span> Rotary International
-                        </li>
-                        <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--color-gold);">•</span> Alumnus of Mayo College
-                        </li>
+                @media (max-width: 768px) {
+                    .bento-grid { grid-template-columns: 1fr; gap: 1rem; }
+                    .bento-wide { grid-column: span 1; }
+                    .bento-item { padding: 2rem; border-radius: 20px; }
+                }
+            </style>
+
+            <div class="bento-grid reveal">
+                <!-- Quote Box (Wide) -->
+                <div class="bento-item bento-wide" style="background: #000; color: #fff;">
+                    <div class="bento-title" style="color: #fff; opacity: 0.5;">The Philosophy</div>
+                    <div class="bento-text" style="color: #fff; font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; font-weight: 400;">
+                        "Leadership is not defined by age, but is shaped by attitude. It is not determined by titles but by the decisions one makes."
+                    </div>
+                </div>
+
+                <!-- Experience Box -->
+                <div class="bento-item">
+                    <div class="bento-title">Experience</div>
+                    <ul class="bento-list">
+                        <li>Grant Thornton</li>
+                        <li>Morgan Stanley</li>
+                        <li>Rotary International</li>
+                        <li>Alumnus of Mayo College</li>
                     </ul>
                 </div>
-                <div class="pillar" style="position: relative; z-index: 2;">
-                    <h3 style="color: var(--color-gold); margin-bottom: 2rem; text-transform: uppercase; font-size: 0.75rem; font-weight: 800; letter-spacing: 4px;">Academic</h3>
-                    <ul style="list-style: none; font-size: 1.05rem; color: #333; padding: 0;">
-                        <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--color-gold);">•</span> Master’s in Finance
-                        </li>
-                        <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--color-gold);">•</span> MBA, Simon Business School (NY)
-                        </li>
-                        <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--color-gold);">•</span> Ed.D Candidate, University of Rochester
-                        </li>
+
+                <!-- Academic Box -->
+                <div class="bento-item">
+                    <div class="bento-title">Academic</div>
+                    <ul class="bento-list">
+                        <li>Master’s in Finance</li>
+                        <li>MBA, Simon Business School</li>
+                        <li>Ed.D Candidate, Univ of Rochester</li>
                     </ul>
                 </div>
-            </div>
 
-            <div class="bio-text-block" style="font-size: 1.2rem; margin-bottom: 8rem; line-height: 1.8; color: #444;">
-                <p style="margin-bottom: 3rem;">
-                    Manuj has spoken at conventions around the world and has been recognized on international platforms for his contributions to the field of education. He mentors students and entrepreneurs across the United States and continues to build platforms that encourage principled leadership and strategic thinking.
-                </p>
-                <p>
-                    Currently residing in Rochester, New York, USA, Manuj continues to bridge the gap between global business practice and academic research, fostering a global, practice-driven perspective in everything he undertakes.
-                </p>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="bio-footer-cta reveal" style="text-align: center; border-top: 1px solid #eee; padding-top: 100px; margin-top: 100px;">
-                <h4 style="font-size: 2rem; margin-bottom: 2rem; font-family: var(--font-serif);">Connect with Manuj</h4>
-                <p style="margin-bottom: 4rem; color: #666; letter-spacing: 1px;">For speaking engagements, mentorship, or literary inquiries.</p>
-                <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-                    <a href="mailto:author@manujmittal.com" class="btn btn-primary" style="background: #000; color: #fff; padding: 1.5rem 4rem; text-decoration: none; font-weight: 800; letter-spacing: 3px; font-size: 0.8rem; transition: 0.4s;">SEND AN EMAIL</a>
-                    <a href="index.php" style="color: #000; text-decoration: none; font-weight: 800; letter-spacing: 3px; border-bottom: 2px solid var(--color-gold); padding-bottom: 5px; font-size: 0.8rem; transition: 0.4s;">BACK TO HOME</a>
+                <!-- Global Reach Box (Wide) -->
+                <div class="bento-item bento-wide">
+                    <div class="bento-title">Global Impact</div>
+                    <div class="bento-text" style="font-weight: 400;">
+                        Recognized on international platforms for contributions to education. Mentors students and entrepreneurs across the United States, fostering principled leadership.
+                    </div>
                 </div>
             </div>
-
-        </div>
-    </div>
-</section>
-
-<style>
-    @media (max-width: 992px) {
-        .bio-header-grid { grid-template-columns: 1fr !important; gap: 4rem !important; text-align: center; }
-        .bio-header-left { order: 2; }
-        .bio-portrait-container { order: 1; margin: 0 auto; width: 80%; }
-        .bio-portrait-frame { height: 400px !important; }
-        .bio-intro-lead { padding-left: 0 !important; border-left: none !important; }
-        .bio-pillars { grid-template-columns: 1fr !important; padding: 3rem !important; gap: 3rem !important; }
-    }
-</style>
 
         </div>
     </div>
