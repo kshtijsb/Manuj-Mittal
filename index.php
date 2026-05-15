@@ -1470,149 +1470,31 @@ $status = $_GET['status'] ?? null;
 
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="container reveal" style="padding: 8vh 0;">
-        <div class="contact-grid">
-            <!-- Left Side: Info -->
-            <div class="contact-info">
-                <div class="side-tag"
-                    style="color: var(--gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block;">
-                    GET IN TOUCH</div>
-                <h2
-                    style="font-size: clamp(3rem, 5vw, 5rem); line-height: 0.9; margin-bottom: 4rem; color: #000; letter-spacing: -3px;">
-                    Let's Write<br>the Next<br>Chapter.</h2>
-                <div class="contact-details" style="margin-top: 6rem;">
-                    <div class="contact-item" style="margin-bottom: 3rem;">
-                        <h4
-                            style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">
-                            Direct Correspondence</h4>
-                        <a href="mailto:author@manujmittal.com"
-                            style="font-size: 1.5rem; color: #000; text-decoration: none; font-family: var(--font-serif); border-bottom: 1px solid #eee; padding-bottom: 5px;">author@manujmittal.com</a>
-                    </div>
-                </div>
+    <!-- Sleek Contact CTA -->
+    <section id="contact" class="container reveal" style="padding: 10vh 0; text-align: center;">
+        <div style="background: #f5f5f7; border-radius: 24px; padding: 6rem 2rem; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+            <div class="side-tag" style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem;">
+                Let's Connect
             </div>
-            <!-- Right Side: Form -->
-            <div class="contact-form-container"
-                style="background: #f9f9f9; padding: 5rem; border-radius: 10px; box-shadow: 0 40px 80px rgba(0,0,0,0.05); border-top: 6px solid var(--gold);">
-                <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
-                    <div
-                        style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
-                        Request sent successfully! We will get back to you soon.
-                    </div>
-                <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
-                    <div
-                        style="background: #f8d7da; color: #721c24; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
-                        Error: Your local development server cannot send emails. This will work once hosted online!
-                    </div>
-                <?php endif; ?>
-
-                <div class="contact-tabs"
-                    style="display: flex; gap: 2rem; margin-bottom: 3rem; border-bottom: 1px solid #ddd;">
-                    <button class="tab-btn active" data-tab="message"
-                        style="background: none; border: none; padding: 1rem 0; font-weight: 800; letter-spacing: 2px; cursor: pointer; border-bottom: 2px solid var(--gold); color: #000; transition: 0.3s;">SEND
-                        MESSAGE</button>
-                    <button class="tab-btn" data-tab="meeting"
-                        style="background: none; border: none; padding: 1rem 0; font-weight: 800; letter-spacing: 2px; cursor: pointer; border-bottom: 2px solid transparent; color: #999; transition: 0.3s;">REQUEST
-                        MEETING</button>
-                </div>
-
-                <!-- Message Form -->
-                <div id="message-tab" class="tab-content active">
-                    <form action="https://api.web3forms.com/submit" method="POST"
-                        style="display: flex; flex-direction: column; gap: 2.5rem;">
-                        <input type="hidden" name="access_key" value="64485f2f-6a99-4da8-8e58-ce77d9357983">
-                        <input type="hidden" name="subject" value="New Message from ManujMittal.com">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="type" value="Message">
-                        <input type="text" name="name" placeholder="Full Name"
-                            style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;"
-                            required>
-                        <input type="email" name="email" placeholder="Email Address"
-                            style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;"
-                            required>
-                        <textarea name="message" rows="4" placeholder="Your Message"
-                            style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none; resize: none;"
-                            required></textarea>
-                        <button type="submit" class="btn btn-primary"
-                            style="background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">SEND
-                            MESSAGE</button>
-                    </form>
-                </div>
-
-                <!-- Meeting Form -->
-                <div id="meeting-tab" class="tab-content" style="display: none;">
-                    <form action="https://api.web3forms.com/submit" method="POST"
-                        style="display: flex; flex-direction: column; gap: 2rem;">
-                        <input type="hidden" name="access_key" value="64485f2f-6a99-4da8-8e58-ce77d9357983">
-                        <input type="hidden" name="subject" value="New Meeting Request from ManujMittal.com">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="type" value="Meeting Request">
-                        <input type="text" name="name" placeholder="Full Name"
-                            style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;"
-                            required>
-                        <input type="email" name="email" placeholder="Email Address"
-                            style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;"
-                            required>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                                <label
-                                    style="font-size: 0.7rem; color: var(--gold); font-weight: 800; letter-spacing: 1px;">PREFERRED
-                                    DATE</label>
-                                <input type="date" name="meeting_date"
-                                    style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;"
-                                    required>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                                <label
-                                    style="font-size: 0.7rem; color: var(--gold); font-weight: 800; letter-spacing: 1px;">PREFERRED
-                                    TIME</label>
-                                <input type="time" name="meeting_time"
-                                    style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none;"
-                                    required>
-                            </div>
-                        </div>
-
-                        <textarea name="message" rows="3" placeholder="What would you like to discuss?"
-                            style="padding: 1.2rem; border: none; border-bottom: 1px solid #ddd; background: transparent; font-size: 1.1rem; outline: none; resize: none;"
-                            required></textarea>
-                        <button type="submit" class="btn btn-primary"
-                            style="background: var(--gold); color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">REQUEST
-                            MEETING</button>
-                    </form>
-                </div>
-
-                <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const tabs = document.querySelectorAll('.tab-btn');
-                        const contents = document.querySelectorAll('.tab-content');
-
-                        tabs.forEach(tab => {
-                            tab.addEventListener('click', () => {
-                                const target = tab.dataset.tab;
-
-                                tabs.forEach(t => {
-                                    t.classList.remove('active');
-                                    t.style.borderBottom = '2px solid transparent';
-                                    t.style.color = '#999';
-                                });
-                                tab.classList.add('active');
-                                tab.style.borderBottom = '2px solid var(--gold)';
-                                tab.style.color = '#000';
-
-                                contents.forEach(c => {
-                                    c.style.display = 'none';
-                                    if (c.id === target + '-tab') c.style.display = 'block';
-                                });
-                            });
-                        });
-                    });
-                </script>
-            </div>
+            <h2 style="font-family: var(--font-sans); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 2rem; color: #111; line-height: 1.1;">
+                Write the Next<br>Chapter Together.
+            </h2>
+            <p style="font-size: 1.1rem; color: #555; max-width: 500px; margin: 0 auto 3rem auto; line-height: 1.6;">
+                Whether for speaking engagements, mentorship, or literary inquiries, Manuj is always open to starting a new conversation.
+            </p>
+            <a href="contact.php" class="btn-apple-primary" style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 1.2rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1rem;">
+                Get in Touch
+            </a>
         </div>
+    </section>
         <!-- Impact by the Numbers -->
         <section class="stats-section container"
             style="padding: 8vh 0; text-align: center; border-top: 1px solid #eee;">
+            <style>
+                @media (max-width: 992px) {
+                    .stats-section { display: none !important; }
+                }
+            </style>
             <div class="stats-grid"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
                 <div class="stat-item reveal">
