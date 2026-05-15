@@ -90,8 +90,8 @@
             background: #000000;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
-        nav { padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1rem; font-weight: 800; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; }
+        nav { padding: 0.8rem 0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 0.85rem; font-weight: 800; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; }
         
         .nav-links { display: flex; gap: 3rem; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--gold); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; }

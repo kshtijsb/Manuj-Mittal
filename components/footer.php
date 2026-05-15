@@ -1,4 +1,4 @@
-    <footer style="padding: 8rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); position: relative; z-index: 10;">
+    <footer style="padding: 4rem 0 2rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); position: relative; z-index: 10;">
         <div class="container">
             <!-- Self-Writing Signature -->
             <div class="signature-container" style="margin-bottom: 4rem;">

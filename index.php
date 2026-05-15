@@ -1471,7 +1471,7 @@ $status = $_GET['status'] ?? null;
 
 
     <!-- Contact Section -->
-    <section id="contact" class="container reveal" style="padding: 15vh 0;">
+    <section id="contact" class="container reveal" style="padding: 8vh 0;">
         <div class="contact-grid">
             <!-- Left Side: Info -->
             <div class="contact-info">
@@ -1612,7 +1612,7 @@ $status = $_GET['status'] ?? null;
         </div>
         <!-- Impact by the Numbers -->
         <section class="stats-section container"
-            style="padding: 15vh 0; text-align: center; border-top: 1px solid #eee;">
+            style="padding: 8vh 0; text-align: center; border-top: 1px solid #eee;">
             <div class="stats-grid"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
                 <div class="stat-item reveal">
@@ -1644,7 +1644,7 @@ $status = $_GET['status'] ?? null;
 
         <!-- Visionary Quotes -->
         <section class="quotes-section"
-            style="padding: 20vh 0; background: #fafafa; position: relative; overflow: hidden;">
+            style="padding: 10vh 0; background: #fafafa; position: relative; overflow: hidden;">
             <div
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
             </div>
