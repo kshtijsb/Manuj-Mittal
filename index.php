@@ -893,9 +893,9 @@ $status = $_GET['status'] ?? null;
                     .hero-mobile {
                         display: flex;
                         flex-direction: column;
-                        align-items: flex-start;
+                        align-items: center;
                         padding: 4rem 2rem 5rem;
-                        text-align: left;
+                        text-align: center;
                         width: 100%;
                         background: #f5f5f7;
                     }
@@ -965,7 +965,7 @@ $status = $_GET['status'] ?? null;
                 }
             </style>
 
-            <h1 class="hero-mobile-title">Manuj<br>Mittal.</h1>
+            <h1 class="hero-mobile-title">Manuj Mittal.</h1>
             <img src="assets/author.png" alt="Manuj Mittal" class="hero-mobile-portrait">
             <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into
                 thought-provoking narratives.</p>
