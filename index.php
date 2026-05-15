@@ -1603,9 +1603,17 @@ $status = $_GET['status'] ?? null;
 
 
     <!-- Sleek Contact CTA -->
-    <section id="contact" class="container reveal" style="padding: 10vh 0; text-align: center;">
-        <div
-            style="background: #f5f5f7; border-radius: 24px; padding: 6rem 2rem; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+    <style>
+        .contact-cta { padding: 8rem 0; }
+        .contact-cta-inner { padding: 6rem 2rem; }
+        @media (max-width: 768px) {
+            .contact-cta { padding: 4rem 0; }
+            .contact-cta-inner { padding: 3rem 1.5rem; }
+        }
+    </style>
+    <section id="contact" class="container reveal contact-cta" style="text-align: center;">
+        <div class="contact-cta-inner"
+            style="background: #f5f5f7; border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
             <div class="side-tag"
                 style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem;">
                 Let's Connect
@@ -1663,12 +1671,12 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section" style="padding: 10vh 0; background: #fafafa; position: relative; overflow: hidden;">
+    <section class="quotes-section" style="padding: 4rem 0; background: #fafafa; position: relative; overflow: hidden;">
         <div
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
         </div>
         <div class="container" style="text-align: center; max-width: 900px; position: relative; z-index: 2;">
-            <div class="quote-slider" style="position: relative; min-height: 300px;">
+            <div class="quote-slider" style="position: relative; min-height: 150px;">
                 <div class="quote-slide active"
                     style="transition: all 1s ease; opacity: 1; position: absolute; width: 100%;">
                     <p
