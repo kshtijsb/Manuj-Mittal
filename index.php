@@ -909,11 +909,11 @@ $status = $_GET['status'] ?? null;
                     }
 
                     .hero-mobile-portrait {
-                        width: 100%;
+                        width: 220px;
                         height: 280px;
                         object-fit: cover;
                         object-position: center 20%;
-                        border-radius: 24px;
+                        border-radius: 20px;
                         margin-bottom: 2rem;
                         box-shadow: 0 10px 30px rgba(0,0,0,0.05);
                     }
