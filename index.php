@@ -885,8 +885,10 @@ $status = $_GET['status'] ?? null;
         <!-- Apple Executive Mobile Hero -->
         <div class="hero-mobile">
             <style>
-                .hero-mobile { display: none; }
-                
+                .hero-mobile {
+                    display: none;
+                }
+
                 @media (max-width: 992px) {
                     .hero-mobile {
                         display: flex;
@@ -912,10 +914,10 @@ $status = $_GET['status'] ?? null;
                         width: 220px;
                         height: 280px;
                         object-fit: cover;
-                        object-position: center 20%;
+                        object-position: center;
                         border-radius: 20px;
                         margin-bottom: 2rem;
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
                     }
 
                     .hero-mobile-desc {
@@ -965,8 +967,9 @@ $status = $_GET['status'] ?? null;
 
             <h1 class="hero-mobile-title">Manuj<br>Mittal.</h1>
             <img src="assets/author.png" alt="Manuj Mittal" class="hero-mobile-portrait">
-            <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into thought-provoking narratives.</p>
-            
+            <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into
+                thought-provoking narratives.</p>
+
             <div class="hero-mobile-buttons">
                 <a href="biography.php" class="btn-apple-primary">Read Full Story</a>
                 <a href="store.php" class="btn-apple-secondary">The New Book</a>
@@ -976,7 +979,10 @@ $status = $_GET['status'] ?? null;
 
     <!-- Cinematic Mobile Book Reveal (Mid-Scroll) -->
     <style>
-        .mobile-cinematic-book { display: none; }
+        .mobile-cinematic-book {
+            display: none;
+        }
+
         @media (max-width: 992px) {
             .mobile-cinematic-book {
                 display: flex;
@@ -990,6 +996,7 @@ $status = $_GET['status'] ?? null;
                 position: relative;
                 overflow: hidden;
             }
+
             .cinematic-glow {
                 position: absolute;
                 top: 50%;
@@ -1001,6 +1008,7 @@ $status = $_GET['status'] ?? null;
                 filter: blur(40px);
                 z-index: 1;
             }
+
             .cinematic-book-cover {
                 width: 100%;
                 max-width: 260px;
@@ -1008,11 +1016,12 @@ $status = $_GET['status'] ?? null;
                 aspect-ratio: 2/3;
                 object-fit: cover;
                 border-radius: 4px;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
                 position: relative;
                 z-index: 2;
                 margin-bottom: 2.5rem;
             }
+
             .cinematic-title {
                 color: #fff;
                 font-family: var(--font-serif);
@@ -1022,6 +1031,7 @@ $status = $_GET['status'] ?? null;
                 position: relative;
                 z-index: 2;
             }
+
             .cinematic-subtitle {
                 color: #aaa;
                 font-size: 0.85rem;
@@ -1032,6 +1042,7 @@ $status = $_GET['status'] ?? null;
                 text-transform: uppercase;
                 font-weight: 800;
             }
+
             .btn-cinematic {
                 background: #fff;
                 color: #000;
@@ -1059,7 +1070,9 @@ $status = $_GET['status'] ?? null;
     <!-- Executive Mobile Layout Logic -->
     <style>
         @media (max-width: 992px) {
-            #about, #journey {
+
+            #about,
+            #journey {
                 display: none !important;
             }
         }
@@ -1118,9 +1131,20 @@ $status = $_GET['status'] ?? null;
         </div>
 
         <style>
-            .pillar-edu:hover { box-shadow: 0 30px 60px rgba(0, 71, 171, 0.1); transform: translateY(-10px); }
-            .pillar-prof:hover { box-shadow: 0 30px 60px rgba(196, 30, 58, 0.1); transform: translateY(-10px); }
-            .pillar-social:hover { box-shadow: 0 30px 60px rgba(46, 139, 87, 0.1); transform: translateY(-10px); }
+            .pillar-edu:hover {
+                box-shadow: 0 30px 60px rgba(0, 71, 171, 0.1);
+                transform: translateY(-10px);
+            }
+
+            .pillar-prof:hover {
+                box-shadow: 0 30px 60px rgba(196, 30, 58, 0.1);
+                transform: translateY(-10px);
+            }
+
+            .pillar-social:hover {
+                box-shadow: 0 30px 60px rgba(46, 139, 87, 0.1);
+                transform: translateY(-10px);
+            }
 
             @media (max-width: 992px) {
                 .about-pillars {
@@ -1133,7 +1157,11 @@ $status = $_GET['status'] ?? null;
                     -webkit-overflow-scrolling: touch;
                     scrollbar-width: none;
                 }
-                .about-pillars::-webkit-scrollbar { display: none; }
+
+                .about-pillars::-webkit-scrollbar {
+                    display: none;
+                }
+
                 .pillar-card {
                     min-width: 85vw;
                     scroll-snap-align: center;
@@ -1147,8 +1175,11 @@ $status = $_GET['status'] ?? null;
     <section id="journey" style="padding: 15vh 0; overflow: hidden; background: #fff;">
         <style>
             @media (max-width: 992px) {
-                #journey { display: none !important; }
+                #journey {
+                    display: none !important;
+                }
             }
+
             @media (max-width: 1024px) {
                 #journey .journey-header {
                     padding: 8rem 1.5rem 4rem !important;
@@ -1321,7 +1352,9 @@ $status = $_GET['status'] ?? null;
             /* Mobile Optimization */
             /* Mobile Optimization (Accordion Timeline) */
             @media (max-width: 992px) {
-                .timeline-line { display: none; }
+                .timeline-line {
+                    display: none;
+                }
 
                 .timeline-card {
                     width: 100%;
@@ -1329,11 +1362,13 @@ $status = $_GET['status'] ?? null;
                     margin-bottom: 1rem;
                 }
 
-                .timeline-dot { display: none !important; }
+                .timeline-dot {
+                    display: none !important;
+                }
 
                 .timeline-content {
-                    border: 1px solid rgba(0,0,0,0.05);
-                    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
                     border-radius: 8px;
                     overflow: hidden;
                     background: #fff;
@@ -1373,12 +1408,27 @@ $status = $_GET['status'] ?? null;
                     animation: fadeInAccordion 0.4s ease forwards;
                 }
 
-                .timeline-year { margin-bottom: 0.5rem; font-size: 0.7rem; }
-                .timeline-text h4 { margin-bottom: 0; font-size: 1.4rem; padding-right: 10px; }
+                .timeline-year {
+                    margin-bottom: 0.5rem;
+                    font-size: 0.7rem;
+                }
+
+                .timeline-text h4 {
+                    margin-bottom: 0;
+                    font-size: 1.4rem;
+                    padding-right: 10px;
+                }
 
                 @keyframes fadeInAccordion {
-                    from { opacity: 0; transform: translateY(-10px); }
-                    to { opacity: 1; transform: translateY(0); }
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
                 }
             }
         </style>
@@ -1534,10 +1584,10 @@ $status = $_GET['status'] ?? null;
                 // Mobile Accordion Logic
                 if (window.innerWidth <= 992) {
                     cards.forEach(card => {
-                        card.addEventListener('click', function() {
+                        card.addEventListener('click', function () {
                             // Close others
                             cards.forEach(c => {
-                                if(c !== this) c.classList.remove('accordion-open');
+                                if (c !== this) c.classList.remove('accordion-open');
                             });
                             // Toggle current
                             this.classList.toggle('accordion-open');
@@ -1554,126 +1604,131 @@ $status = $_GET['status'] ?? null;
 
     <!-- Sleek Contact CTA -->
     <section id="contact" class="container reveal" style="padding: 10vh 0; text-align: center;">
-        <div style="background: #f5f5f7; border-radius: 24px; padding: 6rem 2rem; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
-            <div class="side-tag" style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem;">
+        <div
+            style="background: #f5f5f7; border-radius: 24px; padding: 6rem 2rem; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+            <div class="side-tag"
+                style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem;">
                 Let's Connect
             </div>
-            <h2 style="font-family: var(--font-sans); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 2rem; color: #111; line-height: 1.1;">
+            <h2
+                style="font-family: var(--font-sans); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 2rem; color: #111; line-height: 1.1;">
                 Write the Next<br>Chapter Together.
             </h2>
             <p style="font-size: 1.1rem; color: #555; max-width: 500px; margin: 0 auto 3rem auto; line-height: 1.6;">
-                Whether for speaking engagements, mentorship, or literary inquiries, Manuj is always open to starting a new conversation.
+                Whether for speaking engagements, mentorship, or literary inquiries, Manuj is always open to starting a
+                new conversation.
             </p>
-            <a href="contact.php" class="btn-apple-primary" style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 1.2rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1rem;">
+            <a href="contact.php" class="btn-apple-primary"
+                style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 1.2rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1rem;">
                 Get in Touch
             </a>
         </div>
     </section>
-        <!-- Impact by the Numbers -->
-        <section class="stats-section container"
-            style="padding: 8vh 0; text-align: center; border-top: 1px solid #eee;">
-            <style>
-                @media (max-width: 992px) {
-                    .stats-section { display: none !important; }
-                }
-            </style>
-            <div class="stats-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
-                <div class="stat-item reveal">
-                    <div class="stat-number plus" data-target="200000"
-                        style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
-                        0</div>
-                    <div class="stat-label"
-                        style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
-                        Global Members Led</div>
-                </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number" data-target="8"
-                        style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
-                        0</div>
-                    <div class="stat-label"
-                        style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
-                        Countries Impacted</div>
-                </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number" data-target="27"
-                        style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
-                        0</div>
-                    <div class="stat-label"
-                        style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
-                        Years of Evolution</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Visionary Quotes -->
-        <section class="quotes-section"
-            style="padding: 10vh 0; background: #fafafa; position: relative; overflow: hidden;">
-            <div
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
-            </div>
-            <div class="container" style="text-align: center; max-width: 900px; position: relative; z-index: 2;">
-                <div class="quote-slider" style="position: relative; min-height: 300px;">
-                    <div class="quote-slide active"
-                        style="transition: all 1s ease; opacity: 1; position: absolute; width: 100%;">
-                        <p
-                            style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
-                            "Purpose defines strategy."</p>
-                        <div class="quote-signature"
-                            style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
-                            Manuj Mittal</div>
-                    </div>
-                    <div class="quote-slide"
-                        style="transition: all 1s ease; opacity: 0; position: absolute; width: 100%; transform: translateY(20px); pointer-events: none;">
-                        <p
-                            style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
-                            "Leadership is the art of giving people a platform for spread their own wings."</p>
-                        <div class="quote-signature"
-                            style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
-                            Manuj Mittal</div>
-                    </div>
-                    <div class="quote-slide"
-                        style="transition: all 1s ease; opacity: 0; position: absolute; width: 100%; transform: translateY(20px); pointer-events: none;">
-                        <p
-                            style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
-                            "Vision is not seeing things as they are, but as they will be."</p>
-                        <div class="quote-signature"
-                            style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
-                            Manuj Mittal</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-
-                // Quote Slider Animation
-                const slides = document.querySelectorAll('.quote-slide');
-                let currentSlide = 0;
-                setInterval(() => {
-                    slides[currentSlide].style.opacity = '0';
-                    slides[currentSlide].style.transform = 'translateY(-20px)';
-                    slides[currentSlide].style.pointerEvents = 'none';
-
-                    currentSlide = (currentSlide + 1) % slides.length;
-
-                    slides[currentSlide].style.opacity = '1';
-                    slides[currentSlide].style.transform = 'translateY(0)';
-                    slides[currentSlide].style.pointerEvents = 'auto';
-                }, 5000);
-            });
-        </script>
-
+    <!-- Impact by the Numbers -->
+    <section class="stats-section container" style="padding: 8vh 0; text-align: center; border-top: 1px solid #eee;">
         <style>
-            .stat-number.plus::after {
-                content: '+';
-                font-size: 3rem;
-                vertical-align: top;
-                margin-left: 5px;
-                color: var(--gold);
+            @media (max-width: 992px) {
+                .stats-section {
+                    display: none !important;
+                }
             }
         </style>
+        <div class="stats-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
+            <div class="stat-item reveal">
+                <div class="stat-number plus" data-target="200000"
+                    style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
+                    0</div>
+                <div class="stat-label"
+                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
+                    Global Members Led</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="8"
+                    style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
+                    0</div>
+                <div class="stat-label"
+                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
+                    Countries Impacted</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number" data-target="27"
+                    style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
+                    0</div>
+                <div class="stat-label"
+                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
+                    Years of Evolution</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visionary Quotes -->
+    <section class="quotes-section" style="padding: 10vh 0; background: #fafafa; position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
+        </div>
+        <div class="container" style="text-align: center; max-width: 900px; position: relative; z-index: 2;">
+            <div class="quote-slider" style="position: relative; min-height: 300px;">
+                <div class="quote-slide active"
+                    style="transition: all 1s ease; opacity: 1; position: absolute; width: 100%;">
+                    <p
+                        style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
+                        "Purpose defines strategy."</p>
+                    <div class="quote-signature"
+                        style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
+                        Manuj Mittal</div>
+                </div>
+                <div class="quote-slide"
+                    style="transition: all 1s ease; opacity: 0; position: absolute; width: 100%; transform: translateY(20px); pointer-events: none;">
+                    <p
+                        style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
+                        "Leadership is the art of giving people a platform for spread their own wings."</p>
+                    <div class="quote-signature"
+                        style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
+                        Manuj Mittal</div>
+                </div>
+                <div class="quote-slide"
+                    style="transition: all 1s ease; opacity: 0; position: absolute; width: 100%; transform: translateY(20px); pointer-events: none;">
+                    <p
+                        style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
+                        "Vision is not seeing things as they are, but as they will be."</p>
+                    <div class="quote-signature"
+                        style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
+                        Manuj Mittal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Quote Slider Animation
+            const slides = document.querySelectorAll('.quote-slide');
+            let currentSlide = 0;
+            setInterval(() => {
+                slides[currentSlide].style.opacity = '0';
+                slides[currentSlide].style.transform = 'translateY(-20px)';
+                slides[currentSlide].style.pointerEvents = 'none';
+
+                currentSlide = (currentSlide + 1) % slides.length;
+
+                slides[currentSlide].style.opacity = '1';
+                slides[currentSlide].style.transform = 'translateY(0)';
+                slides[currentSlide].style.pointerEvents = 'auto';
+            }, 5000);
+        });
+    </script>
+
+    <style>
+        .stat-number.plus::after {
+            content: '+';
+            font-size: 3rem;
+            vertical-align: top;
+            margin-left: 5px;
+            color: var(--gold);
+        }
+    </style>
 
 </main>
 
