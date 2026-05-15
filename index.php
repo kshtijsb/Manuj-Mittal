@@ -910,7 +910,7 @@ $status = $_GET['status'] ?? null;
 
                     .hero-mobile-portrait {
                         width: 100%;
-                        height: 400px;
+                        height: 280px;
                         object-fit: cover;
                         object-position: center 20%;
                         border-radius: 24px;
