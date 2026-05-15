@@ -67,13 +67,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            border: 4px solid;
-            border-image: linear-gradient(to bottom, var(--blue), var(--gold)) 1;
             min-height: 100vh;
-        }
-
-        @media (max-width: 768px) {
-            body { border-width: 2px; }
         }
 
         h1 { font-family: var(--font-serif); font-weight: 700; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }

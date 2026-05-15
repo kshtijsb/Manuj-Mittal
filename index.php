@@ -1108,6 +1108,9 @@ $status = $_GET['status'] ?? null;
     <!-- Journey Section: Dynamic Photo Timeline -->
     <section id="journey" style="padding: 15vh 0; overflow: hidden; background: #fff;">
         <style>
+            @media (max-width: 992px) {
+                #journey { display: none !important; }
+            }
             @media (max-width: 1024px) {
                 #journey .journey-header {
                     padding: 8rem 1.5rem 4rem !important;
