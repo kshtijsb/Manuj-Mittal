@@ -974,6 +974,88 @@ $status = $_GET['status'] ?? null;
         </div>
     </section>
 
+    <!-- Cinematic Mobile Book Reveal (Mid-Scroll) -->
+    <style>
+        .mobile-cinematic-book { display: none; }
+        @media (max-width: 992px) {
+            .mobile-cinematic-book {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: #000;
+                padding: 6rem 2rem;
+                text-align: center;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+            .cinematic-glow {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 300px;
+                height: 400px;
+                background: radial-gradient(circle, rgba(197, 160, 89, 0.2) 0%, transparent 70%);
+                filter: blur(40px);
+                z-index: 1;
+            }
+            .cinematic-book-cover {
+                width: 100%;
+                max-width: 260px;
+                height: auto;
+                aspect-ratio: 2/3;
+                object-fit: cover;
+                border-radius: 4px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
+                position: relative;
+                z-index: 2;
+                margin-bottom: 2.5rem;
+            }
+            .cinematic-title {
+                color: #fff;
+                font-family: var(--font-serif);
+                font-size: 2.4rem;
+                line-height: 1.1;
+                margin-bottom: 1rem;
+                position: relative;
+                z-index: 2;
+            }
+            .cinematic-subtitle {
+                color: #aaa;
+                font-size: 0.85rem;
+                margin-bottom: 3rem;
+                position: relative;
+                z-index: 2;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                font-weight: 800;
+            }
+            .btn-cinematic {
+                background: #fff;
+                color: #000;
+                text-align: center;
+                padding: 1.2rem;
+                border-radius: 50px;
+                font-size: 1rem;
+                font-weight: 700;
+                text-decoration: none;
+                width: 100%;
+                max-width: 260px;
+                position: relative;
+                z-index: 2;
+            }
+        }
+    </style>
+    <section class="mobile-cinematic-book reveal">
+        <div class="cinematic-glow"></div>
+        <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="cinematic-book-cover">
+        <h2 class="cinematic-title"><?php echo $books[0]['title']; ?></h2>
+        <p class="cinematic-subtitle">Featured Work</p>
+        <a href="store.php" class="btn-cinematic">Pre-Order Now</a>
+    </section>
+
     <!-- Executive Mobile Layout Logic -->
     <style>
         @media (max-width: 992px) {
