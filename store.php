@@ -4,8 +4,7 @@ $page_title = "The Library Store | Manuj Mittal";
 include 'components/header.php';
 ?>
 
-<!-- PayPal SDK (Replace 'test' with your real Client ID later) -->
-<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+
 
 <style>
     .store-hero { text-align: center; padding: 15vh 0; background: #fff; }
@@ -147,7 +146,7 @@ include 'components/header.php';
                                 <label style="display: block; font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; color: #999; margin-bottom: 1rem; text-transform: uppercase;">Choose Edition</label>
                                 <select id="format-<?php echo $book['id']; ?>" onchange="updatePrice('<?php echo $book['id']; ?>')" style="width: 100%; padding: 1.2rem; border: 1px solid #eee; background: #fff; color: #000; font-family: var(--font-sans); outline: none; cursor: pointer; font-size: 0.9rem;">
                                     <?php foreach($book['formats'] as $key => $f): ?>
-                                        <option value="<?php echo $f['price']; ?>"><?php echo ucfirst($key); ?> — $<?php echo $f['price']; ?></option>
+                                        <option value="<?php echo $f['price']; ?>" data-label="<?php echo htmlspecialchars($f['label']); ?>"><?php echo ucfirst($key); ?> — $<?php echo $f['price']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <p id="format-label-<?php echo $book['id']; ?>" style="font-size: 0.75rem; color: var(--gold); margin-top: 0.5rem; font-style: italic;">
@@ -159,48 +158,29 @@ include 'components/header.php';
                                 <span class="price" id="display-price-<?php echo $book['id']; ?>">$<?php echo $book['price_start']; ?></span>
                             </div>
 
-                            <!-- PayPal Button (Checkout) -->
-                            <div id="paypal-button-<?php echo $book['id']; ?>" class="paypal-button-container"></div>
-                            
-                            <!-- Amazon Alternative -->
+                            <!-- Buy on Amazon Button -->
                             <?php if(isset($book['amazon_url'])): ?>
-                                <a href="<?php echo $book['amazon_url']; ?>" target="_blank" style="display: block; width: 100%; max-width: 400px; text-align: center; padding: 1.2rem; border: 1px solid #000; color: #000; text-decoration: none; font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; margin-top: 1rem; transition: 0.3s; background: transparent;">ORDER VIA AMAZON</a>
+                                <a href="<?php echo $book['amazon_url']; ?>" target="_blank" class="btn-buy" style="display: block; width: 100%; max-width: 400px; text-align: center; text-decoration: none; box-sizing: border-box;">BUY ON AMAZON</a>
                             <?php endif; ?>
 
                             <script>
                                 function updatePrice(id) {
                                     const select = document.getElementById('format-' + id);
                                     document.getElementById('display-price-' + id).innerText = '$' + select.value;
-                                }
-
-                                paypal.Buttons({
-                                    style: {
-                                        layout: 'vertical',
-                                        color:  'black',
-                                        shape:  'rect',
-                                        label:  'buynow'
-                                    },
-                                    createOrder: function (data, actions) {
-                                        const price = document.getElementById('format-<?php echo $book['id']; ?>').value;
-                                        return actions.order.create({
-                                            purchase_units: [{
-                                                amount: { value: price },
-                                                description: '<?php echo $book["title"]; ?>'
-                                            }]
-                                        });
-                                    },
-                                    onApprove: function (data, actions) {
-                                        return actions.order.capture().then(function (details) {
-                                            window.location.href = 'thankyou.php?orderID=' + details.id;
-                                        });
+                                    const selectedOption = select.options[select.selectedIndex];
+                                    const label = document.getElementById('format-label-' + id);
+                                    if (label && selectedOption) {
+                                        label.innerText = selectedOption.getAttribute('data-label');
                                     }
-                                }).render('#paypal-button-<?php echo $book['id']; ?>');
+                                }
                             </script>
                         <?php elseif ($book['status'] === 'available'): ?>
-                            <div class="price-tag">
+                            <div class="price-tag" style="margin-bottom: 2.5rem;">
                                 <span class="price"><?php echo $book['price'] ?? "TBD"; ?></span>
                             </div>
-                            <div id="paypal-button-<?php echo $book['id']; ?>" class="paypal-button-container"></div>
+                            <?php if(isset($book['amazon_url'])): ?>
+                                <a href="<?php echo $book['amazon_url']; ?>" target="_blank" class="btn-buy" style="display: block; width: 100%; max-width: 400px; text-align: center; text-decoration: none; box-sizing: border-box;">BUY ON AMAZON</a>
+                            <?php endif; ?>
                         <?php else: ?>
                             <a href="index.php#contact" class="join-waitlist-btn">INQUIRE FOR RELEASE</a>
                         <?php endif; ?>

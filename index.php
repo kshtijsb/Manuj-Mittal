@@ -1604,11 +1604,22 @@ $status = $_GET['status'] ?? null;
 
     <!-- Sleek Contact CTA -->
     <style>
-        .contact-cta { padding: 8rem 0; }
-        .contact-cta-inner { padding: 6rem 2rem; }
+        .contact-cta {
+            padding: 8rem 0;
+        }
+
+        .contact-cta-inner {
+            padding: 6rem 2rem;
+        }
+
         @media (max-width: 768px) {
-            .contact-cta { padding: 4rem 0; }
-            .contact-cta-inner { padding: 3rem 1.5rem; }
+            .contact-cta {
+                padding: 4rem 0;
+            }
+
+            .contact-cta-inner {
+                padding: 3rem 1.5rem;
+            }
         }
     </style>
     <section id="contact" class="container reveal contact-cta" style="text-align: center;">
