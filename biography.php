@@ -21,7 +21,7 @@ include 'components/header.php';
 
             <div class="bio-portrait-container reveal" style="position: relative;">
                 <div class="bio-portrait-frame shimmer" style="width: 100%; height: 500px; border-radius: 4px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.1); border: 1px solid #eee;">
-                    <img src="assets/author.png" alt="Manuj Mittal" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center;">
+                    <img src="assets/author main.png" alt="Manuj Mittal" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center;">
                 </div>
                 <!-- Decorative Element -->
                 <div style="position: absolute; z-index: -1; top: -20px; right: -20px; width: 100px; height: 100px; border-top: 4px solid var(--color-gold); border-right: 4px solid var(--color-gold);"></div>
