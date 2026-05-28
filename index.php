@@ -1687,57 +1687,16 @@ $status = $_GET['status'] ?? null;
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
         </div>
         <div class="container" style="text-align: center; max-width: 900px; position: relative; z-index: 2;">
-            <div class="quote-slider" style="position: relative; min-height: 150px;">
-                <div class="quote-slide active"
-                    style="transition: all 1s ease; opacity: 1; position: absolute; width: 100%;">
-                    <p
-                        style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
-                        "Purpose defines strategy."</p>
-                    <div class="quote-signature"
-                        style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
-                        Manuj Mittal</div>
-                </div>
-                <div class="quote-slide"
-                    style="transition: all 1s ease; opacity: 0; position: absolute; width: 100%; transform: translateY(20px); pointer-events: none;">
-                    <p
-                        style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
-                        "Leadership is the art of giving people a platform for spread their own wings."</p>
-                    <div class="quote-signature"
-                        style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
-                        Manuj Mittal</div>
-                </div>
-                <div class="quote-slide"
-                    style="transition: all 1s ease; opacity: 0; position: absolute; width: 100%; transform: translateY(20px); pointer-events: none;">
-                    <p
-                        style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
-                        "Vision is not seeing things as they are, but as they will be."</p>
-                    <div class="quote-signature"
-                        style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
-                        Manuj Mittal</div>
-                </div>
+            <div style="width: 100%;">
+                <p
+                    style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
+                    "Purpose defines strategy."</p>
+                <div class="quote-signature"
+                    style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
+                    Manuj Mittal</div>
             </div>
         </div>
     </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // Quote Slider Animation
-            const slides = document.querySelectorAll('.quote-slide');
-            let currentSlide = 0;
-            setInterval(() => {
-                slides[currentSlide].style.opacity = '0';
-                slides[currentSlide].style.transform = 'translateY(-20px)';
-                slides[currentSlide].style.pointerEvents = 'none';
-
-                currentSlide = (currentSlide + 1) % slides.length;
-
-                slides[currentSlide].style.opacity = '1';
-                slides[currentSlide].style.transform = 'translateY(0)';
-                slides[currentSlide].style.pointerEvents = 'auto';
-            }, 5000);
-        });
-    </script>
 
     <style>
         .stat-number.plus::after {
