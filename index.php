@@ -1490,7 +1490,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1000"
+                        <img src="assets/simon business school.jpg"
                             alt="Global Academics">
                     </div>
                     <div class="timeline-text">
@@ -1506,7 +1506,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="https://images.unsplash.com/photo-1560523160-754a9e25c68f?auto=format&fit=crop&q=80&w=1000"
+                        <img src="assets/President rotract south asia.JPG"
                             alt="Leadership Impact">
                     </div>
                     <div class="timeline-text">
@@ -1522,7 +1522,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"
+                        <img src="assets/Professional Excellence, Morgan Stanley.jpg"
                             alt="Professional Strategy">
                     </div>
                     <div class="timeline-text">
