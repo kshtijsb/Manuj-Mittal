@@ -285,8 +285,7 @@
                     </svg>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.php#home">Intro</a></li>
-                    <li><a href="inkwell.php">Blogs and Articles</a></li>
+                    <li><a href="index.php#home">About MJ</a></li>
                     <li><a href="store.php">Store</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
