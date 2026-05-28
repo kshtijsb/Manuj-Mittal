@@ -1305,14 +1305,14 @@ $status = $_GET['status'] ?? null;
 
             .timeline-img {
                 width: 100%;
-                height: 300px;
+                height: 350px;
                 overflow: hidden;
                 position: relative;
             }
 
             .timeline-img img {
                 width: 100%;
-                height: 200%;
+                height: 100%;
                 object-fit: cover;
                 transition: transform 0.8s ease;
             }
