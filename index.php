@@ -1442,7 +1442,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=1000"
+                        <img src="assets/early life and schooling.JPG"
                             alt="Foundation">
                     </div>
                     <div class="timeline-text">
@@ -1458,7 +1458,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
+                        <img src="assets/rotary..JPG"
                             alt="Global Service">
                     </div>
                     <div class="timeline-text">
@@ -1474,7 +1474,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000"
+                        <img src="assets/professional life.jpg"
                             alt="Career Beginnings">
                     </div>
                     <div class="timeline-text">
