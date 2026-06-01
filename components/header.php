@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title ?? "Manuj Mittal | Storyteller"; ?></title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Mrs+Saint+Delafield&family=Caveat:wght@400;700&family=Rock+Salt&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
     <!-- Lenis Smooth Scroll -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <!-- GSAP Core & ScrollTrigger -->
@@ -89,12 +89,63 @@
             position: sticky; top: 0; z-index: 1000;
             background: #000000;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 0.5rem 0 !important;
         }
-        nav { padding: 0.8rem 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 0.85rem; font-weight: 800; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; }
+        nav { padding: 0.5rem 0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 0.95rem; font-weight: 800; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; transition: var(--transition); }
+        .logo:hover { color: #ffffff; }
         
-        .nav-links { display: flex; gap: 3rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--gold); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--gold); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #ffffff; }
+        
+        /* Neomorphic Embossed Social Links in Nav Bar */
+        .nav-social-item {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .nav-social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #161616;
+            color: var(--gold) !important;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            /* Enhanced 3D Embossed (tactile raised) look */
+            box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.06), 
+                        2px 2px 5px rgba(0, 0, 0, 0.8), 
+                        inset 1px 1px 0px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+            text-decoration: none !important;
+        }
+
+        .nav-social-btn:hover {
+            color: #ffffff !important;
+            border-color: rgba(197, 160, 89, 0.4);
+            transform: translateY(-2px);
+            /* Stronger emboss on hover */
+            box-shadow: -3px -3px 8px rgba(255, 255, 255, 0.08), 
+                        3px 3px 8px rgba(0, 0, 0, 0.9), 
+                        inset 1px 1px 0px rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-social-btn:active {
+            transform: translateY(0.5px);
+            /* Tactile pressed (debossed/sunken) look */
+            box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.04), 
+                        inset 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .nav-social-btn svg {
+            display: block;
+            stroke-width: 2px;
+        }
         
         /* Mobile Menu Toggle */
         .menu-toggle { display: none; background: none; border: none; color: var(--gold); cursor: pointer; padding: 5px; }
@@ -288,6 +339,14 @@
                     <li><a href="index.php#home">About MJ</a></li>
                     <li><a href="store.php">Store</a></li>
                     <li><a href="contact.php">Contact</a></li>
+                    <li class="nav-social-item">
+                        <a href="https://www.instagram.com/manujmittal" target="_blank" class="nav-social-btn" aria-label="Instagram">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manujmittal" target="_blank" class="nav-social-btn" aria-label="LinkedIn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

@@ -3,8 +3,8 @@
             <!-- Self-Writing Signature -->
             <div class="signature-container" style="margin-bottom: 4rem;">
                 <style>
-                    .author-signature { font-family: 'Mrs Saint Delafield', cursive; font-size: 5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease; }
-                    @media (max-width: 768px) { .author-signature { font-size: 3rem; } }
+                    .author-signature { font-family: 'Nothing You Could Do', cursive; font-size: 5.5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease; }
+                    @media (max-width: 768px) { .author-signature { font-size: 3.8rem; } }
                 </style>
                 <div class="author-signature">Manuj Mittal</div>
             </div>

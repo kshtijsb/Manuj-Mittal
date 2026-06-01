@@ -1955,7 +1955,7 @@ $status = $_GET['status'] ?? null;
                     style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
                     "Purpose defines strategy."</p>
                 <div class="quote-signature"
-                    style="font-family: 'Mrs Saint Delafield', cursive; font-size: 3.5rem; color: var(--gold);">
+                    style="font-family: 'Nothing You Could Do', cursive; font-size: 4.2rem; color: var(--gold);">
                     Manuj Mittal</div>
             </div>
         </div>
