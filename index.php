@@ -1301,6 +1301,7 @@ $status = $_GET['status'] ?? null;
                 height: 350px;
                 overflow: hidden;
                 position: relative;
+                container-type: inline-size;
             }
 
             .timeline-img img {
@@ -1312,6 +1313,44 @@ $status = $_GET['status'] ?? null;
 
             .timeline-content:hover .timeline-img img {
                 transform: scale(1.05);
+            }
+
+            /* Timeline Photo Marquee */
+            .timeline-marquee {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .timeline-marquee-track {
+                display: flex;
+                width: max-content;
+                height: 100%;
+                will-change: transform;
+                animation: timelineMarqueeAnimation 25s linear infinite;
+            }
+
+            .timeline-content:hover .timeline-marquee-track {
+                animation-play-state: paused;
+            }
+
+            .timeline-marquee-track img {
+                width: 100cqw !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                flex-shrink: 0 !important; 
+                transition: none !important;
+                transform: none !important;
+            }
+
+            @keyframes timelineMarqueeAnimation {
+                0 {
+                    transform: translate3d(0, 0, 0);
+                }
+                100% {
+                    transform: translate3d(-50%, 0, 0);
+                }
             }
 
             .timeline-text {
@@ -1481,8 +1520,19 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="assets/early life and schooling.JPG"
-                            alt="Foundation">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/early life and schooling.JPG" alt="Early Life & Schooling">
+                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/B-Schooling%20(India)/A-Mayo%20College/5.JPG" alt="Mayo College Sports">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/B-Schooling%20(India)/A-Mayo%20College/7.JPG" alt="Mayo College Ceremony">
+                                <!-- Duplicate for seamless infinite marquee loop -->
+                                <img src="assets/early life and schooling.JPG" alt="Early Life & Schooling">
+                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/B-Schooling%20(India)/A-Mayo%20College/5.JPG" alt="Mayo College Sports">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/B-Schooling%20(India)/A-Mayo%20College/7.JPG" alt="Mayo College Ceremony">
+                            </div>
+                        </div>
                     </div>
                     <div class="timeline-text">
                         <div class="timeline-year">1996 – 2011 · Foundation</div>
@@ -1561,8 +1611,17 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="assets/Professional Excellence, Morgan Stanley.jpg"
-                            alt="Professional Strategy">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/Professional Excellence, Morgan Stanley.jpg" alt="Morgan Stanley">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/IMG_8300.jpeg" alt="Professional Life USA">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/C-UR%20Career%20Center%20/IMG_1046.JPG" alt="Career Center presentation">
+                                <!-- Duplicate for seamless infinite marquee loop -->
+                                <img src="assets/Professional Excellence, Morgan Stanley.jpg" alt="Morgan Stanley">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/IMG_8300.jpeg" alt="Professional Life USA">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/C-UR%20Career%20Center%20/IMG_1046.JPG" alt="Career Center presentation">
+                            </div>
+                        </div>
                     </div>
                     <div class="timeline-text">
                         <div class="timeline-year">2021 Onward · Strategy</div>
