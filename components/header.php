@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title ?? "Manuj Mittal | Storyteller"; ?></title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000000'/%3E%3Ctext x='50%25' y='65%25' font-family='Cormorant Garamond, Georgia, serif' font-size='52' font-weight='bold' fill='%23c5a059' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Mrs+Saint+Delafield&family=Caveat:wght@400;700&family=Rock+Salt&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
     <!-- Lenis Smooth Scroll -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
@@ -96,8 +98,7 @@
         /* Marquee style banner */
         .header-marquee {
             width: 100%;
-            background: #0a0a0a;
-            border-top: 1px solid rgba(197, 160, 89, 0.15);
+            background: var(--gold);
             padding: 0.4rem 0;
             overflow: hidden;
             display: flex;
@@ -121,8 +122,8 @@
         .header-marquee-group span {
             font-family: var(--font-sans);
             font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--gold);
+            font-weight: 700;
+            color: #000000;
             text-transform: uppercase;
             letter-spacing: 2px;
             padding: 0 3rem;
@@ -130,8 +131,8 @@
         }
 
         .header-marquee-group .separator {
-            color: var(--gold);
-            opacity: 0.4;
+            color: #000000;
+            opacity: 0.5;
             padding: 0;
             font-size: 0.8rem;
         }
