@@ -89,9 +89,65 @@
             position: sticky; top: 0; z-index: 1000;
             background: #000000;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            padding: 0.5rem 0 !important;
+            padding: 0 !important;
         }
-        nav { padding: 0.5rem 0; display: flex; justify-content: space-between; align-items: center; }
+        nav { padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; }
+
+        /* Marquee style banner */
+        .header-marquee {
+            width: 100%;
+            background: #0a0a0a;
+            border-top: 1px solid rgba(197, 160, 89, 0.15);
+            padding: 0.4rem 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-marquee-inner {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 25s linear infinite;
+        }
+
+        .header-marquee-group {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-width: 100vw;
+        }
+
+        .header-marquee-group span {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0 3rem;
+            white-space: nowrap;
+        }
+
+        .header-marquee-group .separator {
+            color: var(--gold);
+            opacity: 0.4;
+            padding: 0;
+            font-size: 0.8rem;
+        }
+
+        .header-marquee:hover .header-marquee-inner {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee-scroll {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
         .logo { font-size: 0.95rem; font-weight: 800; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; transition: var(--transition); }
         .logo:hover { color: #ffffff; }
         
@@ -468,6 +524,26 @@
                     </li>
                 </ul>
             </nav>
+        </div>
+        <div class="header-marquee">
+            <div class="header-marquee-inner">
+                <div class="header-marquee-group">
+                    <span>Doctorate Researcher</span>
+                    <span class="separator">•</span>
+                    <span>Global Education Representative</span>
+                    <span class="separator">•</span>
+                    <span>Career Strategy Expert</span>
+                    <span class="separator">•</span>
+                </div>
+                <div class="header-marquee-group" aria-hidden="true">
+                    <span>Doctorate Researcher</span>
+                    <span class="separator">•</span>
+                    <span>Global Education Representative</span>
+                    <span class="separator">•</span>
+                    <span>Career Strategy Expert</span>
+                    <span class="separator">•</span>
+                </div>
+            </div>
         </div>
     </header>
 
