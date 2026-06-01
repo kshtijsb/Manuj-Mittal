@@ -1071,8 +1071,7 @@ $status = $_GET['status'] ?? null;
     <style>
         @media (max-width: 992px) {
 
-            #about,
-            #journey {
+            #about {
                 display: none !important;
             }
         }
@@ -1173,12 +1172,6 @@ $status = $_GET['status'] ?? null;
 
     <!-- Journey Section: Dynamic Photo Timeline -->
     <section id="journey" style="padding: 15vh 0; overflow: hidden; background: #fff;">
-        <style>
-            @media (max-width: 992px) {
-                #journey {
-                    display: none !important;
-                }
-            }
 
             @media (max-width: 1024px) {
                 #journey .journey-header {
@@ -1349,86 +1342,128 @@ $status = $_GET['status'] ?? null;
                 margin: 0;
             }
 
-            /* Mobile Optimization */
-            /* Mobile Optimization (Accordion Timeline) */
+            /* Mobile Optimization (Horizontal Scroll Timeline) */
             @media (max-width: 992px) {
-                .timeline-line {
+                .timeline-container {
+                    display: flex;
+                    flex-direction: row;
+                    overflow-x: auto;
+                    scroll-snap-type: x mandatory;
+                    gap: 1.5rem;
+                    padding: 3rem 1.5rem 1.5rem 1.5rem;
+                    scrollbar-width: none;
+                    -webkit-overflow-scrolling: touch;
+                    position: relative;
+                    scroll-padding: 0 1.5rem;
+                }
+
+                .timeline-container::-webkit-scrollbar {
                     display: none;
                 }
 
-                .timeline-card {
-                    width: 100%;
-                    left: 0 !important;
-                    margin-bottom: 1rem;
-                }
-
-                .timeline-dot {
+                .timeline-line {
                     display: none !important;
                 }
 
-                .timeline-content {
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
-                    border-radius: 8px;
-                    overflow: hidden;
-                    background: #fff;
-                    cursor: pointer;
-                    position: relative;
-                    transition: all 0.3s ease;
+                .timeline-line-horizontal {
+                    display: block;
+                    position: absolute;
+                    top: 2.2rem;
+                    height: 3px;
+                    background: rgba(0, 0, 0, 0.08);
+                    z-index: 1;
+                    border-radius: 2px;
                 }
 
-                .timeline-img,
-                .timeline-text p {
-                    display: none;
+                .timeline-progress-horizontal {
+                    height: 100%;
+                    width: 0%;
+                    background: var(--gold);
+                    border-radius: 2px;
+                    transition: width 0.1s ease-out;
+                }
+
+                .timeline-card {
+                    flex: 0 0 85vw;
+                    max-width: 340px;
+                    scroll-snap-align: center;
+                    margin-bottom: 0 !important;
+                    left: auto !important;
+                    position: relative;
+                    opacity: 0.5 !important;
+                    transform: scale(0.95) !important;
+                    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
+                    z-index: 2;
+                    margin-top: 2rem;
+                }
+
+                .timeline-card.active-mobile {
+                    opacity: 1 !important;
+                    transform: scale(1) !important;
+                }
+
+                .timeline-dot {
+                    display: block !important;
+                    position: absolute !important;
+                    top: -2.35rem !important;
+                    left: 50% !important;
+                    transform: translateX(-50%) scale(0.8) !important;
+                    z-index: 3;
+                    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+                }
+
+                .timeline-card.active-mobile .timeline-dot {
+                    border-color: var(--theme-color, var(--gold)) !important;
+                    background: var(--theme-color, var(--gold)) !important;
+                    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.04) !important;
+                    transform: translateX(-50%) scale(1.15) !important;
+                }
+
+                .timeline-content {
+                    border: 1px solid rgba(0, 0, 0, 0.04);
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+                    border-radius: 12px;
+                    overflow: hidden;
+                    background: #fff;
+                    cursor: grab;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .timeline-content:active {
+                    cursor: grabbing;
+                }
+
+                .timeline-img {
+                    display: block !important;
+                    height: 180px !important;
+                    width: 100%;
                 }
 
                 .timeline-text {
-                    padding: 1.5rem 3rem 1.5rem 1.5rem;
-                    position: relative;
+                    padding: 1.5rem !important;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
                 }
 
-                .timeline-text::after {
-                    content: '+';
-                    position: absolute;
-                    right: 20px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    font-size: 2rem;
-                    color: var(--theme-color);
-                    transition: 0.3s;
-                }
-
-                .timeline-card.accordion-open .timeline-text::after {
-                    content: '−';
-                }
-
-                .timeline-card.accordion-open .timeline-img,
-                .timeline-card.accordion-open .timeline-text p {
-                    display: block;
-                    animation: fadeInAccordion 0.4s ease forwards;
+                .timeline-text p {
+                    display: block !important;
+                    font-size: 0.95rem !important;
+                    line-height: 1.6 !important;
+                    color: #555 !important;
                 }
 
                 .timeline-year {
-                    margin-bottom: 0.5rem;
-                    font-size: 0.7rem;
+                    margin-bottom: 0.5rem !important;
+                    font-size: 0.75rem !important;
                 }
 
                 .timeline-text h4 {
-                    margin-bottom: 0;
-                    font-size: 1.4rem;
-                    padding-right: 10px;
-                }
-
-                @keyframes fadeInAccordion {
-                    from {
-                        opacity: 0;
-                        transform: translateY(-10px);
-                    }
-
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
+                    margin-bottom: 0.8rem !important;
+                    font-size: 1.5rem !important;
+                    line-height: 1.3 !important;
                 }
             }
         </style>
@@ -1436,6 +1471,10 @@ $status = $_GET['status'] ?? null;
         <div class="timeline-container">
             <div class="timeline-line">
                 <div class="timeline-progress"></div>
+            </div>
+            <!-- Horizontal Timeline Line for Mobile -->
+            <div class="timeline-line-horizontal">
+                <div class="timeline-progress-horizontal"></div>
             </div>
 
             <div class="timeline-card" style="--theme-color: #2E8B57;">
@@ -1556,44 +1595,95 @@ $status = $_GET['status'] ?? null;
                 const cards = document.querySelectorAll('.timeline-card');
                 const progress = document.querySelector('.timeline-progress');
                 const timelineContainer = document.querySelector('.timeline-container');
+                const progressHorizontal = document.querySelector('.timeline-progress-horizontal');
+                const lineHorizontal = document.querySelector('.timeline-line-horizontal');
 
-                const updateTimeline = () => {
-                    if (!timelineContainer) return;
-                    const scrollPos = window.scrollY + window.innerHeight * 0.8;
-                    const containerRect = timelineContainer.getBoundingClientRect();
-                    const absoluteTop = containerRect.top + window.scrollY;
-
-                    cards.forEach(card => {
-                        const cardTop = card.getBoundingClientRect().top + window.scrollY;
-                        if (scrollPos > cardTop + 100) {
-                            card.classList.add('active');
-                        }
-                    });
-
-                    const relativeScroll = window.scrollY + window.innerHeight / 2 - absoluteTop;
-                    let pct = (relativeScroll / containerRect.height) * 100;
-                    pct = Math.max(0, Math.min(100, pct));
-                    if (progress) {
-                        progress.style.height = pct + '%';
+                // Update dynamic layout properties for horizontal scroll line on mobile
+                const initHorizontalLine = () => {
+                    if (window.innerWidth <= 992 && cards.length > 0 && lineHorizontal) {
+                        const firstCard = cards[0];
+                        const lastCard = cards[cards.length - 1];
+                        
+                        const firstCenter = firstCard.offsetLeft + firstCard.clientWidth / 2;
+                        const lastCenter = lastCard.offsetLeft + lastCard.clientWidth / 2;
+                        
+                        lineHorizontal.style.left = firstCenter + 'px';
+                        lineHorizontal.style.width = (lastCenter - firstCenter) + 'px';
                     }
                 };
 
-                window.addEventListener('scroll', updateTimeline);
-                updateTimeline();
+                const updateTimeline = () => {
+                    if (!timelineContainer) return;
 
-                // Mobile Accordion Logic
-                if (window.innerWidth <= 992) {
-                    cards.forEach(card => {
-                        card.addEventListener('click', function () {
-                            // Close others
-                            cards.forEach(c => {
-                                if (c !== this) c.classList.remove('accordion-open');
-                            });
-                            // Toggle current
-                            this.classList.toggle('accordion-open');
+                    if (window.innerWidth > 992) {
+                        // Desktop scroll logic
+                        const scrollPos = window.scrollY + window.innerHeight * 0.8;
+                        const containerRect = timelineContainer.getBoundingClientRect();
+                        const absoluteTop = containerRect.top + window.scrollY;
+
+                        cards.forEach(card => {
+                            const cardTop = card.getBoundingClientRect().top + window.scrollY;
+                            if (scrollPos > cardTop + 100) {
+                                card.classList.add('active');
+                            }
                         });
-                    });
+
+                        const relativeScroll = window.scrollY + window.innerHeight / 2 - absoluteTop;
+                        let pct = (relativeScroll / containerRect.height) * 100;
+                        pct = Math.max(0, Math.min(100, pct));
+                        if (progress) {
+                            progress.style.height = pct + '%';
+                        }
+                    } else {
+                        // Mobile horizontal scroll logic
+                        const maxScroll = timelineContainer.scrollWidth - timelineContainer.clientWidth;
+                        if (maxScroll > 0) {
+                            const pct = (timelineContainer.scrollLeft / maxScroll) * 100;
+                            if (progressHorizontal) {
+                                progressHorizontal.style.width = pct + '%';
+                            }
+                        }
+
+                        // Determine center card
+                        const containerCenter = timelineContainer.scrollLeft + timelineContainer.clientWidth / 2;
+                        let closestCard = null;
+                        let minDistance = Infinity;
+
+                        cards.forEach(card => {
+                            const cardCenter = card.offsetLeft + card.clientWidth / 2;
+                            const distance = Math.abs(containerCenter - cardCenter);
+                            if (distance < minDistance) {
+                                minDistance = distance;
+                                closestCard = card;
+                            }
+                        });
+
+                        cards.forEach(card => {
+                            if (card === closestCard) {
+                                card.classList.add('active-mobile');
+                            } else {
+                                card.classList.remove('active-mobile');
+                            }
+                        });
+                    }
+                };
+
+                // Setup resize and scroll handlers
+                window.addEventListener('scroll', updateTimeline);
+                window.addEventListener('resize', () => {
+                    initHorizontalLine();
+                    updateTimeline();
+                });
+                
+                if (timelineContainer) {
+                    timelineContainer.addEventListener('scroll', updateTimeline);
                 }
+
+                // Initial run after layout calculations are ready
+                setTimeout(() => {
+                    initHorizontalLine();
+                    updateTimeline();
+                }, 100);
             });
         </script>
     </section>
