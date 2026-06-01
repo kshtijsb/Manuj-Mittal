@@ -98,6 +98,80 @@
         .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--gold); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; transition: color 0.3s ease; }
         .nav-links a:hover { color: #ffffff; }
+
+        /* Dropdown Menu Styles */
+        .nav-dropdown-wrapper {
+            position: relative;
+        }
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: #000000;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            border-radius: 4px;
+            padding: 0.8rem 0;
+            list-style: none;
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+        .nav-dropdown::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            background: #000000;
+            border-top: 1px solid rgba(197, 160, 89, 0.25);
+            border-left: 1px solid rgba(197, 160, 89, 0.25);
+        }
+        .nav-dropdown-wrapper:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .nav-dropdown li {
+            width: 100%;
+            margin: 0 !important;
+            padding: 0;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        .nav-dropdown a {
+            display: block;
+            padding: 0.6rem 1.5rem;
+            color: var(--gold);
+            font-size: 0.8rem !important;
+            font-family: var(--font-sans) !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .nav-dropdown a:hover {
+            background: rgba(197, 160, 89, 0.1);
+            color: #ffffff !important;
+            padding-left: 1.8rem;
+        }
+        .dropdown-arrow {
+            display: inline-block;
+            margin-left: 6px;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+            stroke-width: 2.5px;
+        }
+        .nav-dropdown-wrapper:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
         
         /* Neomorphic Embossed Social Links in Nav Bar */
         .nav-social-item {
@@ -167,20 +241,58 @@
                 opacity: 1;
                 pointer-events: auto;
             }
-            .nav-links li {
-                margin: 1.5rem 0;
+            .nav-links > li {
+                margin: 1.2rem 0;
                 transform: translateY(20px);
                 opacity: 0;
                 transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
             }
-            .nav-links.active li {
+            .nav-links.active > li {
                 transform: translateY(0);
                 opacity: 1;
             }
-            .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
-            .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
-            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
-            .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+            .nav-links.active > li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-links.active > li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-links.active > li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-links.active > li:nth-child(4) { transition-delay: 0.4s; }
+
+            .nav-dropdown {
+                position: static !important;
+                transform: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0.5rem 0 0 0 !important;
+                min-width: auto !important;
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+            .nav-dropdown::before { display: none !important; }
+            .nav-dropdown li {
+                margin: 0 !important;
+                padding: 0 !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .nav-dropdown a {
+                font-size: 1.1rem !important;
+                font-family: var(--font-sans) !important;
+                text-transform: uppercase !important;
+                letter-spacing: 2px !important;
+                color: rgba(197, 160, 89, 0.7) !important;
+                padding: 0.3rem 0 !important;
+                transition: color 0.3s ease !important;
+            }
+            .nav-dropdown a:hover {
+                color: #ffffff !important;
+                background: transparent !important;
+                padding-left: 0 !important;
+            }
+            .dropdown-arrow { display: none !important; }
 
             .menu-toggle { display: block; z-index: 1002; position: relative; }
             .menu-toggle.active svg { stroke: #fff; }
@@ -336,7 +448,14 @@
                     </svg>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.php#home">About MJ</a></li>
+                    <li class="nav-dropdown-wrapper">
+                        <a href="index.php#about" class="dropdown-trigger">About MJ <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></a>
+                        <ul class="nav-dropdown">
+                            <li><a href="education.php">Education</a></li>
+                            <li><a href="professional.php">Professional</a></li>
+                            <li><a href="social-responsibility.php">Social Responsibility</a></li>
+                        </ul>
+                    </li>
                     <li><a href="store.php">Store</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li class="nav-social-item">

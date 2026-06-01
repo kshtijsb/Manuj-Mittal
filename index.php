@@ -1085,51 +1085,67 @@ $status = $_GET['status'] ?? null;
 
         <div class="about-pillars">
             <!-- Education: Blue -->
-            <div class="pillar-card reveal pillar-edu"
-                style="border-top: 6px solid #0047AB; position: relative; overflow: hidden;">
+            <a href="education.php" class="pillar-card reveal pillar-edu"
+                style="border-top: 6px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
                 <div
                     style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(0,71,171,0.03); font-family: var(--font-sans); pointer-events: none;">
                     01</div>
                 <div class="pillar-tag"
                     style="color: #0047AB; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
                     Education</div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Academic Excellence</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Academic Excellence</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Alumnus of Mayo College, holding a
                     Master's in Finance and an MBA from Simon Business School. Currently pursuing a Doctor of Education
                     (Ed.D.) at the University of Rochester.</p>
-            </div>
+                <div class="pillar-link" style="margin-top: 1.5rem; color: #0047AB; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+            </a>
 
             <!-- Profession: Red -->
-            <div class="pillar-card reveal pillar-prof"
-                style="border-top: 6px solid #C41E3A; position: relative; overflow: hidden;">
+            <a href="professional.php" class="pillar-card reveal pillar-prof"
+                style="border-top: 6px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
                 <div
                     style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(196,30,58,0.03); font-family: var(--font-sans); pointer-events: none;">
                     02</div>
                 <div class="pillar-tag"
                     style="color: #C41E3A; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
                     Professional</div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Strategic Leadership</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Strategic Leadership</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Expertise in finance, operations, and
                     organizational strategy. Specializing in distilling complex management challenges into actionable
                     narratives.</p>
-            </div>
+                <div class="pillar-link" style="margin-top: 1.5rem; color: #C41E3A; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+            </a>
 
             <!-- Social Responsibility: Green -->
-            <div class="pillar-card reveal pillar-social"
-                style="border-top: 6px solid #2E8B57; position: relative; overflow: hidden;">
+            <a href="social-responsibility.php" class="pillar-card reveal pillar-social"
+                style="border-top: 6px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
                 <div
                     style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(46,139,87,0.03); font-family: var(--font-sans); pointer-events: none;">
                     03</div>
                 <div class="pillar-tag"
                     style="color: #2E8B57; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
                     Social Responsibility</div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Global Impact</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Global Impact</h3>
                 <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Dedicated to empowering the next
                     generation of leaders through modern management thinking and thought-provoking storytelling.</p>
-            </div>
+                <div class="pillar-link" style="margin-top: 1.5rem; color: #2E8B57; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+            </a>
         </div>
 
         <style>
+            .pillar-card svg {
+                transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+            .pillar-card:hover svg {
+                transform: translateX(5px);
+            }
+
             .pillar-edu:hover {
                 box-shadow: 0 30px 60px rgba(0, 71, 171, 0.1);
                 transform: translateY(-10px);
