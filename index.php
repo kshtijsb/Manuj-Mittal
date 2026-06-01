@@ -1315,7 +1315,7 @@ $status = $_GET['status'] ?? null;
                 transform: scale(1.05);
             }
 
-            /* Timeline Photo Marquee */
+            /* Timeline Photo Slideshow Marquee */
             .timeline-marquee {
                 width: 100%;
                 height: 100%;
@@ -1328,11 +1328,7 @@ $status = $_GET['status'] ?? null;
                 width: max-content;
                 height: 100%;
                 will-change: transform;
-                animation: timelineMarqueeAnimation 25s linear infinite;
-            }
-
-            .timeline-content:hover .timeline-marquee-track {
-                animation-play-state: paused;
+                transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             }
 
             .timeline-marquee-track img {
@@ -1342,15 +1338,6 @@ $status = $_GET['status'] ?? null;
                 flex-shrink: 0 !important; 
                 transition: none !important;
                 transform: none !important;
-            }
-
-            @keyframes timelineMarqueeAnimation {
-                0 {
-                    transform: translate3d(0, 0, 0);
-                }
-                100% {
-                    transform: translate3d(-50%, 0, 0);
-                }
             }
 
             .timeline-text {
@@ -1525,15 +1512,11 @@ $status = $_GET['status'] ?? null;
                             <div class="timeline-marquee-track">
                                 <img src="assets/Early%20life%20and%20family/0.jpg" alt="Early Life">
                                 <img src="assets/Early%20life%20and%20family/1.JPG" alt="Childhood">
-                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family Outing">
+                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family Outing 1">
+                                <img src="assets/Early%20life%20and%20family/3.1.JPG" alt="Family Outing 2">
                                 <img src="assets/Early%20life%20and%20family/4.JPG" alt="Growing Up">
                                 <img src="assets/Early%20life%20and%20family/7.JPG" alt="Family Moments">
-                                <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/Early%20life%20and%20family/0.jpg" alt="Early Life">
-                                <img src="assets/Early%20life%20and%20family/1.JPG" alt="Childhood">
-                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family Outing">
-                                <img src="assets/Early%20life%20and%20family/4.JPG" alt="Growing Up">
-                                <img src="assets/Early%20life%20and%20family/7.JPG" alt="Family Moments">
+                                <img src="assets/Early%20life%20and%20family/early%20life%20and%20schooling.JPG" alt="Early Schooling">
                             </div>
                         </div>
                     </div>
@@ -1552,15 +1535,10 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/early life and schooling.JPG" alt="Mayo College Schooling">
-                                <img src="assets/Education in India/1.JPG" alt="Mayo College Student">
-                                <img src="assets/Education in India/6.JPG" alt="Chess Tournament">
-                                <img src="assets/Education in India/10.JPG" alt="Graduation Day">
-                                <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/early life and schooling.JPG" alt="Mayo College Schooling">
-                                <img src="assets/Education in India/1.JPG" alt="Mayo College Student">
-                                <img src="assets/Education in India/6.JPG" alt="Chess Tournament">
-                                <img src="assets/Education in India/10.JPG" alt="Graduation Day">
+                                <img src="assets/Education%20in%20India/1.JPG" alt="Mayo College">
+                                <img src="assets/Education%20in%20India/1%20copy.JPG" alt="Mayo Classmates">
+                                <img src="assets/Education%20in%20India/6.JPG" alt="Chess Champion">
+                                <img src="assets/Education%20in%20India/10.JPG" alt="Graduation Day">
                             </div>
                         </div>
                     </div>
@@ -1577,15 +1555,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <div class="timeline-marquee">
-                            <div class="timeline-marquee-track">
-                                <img src="assets/professional life.jpg" alt="Corporate Work India">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/C-Professsional%20(India)/5.JPG" alt="Professional Networking">
-                                <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/professional life.jpg" alt="Corporate Work India">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/C-Professsional%20(India)/5.JPG" alt="Professional Networking">
-                            </div>
-                        </div>
+                        <img src="assets/Professional%20Journey%20%20India/5.JPG" alt="Early Professional Life">
                     </div>
                     <div class="timeline-text">
                         <div class="timeline-year">2015 – 2019 · Early Career</div>
@@ -1602,15 +1572,13 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/President rotract south asia.JPG" alt="Rotaract President">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/1.JPG" alt="Rotaract Conference">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/4.JPG" alt="Rotaract Project">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/7.JPG" alt="Rotaract Award Ceremony">
-                                <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/President rotract south asia.JPG" alt="Rotaract President">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/1.JPG" alt="Rotaract Conference">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/4.JPG" alt="Rotaract Project">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/7.JPG" alt="Rotaract Award Ceremony">
+                                <img src="assets/Rise%20in%20Rotaract/1.JPG" alt="Rotaract Event 1">
+                                <img src="assets/Rise%20in%20Rotaract/2.JPG" alt="Rotaract Summit">
+                                <img src="assets/Rise%20in%20Rotaract/3.JPG" alt="Rotaract Members">
+                                <img src="assets/Rise%20in%20Rotaract/4.JPG" alt="Community Project">
+                                <img src="assets/Rise%20in%20Rotaract/5.JPG" alt="Rotaract Action">
+                                <img src="assets/Rise%20in%20Rotaract/6.JPG" alt="Award Ceremony">
+                                <img src="assets/Rise%20in%20Rotaract/7.JPG" alt="Rotaract Group">
                             </div>
                         </div>
                     </div>
@@ -1629,13 +1597,11 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/simon business school.jpg" alt="Simon Business School">
-                                <img src="assets/Education in the US/IMG_1105.JPG" alt="US Campus Life">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/E-Education%20(USA)/A-MSF/2.JPG" alt="Graduate Studies">
-                                <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/simon business school.jpg" alt="Simon Business School">
-                                <img src="assets/Education in the US/IMG_1105.JPG" alt="US Campus Life">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/E-Education%20(USA)/A-MSF/2.JPG" alt="Graduate Studies">
+                                <img src="assets/Education%20in%20the%20US/2.JPG" alt="MSF Class">
+                                <img src="assets/Education%20in%20the%20US/3.JPG" alt="U of R Presentation">
+                                <img src="assets/Education%20in%20the%20US/5.jpg" alt="Networking Coaching">
+                                <img src="assets/Education%20in%20the%20US/IMG_1105.JPG" alt="Campus Life">
+                                <img src="assets/Education%20in%20the%20US/simon%20business%20school.jpg" alt="Simon Business School Graduation">
                             </div>
                         </div>
                     </div>
@@ -1654,13 +1620,21 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/rotary..JPG" alt="Rotary International">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/E-Rotary%20International/1.JPG" alt="Rotary Summit">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/E-Rotary%20International/4.JPG" alt="Rotary Project">
-                                <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/rotary..JPG" alt="Rotary International">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/E-Rotary%20International/1.JPG" alt="Rotary Summit">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/E-Rotary%20International/4.JPG" alt="Rotary Project">
+                                <img src="assets/Rise%20in%20Rotary/rotary..JPG" alt="Rotary International">
+                                <img src="assets/Rise%20in%20Rotary/1.JPG" alt="Rotary Summit Group">
+                                <img src="assets/Rise%20in%20Rotary/1%20copy.JPG" alt="District Rotaract Representative">
+                                <img src="assets/Rise%20in%20Rotary/2.JPG" alt="Atlanta Convention">
+                                <img src="assets/Rise%20in%20Rotary/3.JPG" alt="Hamburg Convention">
+                                <img src="assets/Rise%20in%20Rotary/4.JPG" alt="Service Event 1">
+                                <img src="assets/Rise%20in%20Rotary/4%20copy.JPG" alt="Service Event 2">
+                                <img src="assets/Rise%20in%20Rotary/5.JPG" alt="Global Fellowship">
+                                <img src="assets/Rise%20in%20Rotary/6.JPG" alt="DRR Award Presentation">
+                                <img src="assets/Rise%20in%20Rotary/6.1.JPG" alt="Best DRR Ceremony">
+                                <img src="assets/Rise%20in%20Rotary/7.JPG" alt="Leadership Conference">
+                                <img src="assets/Rise%20in%20Rotary/8.JPG" alt="Youth Exchange Support">
+                                <img src="assets/Rise%20in%20Rotary/9.JPG" alt="Community Outreach">
+                                <img src="assets/Rise%20in%20Rotary/10.jpg" alt="Atlanta Project">
+                                <img src="assets/Rise%20in%20Rotary/12.JPG" alt="Rotary International Board Meeting">
                             </div>
                         </div>
                     </div>
@@ -1679,13 +1653,9 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Professional Excellence, Morgan Stanley.jpg" alt="Morgan Stanley NY">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/IMG_8300.jpeg" alt="US Strategy Consulting">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/C-UR%20Career%20Center%20/IMG_1046.JPG" alt="Assistant Director Role">
-                                <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/Professional Excellence, Morgan Stanley.jpg" alt="Morgan Stanley NY">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/IMG_8300.jpeg" alt="US Strategy Consulting">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/C-UR%20Career%20Center%20/IMG_1046.JPG" alt="Assistant Director Role">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/IMG_8300.jpeg" alt="Morgan Stanley NY Office">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/IMG_1046.JPG" alt="Advising at U of R">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/IMG_8750.JPG" alt="Assistant Director Presentation">
                             </div>
                         </div>
                     </div>
@@ -1704,13 +1674,17 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/1.JPG" alt="Education 2.0 Award">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/6.1.jpg" alt="HESA Presentation">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/10.jpg" alt="Doctor of Education Vision">
-                                <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/1.JPG" alt="Education 2.0 Award">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/6.1.jpg" alt="HESA Presentation">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/10.jpg" alt="Doctor of Education Vision">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0.JPG" alt="Las Vegas Education 2.0 Award">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./1.JPG" alt="Education 2.0 Trophy">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./1.1.JPG" alt="Education Leadership Recognition">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./2.JPG" alt="University of Rochester Ed.D Study">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./2.1.JPG" alt="High Education Student Association Co-Chair">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./3.JPG" alt="Vision 2027 Speech">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./4.JPG" alt="Higher Education Leadership Forum">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./6.1.jpg" alt="Rochester Doctoral Presentation">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./6.2.jpg" alt="Rochester Seminar Panel">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./10.jpg" alt="Outstanding Leadership Certificate">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./10.1.JPG" alt="Academic Research Session">
                             </div>
                         </div>
                     </div>
@@ -1801,6 +1775,70 @@ $status = $_GET['status'] ?? null;
                     }
                 };
 
+                // Setup slideshows for multi-photo cards
+                const initSlideshows = () => {
+                    const marquees = document.querySelectorAll('.timeline-marquee');
+                    marquees.forEach(marquee => {
+                        const track = marquee.querySelector('.timeline-marquee-track');
+                        if (!track) return;
+                        
+                        // Prevent duplicate initialization
+                        if (track.dataset.slideshowInitialized) return;
+                        track.dataset.slideshowInitialized = "true";
+
+                        const images = Array.from(track.querySelectorAll('img'));
+                        if (images.length <= 1) return;
+
+                        // Clone first image for seamless looping
+                        const firstClone = images[0].cloneNode(true);
+                        track.appendChild(firstClone);
+
+                        let currentIndex = 0;
+                        let intervalId = null;
+                        const slideCount = images.length;
+
+                        const startSlideshow = () => {
+                            if (intervalId) return;
+                            intervalId = setInterval(() => {
+                                currentIndex++;
+                                track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                                track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
+
+                                if (currentIndex === slideCount) {
+                                    // Reset to index 0 seamlessly after slide transition finishes
+                                    setTimeout(() => {
+                                        track.style.transition = 'none';
+                                        currentIndex = 0;
+                                        track.style.transform = 'translate3d(0, 0, 0)';
+                                    }, 600);
+                                }
+                            }, 2600); // Stop for 2 seconds (2.0s pause + 0.6s transition)
+                        };
+
+                        const stopSlideshow = () => {
+                            if (intervalId) {
+                                clearInterval(intervalId);
+                                intervalId = null;
+                            }
+                        };
+
+                        // Start the cycle
+                        startSlideshow();
+
+                        // Pause slideshow when user hovers or taps the parent card
+                        const card = marquee.closest('.timeline-card');
+                        if (card) {
+                            card.addEventListener('mouseenter', stopSlideshow);
+                            card.addEventListener('mouseleave', startSlideshow);
+                            // Support tap to toggle pause/play on mobile devices
+                            card.addEventListener('touchstart', () => {
+                                if (intervalId) stopSlideshow();
+                                else startSlideshow();
+                            }, {passive: true});
+                        }
+                    });
+                };
+
                 // Setup resize and scroll handlers
                 window.addEventListener('scroll', updateTimeline);
                 window.addEventListener('resize', () => {
@@ -1816,6 +1854,7 @@ $status = $_GET['status'] ?? null;
                 setTimeout(() => {
                     initHorizontalLine();
                     updateTimeline();
+                    initSlideshows();
                 }, 100);
             });
         </script>
