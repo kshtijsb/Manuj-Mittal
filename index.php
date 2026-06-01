@@ -722,7 +722,7 @@ $status = $_GET['status'] ?? null;
                         <div class="flip-card-front">
                             <div class="side-tag" style="margin-bottom: 2rem;">THE AUTHOR</div>
                             <div class="hero-image-box">
-                                <img src="assets/author main.png" alt="Manuj Mittal" style="object-position: center;">
+                                <img src="assets/author main.jpg" alt="Manuj Mittal" style="object-position: center;">
                             </div>
                             <h2
                                 style="font-size: 2.2rem; font-family: var(--font-serif); color: #111; margin-bottom: 0; line-height: 1.1;">
@@ -966,7 +966,7 @@ $status = $_GET['status'] ?? null;
             </style>
 
             <h1 class="hero-mobile-title">Manuj Mittal.</h1>
-            <img src="assets/author main.png" alt="Manuj Mittal" class="hero-mobile-portrait">
+            <img src="assets/author main.jpg" alt="Manuj Mittal" class="hero-mobile-portrait">
             <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into
                 thought-provoking narratives.</p>
 
