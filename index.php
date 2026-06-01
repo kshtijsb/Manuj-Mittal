@@ -1302,17 +1302,18 @@ $status = $_GET['status'] ?? null;
                 overflow: hidden;
                 position: relative;
                 container-type: inline-size;
+                background-color: #0c0c0e; /* Deep cinematic black background to frame images */
             }
 
             .timeline-img img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain; /* Prevent faces/contents from being cropped */
                 transition: transform 0.8s ease;
             }
 
             .timeline-content:hover .timeline-img img {
-                transform: scale(1.05);
+                transform: scale(1.03); /* Subtle scale effect that works nicely with contained layouts */
             }
 
             /* Timeline Photo Slideshow Marquee */
@@ -1334,7 +1335,7 @@ $status = $_GET['status'] ?? null;
             .timeline-marquee-track img {
                 width: 100cqw !important;
                 height: 100% !important;
-                object-fit: cover !important;
+                object-fit: contain !important; /* Prevent faces/contents from being cropped */
                 flex-shrink: 0 !important; 
                 transition: none !important;
                 transform: none !important;
