@@ -1516,134 +1516,208 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-progress-horizontal"></div>
             </div>
 
+            <!-- Milestone 1: Early Life and Family -->
             <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/early life and schooling.JPG" alt="Early Life & Schooling">
-                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/B-Schooling%20(India)/A-Mayo%20College/5.JPG" alt="Mayo College Sports">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/B-Schooling%20(India)/A-Mayo%20College/7.JPG" alt="Mayo College Ceremony">
+                                <img src="assets/Early%20life%20and%20family/0.jpg" alt="Early Life">
+                                <img src="assets/Early%20life%20and%20family/1.JPG" alt="Childhood">
+                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family Outing">
+                                <img src="assets/Early%20life%20and%20family/4.JPG" alt="Growing Up">
+                                <img src="assets/Early%20life%20and%20family/7.JPG" alt="Family Moments">
                                 <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/early life and schooling.JPG" alt="Early Life & Schooling">
-                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/B-Schooling%20(India)/A-Mayo%20College/5.JPG" alt="Mayo College Sports">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/B-Schooling%20(India)/A-Mayo%20College/7.JPG" alt="Mayo College Ceremony">
+                                <img src="assets/Early%20life%20and%20family/0.jpg" alt="Early Life">
+                                <img src="assets/Early%20life%20and%20family/1.JPG" alt="Childhood">
+                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family Outing">
+                                <img src="assets/Early%20life%20and%20family/4.JPG" alt="Growing Up">
+                                <img src="assets/Early%20life%20and%20family/7.JPG" alt="Family Moments">
                             </div>
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">1996 – 2011 · Foundation</div>
-                        <h4>Early Life & Schooling</h4>
-                        <p>Born in India (1996). Proud alumnus of Mayo College boarding school (2008). Chess Champion &
-                            WazirChand Trophy winner (2011).</p>
+                        <div class="timeline-year">1996 Onward · Foundation</div>
+                        <h4>Early Life and Family</h4>
+                        <p>Born in India (1996). Raised in a close-knit, supportive family environment that nurtured curiosity, built strong value systems, and encouraged academic excellence from the start.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Milestone 2: Education in India -->
             <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="assets/rotary..JPG"
-                            alt="Global Service">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/early life and schooling.JPG" alt="Mayo College Schooling">
+                                <img src="assets/Education in India/1.JPG" alt="Mayo College Student">
+                                <img src="assets/Education in India/6.JPG" alt="Chess Tournament">
+                                <img src="assets/Education in India/10.JPG" alt="Graduation Day">
+                                <!-- Duplicate for seamless infinite marquee loop -->
+                                <img src="assets/early life and schooling.JPG" alt="Mayo College Schooling">
+                                <img src="assets/Education in India/1.JPG" alt="Mayo College Student">
+                                <img src="assets/Education in India/6.JPG" alt="Chess Tournament">
+                                <img src="assets/Education in India/10.JPG" alt="Graduation Day">
+                            </div>
+                        </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2013 – 2017 · Global Service</div>
-                        <h4>Rise in Rotary International</h4>
-                        <p>RYLA Participant (2013). Joined Rotaract (2014). Charter President (2015). District Rotaract
-                            Representative & RI Atlanta Convention (2017).</p>
+                        <div class="timeline-year">2008 – 2017 · Academics</div>
+                        <h4>Education in India</h4>
+                        <p>Proud boarding alumnus of the prestigious Mayo College (2008). Accomplished Chess Champion and winner of the WazirChand Trophy. Completed his Bachelor of Commerce (B.Com) in 2017.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="timeline-card" style="--theme-color: #0047AB;">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-img shimmer">
-                        <img src="assets/professional life.jpg"
-                            alt="Career Beginnings">
-                    </div>
-                    <div class="timeline-text">
-                        <div class="timeline-year">2015 · Career Beginnings</div>
-                        <h4>Early Professional Life</h4>
-                        <p>Entered the workforce and began his professional journey, establishing the foundation of his
-                            career alongside ongoing studies and service commitments.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-card" style="--theme-color: #2E8B57;">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-img shimmer">
-                        <img src="assets/simon business school.jpg"
-                            alt="Global Academics">
-                    </div>
-                    <div class="timeline-text">
-                        <div class="timeline-year">2017 – 2021 · Global Academics</div>
-                        <h4>Simon Business School & MBA</h4>
-                        <p>B.Com (2017). Left India at age 23 (2019). MS Finance (2020). MBA Finance (2021) — Dean's
-                            List & Networking Coach.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-card" style="--theme-color: #C41E3A;">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-img shimmer">
-                        <img src="assets/President rotract south asia.JPG"
-                            alt="Leadership Impact">
-                    </div>
-                    <div class="timeline-text">
-                        <div class="timeline-year">2018 – 2020 · Leadership Impact</div>
-                        <h4>President, Rotaract South Asia</h4>
-                        <p>RI Toronto (2018). RI Hamburg & 'Best DRR' Award (2019). Led 200,000+ members across 8
-                            countries. Chairman, Rotasia Delhi 2020.</p>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Milestone 3: Professional Journey in India -->
             <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Professional Excellence, Morgan Stanley.jpg" alt="Morgan Stanley">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/IMG_8300.jpeg" alt="Professional Life USA">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/C-UR%20Career%20Center%20/IMG_1046.JPG" alt="Career Center presentation">
+                                <img src="assets/professional life.jpg" alt="Corporate Work India">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/C-Professsional%20(India)/5.JPG" alt="Professional Networking">
                                 <!-- Duplicate for seamless infinite marquee loop -->
-                                <img src="assets/Professional Excellence, Morgan Stanley.jpg" alt="Morgan Stanley">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/IMG_8300.jpeg" alt="Professional Life USA">
-                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/C-UR%20Career%20Center%20/IMG_1046.JPG" alt="Career Center presentation">
+                                <img src="assets/professional life.jpg" alt="Corporate Work India">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/C-Professsional%20(India)/5.JPG" alt="Professional Networking">
                             </div>
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2021 Onward · Strategy</div>
-                        <h4>Professional Excellence</h4>
-                        <p>Experience at Grant Thornton, Morgan Stanley, and Boutique M&A firms in NY. Career Advisor &
-                            AD at University of Rochester.</p>
+                        <div class="timeline-year">2015 – 2019 · Early Career</div>
+                        <h4>Professional Journey in India</h4>
+                        <p>Began his professional career in corporate finance and business operations, gaining vital experience in financial modeling, corporate strategy, and organizational development.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Milestone 4: Rise in Rotaract -->
             <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img shimmer">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1000"
-                            alt="The Vision">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/President rotract south asia.JPG" alt="Rotaract President">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/1.JPG" alt="Rotaract Conference">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/4.JPG" alt="Rotaract Project">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/7.JPG" alt="Rotaract Award Ceremony">
+                                <!-- Duplicate for seamless infinite marquee loop -->
+                                <img src="assets/President rotract south asia.JPG" alt="Rotaract President">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/1.JPG" alt="Rotaract Conference">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/4.JPG" alt="Rotaract Project">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/C-Rotaract%20South%20Asia/7.JPG" alt="Rotaract Award Ceremony">
+                            </div>
+                        </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2027 · The Doctoral Vision</div>
-                        <h4>Education 2.0 & Beyond</h4>
-                        <p>Pursuing Ed.D. Award: Education 2.0 (Las Vegas). Co-Chair: HE Students Association. Alumni of
-                            Simon & Mayo College.</p>
+                        <div class="timeline-year">2013 – 2020 · Leadership</div>
+                        <h4>Rise in Rotaract</h4>
+                        <p>Joined Rotaract in 2014, becoming Charter President in 2015. Scaled heights to lead 200,000+ members as President of Rotaract South Asia and serve as Chairman for Rotasia Delhi 2020.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 5: Education in the US -->
+            <div class="timeline-card" style="--theme-color: #C41E3A;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/simon business school.jpg" alt="Simon Business School">
+                                <img src="assets/Education in the US/IMG_1105.JPG" alt="US Campus Life">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/E-Education%20(USA)/A-MSF/2.JPG" alt="Graduate Studies">
+                                <!-- Duplicate for seamless infinite marquee loop -->
+                                <img src="assets/simon business school.jpg" alt="Simon Business School">
+                                <img src="assets/Education in the US/IMG_1105.JPG" alt="US Campus Life">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/E-Education%20(USA)/A-MSF/2.JPG" alt="Graduate Studies">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2019 – 2021 · Global Studies</div>
+                        <h4>Education in the US</h4>
+                        <p>Relocated to the USA at age 23 (2019). Earned an MS in Finance (2020) and an MBA (2021) from the Simon Business School, University of Rochester. Active as a Dean's List student and Networking Coach.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 6: Rise in Rotary -->
+            <div class="timeline-card" style="--theme-color: #0047AB;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/rotary..JPG" alt="Rotary International">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/E-Rotary%20International/1.JPG" alt="Rotary Summit">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/E-Rotary%20International/4.JPG" alt="Rotary Project">
+                                <!-- Duplicate for seamless infinite marquee loop -->
+                                <img src="assets/rotary..JPG" alt="Rotary International">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/E-Rotary%20International/1.JPG" alt="Rotary Summit">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/D-Social%20Responsibility/E-Rotary%20International/4.JPG" alt="Rotary Project">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2017 Onward · Service</div>
+                        <h4>Rise in Rotary</h4>
+                        <p>Advanced in Rotary International. Represented the district at the RI Atlanta Convention (2017) and RI Hamburg Convention (2019), where he won the 'Best DRR' award.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 7: Professional Journey in the US -->
+            <div class="timeline-card" style="--theme-color: #2E8B57;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/Professional Excellence, Morgan Stanley.jpg" alt="Morgan Stanley NY">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/IMG_8300.jpeg" alt="US Strategy Consulting">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/C-UR%20Career%20Center%20/IMG_1046.JPG" alt="Assistant Director Role">
+                                <!-- Duplicate for seamless infinite marquee loop -->
+                                <img src="assets/Professional Excellence, Morgan Stanley.jpg" alt="Morgan Stanley NY">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/IMG_8300.jpeg" alt="US Strategy Consulting">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/F-Professional%20(USA)/C-UR%20Career%20Center%20/IMG_1046.JPG" alt="Assistant Director Role">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2021 Onward · Corporate Strategy</div>
+                        <h4>Professional Journey in the US</h4>
+                        <p>Gained professional excellence in NYC and Manhattan at Grant Thornton and Morgan Stanley. Currently helping future leaders as Career Advisor and Assistant Director at University of Rochester.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 8: Vision | Awards & Recognition -->
+            <div class="timeline-card" style="--theme-color: #C41E3A;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-img shimmer">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/1.JPG" alt="Education 2.0 Award">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/6.1.jpg" alt="HESA Presentation">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/10.jpg" alt="Doctor of Education Vision">
+                                <!-- Duplicate for seamless infinite marquee loop -->
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/1.JPG" alt="Education 2.0 Award">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/6.1.jpg" alt="HESA Presentation">
+                                <img src="assets/images/drive-download-20260601T162201Z-3-001/G-Awards%20and%20Recognition/10.jpg" alt="Doctor of Education Vision">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-text">
+                        <div class="timeline-year">2027 & Beyond · Vision</div>
+                        <h4>Vision | Awards & Recognition</h4>
+                        <p>Pursuing an Ed.D. at the University of Rochester, and serving as HESA Co-Chair. Honored with the global 'Education 2.0' Outstanding Leadership Award in Las Vegas.</p>
                     </div>
                 </div>
             </div>
