@@ -1802,7 +1802,7 @@ $status = $_GET['status'] ?? null;
                             intervalId = setInterval(() => {
                                 currentIndex++;
                                 track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-                                track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
+                                track.style.transform = `translate3d(-${currentIndex * 100}cqw, 0, 0)`;
 
                                 if (currentIndex === slideCount) {
                                     // Reset to index 0 seamlessly after slide transition finishes
