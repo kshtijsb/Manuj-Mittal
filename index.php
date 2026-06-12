@@ -1189,6 +1189,7 @@ $status = $_GET['status'] ?? null;
     <!-- Journey Section: Dynamic Photo Timeline -->
     <section id="journey" style="padding: 15vh 0; overflow: hidden; background: #fff;">
 
+        <style>
             @media (max-width: 1024px) {
                 #journey .journey-header {
                     padding: 8rem 1.5rem 4rem !important;
@@ -1546,13 +1547,13 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer" style="overflow: hidden;">
+                    <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
-                            <div class="timeline-marquee-track" style="align-items: center;">
-                                <img src="assets/Education%20in%20India/1.JPG" alt="Mayo College" style="transform: rotate(90deg) !important; width: 350px !important; height: 100cqw !important; object-fit: cover !important; flex-shrink: 0 !important;">
-                                <img src="assets/Education%20in%20India/1%20copy.JPG" alt="Mayo Classmates" style="transform: rotate(90deg) !important; width: 350px !important; height: 100cqw !important; object-fit: cover !important; flex-shrink: 0 !important;">
-                                <img src="assets/Education%20in%20India/6.JPG" alt="Chess Champion" style="transform: rotate(90deg) !important; width: 350px !important; height: 100cqw !important; object-fit: cover !important; flex-shrink: 0 !important;">
-                                <img src="assets/Education%20in%20India/10.JPG" alt="Graduation Day" style="transform: rotate(90deg) !important; width: 350px !important; height: 100cqw !important; object-fit: cover !important; flex-shrink: 0 !important;">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/Education%20in%20India/1.JPG" alt="Mayo College">
+                                <img src="assets/Education%20in%20India/1%20copy.JPG" alt="Mayo Classmates">
+                                <img src="assets/Education%20in%20India/6.JPG" alt="Chess Champion">
+                                <img src="assets/Education%20in%20India/10.JPG" alt="Graduation Day">
                             </div>
                         </div>
                     </div>
