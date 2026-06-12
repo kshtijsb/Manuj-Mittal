@@ -1202,9 +1202,6 @@ $status = $_GET['status'] ?? null;
         </style>
         <div class="container journey-header">
             <div style="text-align: center; margin-bottom: 8rem;" class="reveal">
-                <div class="side-tag"
-                    style="color: var(--gold); letter-spacing: 5px; margin-bottom: 1.5rem; display: block;">THE
-                    EVOLUTION</div>
                 <h2 style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; color: #000; letter-spacing: -2px;">A
                     Legacy in<br>the Making.</h2>
             </div>
