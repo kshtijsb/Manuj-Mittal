@@ -161,6 +161,33 @@
             }
         }
         .logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; transition: var(--transition); font-family: var(--font-serif); }
+        .nav-book-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #000;
+            color: #fff !important;
+            padding: 0.55rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 800 !important;
+            font-size: 0.75rem !important;
+            letter-spacing: 1px;
+            transition: all 0.25s ease !important;
+            white-space: nowrap;
+        }
+        .nav-book-btn:hover {
+            background: var(--gold) !important;
+            color: #000 !important;
+            transform: translateY(-1px);
+        }
+        [data-theme="dark"] .nav-book-btn {
+            background: var(--gold);
+            color: #000 !important;
+        }
+        [data-theme="dark"] .nav-book-btn:hover {
+            background: #fff !important;
+            color: #000 !important;
+        }
         .logo:hover { color: #ffffff; }
         
         .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
@@ -553,6 +580,7 @@
                     </li>
 
                     <li><a href="contact.php">Contact</a></li>
+                    <li><a href="book-meeting.php" class="nav-book-btn">&#x1F4C5;&nbsp;Book a Meeting</a></li>
                     <li class="nav-social-item">
                         <a href="https://www.instagram.com/manujmittal" target="_blank" class="nav-social-btn" aria-label="Instagram">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>

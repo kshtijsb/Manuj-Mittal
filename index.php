@@ -2046,10 +2046,19 @@ $status = $_GET['status'] ?? null;
                 Whether for speaking engagements, mentorship, or literary inquiries, Manuj is always open to starting a
                 new conversation.
             </p>
-            <a href="contact.php" class="btn-apple-primary"
-                style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 1.2rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1rem;">
-                Get in Touch
-            </a>
+            <div style="display: inline-flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center;">
+                <a href="contact.php" class="btn-apple-primary"
+                    style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 1.2rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1rem;">
+                    Get in Touch
+                </a>
+                <a href="book-meeting.php"
+                    style="display: inline-flex; align-items: center; gap: 0.6rem; background: transparent; color: #000; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 50px; font-weight: 700; font-size: 1rem; border: 2px solid #000; transition: all 0.3s ease;"
+                    onmouseover="this.style.background='#000';this.style.color='#fff';"
+                    onmouseout="this.style.background='transparent';this.style.color='#000';">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Book a Meeting
+                </a>
+            </div>
         </div>
     </section>
     <!-- Impact by the Numbers -->
