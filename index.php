@@ -1581,12 +1581,12 @@ $status = $_GET['status'] ?? null;
 
                 .timeline-img {
                     display: block !important;
-                    height: 180px !important;
+                    height: 260px !important;
                     width: 100%;
                 }
 
                 .timeline-text {
-                    padding: 1.5rem !important;
+                    padding: 1.2rem !important;
                     flex-grow: 1;
                     display: flex;
                     flex-direction: column;
