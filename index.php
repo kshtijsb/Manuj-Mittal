@@ -884,7 +884,7 @@ $status = $_GET['status'] ?? null;
                         padding: 4rem 2rem 5rem;
                         text-align: center;
                         width: 100%;
-                        background: #f5f5f7;
+                        background: transparent;
                     }
 
                     .hero-mobile-title {
@@ -892,7 +892,7 @@ $status = $_GET['status'] ?? null;
                         font-size: 3.8rem;
                         font-weight: 800;
                         letter-spacing: -2px;
-                        color: #111;
+                        color: var(--color-text);
                         line-height: 1;
                         margin-bottom: 2rem;
                     }
@@ -910,7 +910,7 @@ $status = $_GET['status'] ?? null;
                     .hero-mobile-desc {
                         font-family: var(--font-sans);
                         font-size: 1.15rem;
-                        color: #444;
+                        color: var(--color-text-muted);
                         font-weight: 400;
                         line-height: 1.6;
                         margin-bottom: 3rem;
@@ -924,8 +924,8 @@ $status = $_GET['status'] ?? null;
                     }
 
                     .btn-apple-primary {
-                        background: #000;
-                        color: #fff;
+                        background: var(--color-text);
+                        color: var(--color-bg);
                         text-align: center;
                         padding: 1.2rem;
                         border-radius: 50px;
@@ -938,8 +938,8 @@ $status = $_GET['status'] ?? null;
 
                     .btn-apple-secondary {
                         background: transparent;
-                        color: #000;
-                        border: 2px solid #ddd;
+                        color: var(--color-text);
+                        border: 2px solid var(--color-text-muted);
                         text-align: center;
                         padding: 1.2rem;
                         border-radius: 50px;
@@ -976,7 +976,7 @@ $status = $_GET['status'] ?? null;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                background: #000;
+                background: transparent;
                 padding: 6rem 2rem;
                 text-align: center;
                 width: 100%;
@@ -1010,7 +1010,7 @@ $status = $_GET['status'] ?? null;
             }
 
             .cinematic-title {
-                color: #fff;
+                color: var(--color-text);
                 font-family: var(--font-serif);
                 font-size: 2.4rem;
                 line-height: 1.1;
@@ -1020,7 +1020,7 @@ $status = $_GET['status'] ?? null;
             }
 
             .cinematic-subtitle {
-                color: #aaa;
+                color: var(--color-text-muted);
                 font-size: 0.85rem;
                 margin-bottom: 3rem;
                 position: relative;
@@ -1031,8 +1031,8 @@ $status = $_GET['status'] ?? null;
             }
 
             .btn-cinematic {
-                background: #fff;
-                color: #000;
+                background: var(--color-text);
+                color: var(--color-bg);
                 text-align: center;
                 padding: 1.2rem;
                 border-radius: 50px;
@@ -1254,11 +1254,11 @@ $status = $_GET['status'] ?? null;
             @media (max-width: 1024px) {
                 #journey .journey-header {
                     padding: 8rem 1.5rem 4rem !important;
-                    background: #000;
+                    background: transparent;
                 }
 
                 #journey .journey-header h2 {
-                    color: #fff !important;
+                    color: var(--color-text) !important;
                 }
             }
         </style>
