@@ -563,11 +563,11 @@ include 'components/header.php';
                         <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;">
                             Connect On</h4>
                         <div style="display: flex; gap: 1.5rem;">
-                            <a href="https://www.instagram.com/manujmittal" target="_blank"
+                            <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
                                 style="font-size: 0.8rem; color: var(--text); letter-spacing: 2px; font-weight: 800; opacity: 0.7; transition: 0.3s;"
                                 onmouseover="this.style.opacity='1';this.style.color='var(--gold)';"
                                 onmouseout="this.style.opacity='0.7';this.style.color='var(--text)';">INSTAGRAM</a>
-                            <a href="https://www.linkedin.com/in/manujmittal" target="_blank"
+                            <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"
                                 style="font-size: 0.8rem; color: var(--text); letter-spacing: 2px; font-weight: 800; opacity: 0.7; transition: 0.3s;"
                                 onmouseover="this.style.opacity='1';this.style.color='var(--gold)';"
                                 onmouseout="this.style.opacity='0.7';this.style.color='var(--text)';">LINKEDIN</a>
