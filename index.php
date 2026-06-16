@@ -1057,10 +1057,7 @@ $status = $_GET['status'] ?? null;
     <!-- Executive Mobile Layout Logic -->
     <style>
         @media (max-width: 992px) {
-
-            #about {
-                display: none !important;
-            }
+            /* About section visibility restored for mobile */
         }
     </style>
 
