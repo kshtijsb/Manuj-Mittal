@@ -2064,23 +2064,23 @@ $status = $_GET['status'] ?? null;
         <div class="stats-grid"
             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
             <div class="stat-item reveal">
-                <div class="stat-number plus" data-target="200000"
+                <div class="stat-number plus" data-target="19"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
                 <div class="stat-label"
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
-                    Global Members Led</div>
+                    Countries Travelled</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-number" data-target="8"
+                <div class="stat-number plus" data-target="10000"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
                 <div class="stat-label"
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
-                    Countries Impacted</div>
+                    Days of Experience</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-number" data-target="27"
+                <div class="stat-number plus" data-target="27"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
                 <div class="stat-label"
