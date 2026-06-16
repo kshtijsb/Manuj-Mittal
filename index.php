@@ -1657,7 +1657,6 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img shimmer">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Education%20in%20India/1.JPG" alt="Mayo College">
                                 <img src="assets/Education%20in%20India/1%20copy.JPG" alt="Mayo Classmates">
                                 <img src="assets/Education%20in%20India/6.JPG" alt="Chess Champion">
                                 <img src="assets/Education%20in%20India/10.JPG" alt="Graduation Day">
