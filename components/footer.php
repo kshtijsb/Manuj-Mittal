@@ -13,7 +13,7 @@
                 <a href="store.php" style="color: var(--gold); text-decoration: none; font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; border: 1px solid var(--gold); padding: 1rem 3rem; transition: 0.3s; display: inline-block;">THE LIBRARY</a>
             </div>
             <p style="font-size: 0.7rem; color: var(--muted); letter-spacing: 3px; margin-bottom: 1rem;">&copy; <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>. ALL STORIES RESERVED.</p>
-            <p style="font-size: 0.6rem; color: var(--muted); opacity: 0.6; letter-spacing: 2px;">Developed with Imagination by <span style="color: var(--blue); font-weight: 800;"><?php echo $developer_name; ?></span></p>
+
         </div>
     </footer>
 
@@ -137,6 +137,53 @@
                     }
                 });
             });
+
+            // Developer Easter Egg
+            let secretKeys = [];
+            const secretCode = 'kshitij';
+            window.addEventListener('keydown', (e) => {
+                secretKeys.push(e.key.toLowerCase());
+                secretKeys.splice(-secretCode.length - 1, secretKeys.length - secretCode.length);
+                if (secretKeys.join('').includes(secretCode)) {
+                    const toast = document.createElement('div');
+                    toast.innerText = '✨ Designed & Developed by Kshitij Bhilare ✨';
+                    Object.assign(toast.style, {
+                        position: 'fixed',
+                        bottom: '30px',
+                        left: '50%',
+                        transform: 'translateX(-50%) translateY(50px)',
+                        background: 'rgba(0, 0, 0, 0.9)',
+                        color: 'var(--gold)',
+                        padding: '1rem 2.5rem',
+                        borderRadius: '50px',
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '0.85rem',
+                        fontWeight: '800',
+                        letterSpacing: '3px',
+                        textTransform: 'uppercase',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                        border: '1px solid rgba(197, 160, 89, 0.5)',
+                        zIndex: '9999999',
+                        opacity: '0',
+                        transition: 'all 0.6s cubic-bezier(0.19, 1, 0.22, 1)'
+                    });
+                    document.body.appendChild(toast);
+                    
+                    setTimeout(() => {
+                        toast.style.transform = 'translateX(-50%) translateY(0)';
+                        toast.style.opacity = '1';
+                    }, 50);
+                    
+                    setTimeout(() => {
+                        toast.style.transform = 'translateX(-50%) translateY(50px)';
+                        toast.style.opacity = '0';
+                        setTimeout(() => toast.remove(), 600);
+                    }, 4000);
+                    
+                    secretKeys = [];
+                }
+            });
+
         });
     </script>
 </body>
