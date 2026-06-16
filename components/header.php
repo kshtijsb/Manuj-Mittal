@@ -23,7 +23,8 @@
             --gold: #c5a059;
             --yellow: #f4d03f;
             --white: #ffffff;
-            --bg: #fcfcfc;
+            --bg: #F8F6F0;
+            --bg-gradient: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F8F6F0 60%, #EFEBE0 100%);
             --text: #111111;
             --muted: #666666;
             --green: #2E8B57;
@@ -53,6 +54,7 @@
 
         [data-theme="dark"] {
             --bg: #0A0F14;
+            --bg-gradient: radial-gradient(circle at 50% 0%, #151A22 0%, #0A0F14 60%, #05080A 100%);
             --text: #F0F0F0;
             --surface: #12181F;
             --gold: #E5C07B;
@@ -65,6 +67,7 @@
         body { 
             font-family: var(--font-sans); 
             background: var(--bg); 
+            background-image: var(--bg-gradient);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
@@ -78,6 +81,14 @@
         h4 { font-family: var(--font-serif); font-weight: 700; }
 
 
+
+        .gradient-text-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, #F9E596 50%, #B6862C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
 
@@ -149,7 +160,7 @@
                 transform: translate3d(-50%, 0, 0);
             }
         }
-        .logo { font-size: 0.95rem; font-weight: 800; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; transition: var(--transition); }
+        .logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; transition: var(--transition); font-family: var(--font-serif); }
         .logo:hover { color: #ffffff; }
         
         .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
@@ -410,6 +421,32 @@
     </style>
 </head>
 <body>
+    <!-- Premium Preloader -->
+    <div id="premium-preloader" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0A0F14; z-index: 999999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.8s; visibility: visible; opacity: 1;">
+        <h1 style="color: var(--gold); font-size: 5rem; letter-spacing: 10px; font-weight: 900; margin: 0; padding-left: 10px; opacity: 0; transform: scale(0.9); animation: mmLogoFade 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;">
+            MM
+        </h1>
+    </div>
+    <style>
+        @keyframes mmLogoFade {
+            0% { opacity: 0; transform: scale(0.95) translateY(10px); filter: blur(10px); }
+            40% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+            80% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+            100% { opacity: 0; transform: scale(1.05) translateY(-5px); filter: blur(5px); }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const preloader = document.getElementById('premium-preloader');
+                if (preloader) {
+                    preloader.style.opacity = '0';
+                    preloader.style.visibility = 'hidden';
+                    setTimeout(() => preloader.remove(), 800);
+                }
+            }, 1500);
+        });
+    </script>
     <div id="ambient-canvas"></div>
 
 
@@ -496,7 +533,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.php" class="logo">MANUJ MITTAL</a>
+                <span class="logo" style="cursor: default;">MANUJ MITTAL</span>
                 <button class="menu-toggle">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -505,6 +542,7 @@
                     </svg>
                 </button>
                 <ul class="nav-links">
+                    <li><a href="index.php">Home</a></li>
                     <li class="nav-dropdown-wrapper">
                         <a href="index.php#about" class="dropdown-trigger">About MJ <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></a>
                         <ul class="nav-dropdown">
@@ -513,7 +551,7 @@
                             <li><a href="social-responsibility.php">Social Responsibility</a></li>
                         </ul>
                     </li>
-                    <li><a href="store.php">Store</a></li>
+
                     <li><a href="contact.php">Contact</a></li>
                     <li class="nav-social-item">
                         <a href="https://www.instagram.com/manujmittal" target="_blank" class="nav-social-btn" aria-label="Instagram">

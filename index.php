@@ -40,7 +40,7 @@ $status = $_GET['status'] ?? null;
     }
 
     .author-side {
-        background: #fff;
+        background: transparent;
         z-index: 1;
     }
 
@@ -727,20 +727,7 @@ $status = $_GET['status'] ?? null;
                             <h2
                                 style="font-size: 2.2rem; font-family: var(--font-serif); color: #111; margin-bottom: 0; line-height: 1.1;">
                                 Manuj Mittal</h2>
-                            <div class="author-simple-stats">
-                                <div class="stat">
-                                    <h4
-                                        style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">
-                                        Expertise</h4>
-                                    <p style="font-size: 0.9rem; font-weight: 800; color: #000;">Finance & Strategy</p>
-                                </div>
-                                <div class="stat">
-                                    <h4
-                                        style="font-size: 0.6rem; color: var(--color-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem;">
-                                        Academic</h4>
-                                    <p style="font-size: 0.9rem; font-weight: 800; color: #000;">MBA | Ed.D</p>
-                                </div>
-                            </div>
+
                             <p
                                 style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 0.1rem;">
                                 HOVER TO DISCOVER</p>
@@ -1080,59 +1067,133 @@ $status = $_GET['status'] ?? null;
     <!-- About Pillars Section (Color Coded) -->
     <section id="about" class="container" style="padding-top: 15vh;">
         <div class="section-header reveal">
-            <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Foundation of<br>the Visionary.</h2>
+            <h2 class="gradient-text-gold" style="font-size: 3.5rem; margin-bottom: 2rem;">Foundation of<br>the Visionary.</h2>
         </div>
 
+        <style>
+            .pillar-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                max-height: 200px;
+                overflow: hidden;
+                -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+                mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+                transition: max-height 0.5s ease;
+            }
+            .pillar-list li {
+                font-size: 0.9rem;
+                color: #555;
+                line-height: 1.5;
+                padding: 0.35rem 0 0.35rem 1.2rem;
+                position: relative;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            .pillar-list li:last-child {
+                border-bottom: none;
+            }
+            .pillar-list li::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: var(--theme-color);
+            }
+        </style>
         <div class="about-pillars">
             <!-- Education: Blue -->
             <a href="education.php" class="pillar-card reveal pillar-edu"
-                style="border-top: 6px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #0047AB; border-top: 6px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
                 <div
-                    style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(0,71,171,0.03); font-family: var(--font-sans); pointer-events: none;">
+                    style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: transparent; -webkit-text-stroke: 2px rgba(0,71,171,0.15); font-family: var(--font-serif); pointer-events: none;">
                     01</div>
                 <div class="pillar-tag"
                     style="color: #0047AB; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
                     Education</div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Academic Excellence</h3>
-                <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Alumnus of Mayo College, holding a
-                    Master's in Finance and an MBA from Simon Business School. Currently pursuing a Doctor of Education
-                    (Ed.D.) at the University of Rochester.</p>
-                <div class="pillar-link" style="margin-top: 1.5rem; color: #0047AB; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Education &amp; Early Life</h3>
+                <ul class="pillar-list">
+                    <li>Early Life - Childhood (1996)</li>
+                    <li>Pictures (TBD)</li>
+                    <li>Mayo College (Boarding School) at Age 12 (2008)</li>
+                    <li>Chess Champion @Age 15 (WazirChand Trophy)</li>
+                    <li>High School: Science (PCM)</li>
+                    <li>IMO (Represented India) in Kazakhstan</li>
+                    <li>Pursued CA (US CPA Equivalent) from Delhi, India</li>
+                    <li>IT Trainings and Soft Skills Programming</li>
+                    <li>B. Com 2017 - IGNOU, India</li>
+                    <li>Ms Finance 2020 - USA (Left India at age 23 in 2019)</li>
+                    <li>MBA (Finance) 2021 - Simon Business School, USA</li>
+                    <li>Dean’s List</li>
+                    <li>Networking Coaching</li>
+                    <li>Pursuing Doctor of Education (HE Administration)</li>
+                    <li>Award: Education 2.0 (Las Vegas)</li>
+                    <li>Graduating 2027</li>
+                    <li>Co-Chair: HE Students Association</li>
+                </ul>
+                <div class="pillar-link" style="margin-top: 1.5rem; background: rgba(0,71,171,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #0047AB; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
                     Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
             </a>
 
             <!-- Profession: Red -->
             <a href="professional.php" class="pillar-card reveal pillar-prof"
-                style="border-top: 6px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #C41E3A; border-top: 6px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
                 <div
-                    style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(196,30,58,0.03); font-family: var(--font-sans); pointer-events: none;">
+                    style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: transparent; -webkit-text-stroke: 2px rgba(196,30,58,0.15); font-family: var(--font-serif); pointer-events: none;">
                     02</div>
                 <div class="pillar-tag"
                     style="color: #C41E3A; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
                     Professional</div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Strategic Leadership</h3>
-                <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Expertise in finance, operations, and
-                    organizational strategy. Specializing in distilling complex management challenges into actionable
-                    narratives.</p>
-                <div class="pillar-link" style="margin-top: 1.5rem; color: #C41E3A; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Professional Career</h3>
+                <ul class="pillar-list">
+                    <li>BNP Paribas - Internship</li>
+                    <li>Grant Thornton - Articleship/ Externship (USA)</li>
+                    <li>Boutique Investment Banking (Delhi, India)</li>
+                    <li>Boutique M&amp;A (NY, USA)</li>
+                    <li>Morgan Stanley (Manhattan, USA)</li>
+                    <li>CPA, Firm (NY, USA)</li>
+                    <li>Career Advisor /AD - UR (Rochester,USA)</li>
+                    <li>Award: Education 2.0 (Las Vegas)</li>
+                    <li>Leadership Programs GA - UR (Rochester,USA)</li>
+                </ul>
+                <div class="pillar-link" style="margin-top: 1.5rem; background: rgba(196,30,58,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #C41E3A; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
                     Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
             </a>
 
             <!-- Social Responsibility: Green -->
             <a href="social-responsibility.php" class="pillar-card reveal pillar-social"
-                style="border-top: 6px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #2E8B57; border-top: 6px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
                 <div
-                    style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: rgba(46,139,87,0.03); font-family: var(--font-sans); pointer-events: none;">
+                    style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; font-weight: 900; color: transparent; -webkit-text-stroke: 2px rgba(46,139,87,0.15); font-family: var(--font-serif); pointer-events: none;">
                     03</div>
                 <div class="pillar-tag"
                     style="color: #2E8B57; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
                     Social Responsibility</div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Global Impact</h3>
-                <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Dedicated to empowering the next
-                    generation of leaders through modern management thinking and thought-provoking storytelling.</p>
-                <div class="pillar-link" style="margin-top: 1.5rem; color: #2E8B57; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Social Responsibility</h3>
+                <ul class="pillar-list">
+                    <li>RYLA Participant - Interact 2013 (Rotary International)</li>
+                    <li>Joined Rotaract in 2014 - RC MV (Rotary International)</li>
+                    <li>Charter President - RC Delhi Central (2015-16)</li>
+                    <li>RI Convention - Atlanta 2017</li>
+                    <li>District Rotaract Representative (2016-17)</li>
+                    <li>RI Convention - Toronto 2018</li>
+                    <li>RI Convention - Hamburg 2019</li>
+                    <li>RSA ROAR ‘Best DRR’ Award</li>
+                    <li>President - Rotaract South Asia MDIO (2019-2020)</li>
+                    <li>8 Countries, xDistricts, #200,000 Rotaractors</li>
+                    <li>Chairman - Rotasia Delhi 2020 (Conference)</li>
+                    <li><strong>At Present:</strong></li>
+                    <li>RI Member and Rotaract Alumni</li>
+                    <li>Mayo Alumni North America (MACANA)- Member</li>
+                    <li>ICAI, NY- Member</li>
+                    <li>Simon Business School, NY- Alumni</li>
+                </ul>
+                <div class="pillar-link" style="margin-top: 1.5rem; background: rgba(46,139,87,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #2E8B57; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
                     Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
             </a>
@@ -1187,7 +1248,7 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Journey Section: Dynamic Photo Timeline -->
-    <section id="journey" style="padding: 15vh 0; overflow: hidden; background: #fff;">
+    <section id="journey" style="padding: 15vh 0; overflow: hidden; background: transparent;">
 
         <style>
             @media (max-width: 1024px) {
@@ -1203,7 +1264,7 @@ $status = $_GET['status'] ?? null;
         </style>
         <div class="container journey-header">
             <div style="text-align: center; margin-bottom: 8rem;" class="reveal">
-                <h2 style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; color: #000; letter-spacing: -2px;">A
+                <h2 class="gradient-text-gold" style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -2px;">A
                     Legacy in<br>the Making.</h2>
             </div>
         </div>
@@ -1292,22 +1353,25 @@ $status = $_GET['status'] ?? null;
             .timeline-card.active .timeline-dot {
                 border-color: var(--theme-color, var(--gold));
                 background: var(--theme-color, var(--gold));
-                box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.05);
+                box-shadow: 0 0 20px var(--theme-color, var(--gold)), 0 0 0 8px rgba(197, 160, 89, 0.2);
             }
 
             /* Card Content Styling */
             .timeline-content {
-                background: #fff;
+                background: rgba(255, 255, 255, 0.5); /* Glassmorphism */
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
                 border-radius: 12px;
                 overflow: hidden;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-                border: 1px solid rgba(0, 0, 0, 0.03);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.3);
                 transition: transform 0.5s ease, box-shadow 0.5s ease;
             }
 
             .timeline-content:hover {
                 transform: translateY(-10px);
-                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+                border: 1px solid rgba(255, 255, 255, 0.5);
             }
 
             .timeline-img {
@@ -1381,6 +1445,45 @@ $status = $_GET['status'] ?? null;
                 color: #666;
                 line-height: 1.8;
                 margin: 0;
+            }
+
+            .timeline-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .timeline-list li {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.7;
+                padding: 0.45rem 0 0.45rem 1.4rem;
+                position: relative;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+
+            .timeline-list li:last-child {
+                border-bottom: none;
+            }
+
+            .timeline-list li::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--theme-color, var(--gold));
+            }
+
+            .numerology {
+                font-size: 0.78rem;
+                color: var(--gold);
+                font-weight: 700;
+                letter-spacing: 1px;
+                opacity: 0.85;
             }
 
             /* Mobile Optimization (Horizontal Scroll Timeline) */
@@ -1489,11 +1592,12 @@ $status = $_GET['status'] ?? null;
                     flex-direction: column;
                 }
 
-                .timeline-text p {
+                .timeline-list li {
                     display: block !important;
                     font-size: 0.95rem !important;
                     line-height: 1.6 !important;
                     color: #555 !important;
+                    padding: 0.35rem 0 0.35rem 1.2rem !important;
                 }
 
                 .timeline-year {
@@ -1536,9 +1640,12 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">1996 Onward · Foundation</div>
                         <h4>Early Life and Family</h4>
-                        <p>Born in India (1996). Raised in a close-knit, supportive family environment that nurtured curiosity, built strong value systems, and encouraged academic excellence from the start.</p>
+                        <ul class="timeline-list">
+                            <li>Family members are engineers, doctors, lawyers and civil services/ public sector/administrators</li>
+                            <li>Father early career in USA, build his own business in India and is Rotary International - Past District Governor</li>
+                            <li>Manuj born on Jan 10 (01.10.1996) &nbsp;<span class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1558,9 +1665,13 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2008 – 2017 · Academics</div>
                         <h4>Education in India</h4>
-                        <p>Proud boarding alumnus of the prestigious Mayo College (2008). Accomplished Chess Champion and winner of the WazirChand Trophy. Completed his Bachelor of Commerce (B.Com) in 2017.</p>
+                        <ul class="timeline-list">
+                            <li>Early schooling from Mayo College, Ajmer</li>
+                            <li>B. Commerce (Accounting &amp; Finance)</li>
+                            <li>ICAI (Chartered Accountant) — Intermediate</li>
+                            <li>Doctorate in Leadership &amp; Social Work (Honoris Causa)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1573,9 +1684,12 @@ $status = $_GET['status'] ?? null;
                         <img src="assets/Professional%20Journey%20%20India/5.JPG" alt="Early Professional Life">
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2015 – 2019 · Early Career</div>
                         <h4>Professional Journey in India</h4>
-                        <p>Began his professional career in corporate finance and business operations, gaining vital experience in financial modeling, corporate strategy, and organizational development.</p>
+                        <ul class="timeline-list">
+                            <li>Risk Advisory (Internal Audit) at Grant Thornton</li>
+                            <li>Consulting at Boutique Firm</li>
+                            <li>M&amp;A at Boutique IB Firm</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1598,9 +1712,12 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2013 – 2020 · Leadership</div>
-                        <h4>Rise in Rotaract</h4>
-                        <p>Joined Rotaract in 2014, becoming Charter President in 2015. Scaled heights to lead 200,000+ members as President of Rotaract South Asia and serve as Chairman for Rotasia Delhi 2020.</p>
+                        <h4>Service through Rotaract International</h4>
+                        <ul class="timeline-list">
+                            <li>Charter President — Rotaract Club Delhi Central</li>
+                            <li>District Rotaract Representative (DRR) — RID 3011 (2016–2017)</li>
+                            <li>President — Rotaract South Asia MDIO (2019–2020)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1621,9 +1738,12 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2019 – 2021 · Global Studies</div>
                         <h4>Education in the US</h4>
-                        <p>Relocated to the USA at age 23 (2019). Earned an MS in Finance (2020) and an MBA (2021) from the Simon Business School, University of Rochester. Active as a Dean's List student and Networking Coach.</p>
+                        <ul class="timeline-list">
+                            <li>Master in Finance (MSF) — Simon Business School, NY</li>
+                            <li>Master in Business Administration (MBA) — Simon Business School, NY</li>
+                            <li>Doctorate in Education (Ed.D) — Warner School, University of Rochester</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1654,9 +1774,13 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2017 Onward · Service</div>
                         <h4>Rise in Rotary</h4>
-                        <p>Advanced in Rotary International. Represented the district at the RI Atlanta Convention (2017) and RI Hamburg Convention (2019), where he won the 'Best DRR' award.</p>
+                        <ul class="timeline-list">
+                            <li>Indian Representative at RI Assembly, USA 2020</li>
+                            <li>Chairman — Rotasia Delhi 2020</li>
+                            <li>Speaker at International Pre-Convention (USA, Canada, Germany)</li>
+                            <li>Rotary International — Paul Harris Fellow (PHF)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1675,9 +1799,13 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2021 Onward · Corporate Strategy</div>
                         <h4>Professional Journey in the US</h4>
-                        <p>Gained professional excellence in NYC and Manhattan at Grant Thornton and Morgan Stanley. Currently helping future leaders as Career Advisor and Assistant Director at University of Rochester.</p>
+                        <ul class="timeline-list">
+                            <li>Finance Internships at Boutique Firms</li>
+                            <li>Investor Services at Morgan Stanley, NYC</li>
+                            <li>Career Consultant at Benet Career Management Center, University of Rochester</li>
+                            <li>Leadership Program GA at Student Life, University of Rochester</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1704,9 +1832,15 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <div class="timeline-year">2027 & Beyond · Vision</div>
                         <h4>Vision | Awards & Recognition</h4>
-                        <p>Pursuing an Ed.D. at the University of Rochester, and serving as HESA Co-Chair. Honored with the global 'Education 2.0' Outstanding Leadership Award in Las Vegas.</p>
+                        <ul class="timeline-list">
+                            <li>District Chess Champion - Rajasthan, India 2011</li>
+                            <li>Represented India at International Maths Olympiad, Kazakhstan 2014</li>
+                            <li>Best ‘DRR’ - India 2017</li>
+                            <li>Dean’s List - Simon Business School 2021</li>
+                            <li>Excellence in Education - 2.0 Conference USA 2026</li>
+                            <li>Continue contributing towards designing the future of our futures</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1900,8 +2034,7 @@ $status = $_GET['status'] ?? null;
         }
     </style>
     <section id="contact" class="container reveal contact-cta" style="text-align: center;">
-        <div class="contact-cta-inner"
-            style="background: #f5f5f7; border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+        <div class="contact-cta-inner" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid rgba(255, 255, 255, 0.5);">
             <div class="side-tag"
                 style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem;">
                 Let's Connect
@@ -1959,7 +2092,7 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section" style="padding: 4rem 0; background: #fafafa; position: relative; overflow: hidden;">
+    <section class="quotes-section" style="padding: 4rem 0; background: transparent; position: relative; overflow: hidden;">
         <div
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
         </div>
@@ -1968,9 +2101,6 @@ $status = $_GET['status'] ?? null;
                 <p
                     style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
                     "Purpose defines strategy."</p>
-                <div class="quote-signature"
-                    style="font-family: 'Nothing You Could Do', cursive; font-size: 4.2rem; color: var(--gold);">
-                    Manuj Mittal</div>
             </div>
         </div>
     </section>
