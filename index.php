@@ -1250,17 +1250,21 @@ $status = $_GET['status'] ?? null;
         <style>
             @media (max-width: 1024px) {
                 #journey .journey-header {
-                    padding: 8rem 1.5rem 4rem !important;
+                    padding: 4rem 1.5rem 0 !important;
                     background: transparent;
                 }
 
                 #journey .journey-header h2 {
                     color: var(--color-text) !important;
                 }
+
+                #journey .legacy-title-wrapper {
+                    margin-bottom: 1rem !important;
+                }
             }
         </style>
         <div class="container journey-header">
-            <div style="text-align: center; margin-bottom: 8rem;" class="reveal">
+            <div style="text-align: center; margin-bottom: 8rem;" class="reveal legacy-title-wrapper">
                 <h2 class="gradient-text-gold" style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -2px;">A
                     Legacy in<br>the Making.</h2>
             </div>
