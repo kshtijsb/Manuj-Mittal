@@ -1046,7 +1046,7 @@ $status = $_GET['status'] ?? null;
             }
         }
     </style>
-    <section class="mobile-cinematic-book reveal">
+    <section id="book" class="mobile-cinematic-book reveal">
         <div class="cinematic-glow"></div>
         <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="cinematic-book-cover">
         <h2 class="cinematic-title"><?php echo $books[0]['title']; ?></h2>
