@@ -3,6 +3,8 @@
 :root {
   /* Vibrant Palette */
   --color-bg: #ffffff;
+  --color-bg-center: #ffffff;
+  --color-bg-edge: #f4f4f9;
   --color-surface: #f8faff;
   --color-primary: #0056b3; /* Royal Blue */
   --color-secondary: #f1c40f; /* Sun Yellow */
@@ -32,7 +34,8 @@
 }
 
 html, body {
-  background-color: var(--color-bg);
+  background: radial-gradient(circle at center, var(--color-bg-center) 0%, var(--color-bg-edge) 100%) fixed;
+  background-color: var(--color-bg-edge);
   color: var(--color-text);
   font-family: var(--font-sans);
   line-height: 1.6;
@@ -684,6 +687,8 @@ nav {
 
 [data-theme="dark"] {
     --color-bg: #0a0a0a;
+    --color-bg-center: #16161e;
+    --color-bg-edge: #030305;
     --color-surface: #121212;
     --color-text: #ffffff;
     --color-text-muted: #a0a0a0;

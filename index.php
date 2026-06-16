@@ -1067,7 +1067,7 @@ $status = $_GET['status'] ?? null;
     <!-- About Pillars Section (Color Coded) -->
     <section id="about" class="container" style="padding-top: 15vh;">
         <div class="section-header reveal">
-            <h2 class="gradient-text-gold" style="font-size: 3.5rem; margin-bottom: 2rem;">Foundation of<br>the Visionary.</h2>
+            <h2 class="gradient-text-gold" style="font-size: 3.5rem; margin-bottom: 2rem;">Foundation of<br>the Author.</h2>
         </div>
 
         <style>
