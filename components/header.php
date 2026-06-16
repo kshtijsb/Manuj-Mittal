@@ -389,7 +389,7 @@
             }
             .dropdown-arrow { display: none !important; }
 
-            .menu-toggle { display: block; z-index: 1002; position: relative; }
+            .menu-toggle { display: none !important; }
             .menu-toggle.active svg { stroke: #fff; }
             .nav-links a { font-size: 2.2rem; font-family: var(--font-serif); text-transform: none; letter-spacing: 0px; color: #fff; font-weight: 400; }
         }
@@ -425,7 +425,7 @@
         }
 
         @media (max-width: 768px) {
-            .theme-toggle { bottom: 15px !important; right: 15px !important; width: 38px !important; height: 38px !important; }
+            .theme-toggle { bottom: 90px !important; right: 15px !important; width: 38px !important; height: 38px !important; }
             h1 { font-size: 2.5rem !important; }
             h2 { font-size: 2rem !important; }
         }
