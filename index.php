@@ -1408,10 +1408,10 @@ $status = $_GET['status'] ?? null;
             }
 
             .timeline-marquee-track img {
-                width: 100cqw !important;
+                width: 100% !important;
                 height: 100% !important;
                 object-fit: contain !important; /* Prevent faces/contents from being cropped */
-                flex-shrink: 0 !important; 
+                flex: 0 0 100% !important; 
                 transition: none !important;
                 transform: none !important;
             }

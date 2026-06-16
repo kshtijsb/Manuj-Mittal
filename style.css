@@ -42,6 +42,7 @@ html, body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -445,6 +446,8 @@ nav {
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-text { text-align: center; }
   .section-title { font-size: 3rem; }
+  .section-header { text-align: center; }
+  .section-header h2 { text-align: center !important; }
 }
 
 @media (max-width: 768px) {
