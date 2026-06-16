@@ -51,10 +51,8 @@ include 'components/header.php';
                 .bento-list li::before { content: ''; display: inline-block; width: 6px; height: 6px; background: #C41E3A; border-radius: 50%; }
                 
                 @media (max-width: 768px) {
-                    .editorial-grid { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 60px; }
-                    .portrait-container { order: -1; }
-                    .portrait-frame { height: auto !important; aspect-ratio: 4/3; max-height: 350px; }
-                    .portrait-frame img { object-position: top center !important; }
+                    .editorial-grid { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 40px; }
+                    .portrait-container { display: none !important; }
                     .bento-grid { grid-template-columns: 1fr; gap: 1rem; }
                     .bento-wide { grid-column: span 1; }
                     .bento-item { padding: 2rem; border-radius: 16px; }
