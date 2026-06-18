@@ -383,8 +383,8 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Early Life and Family</h4>
                         <ul class="timeline-list">
-                            <li>Family members are engineers, doctors, lawyers and civil services/ public sector/administrators</li>
-                            <li>Father early career in USA, build his own business in India and is Rotary International - Past District Governor</li>
+                            <li>Family members are engineers, doctors, lawyers and public sector administrators </li>
+                            <li>Father early career in USA, build his own business in India and is Past District Governor with Rotary International</li>
                             <li>Manuj born on Jan 10 (01.10.1996) &nbsp;<span class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
                         </ul>
                     </div>
@@ -408,9 +408,9 @@ $status = $_GET['status'] ?? null;
                         <h4>Education in India</h4>
                         <ul class="timeline-list">
                             <li>Early schooling from Mayo College, Ajmer</li>
-                            <li>B. Commerce (Accounting &amp; Finance)</li>
+                            <li>B. Commerce in Accounting & Finance, Delhi</li>
                             <li>ICAI (Chartered Accountant) — Intermediate</li>
-                            <li>Doctorate in Leadership &amp; Social Work (Honoris Causa)</li>
+                            <li>Honorary Doctorate in Leadership & Social Work</li>
                         </ul>
                     </div>
                 </div>
@@ -514,11 +514,11 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>Rise in Rotary</h4>
+                        <h4>Service and Leadership with Rotary International</h4>
                         <ul class="timeline-list">
-                            <li>Indian Representative at RI Assembly, USA 2020</li>
+                            <li>Rotaract Representative at RI Assembly, USA 2020</li>
                             <li>Chairman — Rotasia Delhi 2020</li>
-                            <li>Speaker at International Pre-Convention (USA, Canada, Germany)</li>
+                            <li>Speaker at International Pre-Convention (USA 2017, Canada 2018, Germany 2019)</li>
                             <li>Rotary International — Paul Harris Fellow (PHF)</li>
                         </ul>
                     </div>
@@ -539,7 +539,7 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>Professional Journey in the US</h4>
+                        <h4>USA Professional Journey</h4>
                         <ul class="timeline-list">
                             <li>Finance Internships at Boutique Firms</li>
                             <li>Investor Services at Morgan Stanley, NYC</li>

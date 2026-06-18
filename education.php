@@ -47,7 +47,7 @@ include 'components/header.php';
                 .bento-title { font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #0047AB; margin-bottom: 1.2rem; }
                 .bento-text { font-size: 1.15rem; color: #111; line-height: 1.6; font-weight: 600; }
                 .bento-list { list-style: none; padding: 0; margin: 0; }
-                .bento-list li { font-size: 1.05rem; color: #444; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem; }
+                .bento-list li { font-size: 1.05rem; color: #444; margin-bottom: 0.8rem; display: flex; align-citems: center; gap: 0.6rem; }
                 .bento-list li::before { content: ''; display: inline-block; width: 6px; height: 6px; background: #0047AB; border-radius: 50%; }
                 
                 @media (max-width: 768px) {

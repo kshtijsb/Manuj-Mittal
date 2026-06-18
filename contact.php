@@ -542,7 +542,7 @@ include 'components/header.php';
                 <div class="side-tag"
                     style="color: var(--gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block;">
                     GET IN TOUCH</div>
-                <h1 class="contact-page-h1" style="color: var(--text);">Let's Write<br>the Next<br>Chapter.</h1>
+                <h1 class="contact-page-h1" style="color: var(--text);">Open to connecting<br>and networking<br>forward.</h1>
 
                 <div class="contact-details" style="margin-top: 6rem;">
                     <div class="contact-item" style="margin-bottom: 3rem;">
