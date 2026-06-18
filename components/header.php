@@ -135,8 +135,8 @@
                     </svg>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.php">Home</a></li>
-                    <li class="nav-dropdown-wrapper">
+                    <li class="hide-on-mobile"><a href="index.php">Home</a></li>
+                    <li class="nav-dropdown-wrapper hide-on-mobile">
                         <a href="index.php#about" class="dropdown-trigger">About MJ <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></a>
                         <ul class="nav-dropdown">
                             <li><a href="education.php">Education</a></li>
@@ -145,7 +145,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="contact.php">Contact</a></li>
+                    <li class="hide-on-mobile"><a href="contact.php">Contact</a></li>
                     <li class="nav-social-item">
                         <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank" class="nav-social-btn" aria-label="Instagram">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
