@@ -6,7 +6,7 @@ $developer_name = "Kshitij Bhilare";
 $books = [
     [
         "id" => "eternal-archive",
-        "title" => "The Eternal Archive",
+        "title" => "Personal Operating System",
         "tag" => "Latest Release",
         "meta" => "Philosophical Fiction",
         "price_start" => "$5.23",

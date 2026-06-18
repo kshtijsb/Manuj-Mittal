@@ -1,6 +1,6 @@
 <?php
 require_once 'includes/data.php';
-$page_title = "Manuj Mittal | Narrative Architect";
+$page_title = "Manuj Mittal";
 include 'components/header.php';
 
 // Check for subscriber status
@@ -25,7 +25,7 @@ $status = $_GET['status'] ?? null;
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>">
                             </div>
                             <h2
-                                style="font-size: 2.2rem; font-family: var(--font-serif); margin-bottom: 0; color: #111; line-height: 1.1;">
+                                style="font-size: 2.2rem; font-family: var(--font-serif); margin-bottom: 0; color: #000000; line-height: 1.1;">
                                 <?php echo $books[0]['title']; ?>
                             </h2>
                             <p
@@ -63,7 +63,7 @@ $status = $_GET['status'] ?? null;
                                 <img src="assets/author main.jpg" alt="Manuj Mittal" style="object-position: center;">
                             </div>
                             <h2
-                                style="font-size: 2.2rem; font-family: var(--font-serif); color: #111; margin-bottom: 0; line-height: 1.1;">
+                                style="font-size: 2.2rem; font-family: var(--font-serif); color: #000000; margin-bottom: 0; line-height: 1.1;">
                                 Manuj Mittal</h2>
 
                             <p
