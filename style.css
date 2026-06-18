@@ -1963,7 +1963,7 @@ nav {
             .timeline-marquee-track img {
                 width: 100% !important;
                 height: 100% !important;
-                object-fit: cover !important; 
+                object-fit: contain !important; 
                 flex: 0 0 100% !important; 
                 transition: none !important;
                 transform: none !important;
