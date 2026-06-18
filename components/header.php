@@ -17,7 +17,7 @@
     <script src="https://unpkg.com/split-type"></script>
     <!-- Swup (Page Transitions) -->
     <script src="https://unpkg.com/swup@4"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     
 </head>
 <body>
