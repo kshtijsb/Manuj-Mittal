@@ -1,28 +1,34 @@
 // --- 1. Initialize Lenis Smooth Scrolling ---
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard ease-out
-    direction: 'vertical',
-    gestureDirection: 'vertical',
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-})
+let lenis;
 
-function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
+if (window.innerWidth > 992) {
+    lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard ease-out
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 }
-requestAnimationFrame(raf)
 
 // --- 2. GSAP ScrollTrigger Integration ---
 gsap.registerPlugin(ScrollTrigger);
 
 // Sync ScrollTrigger with Lenis
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time) => { lenis.raf(time * 1000) });
+if (lenis) {
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000) });
+}
 gsap.ticker.lagSmoothing(0, 0);
 
 // --- 3. Cinematic Typography (SplitType) & Reveal ---
