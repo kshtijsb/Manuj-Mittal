@@ -544,7 +544,7 @@ $status = $_GET['status'] ?? null;
                             <li>Finance Internships at Boutique Firms</li>
                             <li>Investor Services at Morgan Stanley, NYC</li>
                             <li>Career Consultant at Benet Career Management Center, University of Rochester</li>
-                            <li>Leadership Program GA at Student Life, University of Rochester</li>
+                            <li>Leadership Program GA at Student Life,      University of Rochester</li>
                         </ul>
                     </div>
                 </div>
@@ -572,14 +572,13 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>Vision | Awards & Recognition</h4>
+                        <h4>Awards & Recognition</h4>
                         <ul class="timeline-list">
                             <li>District Chess Champion - Rajasthan, India 2011</li>
                             <li>Represented India at International Maths Olympiad, Kazakhstan 2014</li>
-                            <li>Best ‘DRR’ - India 2017</li>
-                            <li>Dean’s List - Simon Business School 2021</li>
+                            <li>Best ‘DRR’ - South Asia 2017</li>
+                            <li>Dean’s List - Simon Business School, NY 2021</li>
                             <li>Excellence in Education - 2.0 Conference USA 2026</li>
-                            <li>Continue contributing towards designing the future of our futures</li>
                         </ul>
                     </div>
                 </div>
@@ -781,7 +780,15 @@ $status = $_GET['status'] ?? null;
         <div class="stats-grid"
             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
             <div class="stat-item reveal">
-                <div class="stat-number plus" data-target="19"
+                <div class="stat-number plus" data-target="150000"
+                    style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
+                    0</div>
+                <div class="stat-label"
+                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
+                    Lives Impacted</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number plus" data-target="15"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
                 <div class="stat-label"
@@ -794,7 +801,7 @@ $status = $_GET['status'] ?? null;
                     0</div>
                 <div class="stat-label"
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
-                    Days of Experience</div>
+                    Days Lived</div>
             </div>
             <div class="stat-item reveal">
                 <div class="stat-number plus" data-target="27"
