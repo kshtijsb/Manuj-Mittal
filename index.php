@@ -762,7 +762,7 @@ $status = $_GET['status'] ?? null;
             </div>
             <h2
                 style="font-family: var(--font-sans); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 2rem; color: #111; line-height: 1.1;">
-                Write the Next<br>Chapter Together.
+                Open to connecting<br>and networking forward.
             </h2>
             <p style="font-size: 1.1rem; color: #555; max-width: 500px; margin: 0 auto 3rem auto; line-height: 1.6;">
                 Whether for speaking engagements, mentorship, or literary inquiries, Manuj is always open to starting a
@@ -802,14 +802,6 @@ $status = $_GET['status'] ?? null;
                 <div class="stat-label"
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
                     Days Lived</div>
-            </div>
-            <div class="stat-item reveal">
-                <div class="stat-number plus" data-target="27"
-                    style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
-                    0</div>
-                <div class="stat-label"
-                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
-                    Years of Evolution</div>
             </div>
         </div>
     </section>
