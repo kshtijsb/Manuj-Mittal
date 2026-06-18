@@ -2675,3 +2675,14 @@ nav {
     flex: 0 0 1.5rem;
     display: block;
 }
+
+/* Mobile Heading Enhancements for Continuous Layout */
+@media (max-width: 768px) {
+    #about .section-header h2,
+    #journey .legacy-title-wrapper h2 {
+        font-size: clamp(3.8rem, 12vw, 4.6rem) !important;
+        text-align: center !important;
+        display: block !important;
+        line-height: 1.05 !important;
+    }
+}
