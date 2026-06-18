@@ -367,7 +367,7 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer">
+                    <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
                                 <img src="assets/Early%20life%20and%20family/0.jpg" alt="Early Life">
@@ -395,7 +395,7 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer">
+                    <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
                                 <img src="assets/Education%20in%20India/1%20copy.JPG" alt="Mayo Classmates">
@@ -420,7 +420,7 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer">
+                    <div class="timeline-img">
                         <img src="assets/Professional%20Journey%20%20India/5.JPG" alt="Early Professional Life">
                     </div>
                     <div class="timeline-text">
@@ -438,7 +438,7 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer">
+                    <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
                                 <img src="assets/Rise%20in%20Rotaract/1.JPG" alt="Rotaract Event 1">
@@ -466,7 +466,7 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer">
+                    <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
                                 <img src="assets/Education%20in%20the%20US/2.JPG" alt="MSF Class">
@@ -492,7 +492,7 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer">
+                    <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
                                 <img src="assets/Rise%20in%20Rotary/rotary..JPG" alt="Rotary International">
@@ -529,7 +529,7 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer">
+                    <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
                                 <img src="assets/Professional%20Journey%20in%20the%20US/IMG_8300.jpeg" alt="Morgan Stanley NY Office">
@@ -554,7 +554,7 @@ $status = $_GET['status'] ?? null;
             <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-img shimmer">
+                    <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
                                 <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0.JPG" alt="Las Vegas Education 2.0 Award">
@@ -691,7 +691,8 @@ $status = $_GET['status'] ?? null;
                             intervalId = setInterval(() => {
                                 currentIndex++;
                                 track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-                                track.style.transform = `translate3d(-${currentIndex * 100}cqw, 0, 0)`;
+                                const percent = (currentIndex * 100) / (slideCount + 1);
+                                track.style.transform = `translate3d(-${percent}%, 0, 0)`;
 
                                 if (currentIndex === slideCount) {
                                     // Reset to index 0 seamlessly after slide transition finishes
