@@ -1424,11 +1424,15 @@ nav {
             padding: 2rem 1.5rem !important;
         }
 
-        #about,
-        #journey,
         #contact,
         .stats-section {
             padding: 4rem 0 !important;
+        }
+        #about {
+            padding: 4rem 0 1rem 0 !important;
+        }
+        #journey {
+            padding: 1rem 0 4rem 0 !important;
         }
 
         .side-tag {
@@ -1811,7 +1815,7 @@ nav {
 
             @media (max-width: 1024px) {
                 #journey .journey-header {
-                    padding: 4rem 1.5rem 0 !important;
+                    padding: 1rem 1.5rem 0 !important;
                     background: transparent;
                 }
 
