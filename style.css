@@ -2500,6 +2500,8 @@ nav {
         .nav-social-btn svg {
             display: block;
             stroke-width: 2px;
+        }
+
         /* Mobile Menu Toggle */
         .menu-toggle { 
             display: none; 
