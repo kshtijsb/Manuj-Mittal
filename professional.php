@@ -52,7 +52,8 @@ include 'components/header.php';
                 
                 @media (max-width: 768px) {
                     .editorial-grid { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 40px; }
-                    .portrait-container { display: none !important; }
+                    .portrait-frame { height: 350px !important; border-radius: 12px !important; }
+                    .portrait-container > div:last-child { top: -10px !important; right: -10px !important; width: 60px !important; height: 60px !important; }
                     .bento-grid { grid-template-columns: 1fr; gap: 1rem; }
                     .bento-wide { grid-column: span 1; }
                     .bento-item { padding: 2rem; border-radius: 16px; }
