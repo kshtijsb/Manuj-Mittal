@@ -163,21 +163,21 @@
         <div class="header-marquee">
             <div class="header-marquee-inner">
                 <div class="header-marquee-group">
-                    <span>Author</span>
+                    <span>Published Author</span>
                     <span class="separator">•</span>
                     <span>Doctorate Researcher (Higher Education)</span>
                     <span class="separator">•</span>
-                    <span>Financial Service</span>
+                    <span>Financial Service Provider</span>
                     <span class="separator">•</span>
                     <span>Career Strategy Advisor (Consultant)</span>
                     <span class="separator">•</span>
                 </div>
                 <div class="header-marquee-group" aria-hidden="true">
-                    <span>Author</span>
+                    <span>Published Author</span>
                     <span class="separator">•</span>
                     <span>Doctorate Researcher (Higher Education)</span>
                     <span class="separator">•</span>
-                    <span>Financial Service</span>
+                    <span>Financial Service Provider</span>
                     <span class="separator">•</span>
                     <span>Career Strategy Advisor (Consultant)</span>
                     <span class="separator">•</span>
