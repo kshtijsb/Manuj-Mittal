@@ -441,7 +441,15 @@ nav {
   transform: translateY(0);
 }
 
+.section-header {
+  text-align: center;
+  width: 100%;
+}
 
+.section-header h2 {
+  text-align: center !important;
+  display: block !important;
+}
 
 /* Responsive */
 @media (max-width: 992px) {
