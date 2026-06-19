@@ -354,10 +354,7 @@ $status = $_GET['status'] ?? null;
         
 
         <div class="timeline-container">
-            <div class="timeline-line">
-                <div class="timeline-progress"></div>
-            </div>
-            <!-- Horizontal Timeline Line for Mobile -->
+            <!-- Horizontal Timeline Line -->
             <div class="timeline-line-horizontal">
                 <div class="timeline-progress-horizontal"></div>
             </div>
@@ -587,14 +584,13 @@ $status = $_GET['status'] ?? null;
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const cards = document.querySelectorAll('.timeline-card');
-                const progress = document.querySelector('.timeline-progress');
                 const timelineContainer = document.querySelector('.timeline-container');
                 const progressHorizontal = document.querySelector('.timeline-progress-horizontal');
                 const lineHorizontal = document.querySelector('.timeline-line-horizontal');
 
-                // Update dynamic layout properties for horizontal scroll line on mobile
+                // Update dynamic layout properties for horizontal scroll line
                 const initHorizontalLine = () => {
-                    if (window.innerWidth <= 992 && cards.length > 0 && lineHorizontal) {
+                    if (cards.length > 0 && lineHorizontal) {
                         const firstCard = cards[0];
                         const lastCard = cards[cards.length - 1];
                         
@@ -609,58 +605,66 @@ $status = $_GET['status'] ?? null;
                 const updateTimeline = () => {
                     if (!timelineContainer) return;
 
-                    if (window.innerWidth > 992) {
-                        // Desktop scroll logic
-                        const scrollPos = window.scrollY + window.innerHeight * 0.8;
-                        const containerRect = timelineContainer.getBoundingClientRect();
-                        const absoluteTop = containerRect.top + window.scrollY;
-
-                        cards.forEach(card => {
-                            const cardTop = card.getBoundingClientRect().top + window.scrollY;
-                            if (scrollPos > cardTop + 100) {
-                                card.classList.add('active');
-                            }
-                        });
-
-                        const relativeScroll = window.scrollY + window.innerHeight / 2 - absoluteTop;
-                        let pct = (relativeScroll / containerRect.height) * 100;
-                        pct = Math.max(0, Math.min(100, pct));
-                        if (progress) {
-                            progress.style.height = pct + '%';
+                    // Global horizontal scroll logic
+                    const maxScroll = timelineContainer.scrollWidth - timelineContainer.clientWidth;
+                    if (maxScroll > 0) {
+                        const pct = (timelineContainer.scrollLeft / maxScroll) * 100;
+                        if (progressHorizontal) {
+                            progressHorizontal.style.width = pct + '%';
                         }
-                    } else {
-                        // Mobile horizontal scroll logic
-                        const maxScroll = timelineContainer.scrollWidth - timelineContainer.clientWidth;
-                        if (maxScroll > 0) {
-                            const pct = (timelineContainer.scrollLeft / maxScroll) * 100;
-                            if (progressHorizontal) {
-                                progressHorizontal.style.width = pct + '%';
-                            }
-                        }
-
-                        // Determine center card
-                        const containerCenter = timelineContainer.scrollLeft + timelineContainer.clientWidth / 2;
-                        let closestCard = null;
-                        let minDistance = Infinity;
-
-                        cards.forEach(card => {
-                            const cardCenter = card.offsetLeft + card.clientWidth / 2;
-                            const distance = Math.abs(containerCenter - cardCenter);
-                            if (distance < minDistance) {
-                                minDistance = distance;
-                                closestCard = card;
-                            }
-                        });
-
-                        cards.forEach(card => {
-                            if (card === closestCard) {
-                                card.classList.add('active-mobile');
-                            } else {
-                                card.classList.remove('active-mobile');
-                            }
-                        });
                     }
+
+                    // Determine center card
+                    const containerCenter = timelineContainer.scrollLeft + timelineContainer.clientWidth / 2;
+                    let closestCard = null;
+                    let minDistance = Infinity;
+
+                    cards.forEach(card => {
+                        const cardCenter = card.offsetLeft + card.clientWidth / 2;
+                        const distance = Math.abs(containerCenter - cardCenter);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestCard = card;
+                        }
+                    });
+
+                    cards.forEach(card => {
+                        if (card === closestCard) {
+                            card.classList.add('active-mobile');
+                        } else {
+                            card.classList.remove('active-mobile');
+                        }
+                    });
                 };
+
+                // Desktop Drag-to-Scroll Functionality
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                if (timelineContainer) {
+                    timelineContainer.addEventListener('mousedown', (e) => {
+                        isDown = true;
+                        timelineContainer.style.cursor = 'grabbing';
+                        startX = e.pageX - timelineContainer.offsetLeft;
+                        scrollLeft = timelineContainer.scrollLeft;
+                    });
+                    timelineContainer.addEventListener('mouseleave', () => {
+                        isDown = false;
+                        timelineContainer.style.cursor = 'grab';
+                    });
+                    timelineContainer.addEventListener('mouseup', () => {
+                        isDown = false;
+                        timelineContainer.style.cursor = 'grab';
+                    });
+                    timelineContainer.addEventListener('mousemove', (e) => {
+                        if (!isDown) return;
+                        e.preventDefault();
+                        const x = e.pageX - timelineContainer.offsetLeft;
+                        const walk = (x - startX) * 2; // Scroll-fast
+                        timelineContainer.scrollLeft = scrollLeft - walk;
+                    });
+                }
 
                 // Setup slideshows for multi-photo cards
                 const initSlideshows = () => {
