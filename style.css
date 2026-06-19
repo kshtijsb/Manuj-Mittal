@@ -1842,25 +1842,22 @@ nav {
 
             .timeline-container {
                 position: relative;
-                max-width: 1200px;
+                width: 100%;
                 margin: 0 auto;
-                padding: 4rem 2rem;
-            }
-
-            /* Central Line (Deleted) */
-
-            /* Horizontal Timeline (Global) */
-            .timeline-container {
                 display: flex;
                 flex-direction: row;
                 overflow-x: auto;
                 scroll-snap-type: x mandatory;
                 gap: 2rem;
-                padding: 4rem 2rem;
+                padding: 4rem calc(50% - 225px); /* Desktop card is 450px */
                 scrollbar-width: none;
                 -webkit-overflow-scrolling: touch;
-                position: relative;
-                scroll-padding: 0 2rem;
+            }
+
+            @media (max-width: 768px) {
+                .timeline-container {
+                    padding: 4rem calc(50% - 170px); /* Mobile card is 340px */
+                }
             }
 
             .timeline-container::-webkit-scrollbar {
@@ -2591,7 +2588,7 @@ nav {
                     @media (max-width: 768px) { .author-signature { font-size: 3.8rem; } }
                 
 /* Horizontal Gallery Fix for 'Cut Assets' */
-.about-pillars::after, .timeline-container::after {
+.about-pillars::after {
     content: '';
     flex: 0 0 1.5rem;
     display: block;
