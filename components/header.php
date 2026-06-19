@@ -193,7 +193,7 @@
                     <span class="separator">•</span>
                     <span>Doctorate Researcher (Higher Education)</span>
                     <span class="separator">•</span>
-                    <span>Financial Service Provider</span>
+                    <span>Financial Services Provider</span>
                     <span class="separator">•</span>
                     <span>Career Strategy Advisor (Consultant)</span>
                     <span class="separator">•</span>
@@ -205,7 +205,7 @@
                     <span class="separator">•</span>
                     <span>Doctorate Researcher (Higher Education)</span>
                     <span class="separator">•</span>
-                    <span>Financial Service Provider</span>
+                    <span>Financial Services Provider</span>
                     <span class="separator">•</span>
                     <span>Career Strategy Advisor (Consultant)</span>
                     <span class="separator">•</span>
