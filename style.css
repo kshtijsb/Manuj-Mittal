@@ -2304,6 +2304,7 @@ nav {
         .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--gold); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; transition: color 0.3s ease; }
         .nav-links a:hover { color: #ffffff; }
+        .show-on-mobile { display: none; }
 
         /* Dropdown Menu Styles */
         .nav-dropdown-wrapper {
@@ -2515,9 +2516,13 @@ nav {
 
             .menu-toggle { display: none !important; }
             .menu-toggle.active svg { stroke: #fff; }
-            .nav-links a { font-size: 2.2rem; font-family: var(--font-serif); text-transform: none; letter-spacing: 0px; color: #fff; font-weight: 400; }
+            
+            /* Make the horizontal navbar visible on mobile with limited items */
+            .nav-links { display: flex !important; gap: 1.2rem; align-items: center; }
+            .nav-links a { font-size: 0.85rem; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 1px; color: var(--gold); font-weight: 800; text-decoration: none; }
             
             .hide-on-mobile { display: none !important; }
+            .show-on-mobile { display: block !important; }
         }
 
         /* Common Book Components */

@@ -136,6 +136,7 @@
                 </button>
                 <ul class="nav-links">
                     <li class="hide-on-mobile"><a href="index.php">Home</a></li>
+                    
                     <li class="nav-dropdown-wrapper hide-on-mobile">
                         <a href="index.php#about" class="dropdown-trigger">About MJ <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></a>
                         <ul class="nav-dropdown">
@@ -144,6 +145,8 @@
                             <li><a href="social-responsibility.php">Social Responsibility</a></li>
                         </ul>
                     </li>
+
+                    <li class="show-on-mobile" style="display: none;"><a href="biography.php">About MJ</a></li>
 
                     <li class="hide-on-mobile"><a href="contact.php">Contact</a></li>
                     <li class="nav-social-item">
