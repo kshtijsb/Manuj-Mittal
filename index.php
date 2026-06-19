@@ -477,9 +477,9 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Education%20in%20the%20US/0_Final1" alt="Education US">
-                                <img src="assets/Education%20in%20the%20US/0_Final2.HEIC" alt="Education US">
-                                <img src="assets/Education%20in%20the%20US/0_Final3" alt="Education US">
+                                <img src="assets/Education%20in%20the%20US/0_Final1.jpg" alt="Education US">
+                                <img src="assets/Education%20in%20the%20US/0_Final2.jpg" alt="Education US">
+                                <img src="assets/Education%20in%20the%20US/0_Final3.jpg" alt="Education US">
                                 <img src="assets/Education%20in%20the%20US/0_Final4.jpg" alt="Education US">
                                 <img src="assets/Education%20in%20the%20US/0_Final5.JPG" alt="Education US">
                                 <img src="assets/Education%20in%20the%20US/0_Final6.jpg" alt="Education US">
@@ -507,7 +507,7 @@ $status = $_GET['status'] ?? null;
                                 <img src="assets/Rise%20in%20Rotary/0_Final1.JPG" alt="Rotary">
                                 <img src="assets/Rise%20in%20Rotary/0_Final2.JPG" alt="Rotary">
                                 <img src="assets/Rise%20in%20Rotary/0_Final3.JPG" alt="Rotary">
-                                <img src="assets/Rise%20in%20Rotary/0_Final4.HEIC" alt="Rotary">
+                                <img src="assets/Rise%20in%20Rotary/0_Final4.jpg" alt="Rotary">
                                 <img src="assets/Rise%20in%20Rotary/0_Final5.JPG" alt="Rotary">
                                 <img src="assets/Rise%20in%20Rotary/0_Final6.JPG" alt="Rotary">
                             </div>
