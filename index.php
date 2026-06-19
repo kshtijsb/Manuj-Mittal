@@ -779,14 +779,6 @@ $status = $_GET['status'] ?? null;
         <div class="stats-grid"
             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
             <div class="stat-item reveal">
-                <div class="stat-number plus" data-target="150000"
-                    style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
-                    0</div>
-                <div class="stat-label"
-                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
-                    Lives Impacted</div>
-            </div>
-            <div class="stat-item reveal">
                 <div class="stat-number plus" data-target="15"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
@@ -801,6 +793,14 @@ $status = $_GET['status'] ?? null;
                 <div class="stat-label"
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
                     Days Lived</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number plus" data-target="150000"
+                    style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
+                    0</div>
+                <div class="stat-label"
+                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
+                    Lives Impacted</div>
             </div>
         </div>
     </section>
