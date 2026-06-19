@@ -366,13 +366,12 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Early%20life%20and%20family/0.jpg" alt="Early Life">
-                                <img src="assets/Early%20life%20and%20family/1.JPG" alt="Childhood">
-                                <img src="assets/Early%20life%20and%20family/3.JPG" alt="Family Outing 1">
-                                <img src="assets/Early%20life%20and%20family/3.1.JPG" alt="Family Outing 2">
-                                <img src="assets/Early%20life%20and%20family/4.JPG" alt="Growing Up">
-                                <img src="assets/Early%20life%20and%20family/7.JPG" alt="Family Moments">
-                                <img src="assets/Early%20life%20and%20family/early%20life%20and%20schooling.JPG" alt="Early Schooling">
+                                <img src="assets/Early%20life%20and%20family/0_Final1.jpg" alt="Early Life">
+                                <img src="assets/Early%20life%20and%20family/0_Final2.JPG" alt="Early Life">
+                                <img src="assets/Early%20life%20and%20family/0_Final3.JPG" alt="Early Life">
+                                <img src="assets/Early%20life%20and%20family/0_Final4.JPG" alt="Early Life">
+                                <img src="assets/Early%20life%20and%20family/0_Final5.jpg" alt="Early Life">
+                                <img src="assets/Early%20life%20and%20family/0_Final6.jpg" alt="Early Life">
                             </div>
                         </div>
                     </div>
@@ -394,9 +393,12 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Education%20in%20India/1%20copy.JPG" alt="Mayo Classmates">
-                                <img src="assets/Education%20in%20India/6.JPG" alt="Chess Champion">
-                                <img src="assets/Education%20in%20India/10.JPG" alt="Graduation Day">
+                                <img src="assets/Education%20in%20India/0_Final1.jpg" alt="Education">
+                                <img src="assets/Education%20in%20India/0_Final2.JPG" alt="Education">
+                                <img src="assets/Education%20in%20India/0_Final3.JPG" alt="Education">
+                                <img src="assets/Education%20in%20India/0_Final4.jpeg" alt="Education">
+                                <img src="assets/Education%20in%20India/0_Final5.jpg" alt="Education">
+                                <img src="assets/Education%20in%20India/0_Final6.JPG" alt="Education">
                             </div>
                         </div>
                     </div>
@@ -417,7 +419,15 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img">
-                        <img src="assets/Professional%20Journey%20%20India/5.JPG" alt="Early Professional Life">
+                        <div class="timeline-marquee">
+                            <div class="timeline-marquee-track">
+                                <img src="assets/Professional%20Journey%20%20India/0_Final1.PNG" alt="Professional">
+                                <img src="assets/Professional%20Journey%20%20India/0_Final2.jpg" alt="Professional">
+                                <img src="assets/Professional%20Journey%20%20India/0_Final3.PNG" alt="Professional">
+                                <img src="assets/Professional%20Journey%20%20India/0_Final4.jpeg" alt="Professional">
+                                <img src="assets/Professional%20Journey%20%20India/0_Final5.jpg" alt="Professional">
+                            </div>
+                        </div>
                     </div>
                     <div class="timeline-text">
                         <h4>Professional Journey in India</h4>
@@ -437,13 +447,15 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Rise%20in%20Rotaract/1.JPG" alt="Rotaract Event 1">
-                                <img src="assets/Rise%20in%20Rotaract/2.JPG" alt="Rotaract Summit">
-                                <img src="assets/Rise%20in%20Rotaract/3.JPG" alt="Rotaract Members">
-                                <img src="assets/Rise%20in%20Rotaract/4.JPG" alt="Community Project">
-                                <img src="assets/Rise%20in%20Rotaract/5.JPG" alt="Rotaract Action">
-                                <img src="assets/Rise%20in%20Rotaract/6.JPG" alt="Award Ceremony">
-                                <img src="assets/Rise%20in%20Rotaract/7.JPG" alt="Rotaract Group">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final1.jpg" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final2.JPG" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final3%20(Add%20to%20top%20left%20corner).jpg" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final3.JPG" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final4.JPG" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final5.JPG" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final6.JPG" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final7.jpg" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final8.jpg" alt="Rotaract">
                             </div>
                         </div>
                     </div>
@@ -465,11 +477,12 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Education%20in%20the%20US/2.JPG" alt="MSF Class">
-                                <img src="assets/Education%20in%20the%20US/3.JPG" alt="U of R Presentation">
-                                <img src="assets/Education%20in%20the%20US/5.jpg" alt="Networking Coaching">
-                                <img src="assets/Education%20in%20the%20US/IMG_1105.JPG" alt="Campus Life">
-                                <img src="assets/Education%20in%20the%20US/simon%20business%20school.jpg" alt="Simon Business School Graduation">
+                                <img src="assets/Education%20in%20the%20US/0_Final1" alt="Education US">
+                                <img src="assets/Education%20in%20the%20US/0_Final2.HEIC" alt="Education US">
+                                <img src="assets/Education%20in%20the%20US/0_Final3" alt="Education US">
+                                <img src="assets/Education%20in%20the%20US/0_Final4.jpg" alt="Education US">
+                                <img src="assets/Education%20in%20the%20US/0_Final5.JPG" alt="Education US">
+                                <img src="assets/Education%20in%20the%20US/0_Final6.jpg" alt="Education US">
                             </div>
                         </div>
                     </div>
@@ -491,21 +504,12 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Rise%20in%20Rotary/rotary..JPG" alt="Rotary International">
-                                <img src="assets/Rise%20in%20Rotary/1.JPG" alt="Rotary Summit Group">
-                                <img src="assets/Rise%20in%20Rotary/1%20copy.JPG" alt="District Rotaract Representative">
-                                <img src="assets/Rise%20in%20Rotary/2.JPG" alt="Atlanta Convention">
-                                <img src="assets/Rise%20in%20Rotary/3.JPG" alt="Hamburg Convention">
-                                <img src="assets/Rise%20in%20Rotary/4.JPG" alt="Service Event 1">
-                                <img src="assets/Rise%20in%20Rotary/4%20copy.JPG" alt="Service Event 2">
-                                <img src="assets/Rise%20in%20Rotary/5.JPG" alt="Global Fellowship">
-                                <img src="assets/Rise%20in%20Rotary/6.JPG" alt="DRR Award Presentation">
-                                <img src="assets/Rise%20in%20Rotary/6.1.JPG" alt="Best DRR Ceremony">
-                                <img src="assets/Rise%20in%20Rotary/7.JPG" alt="Leadership Conference">
-                                <img src="assets/Rise%20in%20Rotary/8.JPG" alt="Youth Exchange Support">
-                                <img src="assets/Rise%20in%20Rotary/9.JPG" alt="Community Outreach">
-                                <img src="assets/Rise%20in%20Rotary/10.jpg" alt="Atlanta Project">
-                                <img src="assets/Rise%20in%20Rotary/12.JPG" alt="Rotary International Board Meeting">
+                                <img src="assets/Rise%20in%20Rotary/0_Final1.JPG" alt="Rotary">
+                                <img src="assets/Rise%20in%20Rotary/0_Final2.JPG" alt="Rotary">
+                                <img src="assets/Rise%20in%20Rotary/0_Final3.JPG" alt="Rotary">
+                                <img src="assets/Rise%20in%20Rotary/0_Final4.HEIC" alt="Rotary">
+                                <img src="assets/Rise%20in%20Rotary/0_Final5.JPG" alt="Rotary">
+                                <img src="assets/Rise%20in%20Rotary/0_Final6.JPG" alt="Rotary">
                             </div>
                         </div>
                     </div>
@@ -528,9 +532,9 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Professional%20Journey%20in%20the%20US/IMG_8300.jpeg" alt="Morgan Stanley NY Office">
-                                <img src="assets/Professional%20Journey%20in%20the%20US/IMG_1046.JPG" alt="Advising at U of R">
-                                <img src="assets/Professional%20Journey%20in%20the%20US/IMG_8750.JPG" alt="Assistant Director Presentation">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final2.jpg" alt="Professional US">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final3.jpg" alt="Professional US">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final5.jpg" alt="Professional US">
                             </div>
                         </div>
                     </div>
@@ -553,17 +557,12 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0.JPG" alt="Las Vegas Education 2.0 Award">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./1.JPG" alt="Education 2.0 Trophy">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./1.1.JPG" alt="Education Leadership Recognition">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./2.JPG" alt="University of Rochester Ed.D Study">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./2.1.JPG" alt="High Education Student Association Co-Chair">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./3.JPG" alt="Vision 2027 Speech">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./4.JPG" alt="Higher Education Leadership Forum">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./6.1.jpg" alt="Rochester Doctoral Presentation">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./6.2.jpg" alt="Rochester Seminar Panel">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./10.jpg" alt="Outstanding Leadership Certificate">
-                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./10.1.JPG" alt="Academic Research Session">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0_Final1.jpg" alt="Awards">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0_Final2.jpg" alt="Awards">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0_Final4.jpg" alt="Awards">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0_Final6.JPG" alt="Awards">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0_Final7.JPG" alt="Awards">
+                                <img src="assets/Vision%20%7C%20Awards%20%26%20Recognition./0_Final8.jpg" alt="Awards">
                             </div>
                         </div>
                     </div>
