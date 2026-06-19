@@ -18,10 +18,10 @@ $status = $_GET['status'] ?? null;
             <div class="book-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'STZhongsong', var(--font-serif); font-weight: bold; color: #000; font-size: 1.2rem;">
+                        style="margin-bottom: 1rem; font-family: var(--font-serif); font-weight: bold; color: #000; font-size: 1.2rem;">
                         FEATURED WORK</div>
 
-                    <div class="flip-card" style="animation: breathe 4s ease-in-out infinite; margin-bottom: 1rem;">
+                    <div class="flip-card" style="margin-bottom: 1rem;">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>"
@@ -47,7 +47,7 @@ $status = $_GET['status'] ?? null;
                     </div>
 
                     <h2
-                        style="font-size: 2.2rem; font-family: 'STZhongsong', var(--font-serif); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                        style="font-size: 2.2rem; font-family: var(--font-serif); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
                         <?php echo $books[0]['title']; ?>
                     </h2>
 
@@ -58,7 +58,7 @@ $status = $_GET['status'] ?? null;
             <div class="author-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'STZhongsong', var(--font-serif); font-weight: bold; color: #000; font-size: 1.2rem;">
+                        style="margin-bottom: 1rem; font-family: var(--font-serif); font-weight: bold; color: #000; font-size: 1.2rem;">
                         THE AUTHOR</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
@@ -85,7 +85,7 @@ $status = $_GET['status'] ?? null;
                     </div>
 
                     <h2
-                        style="font-size: 2.2rem; font-family: 'STZhongsong', var(--font-serif); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                        style="font-size: 2.2rem; font-family: var(--font-serif); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
                         Manuj Mittal<br>(MJ)
                     </h2>
 
@@ -843,8 +843,7 @@ $status = $_GET['status'] ?? null;
         </div>
         <div class="container" style="text-align: center; max-width: 900px; position: relative; z-index: 2;">
             <div style="width: 100%;">
-                <p class="gradient-text-gold"
-                    style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem;">
+                <p style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #000;">
                     "Skill Youth and Empower Communities for Better Tomorrow"</p>
             </div>
         </div>
