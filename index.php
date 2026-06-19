@@ -815,9 +815,9 @@ $status = $_GET['status'] ?? null;
         </div>
         <div class="container" style="text-align: center; max-width: 900px; position: relative; z-index: 2;">
             <div style="width: 100%;">
-                <p
-                    style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #111;">
-                    "Purpose defines strategy."</p>
+                <p class="gradient-text-gold"
+                    style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem;">
+                    "Skill Youth and Empower Communities for Better Tomorrow"</p>
             </div>
         </div>
     </section>

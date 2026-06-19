@@ -186,6 +186,7 @@
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
+        const header = document.querySelector('header');
         
         if(menuToggle) {
             menuToggle.addEventListener('click', () => {
@@ -201,4 +202,31 @@
                 menuToggle.classList.remove('active');
             });
         });
+
+        // Smart Header (Hide on scroll down, show on scroll up) on Mobile
+        let lastScrollY = window.scrollY;
+        
+        // Add CSS transition dynamically to header
+        header.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+        
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) {
+                // Ignore scroll bouncing at the top
+                if (window.scrollY <= 0) {
+                    header.style.transform = 'translateY(0)';
+                    return;
+                }
+
+                if (window.scrollY > lastScrollY && window.scrollY > 150) {
+                    // Scrolling down - hide header (including marquee)
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up - show header
+                    header.style.transform = 'translateY(0)';
+                }
+            } else {
+                header.style.transform = 'translateY(0)'; // Always visible on desktop
+            }
+            lastScrollY = window.scrollY;
+        }, { passive: true });
     </script>
