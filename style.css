@@ -2685,4 +2685,20 @@ nav {
         display: block !important;
         line-height: 1.05 !important;
     }
+    
+    /* Disable jumping hover effect on mobile for smooth horizontal scrolling */
+    .pillar-card:hover,
+    .pillar-prof:hover,
+    .pillar-social:hover,
+    .pillar-card:active,
+    .pillar-prof:active,
+    .pillar-social:active {
+        transform: none !important;
+    }
+    
+    /* Ensure no vertical diagonal scroll inside the horizontal container */
+    .about-pillars {
+        overflow-y: hidden !important;
+        touch-action: pan-y pan-x;
+    }
 }
