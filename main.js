@@ -33,6 +33,8 @@ gsap.ticker.lagSmoothing(0, 0);
 
 // --- 3. Cinematic Typography (SplitType) & Reveal ---
 document.addEventListener("DOMContentLoaded", () => {
+    const animSpeed = window.innerWidth <= 768 ? 0.6 : 1;
+
     // Reveal simple fade-up elements
     gsap.utils.toArray('.fade-up').forEach(el => {
         gsap.to(el, {
@@ -42,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: 1 * animSpeed,
             ease: "power3.out"
         });
     });
@@ -63,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 opacity: 0,
                 y: 20,
                 rotationX: 90,
-                stagger: 0.02,
-                duration: 0.8,
+                stagger: 0.02 * animSpeed,
+                duration: 0.8 * animSpeed,
                 ease: "back.out(1.7)"
             });
         }
@@ -153,6 +155,8 @@ if (newsletterForm) {
 
 // --- 4. Image Parallax & Cinematic Reveals ---
 document.addEventListener("DOMContentLoaded", () => {
+    const animSpeed = window.innerWidth <= 768 ? 0.6 : 1;
+
     // Elegant Image Reveal
     gsap.utils.toArray('img:not(.no-reveal)').forEach(img => {
         gsap.fromTo(img, 
@@ -161,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", 
                 filter: "grayscale(0%) blur(0px)",
                 scale: 1,
-                duration: 1.5, 
+                duration: 1.5 * animSpeed, 
                 ease: "power4.inOut",
                 scrollTrigger: {
                     trigger: img,

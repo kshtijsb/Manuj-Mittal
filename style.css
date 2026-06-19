@@ -2701,4 +2701,10 @@ nav {
         overflow-y: hidden !important;
         touch-action: pan-y pan-x;
     }
+
+    /* Thumb-Zone Reading Experience */
+    p, .pillar-list li {
+        line-height: 1.8 !important;
+        padding: 0 0.5rem;
+    }
 }
