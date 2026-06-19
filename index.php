@@ -16,75 +16,79 @@ $status = $_GET['status'] ?? null;
 
             <!-- LEFT: Book Side -->
             <div class="book-side">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
+                <div class="card-wrapper">
+                    <div class="side-tag"
+                        style="margin-bottom: 1rem; font-family: 'STZhongsong', var(--font-serif); font-weight: bold; color: #000; font-size: 1.2rem;">
+                        FEATURED WORK</div>
 
-                        <div class="flip-card-front">
-                            <div class="side-tag" style="margin-bottom: 2rem;">FEATURED WORK</div>
-                            <div class="hero-image-box" style="animation: breathe 4s ease-in-out infinite;">
-                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>">
+                    <div class="flip-card" style="animation: breathe 4s ease-in-out infinite; margin-bottom: 1rem;">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>"
+                                    style="width: 100%; height: 100%; object-fit: fill;">
                             </div>
-                            <h2
-                                style="font-size: 2.2rem; font-family: var(--font-serif); margin-bottom: 0; color: #000000; line-height: 1.1;">
-                                <?php echo $books[0]['title']; ?>
-                            </h2>
-                            <p
-                                style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 2rem;">
-                                HOVER TO READ MORE</p>
-                        </div>
 
-                        <!-- BACK: Synopsis + Order Now -->
-                        <div class="flip-card-back">
-                            <div class="side-tag" style="margin-bottom: 1.5rem; color: var(--color-gold);">SYNOPSIS
+                            <!-- BACK: Synopsis + Order Now -->
+                            <div class="flip-card-back"
+                                style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
+                                <div class="side-tag" style="margin-bottom: 1rem; color: var(--color-gold);">SYNOPSIS
+                                </div>
+                                <p style="font-size: 0.85rem; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">A
+                                    book on upskilling personal life management, featuring thought-provoking quotations
+                                    that address four core pillars essential for success: <strong>Vision</strong>,
+                                    <strong>Leadership</strong>, <strong>Growth</strong>, and
+                                    <strong>Integrity</strong>.
+                                </p>
+                                <a href="store.php"
+                                    style="background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">ORDER
+                                    NOW</a>
                             </div>
-                            <p style="font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 2.5rem;">A book on
-                                upskilling personal life management, featuring thought-provoking quotations that address
-                                four core pillars essential for success: <strong>Vision</strong>,
-                                <strong>Leadership</strong>, <strong>Growth</strong>, and <strong>Integrity</strong>.
-                            </p>
-                            <a href="store.php"
-                                style="background: #000; color: #fff; padding: 1rem 2.5rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; font-weight: 700; display: inline-block;">ORDER
-                                NOW</a>
                         </div>
-
                     </div>
+
+                    <h2
+                        style="font-size: 2.2rem; font-family: 'STZhongsong', var(--font-serif); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                        <?php echo $books[0]['title']; ?>
+                    </h2>
+
                 </div>
             </div>
 
             <!-- RIGHT: Author Side -->
             <div class="author-side">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
+                <div class="card-wrapper">
+                    <div class="side-tag"
+                        style="margin-bottom: 1rem; font-family: 'STZhongsong', var(--font-serif); font-weight: bold; color: #000; font-size: 1.2rem;">
+                        THE AUTHOR</div>
 
-                        <!-- FRONT: Photo + name + stats -->
-                        <div class="flip-card-front">
-                            <div class="side-tag" style="margin-bottom: 2rem;">THE AUTHOR</div>
-                            <div class="hero-image-box">
-                                <img src="assets/author main.jpg" alt="Manuj Mittal" style="object-position: center;">
+                    <div class="flip-card" style="margin-bottom: 1rem;">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="assets/author main.jpg" alt="Manuj Mittal"
+                                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                             </div>
-                            <h2
-                                style="font-size: 2.2rem; font-family: var(--font-serif); color: #000000; margin-bottom: 0; line-height: 1.1;">
-                                Manuj Mittal</h2>
 
-                            <p
-                                style="margin-top: auto; font-size: 0.65rem; letter-spacing: 3px; color: #bbb; padding-top: 0.1rem;">
-                                HOVER TO DISCOVER</p>
-                        </div>
-
-                        <!-- BACK: Bio + biography link -->
-                        <div class="flip-card-back">
-                            <div class="side-tag" style="margin-bottom: 1.5rem; color: var(--color-gold);">THE NARRATIVE
+                            <!-- BACK: Bio + biography link -->
+                            <div class="flip-card-back"
+                                style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
+                                <div class="side-tag" style="margin-bottom: 1rem; color: var(--color-gold);">THE
+                                    NARRATIVE</div>
+                                <p style="font-size: 0.85rem; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
+                                    Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth
+                                    development through modern management thinking. He distills complex challenges into
+                                    thought-provoking narratives.</p>
+                                <a href="biography.php"
+                                    style="background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">FULL
+                                    BIOGRAPHY</a>
                             </div>
-                            <p style="font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 2.5rem;">Manuj
-                                Mittal (MJ) is a writer and youth leader dedicated to advancing youth development
-                                through modern management thinking. He distills complex challenges into
-                                thought-provoking narratives.</p>
-                            <a href="biography.php"
-                                style="background: #000; color: #fff; padding: 1rem 2.5rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; font-weight: 700; display: inline-block;">FULL
-                                BIOGRAPHY</a>
                         </div>
-
                     </div>
+
+                    <h2
+                        style="font-size: 2.2rem; font-family: 'STZhongsong', var(--font-serif); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                        Manuj Mittal<br>(MJ)
+                    </h2>
+
                 </div>
             </div>
 
@@ -209,7 +213,7 @@ $status = $_GET['status'] ?? null;
 
         <!-- Apple Executive Mobile Hero -->
         <div class="hero-mobile">
-            
+
             <img src="assets/author main.jpg" alt="Manuj Mittal" class="hero-mobile-portrait">
             <h1 class="hero-mobile-title">Manuj Mittal.</h1>
             <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into
@@ -223,7 +227,7 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Cinematic Mobile Book Reveal (Mid-Scroll) -->
-    
+
     <section id="book" class="mobile-cinematic-book reveal">
         <div class="cinematic-glow"></div>
         <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="cinematic-book-cover">
@@ -233,15 +237,16 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Executive Mobile Layout Logic -->
-    
+
 
     <!-- About Pillars Section (Color Coded) -->
     <section id="about" class="container" style="padding-top: 15vh;">
         <div class="section-header reveal">
-            <h2 class="gradient-text-gold" style="font-size: 3.5rem; margin-bottom: 2rem;">Foundation of<br>the Author.</h2>
+            <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000;">Foundation
+                of the Author.</h2>
         </div>
 
-        
+
         <div class="about-pillars">
             <!-- Education: Blue -->
             <a href="education.php" class="pillar-card reveal pillar-edu"
@@ -252,10 +257,10 @@ $status = $_GET['status'] ?? null;
                 <div class="pillar-tag"
                     style="color: #0047AB; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
                     Education</div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Education &amp; Early Life</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Education &amp; Early Life
+                </h3>
                 <ul class="pillar-list">
                     <li>Early Life - Childhood (1996)</li>
-                    <li>Pictures (TBD)</li>
                     <li>Mayo College (Boarding School) at Age 12 (2008)</li>
                     <li>Chess Champion @Age 15 (WazirChand Trophy)</li>
                     <li>High School: Science (PCM)</li>
@@ -272,8 +277,13 @@ $status = $_GET['status'] ?? null;
                     <li>Graduating 2027</li>
                     <li>Co-Chair: HE Students Association</li>
                 </ul>
-                <div class="pillar-link" style="margin-top: 1.5rem; background: rgba(0,71,171,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #0047AB; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
-                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <div class="pillar-link"
+                    style="margin-top: 1.5rem; background: rgba(0,71,171,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #0047AB; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                 </div>
             </a>
 
@@ -298,8 +308,13 @@ $status = $_GET['status'] ?? null;
                     <li>Award: Education 2.0 (Las Vegas)</li>
                     <li>Leadership Programs GA - UR (Rochester,USA)</li>
                 </ul>
-                <div class="pillar-link" style="margin-top: 1.5rem; background: rgba(196,30,58,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #C41E3A; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
-                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <div class="pillar-link"
+                    style="margin-top: 1.5rem; background: rgba(196,30,58,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #C41E3A; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                 </div>
             </a>
 
@@ -331,27 +346,32 @@ $status = $_GET['status'] ?? null;
                     <li>ICAI, NY- Member</li>
                     <li>Simon Business School, NY- Alumni</li>
                 </ul>
-                <div class="pillar-link" style="margin-top: 1.5rem; background: rgba(46,139,87,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #2E8B57; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
-                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <div class="pillar-link"
+                    style="margin-top: 1.5rem; background: rgba(46,139,87,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #2E8B57; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                 </div>
             </a>
         </div>
 
-        
+
     </section>
 
     <!-- Journey Section: Dynamic Photo Timeline -->
     <section id="journey" style="padding: 15vh 0; overflow: hidden; background: transparent;">
 
-        
+
         <div class="container journey-header">
             <div style="text-align: center; margin-bottom: 8rem;" class="reveal legacy-title-wrapper">
-                <h2 class="gradient-text-gold" style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -2px;">A
-                    Legacy in<br>the Making.</h2>
+                <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000;">A
+                    Legacy in the Making.</h2>
             </div>
         </div>
 
-        
+
 
         <div class="timeline-container">
             <!-- Horizontal Timeline Line -->
@@ -379,8 +399,10 @@ $status = $_GET['status'] ?? null;
                         <h4>Early Life and Family</h4>
                         <ul class="timeline-list">
                             <li>Family members are engineers, doctors, lawyers and public sector administrators </li>
-                            <li>Father early career in USA, build his own business in India and is Past District Governor with Rotary International</li>
-                            <li>Manuj born on Jan 10 (01.10.1996) &nbsp;<span class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
+                            <li>Father early career in USA, build his own business in India and is Past District
+                                Governor with Rotary International</li>
+                            <li>Manuj born on Jan 10 (01.10.1996) &nbsp;<span
+                                    class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
                         </ul>
                     </div>
                 </div>
@@ -449,7 +471,8 @@ $status = $_GET['status'] ?? null;
                             <div class="timeline-marquee-track">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final1.jpg" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final2.JPG" alt="Rotaract">
-                                <img src="assets/Rise%20in%20Rotaract/0_Final3%20(Add%20to%20top%20left%20corner).jpg" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_Final3%20(Add%20to%20top%20left%20corner).jpg"
+                                    alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final3.JPG" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final4.JPG" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final5.JPG" alt="Rotaract">
@@ -532,9 +555,12 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-img">
                         <div class="timeline-marquee">
                             <div class="timeline-marquee-track">
-                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final2.jpg" alt="Professional US">
-                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final3.jpg" alt="Professional US">
-                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final5.jpg" alt="Professional US">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final2.jpg"
+                                    alt="Professional US">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final3.jpg"
+                                    alt="Professional US">
+                                <img src="assets/Professional%20Journey%20in%20the%20US/0_Final5.jpg"
+                                    alt="Professional US">
                             </div>
                         </div>
                     </div>
@@ -544,7 +570,7 @@ $status = $_GET['status'] ?? null;
                             <li>Finance Internships at Boutique Firms</li>
                             <li>Investor Services at Morgan Stanley, NYC</li>
                             <li>Career Consultant at Benet Career Management Center, University of Rochester</li>
-                            <li>Leadership Program GA at Student Life,      University of Rochester</li>
+                            <li>Leadership Program GA at Student Life, University of Rochester</li>
                         </ul>
                     </div>
                 </div>
@@ -592,10 +618,10 @@ $status = $_GET['status'] ?? null;
                     if (cards.length > 0 && lineHorizontal) {
                         const firstCard = cards[0];
                         const lastCard = cards[cards.length - 1];
-                        
+
                         const firstCenter = firstCard.offsetLeft + firstCard.clientWidth / 2;
                         const lastCenter = lastCard.offsetLeft + lastCard.clientWidth / 2;
-                        
+
                         lineHorizontal.style.left = firstCenter + 'px';
                         lineHorizontal.style.width = (lastCenter - firstCenter) + 'px';
                     }
@@ -671,7 +697,7 @@ $status = $_GET['status'] ?? null;
                     marquees.forEach(marquee => {
                         const track = marquee.querySelector('.timeline-marquee-track');
                         if (!track) return;
-                        
+
                         // Prevent duplicate initialization
                         if (track.dataset.slideshowInitialized) return;
                         track.dataset.slideshowInitialized = "true";
@@ -724,7 +750,7 @@ $status = $_GET['status'] ?? null;
                             card.addEventListener('touchstart', () => {
                                 if (intervalId) stopSlideshow();
                                 else startSlideshow();
-                            }, {passive: true});
+                            }, { passive: true });
                         }
                     });
                 };
@@ -735,7 +761,7 @@ $status = $_GET['status'] ?? null;
                     initHorizontalLine();
                     updateTimeline();
                 });
-                
+
                 if (timelineContainer) {
                     timelineContainer.addEventListener('scroll', updateTimeline);
                 }
@@ -755,9 +781,10 @@ $status = $_GET['status'] ?? null;
 
 
     <!-- Sleek Contact CTA -->
-    
+
     <section id="contact" class="container reveal contact-cta" style="text-align: center;">
-        <div class="contact-cta-inner" style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid rgba(255, 255, 255, 0.5);">
+        <div class="contact-cta-inner"
+            style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid rgba(255, 255, 255, 0.5);">
             <div class="side-tag"
                 style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem;">
                 Let's Connect
@@ -778,7 +805,7 @@ $status = $_GET['status'] ?? null;
     </section>
     <!-- Impact by the Numbers -->
     <section class="stats-section container" style="padding: 8vh 0; text-align: center; border-top: 1px solid #eee;">
-        
+
         <div class="stats-grid"
             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
             <div class="stat-item reveal">
@@ -809,7 +836,8 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section" style="padding: 4rem 0; background: transparent; position: relative; overflow: hidden;">
+    <section class="quotes-section"
+        style="padding: 4rem 0; background: transparent; position: relative; overflow: hidden;">
         <div
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
         </div>
@@ -822,7 +850,7 @@ $status = $_GET['status'] ?? null;
         </div>
     </section>
 
-    
+
 
 </main>
 

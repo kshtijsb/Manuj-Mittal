@@ -160,7 +160,9 @@
 
                     <li class="show-on-mobile" style="display: none;"><a href="biography.php">About MJ</a></li>
 
-                    <li class="hide-on-mobile"><a href="contact.php">Contact</a></li>
+                    <li class="hide-on-mobile"><a href="store.php">Books</a></li>
+
+                    <li class="hide-on-mobile"><a href="contact.php">Contact Us</a></li>
                     <li class="nav-social-item">
                         <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
                             class="nav-social-btn" aria-label="Instagram">
