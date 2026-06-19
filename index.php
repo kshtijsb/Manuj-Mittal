@@ -210,9 +210,8 @@ $status = $_GET['status'] ?? null;
         <!-- Apple Executive Mobile Hero -->
         <div class="hero-mobile">
             
-
-            <h1 class="hero-mobile-title">Manuj Mittal.</h1>
             <img src="assets/author main.jpg" alt="Manuj Mittal" class="hero-mobile-portrait">
+            <h1 class="hero-mobile-title">Manuj Mittal.</h1>
             <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into
                 thought-provoking narratives.</p>
 
