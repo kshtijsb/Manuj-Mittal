@@ -1763,15 +1763,18 @@ nav {
                 border-bottom: none;
             }
             .pillar-list li::before {
-                content: '';
+                content: '❯';
                 position: absolute;
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                width: 5px;
-                height: 5px;
-                border-radius: 50%;
-                background: var(--theme-color);
+                font-size: 0.75rem;
+                font-weight: 800;
+                color: var(--theme-color);
+                transition: transform 0.3s ease;
+            }
+            .pillar-list li:hover::before {
+                transform: translate(4px, -50%);
             }
         
 
@@ -2042,15 +2045,18 @@ nav {
             }
 
             .timeline-list li::before {
-                content: '';
+                content: '❯';
                 position: absolute;
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: var(--theme-color, var(--gold));
+                font-size: 0.75rem;
+                font-weight: 800;
+                color: var(--theme-color, var(--gold));
+                transition: transform 0.3s ease;
+            }
+            .timeline-list li:hover::before {
+                transform: translate(4px, -50%);
             }
 
             .numerology {
