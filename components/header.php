@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
     <title><?php echo $page_title ?? "Manuj Mittal | Storyteller"; ?></title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000000'/%3E%3Ctext x='50%25' y='65%25' font-family='Cormorant Garamond, Georgia, serif' font-size='52' font-weight='bold' fill='%23c5a059' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Mrs+Saint+Delafield&family=Caveat:wght@400;700&family=Rock+Salt&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000000'/%3E%3Ctext x='50%25' y='65%25' font-family='Cormorant Garamond, Georgia, serif' font-size='52' font-weight='bold' fill='%23c5a059' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Mrs+Saint+Delafield&family=Caveat:wght@400;700&family=Rock+Salt&family=Nothing+You+Could+Do&display=swap"
+        rel="stylesheet">
     <!-- Lenis Smooth Scroll -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <!-- GSAP Core & ScrollTrigger -->
@@ -18,16 +22,19 @@
     <!-- Swup (Page Transitions) -->
     <script src="https://unpkg.com/swup@4"></script>
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    
+
 </head>
+
 <body>
     <!-- Premium Preloader -->
-    <div id="premium-preloader" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0A0F14; z-index: 999999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.8s; visibility: visible; opacity: 1;">
-        <h1 style="color: var(--gold); font-size: 5rem; letter-spacing: 10px; font-weight: 900; margin: 0; padding-left: 10px; opacity: 0; transform: scale(0.9); animation: mmLogoFade 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;">
+    <div id="premium-preloader"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0A0F14; z-index: 999999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.8s; visibility: visible; opacity: 1;">
+        <h1
+            style="color: var(--gold); font-size: 5rem; letter-spacing: 10px; font-weight: 900; margin: 0; padding-left: 10px; opacity: 0; transform: scale(0.9); animation: mmLogoFade 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;">
             MM
         </h1>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
@@ -44,7 +51,8 @@
 
 
     <!-- Gold Dust Particles Canvas -->
-    <canvas id="goldDust" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.6;"></canvas>
+    <canvas id="goldDust"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.6;"></canvas>
 
     <script>
         const canvas = document.getElementById('goldDust');
@@ -56,7 +64,7 @@
             mouse.x = e.clientX;
             mouse.y = e.clientY;
         });
-        
+
         function resize() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -136,9 +144,13 @@
                 </button>
                 <ul class="nav-links">
                     <li class="hide-on-mobile"><a href="index.php">Home</a></li>
-                    
+
                     <li class="nav-dropdown-wrapper hide-on-mobile">
-                        <a href="index.php#about" class="dropdown-trigger">About MJ <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg></a>
+                        <a href="index.php#about" class="dropdown-trigger">About MJ <svg class="dropdown-arrow"
+                                width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M1 1l4 4 4-4" />
+                            </svg></a>
                         <ul class="nav-dropdown">
                             <li><a href="education.php">Education</a></li>
                             <li><a href="professional.php">Professional</a></li>
@@ -150,11 +162,25 @@
 
                     <li class="hide-on-mobile"><a href="contact.php">Contact</a></li>
                     <li class="nav-social-item">
-                        <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank" class="nav-social-btn" aria-label="Instagram">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
+                            class="nav-social-btn" aria-label="Instagram">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
                         </a>
-                        <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="nav-social-btn" aria-label="LinkedIn">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                            target="_blank" class="nav-social-btn" aria-label="LinkedIn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
                         </a>
                     </li>
                 </ul>
@@ -171,6 +197,8 @@
                     <span class="separator">•</span>
                     <span>Career Strategy Advisor (Consultant)</span>
                     <span class="separator">•</span>
+                    <span>Community Builder</span>
+                    <span class="separator">•</span>
                 </div>
                 <div class="header-marquee-group" aria-hidden="true">
                     <span>Published Author</span>
@@ -181,6 +209,8 @@
                     <span class="separator">•</span>
                     <span>Career Strategy Advisor (Consultant)</span>
                     <span class="separator">•</span>
+                    <span>Community Builder</span>
+                    <span class="separator">•</span>
                 </div>
             </div>
         </div>
@@ -190,14 +220,14 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         const header = document.querySelector('header');
-        
-        if(menuToggle) {
+
+        if (menuToggle) {
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
                 menuToggle.classList.toggle('active');
             });
         }
-        
+
         // Close menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
@@ -208,10 +238,10 @@
 
         // Smart Header (Hide on scroll down, show on scroll up) on Mobile
         let lastScrollY = window.scrollY;
-        
+
         // Add CSS transition dynamically to header
         header.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-        
+
         window.addEventListener('scroll', () => {
             if (window.innerWidth <= 768) {
                 // Ignore scroll bouncing at the top
