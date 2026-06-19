@@ -17,7 +17,7 @@ include 'components/header.php';
     .contact-tabs {
         display: flex;
         gap: 0;
-        border-bottom: 1px solid rgba(0,0,0,0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         margin-bottom: 4rem;
         max-width: 1000px;
         margin-left: auto;
@@ -25,7 +25,9 @@ include 'components/header.php';
         padding: 0 1rem;
     }
 
-    [data-theme="dark"] .contact-tabs { border-color: rgba(255,255,255,0.07); }
+    [data-theme="dark"] .contact-tabs {
+        border-color: rgba(255, 255, 255, 0.07);
+    }
 
     .contact-tab {
         padding: 1rem 0;
@@ -59,8 +61,13 @@ include 'components/header.php';
     /* ============================================================
        TAB PANELS
     ============================================================ */
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
+    .tab-panel {
+        display: none;
+    }
+
+    .tab-panel.active {
+        display: block;
+    }
 
     /* ─── SEND MESSAGE PANEL ─── */
     .contact-page-grid {
@@ -81,13 +88,27 @@ include 'components/header.php';
         letter-spacing: -3px;
     }
 
-    [data-theme="dark"] .contact-page-h1 { color: #fff; }
+    [data-theme="dark"] .contact-page-h1 {
+        color: #fff;
+    }
 
     @media (max-width: 992px) {
-        .contact-page { padding: 80px 0 60px; }
-        .contact-page-grid { grid-template-columns: 1fr; gap: 3rem; }
-        .contact-page-h1 { margin-bottom: 2rem; }
-        .contact-tabs { margin-bottom: 2.5rem; }
+        .contact-page {
+            padding: 80px 0 60px;
+        }
+
+        .contact-page-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact-page-h1 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-tabs {
+            margin-bottom: 2.5rem;
+        }
     }
 
     /* Input styling */
@@ -123,7 +144,7 @@ include 'components/header.php';
     [data-theme="dark"] .input-group input,
     [data-theme="dark"] .input-group select,
     [data-theme="dark"] .input-group textarea {
-        border-color: rgba(255,255,255,0.1);
+        border-color: rgba(255, 255, 255, 0.1);
         color: #fff;
     }
 
@@ -151,376 +172,727 @@ include 'components/header.php';
     }
 
     @media (max-width: 860px) {
-        .scheduler-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .scheduler-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
     }
 
     /* Host Panel */
     .host-panel {
-        background: rgba(255,255,255,0.55);
+        background: rgba(255, 255, 255, 0.55);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255,255,255,0.7);
+        border: 1px solid rgba(255, 255, 255, 0.7);
         border-radius: 20px;
         padding: 2.5rem 2rem;
-        box-shadow: 0 6px 28px rgba(0,0,0,0.04);
+        box-shadow: 0 6px 28px rgba(0, 0, 0, 0.04);
         position: sticky;
         top: 110px;
     }
 
     [data-theme="dark"] .host-panel {
-        background: rgba(18,24,31,0.65);
-        border-color: rgba(255,255,255,0.06);
+        background: rgba(18, 24, 31, 0.65);
+        border-color: rgba(255, 255, 255, 0.06);
     }
 
     .host-avatar {
-        width: 64px; height: 64px;
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
         background: linear-gradient(135deg, var(--gold), #B6862C);
-        display: flex; align-items: center; justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-family: var(--font-serif);
-        font-size: 1.5rem; font-weight: 900; color: #fff;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #fff;
         margin-bottom: 1.2rem;
-        box-shadow: 0 6px 18px rgba(197,160,89,0.35);
+        box-shadow: 0 6px 18px rgba(197, 160, 89, 0.35);
     }
 
     .host-name {
         font-family: var(--font-serif);
-        font-size: 1.5rem; font-weight: 900; color: #000;
-        letter-spacing: -0.5px; margin-bottom: 0.2rem;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #000;
+        letter-spacing: -0.5px;
+        margin-bottom: 0.2rem;
     }
 
-    [data-theme="dark"] .host-name { color: #fff; }
+    [data-theme="dark"] .host-name {
+        color: #fff;
+    }
 
     .host-title {
-        font-size: 0.72rem; font-weight: 700;
-        letter-spacing: 2px; color: var(--gold);
-        text-transform: uppercase; margin-bottom: 1.8rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 1.8rem;
     }
 
-    .meeting-meta { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+    .meeting-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
 
     .meeting-meta-item {
-        display: flex; align-items: center; gap: 0.9rem;
-        font-size: 0.88rem; color: #555;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        font-size: 0.88rem;
+        color: #555;
     }
 
-    [data-theme="dark"] .meeting-meta-item { color: #aaa; }
-    .meeting-meta-item svg { flex-shrink: 0; color: var(--gold); }
+    [data-theme="dark"] .meeting-meta-item {
+        color: #aaa;
+    }
 
-    .meeting-types { display: flex; flex-direction: column; gap: 0.6rem; }
+    .meeting-meta-item svg {
+        flex-shrink: 0;
+        color: var(--gold);
+    }
+
+    .meeting-types {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
 
     .meeting-type-btn {
         padding: 0.85rem 1.2rem;
-        border: 1.5px solid #eee; border-radius: 10px;
+        border: 1.5px solid #eee;
+        border-radius: 10px;
         background: transparent;
-        font-family: var(--font-sans); font-size: 0.85rem; font-weight: 700;
-        color: #444; cursor: pointer; text-align: left;
-        display: flex; justify-content: space-between; align-items: center;
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #444;
+        cursor: pointer;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         transition: all 0.22s ease;
     }
 
-    [data-theme="dark"] .meeting-type-btn { border-color: rgba(255,255,255,0.08); color: #ccc; }
-    .meeting-type-btn:hover { border-color: var(--gold); background: rgba(197,160,89,0.04); }
+    [data-theme="dark"] .meeting-type-btn {
+        border-color: rgba(255, 255, 255, 0.08);
+        color: #ccc;
+    }
+
+    .meeting-type-btn:hover {
+        border-color: var(--gold);
+        background: rgba(197, 160, 89, 0.04);
+    }
 
     .meeting-type-btn.active {
-        border-color: #000; background: #000; color: #fff;
+        border-color: #000;
+        background: #000;
+        color: #fff;
     }
 
     [data-theme="dark"] .meeting-type-btn.active {
-        border-color: var(--gold); background: var(--gold); color: #000;
+        border-color: var(--gold);
+        background: var(--gold);
+        color: #000;
     }
 
     .mt-badge {
-        font-size: 0.65rem; font-weight: 800; letter-spacing: 1.5px;
-        padding: 0.25rem 0.6rem; border-radius: 20px;
-        background: rgba(197,160,89,0.12); color: var(--gold);
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        padding: 0.25rem 0.6rem;
+        border-radius: 20px;
+        background: rgba(197, 160, 89, 0.12);
+        color: var(--gold);
     }
 
-    .meeting-type-btn.active .mt-badge { background: rgba(255,255,255,0.15); color: #fff; }
-    [data-theme="dark"] .meeting-type-btn.active .mt-badge { background: rgba(0,0,0,0.15); color: #000; }
+    .meeting-type-btn.active .mt-badge {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+    }
+
+    [data-theme="dark"] .meeting-type-btn.active .mt-badge {
+        background: rgba(0, 0, 0, 0.15);
+        color: #000;
+    }
 
     /* Booking Panel */
     .booking-panel {
-        background: rgba(255,255,255,0.55);
+        background: rgba(255, 255, 255, 0.55);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255,255,255,0.7);
+        border: 1px solid rgba(255, 255, 255, 0.7);
         border-radius: 20px;
         padding: 2.5rem 2rem;
-        box-shadow: 0 6px 28px rgba(0,0,0,0.04);
+        box-shadow: 0 6px 28px rgba(0, 0, 0, 0.04);
     }
 
     [data-theme="dark"] .booking-panel {
-        background: rgba(18,24,31,0.65);
-        border-color: rgba(255,255,255,0.06);
+        background: rgba(18, 24, 31, 0.65);
+        border-color: rgba(255, 255, 255, 0.06);
     }
 
     /* Booking steps */
     .booking-steps {
-        display: flex; gap: 0;
+        display: flex;
+        gap: 0;
         border-bottom: 1px solid #eee;
         margin-bottom: 2rem;
     }
 
-    [data-theme="dark"] .booking-steps { border-color: rgba(255,255,255,0.07); }
+    [data-theme="dark"] .booking-steps {
+        border-color: rgba(255, 255, 255, 0.07);
+    }
 
     .booking-step {
-        padding: 0.7rem 0; margin-right: 1.8rem;
-        font-size: 0.65rem; font-weight: 800; letter-spacing: 2px;
-        text-transform: uppercase; color: #ccc;
-        border-bottom: 2px solid transparent; margin-bottom: -1px;
+        padding: 0.7rem 0;
+        margin-right: 1.8rem;
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #ccc;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
         transition: all 0.25s ease;
     }
 
-    .booking-step.active { color: #000; border-bottom-color: #000; }
-    [data-theme="dark"] .booking-step.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .booking-step.active {
+        color: #000;
+        border-bottom-color: #000;
+    }
+
+    [data-theme="dark"] .booking-step.active {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+    }
 
     /* Calendar */
     .calendar-header {
-        display: flex; align-items: center;
-        justify-content: space-between; margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.2rem;
     }
 
     .calendar-month {
-        font-family: var(--font-serif); font-size: 1.3rem;
-        font-weight: 900; color: #000; letter-spacing: -0.5px;
+        font-family: var(--font-serif);
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: #000;
+        letter-spacing: -0.5px;
     }
 
-    [data-theme="dark"] .calendar-month { color: #fff; }
+    [data-theme="dark"] .calendar-month {
+        color: #fff;
+    }
 
     .cal-nav-btn {
-        width: 36px; height: 36px; border-radius: 50%;
-        border: 1.5px solid #eee; background: transparent;
-        cursor: pointer; display: flex; align-items: center;
-        justify-content: center; transition: all 0.22s ease; color: #333;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1.5px solid #eee;
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.22s ease;
+        color: #333;
     }
 
-    [data-theme="dark"] .cal-nav-btn { border-color: rgba(255,255,255,0.1); color: #ccc; }
+    [data-theme="dark"] .cal-nav-btn {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #ccc;
+    }
 
-    .cal-nav-btn:hover { border-color: #000; background: #000; color: #fff; }
-    [data-theme="dark"] .cal-nav-btn:hover { border-color: var(--gold); background: var(--gold); color: #000; }
-    .cal-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; pointer-events: none; }
+    .cal-nav-btn:hover {
+        border-color: #000;
+        background: #000;
+        color: #fff;
+    }
+
+    [data-theme="dark"] .cal-nav-btn:hover {
+        border-color: var(--gold);
+        background: var(--gold);
+        color: #000;
+    }
+
+    .cal-nav-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
 
     .calendar-weekdays {
-        display: grid; grid-template-columns: repeat(7,1fr);
-        gap: 3px; margin-bottom: 0.3rem;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
+        margin-bottom: 0.3rem;
     }
 
     .cal-weekday {
-        text-align: center; font-size: 0.6rem; font-weight: 800;
-        letter-spacing: 1.5px; color: #bbb; text-transform: uppercase; padding: 0.3rem 0;
+        text-align: center;
+        font-size: 0.6rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        color: #bbb;
+        text-transform: uppercase;
+        padding: 0.3rem 0;
     }
 
-    .calendar-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 3px; }
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
+    }
 
     .cal-day {
-        aspect-ratio: 1; display: flex; align-items: center;
-        justify-content: center; border-radius: 50%;
-        font-size: 0.85rem; font-weight: 600; cursor: pointer;
-        transition: all 0.18s ease; position: relative; color: #222;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.18s ease;
+        position: relative;
+        color: #222;
     }
 
-    [data-theme="dark"] .cal-day { color: #ddd; }
-    .cal-day.empty { cursor: default; }
+    [data-theme="dark"] .cal-day {
+        color: #ddd;
+    }
 
-    .cal-day.past { color: #ccc; cursor: not-allowed; }
-    [data-theme="dark"] .cal-day.past { color: #444; }
+    .cal-day.empty {
+        cursor: default;
+    }
+
+    .cal-day.past {
+        color: #ccc;
+        cursor: not-allowed;
+    }
+
+    [data-theme="dark"] .cal-day.past {
+        color: #444;
+    }
 
     .cal-day.today::after {
-        content: ''; position: absolute; bottom: 3px;
-        width: 4px; height: 4px; border-radius: 50%; background: var(--gold);
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--gold);
     }
 
-    .cal-day.available:hover { background: #f0f0f0; }
-    [data-theme="dark"] .cal-day.available:hover { background: rgba(255,255,255,0.06); }
+    .cal-day.available:hover {
+        background: #f0f0f0;
+    }
 
-    .cal-day.selected { background: #000 !important; color: #fff !important; }
-    [data-theme="dark"] .cal-day.selected { background: var(--gold) !important; color: #000 !important; }
+    [data-theme="dark"] .cal-day.available:hover {
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .cal-day.selected {
+        background: #000 !important;
+        color: #fff !important;
+    }
+
+    [data-theme="dark"] .cal-day.selected {
+        background: var(--gold) !important;
+        color: #000 !important;
+    }
 
     /* Time slots sub-panel */
     #sch-time-panel {
-        display: none; flex-direction: column; gap: 1.2rem;
-        margin-top: 1.5rem; padding-top: 1.5rem;
+        display: none;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
         border-top: 1px solid #eee;
-        animation: schSlideUp 0.35s cubic-bezier(0.25,1,0.5,1);
+        animation: schSlideUp 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    [data-theme="dark"] #sch-time-panel { border-color: rgba(255,255,255,0.07); }
+    [data-theme="dark"] #sch-time-panel {
+        border-color: rgba(255, 255, 255, 0.07);
+    }
 
     @keyframes schSlideUp {
-        from { opacity:0; transform: translateY(10px); }
-        to   { opacity:1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .sch-time-label {
-        font-size: 0.65rem; font-weight: 800; letter-spacing: 2.5px;
-        color: #999; text-transform: uppercase;
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        color: #999;
+        text-transform: uppercase;
     }
 
     .sch-time-slots-grid {
-        display: grid; grid-template-columns: repeat(4,1fr); gap: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
     }
 
-    @media (max-width: 600px) { .sch-time-slots-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 600px) {
+        .sch-time-slots-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 
     .sch-time-slot {
-        padding: 0.75rem 0.4rem; text-align: center;
-        border: 1.5px solid #eee; border-radius: 8px;
-        font-size: 0.78rem; font-weight: 700; cursor: pointer;
-        transition: all 0.18s ease; color: #333; background: #fff;
+        padding: 0.75rem 0.4rem;
+        text-align: center;
+        border: 1.5px solid #eee;
+        border-radius: 8px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.18s ease;
+        color: #333;
+        background: #fff;
     }
 
     [data-theme="dark"] .sch-time-slot {
-        background: rgba(255,255,255,0.03);
-        border-color: rgba(255,255,255,0.08); color: #ccc;
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.08);
+        color: #ccc;
     }
 
     .sch-time-slot:hover {
-        border-color: var(--gold); background: rgba(197,160,89,0.05);
+        border-color: var(--gold);
+        background: rgba(197, 160, 89, 0.05);
         transform: translateY(-1px);
     }
 
     .sch-time-slot.selected {
-        background: #000; color: #fff; border-color: #000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.14);
+        background: #000;
+        color: #fff;
+        border-color: #000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
     }
 
     [data-theme="dark"] .sch-time-slot.selected {
-        background: var(--gold); color: #000; border-color: var(--gold);
-        box-shadow: 0 4px 12px rgba(197,160,89,0.22);
+        background: var(--gold);
+        color: #000;
+        border-color: var(--gold);
+        box-shadow: 0 4px 12px rgba(197, 160, 89, 0.22);
     }
 
     /* Details form panel */
     #sch-details-panel {
-        display: none; flex-direction: column; gap: 1.5rem;
-        margin-top: 1.5rem; padding-top: 1.5rem;
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
         border-top: 1px solid #eee;
-        animation: schSlideUp 0.35s cubic-bezier(0.25,1,0.5,1);
+        animation: schSlideUp 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    [data-theme="dark"] #sch-details-panel { border-color: rgba(255,255,255,0.07); }
+    [data-theme="dark"] #sch-details-panel {
+        border-color: rgba(255, 255, 255, 0.07);
+    }
 
     .booking-summary-bar {
-        background: #000; color: #fff; border-radius: 10px;
-        padding: 1rem 1.3rem; display: flex; align-items: center;
-        gap: 0.8rem; font-size: 0.85rem; font-weight: 700;
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+        padding: 1rem 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 0.85rem;
+        font-weight: 700;
     }
 
-    [data-theme="dark"] .booking-summary-bar { background: var(--gold); color: #000; }
-    .booking-summary-bar svg { flex-shrink: 0; }
+    [data-theme="dark"] .booking-summary-bar {
+        background: var(--gold);
+        color: #000;
+    }
 
-    .sch-form-field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .booking-summary-bar svg {
+        flex-shrink: 0;
+    }
+
+    .sch-form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
     .sch-form-label {
-        font-size: 0.65rem; font-weight: 800; letter-spacing: 2.5px;
-        color: #999; text-transform: uppercase;
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        color: #999;
+        text-transform: uppercase;
     }
 
     .sch-form-input {
-        padding: 0.9rem 0; border: none;
-        border-bottom: 1.5px solid #ddd; background: transparent;
-        font-family: var(--font-sans); font-size: 1rem; color: #000;
-        outline: none; transition: border-color 0.25s ease;
+        padding: 0.9rem 0;
+        border: none;
+        border-bottom: 1.5px solid #ddd;
+        background: transparent;
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        color: #000;
+        outline: none;
+        transition: border-color 0.25s ease;
     }
 
-    [data-theme="dark"] .sch-form-input { border-color: rgba(255,255,255,0.1); color: #fff; }
-    .sch-form-input:focus { border-bottom-color: #000; }
-    [data-theme="dark"] .sch-form-input:focus { border-bottom-color: var(--gold); }
-    .sch-form-input::placeholder { color: #bbb; }
+    [data-theme="dark"] .sch-form-input {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .sch-form-input:focus {
+        border-bottom-color: #000;
+    }
+
+    [data-theme="dark"] .sch-form-input:focus {
+        border-bottom-color: var(--gold);
+    }
+
+    .sch-form-input::placeholder {
+        color: #bbb;
+    }
 
     .sch-form-textarea {
-        padding: 0.9rem 0; border: none;
-        border-bottom: 1.5px solid #ddd; background: transparent;
-        font-family: var(--font-sans); font-size: 1rem; color: #000;
-        outline: none; resize: none; transition: border-color 0.25s ease;
+        padding: 0.9rem 0;
+        border: none;
+        border-bottom: 1.5px solid #ddd;
+        background: transparent;
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        color: #000;
+        outline: none;
+        resize: none;
+        transition: border-color 0.25s ease;
     }
 
-    [data-theme="dark"] .sch-form-textarea { border-color: rgba(255,255,255,0.1); color: #fff; }
-    .sch-form-textarea:focus { border-bottom-color: #000; }
-    [data-theme="dark"] .sch-form-textarea:focus { border-bottom-color: var(--gold); }
-    .sch-form-textarea::placeholder { color: #bbb; }
+    [data-theme="dark"] .sch-form-textarea {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .sch-form-textarea:focus {
+        border-bottom-color: #000;
+    }
+
+    [data-theme="dark"] .sch-form-textarea:focus {
+        border-bottom-color: var(--gold);
+    }
+
+    .sch-form-textarea::placeholder {
+        color: #bbb;
+    }
 
     /* Confirm button */
     .btn-confirm {
-        width: 100%; padding: 1.2rem;
-        background: #000; color: #fff; border: none; border-radius: 12px;
-        font-family: var(--font-sans); font-size: 0.95rem; font-weight: 800;
-        letter-spacing: 2px; cursor: pointer; transition: all 0.25s ease;
-        text-transform: uppercase; display: flex; align-items: center;
-        justify-content: center; gap: 0.7rem;
+        width: 100%;
+        padding: 1.2rem;
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
     }
 
-    [data-theme="dark"] .btn-confirm { background: var(--gold); color: #000; }
-    .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.18); }
-    [data-theme="dark"] .btn-confirm:hover { box-shadow: 0 8px 22px rgba(197,160,89,0.28); }
-    .btn-confirm:active { transform: translateY(0); }
+    [data-theme="dark"] .btn-confirm {
+        background: var(--gold);
+        color: #000;
+    }
+
+    .btn-confirm:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    }
+
+    [data-theme="dark"] .btn-confirm:hover {
+        box-shadow: 0 8px 22px rgba(197, 160, 89, 0.28);
+    }
+
+    .btn-confirm:active {
+        transform: translateY(0);
+    }
 
     /* Back link */
     .sch-back-link {
-        font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
-        color: #aaa; cursor: pointer; display: inline-flex;
-        align-items: center; gap: 0.4rem; transition: color 0.2s;
-        background: none; border: none; font-family: var(--font-sans); padding: 0;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #aaa;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: color 0.2s;
+        background: none;
+        border: none;
+        font-family: var(--font-sans);
+        padding: 0;
     }
 
-    .sch-back-link:hover { color: #000; }
-    [data-theme="dark"] .sch-back-link:hover { color: var(--gold); }
+    .sch-back-link:hover {
+        color: #000;
+    }
+
+    [data-theme="dark"] .sch-back-link:hover {
+        color: var(--gold);
+    }
 
     /* Success screen */
     #sch-success-panel {
-        display: none; flex-direction: column;
-        align-items: center; text-align: center; gap: 1.3rem;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.3rem;
         padding: 2rem 0.5rem;
-        animation: schSlideUp 0.5s cubic-bezier(0.25,1,0.5,1);
+        animation: schSlideUp 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     .success-icon {
-        width: 68px; height: 68px; border-radius: 50%;
-        background: linear-gradient(135deg,#000,#333);
-        display: flex; align-items: center; justify-content: center;
-        box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #000, #333);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
     }
 
-    [data-theme="dark"] .success-icon { background: linear-gradient(135deg,var(--gold),#B6862C); }
+    [data-theme="dark"] .success-icon {
+        background: linear-gradient(135deg, var(--gold), #B6862C);
+    }
 
     .success-title {
-        font-family: var(--font-serif); font-size: 1.8rem; font-weight: 900;
-        color: #000; letter-spacing: -0.5px;
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: #000;
+        letter-spacing: -0.5px;
     }
 
-    [data-theme="dark"] .success-title { color: #fff; }
+    [data-theme="dark"] .success-title {
+        color: #fff;
+    }
 
-    .success-detail { font-size: 0.95rem; color: #666; line-height: 1.7; max-width: 320px; }
-    [data-theme="dark"] .success-detail { color: #aaa; }
+    .success-detail {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.7;
+        max-width: 320px;
+    }
+
+    [data-theme="dark"] .success-detail {
+        color: #aaa;
+    }
 
     .success-box {
-        background: #f8f8f8; border-radius: 12px;
-        padding: 1.2rem 1.6rem; width: 100%; text-align: left;
+        background: #f8f8f8;
+        border-radius: 12px;
+        padding: 1.2rem 1.6rem;
+        width: 100%;
+        text-align: left;
     }
 
-    [data-theme="dark"] .success-box { background: rgba(255,255,255,0.04); }
+    [data-theme="dark"] .success-box {
+        background: rgba(255, 255, 255, 0.04);
+    }
 
     .conf-row {
-        display: flex; justify-content: space-between; align-items: center;
-        padding: 0.6rem 0; border-bottom: 1px solid #eee; font-size: 0.88rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 0;
+        border-bottom: 1px solid #eee;
+        font-size: 0.88rem;
     }
 
-    [data-theme="dark"] .conf-row { border-color: rgba(255,255,255,0.06); }
-    .conf-row:last-child { border-bottom: none; }
-    .conf-row span:first-child { font-weight: 800; letter-spacing: 1px; color: #999; font-size: 0.65rem; text-transform: uppercase; }
-    .conf-row span:last-child { font-weight: 700; color: #000; }
-    [data-theme="dark"] .conf-row span:last-child { color: #fff; }
+    [data-theme="dark"] .conf-row {
+        border-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .conf-row:last-child {
+        border-bottom: none;
+    }
+
+    .conf-row span:first-child {
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #999;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+    }
+
+    .conf-row span:last-child {
+        font-weight: 700;
+        color: #000;
+    }
+
+    [data-theme="dark"] .conf-row span:last-child {
+        color: #fff;
+    }
 
     .btn-back-contact {
-        display: inline-flex; align-items: center; gap: 0.6rem;
-        padding: 0.9rem 2.2rem; background: #000; color: #fff;
-        border-radius: 50px; font-weight: 700; font-size: 0.85rem;
-        letter-spacing: 1px; transition: all 0.25s ease; cursor: pointer;
-        border: none; font-family: var(--font-sans);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.9rem 2.2rem;
+        background: #000;
+        color: #fff;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        transition: all 0.25s ease;
+        cursor: pointer;
+        border: none;
+        font-family: var(--font-sans);
     }
 
-    [data-theme="dark"] .btn-back-contact { background: var(--gold); color: #000; }
-    .btn-back-contact:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,0.18); }
+    [data-theme="dark"] .btn-back-contact {
+        background: var(--gold);
+        color: #000;
+    }
+
+    .btn-back-contact:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
 </style>
 
 <section class="contact-page">
@@ -528,7 +900,7 @@ include 'components/header.php';
     <!-- ── Tabs ─────────────────────────────────────── -->
     <div class="contact-tabs">
         <button class="contact-tab active" id="tab-msg" onclick="switchTab('msg')">Send a Message</button>
-        <button class="contact-tab"        id="tab-mtg" onclick="switchTab('mtg')">Book a Meeting</button>
+        <button class="contact-tab" id="tab-mtg" onclick="switchTab('mtg')">Book a Meeting</button>
     </div>
 
     <!-- ══════════════════════════════════════════════
@@ -542,11 +914,13 @@ include 'components/header.php';
                 <div class="side-tag"
                     style="color: var(--gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block;">
                     GET IN TOUCH</div>
-                <h1 class="contact-page-h1" style="color: var(--text);">Open to connecting<br>and networking<br>forward.</h1>
+                <h1 class="contact-page-h1" style="color: var(--text);">Open to connecting<br>and networking<br>forward.
+                </h1>
 
                 <div class="contact-details" style="margin-top: 6rem;">
                     <div class="contact-item" style="margin-bottom: 3rem;">
-                        <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">
+                        <h4
+                            style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">
                             Direct Correspondence</h4>
                         <a href="mailto:author@manujmittal.com"
                             style="font-size: 1.5rem; color: var(--text); text-decoration: none; font-family: var(--font-serif); border-bottom: 1px solid rgba(197,160,89,0.2); padding-bottom: 5px;">
@@ -554,20 +928,23 @@ include 'components/header.php';
                     </div>
 
                     <div class="contact-item" style="margin-bottom: 3rem;">
-                        <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">
+                        <h4
+                            style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">
                             Based In</h4>
                         <p style="font-size: 1.2rem; color: var(--text); opacity: 0.85;">Rochester, New York, USA</p>
                     </div>
 
                     <div class="contact-item">
-                        <h4 style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;">
+                        <h4
+                            style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;">
                             Connect On</h4>
                         <div style="display: flex; gap: 1.5rem;">
                             <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
                                 style="font-size: 0.8rem; color: var(--text); letter-spacing: 2px; font-weight: 800; opacity: 0.7; transition: 0.3s;"
                                 onmouseover="this.style.opacity='1';this.style.color='var(--gold)';"
                                 onmouseout="this.style.opacity='0.7';this.style.color='var(--text)';">INSTAGRAM</a>
-                            <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"
+                            <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                                target="_blank"
                                 style="font-size: 0.8rem; color: var(--text); letter-spacing: 2px; font-weight: 800; opacity: 0.7; transition: 0.3s;"
                                 onmouseover="this.style.opacity='1';this.style.color='var(--gold)';"
                                 onmouseout="this.style.opacity='0.7';this.style.color='var(--text)';">LINKEDIN</a>
@@ -579,7 +956,8 @@ include 'components/header.php';
             <!-- Right: Form -->
             <div class="contact-form-box reveal">
                 <?php if (isset($_GET['success']) && $_GET['success'] == '1'): ?>
-                    <div style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
+                    <div
+                        style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
                         Message sent successfully! We will get back to you soon.
                     </div>
                 <?php endif; ?>
@@ -612,7 +990,8 @@ include 'components/header.php';
 
                     <div class="input-group">
                         <label>Your Message</label>
-                        <textarea name="message" rows="4" placeholder="How can we collaborate?" style="resize: none;" required></textarea>
+                        <textarea name="message" rows="4" placeholder="How can we collaborate?" style="resize: none;"
+                            required></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary"
@@ -638,28 +1017,52 @@ include 'components/header.php';
 
                 <div class="meeting-meta">
                     <div class="meeting-meta-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
                         <span id="meta-duration">30 minutes</span>
                     </div>
                     <div class="meeting-meta-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
                         <span>Virtual</span>
                     </div>
                     <div class="meeting-meta-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
                         <span>Mon – Fri, 9 AM – 5 PM IST</span>
                     </div>
                     <div class="meeting-meta-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
                         <span>Confirmation sent to your email</span>
                     </div>
                 </div>
 
                 <div class="meeting-types">
-                    <button class="meeting-type-btn active" data-duration="30" data-label="Intro Call"        onclick="selectMeetingType(this)">Intro Call           <span class="mt-badge">30 MIN</span></button>
-                    <button class="meeting-type-btn"        data-duration="60" data-label="Mentorship Session" onclick="selectMeetingType(this)">Mentorship Session   <span class="mt-badge">60 MIN</span></button>
-                    <button class="meeting-type-btn"        data-duration="45" data-label="Speaking Inquiry"   onclick="selectMeetingType(this)">Speaking Inquiry     <span class="mt-badge">45 MIN</span></button>
-                    <button class="meeting-type-btn"        data-duration="30" data-label="General Discussion" onclick="selectMeetingType(this)">General Discussion   <span class="mt-badge">30 MIN</span></button>
+                    <button class="meeting-type-btn active" data-duration="30" data-label="Intro Call"
+                        onclick="selectMeetingType(this)">Intro Call <span class="mt-badge">30 MIN</span></button>
+                    <button class="meeting-type-btn" data-duration="60" data-label="Mentorship Session"
+                        onclick="selectMeetingType(this)">Mentorship Session <span class="mt-badge">60
+                            MIN</span></button>
+                    <button class="meeting-type-btn" data-duration="45" data-label="Speaking Inquiry"
+                        onclick="selectMeetingType(this)">Speaking Inquiry <span class="mt-badge">45 MIN</span></button>
+                    <button class="meeting-type-btn" data-duration="30" data-label="General Discussion"
+                        onclick="selectMeetingType(this)">General Discussion <span class="mt-badge">30
+                            MIN</span></button>
                 </div>
             </aside>
 
@@ -668,25 +1071,36 @@ include 'components/header.php';
                 <!-- Step indicator -->
                 <div class="booking-steps">
                     <div class="booking-step active" id="sch-step-1">01 · Date</div>
-                    <div class="booking-step"        id="sch-step-2">02 · Time</div>
-                    <div class="booking-step"        id="sch-step-3">03 · Details</div>
+                    <div class="booking-step" id="sch-step-2">02 · Time</div>
+                    <div class="booking-step" id="sch-step-3">03 · Details</div>
                 </div>
 
                 <!-- Step 1: Calendar -->
                 <div id="sch-cal-panel">
                     <div class="calendar-header">
-                        <button class="cal-nav-btn" id="sch-prev-month" onclick="schChangeMonth(-1)" aria-label="Previous month">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                        <button class="cal-nav-btn" id="sch-prev-month" onclick="schChangeMonth(-1)"
+                            aria-label="Previous month">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg>
                         </button>
                         <div class="calendar-month" id="sch-month-label">June 2026</div>
-                        <button class="cal-nav-btn" id="sch-next-month" onclick="schChangeMonth(1)" aria-label="Next month">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                        <button class="cal-nav-btn" id="sch-next-month" onclick="schChangeMonth(1)"
+                            aria-label="Next month">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
                         </button>
                     </div>
                     <div class="calendar-weekdays">
-                        <div class="cal-weekday">Su</div><div class="cal-weekday">Mo</div>
-                        <div class="cal-weekday">Tu</div><div class="cal-weekday">We</div>
-                        <div class="cal-weekday">Th</div><div class="cal-weekday">Fr</div>
+                        <div class="cal-weekday">Su</div>
+                        <div class="cal-weekday">Mo</div>
+                        <div class="cal-weekday">Tu</div>
+                        <div class="cal-weekday">We</div>
+                        <div class="cal-weekday">Th</div>
+                        <div class="cal-weekday">Fr</div>
                         <div class="cal-weekday">Sa</div>
                     </div>
                     <div class="calendar-grid" id="sch-cal-grid"></div>
@@ -695,7 +1109,10 @@ include 'components/header.php';
                 <!-- Step 2: Time slots -->
                 <div id="sch-time-panel">
                     <button class="sch-back-link" onclick="schGoToStep(1)">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
                         Change date
                     </button>
                     <div class="sch-time-label" id="sch-date-label">Choose a time</div>
@@ -705,23 +1122,33 @@ include 'components/header.php';
                 <!-- Step 3: Details form -->
                 <div id="sch-details-panel">
                     <button class="sch-back-link" onclick="schGoToStep(2)">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
                         Change time
                     </button>
 
                     <div class="booking-summary-bar">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
                         <span id="sch-summary-text">—</span>
                     </div>
 
-                    <form id="sch-booking-form" action="https://api.web3forms.com/submit" method="POST" style="display:flex;flex-direction:column;gap:1.5rem;">
-                        <input type="hidden" name="access_key"       value="64485f2f-6a99-4da8-8e58-ce77d9357983">
-                        <input type="hidden" name="_captcha"          value="false">
-                        <input type="hidden" name="subject"           id="sch-form-subject"   value="New Meeting Booking">
-                        <input type="hidden" name="meeting_date"      id="sch-form-date">
-                        <input type="hidden" name="meeting_time"      id="sch-form-time">
-                        <input type="hidden" name="meeting_type"      id="sch-form-type"      value="Intro Call">
-                        <input type="hidden" name="meeting_duration"  id="sch-form-duration"  value="30 minutes">
+                    <form id="sch-booking-form" action="https://api.web3forms.com/submit" method="POST"
+                        style="display:flex;flex-direction:column;gap:1.5rem;">
+                        <input type="hidden" name="access_key" value="64485f2f-6a99-4da8-8e58-ce77d9357983">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="subject" id="sch-form-subject" value="New Meeting Booking">
+                        <input type="hidden" name="meeting_date" id="sch-form-date">
+                        <input type="hidden" name="meeting_time" id="sch-form-time">
+                        <input type="hidden" name="meeting_type" id="sch-form-type" value="Intro Call">
+                        <input type="hidden" name="meeting_duration" id="sch-form-duration" value="30 minutes">
 
                         <div class="sch-form-field">
                             <label class="sch-form-label">Full Name</label>
@@ -729,14 +1156,19 @@ include 'components/header.php';
                         </div>
                         <div class="sch-form-field">
                             <label class="sch-form-label">Email Address</label>
-                            <input type="email" name="email" class="sch-form-input" placeholder="your@email.com" required>
+                            <input type="email" name="email" class="sch-form-input" placeholder="your@email.com"
+                                required>
                         </div>
                         <div class="sch-form-field">
                             <label class="sch-form-label">Brief Agenda</label>
-                            <textarea name="message" class="sch-form-textarea" rows="2" placeholder="What would you like to discuss?"></textarea>
+                            <textarea name="message" class="sch-form-textarea" rows="2"
+                                placeholder="What would you like to discuss?"></textarea>
                         </div>
                         <button type="submit" class="btn-confirm" id="sch-submit-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Confirm Booking
                         </button>
                     </form>
@@ -745,20 +1177,26 @@ include 'components/header.php';
                 <!-- Success screen -->
                 <div id="sch-success-panel">
                     <div class="success-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
                     </div>
                     <div class="success-title">You're booked!</div>
-                    <p class="success-detail">A confirmation has been sent to your email. Manuj looks forward to speaking with you.</p>
+                    <p class="success-detail">A confirmation has been sent to your email. Manuj looks forward to
+                        speaking with you.</p>
 
                     <div class="success-box">
                         <div class="conf-row"><span>Meeting Type</span><span id="conf-type">—</span></div>
-                        <div class="conf-row"><span>Date</span>        <span id="conf-date">—</span></div>
-                        <div class="conf-row"><span>Time</span>        <span id="conf-time">—</span></div>
-                        <div class="conf-row"><span>Duration</span>    <span id="conf-duration">—</span></div>
+                        <div class="conf-row"><span>Date</span> <span id="conf-date">—</span></div>
+                        <div class="conf-row"><span>Time</span> <span id="conf-time">—</span></div>
+                        <div class="conf-row"><span>Duration</span> <span id="conf-duration">—</span></div>
                     </div>
 
                     <button class="btn-back-contact" onclick="resetScheduler()">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
                         Book Another
                     </button>
                 </div>
@@ -769,242 +1207,242 @@ include 'components/header.php';
 </section>
 
 <script>
-/* ============================================================
-   TAB SWITCHER
-============================================================ */
-function switchTab(tab) {
-    document.querySelectorAll('.contact-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('tab-' + tab).classList.add('active');
-    document.getElementById('panel-' + tab).classList.add('active');
+    /* ============================================================
+       TAB SWITCHER
+    ============================================================ */
+    function switchTab(tab) {
+        document.querySelectorAll('.contact-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('tab-' + tab).classList.add('active');
+        document.getElementById('panel-' + tab).classList.add('active');
 
-    // Init scheduler on first open
-    if (tab === 'mtg' && !window._schInitialised) {
-        schInit();
-        window._schInitialised = true;
-    }
-}
-
-// Open to "Book a Meeting" tab if hash present
-if (window.location.hash === '#book') {
-    switchTab('mtg');
-}
-
-/* ============================================================
-   SCHEDULER
-============================================================ */
-(function () {
-    const MONTH_NAMES = ['January','February','March','April','May','June',
-                         'July','August','September','October','November','December'];
-    const TIME_SLOTS  = ['09:00 AM','10:00 AM','11:00 AM','12:00 PM',
-                         '02:00 PM','03:00 PM','04:00 PM','05:00 PM'];
-
-    let curYear  = new Date().getFullYear();
-    let curMonth = new Date().getMonth();
-    let selDate  = null;
-    let selTime  = null;
-    let selType  = 'Intro Call';
-    let selDur   = '30 minutes';
-
-    const today = new Date();
-    today.setHours(0,0,0,0);
-
-    /* ── Meeting type picker ──────────────────────────────── */
-    window.selectMeetingType = function(btn) {
-        document.querySelectorAll('.meeting-type-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selType = btn.dataset.label;
-        selDur  = btn.dataset.duration + ' minutes';
-        document.getElementById('meta-duration').textContent = selDur;
-    };
-
-    /* ── Calendar render ──────────────────────────────────── */
-    function renderCal() {
-        document.getElementById('sch-month-label').textContent =
-            MONTH_NAMES[curMonth] + ' ' + curYear;
-
-        const isCurrentMonth = (curYear === today.getFullYear() && curMonth === today.getMonth());
-        document.getElementById('sch-prev-month').disabled = isCurrentMonth;
-
-        const grid   = document.getElementById('sch-cal-grid');
-        grid.innerHTML = '';
-
-        const firstDay    = new Date(curYear, curMonth, 1).getDay();
-        const daysInMonth = new Date(curYear, curMonth + 1, 0).getDate();
-
-        for (let i = 0; i < firstDay; i++) {
-            const e = document.createElement('div');
-            e.className = 'cal-day empty';
-            grid.appendChild(e);
+        // Init scheduler on first open
+        if (tab === 'mtg' && !window._schInitialised) {
+            schInit();
+            window._schInitialised = true;
         }
+    }
 
-        for (let d = 1; d <= daysInMonth; d++) {
-            const cell = document.createElement('div');
-            cell.textContent = d;
-            cell.className   = 'cal-day';
+    // Open to "Book a Meeting" tab if hash present
+    if (window.location.hash === '#book') {
+        switchTab('mtg');
+    }
 
-            const thisDate = new Date(curYear, curMonth, d);
-            const dow      = thisDate.getDay();
-            const isPast   = thisDate < today;
-            const isWknd   = dow === 0 || dow === 6;
-            const isToday  = thisDate.getTime() === today.getTime();
+    /* ============================================================
+       SCHEDULER
+    ============================================================ */
+    (function () {
+        const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'];
+        const TIME_SLOTS = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
+            '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'];
 
-            if (isPast || isWknd) {
-                cell.classList.add('past');
-            } else {
-                cell.classList.add('available');
-                cell.addEventListener('click', () => selectDate(thisDate, cell));
+        let curYear = new Date().getFullYear();
+        let curMonth = new Date().getMonth();
+        let selDate = null;
+        let selTime = null;
+        let selType = 'Intro Call';
+        let selDur = '30 minutes';
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        /* ── Meeting type picker ──────────────────────────────── */
+        window.selectMeetingType = function (btn) {
+            document.querySelectorAll('.meeting-type-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            selType = btn.dataset.label;
+            selDur = btn.dataset.duration + ' minutes';
+            document.getElementById('meta-duration').textContent = selDur;
+        };
+
+        /* ── Calendar render ──────────────────────────────────── */
+        function renderCal() {
+            document.getElementById('sch-month-label').textContent =
+                MONTH_NAMES[curMonth] + ' ' + curYear;
+
+            const isCurrentMonth = (curYear === today.getFullYear() && curMonth === today.getMonth());
+            document.getElementById('sch-prev-month').disabled = isCurrentMonth;
+
+            const grid = document.getElementById('sch-cal-grid');
+            grid.innerHTML = '';
+
+            const firstDay = new Date(curYear, curMonth, 1).getDay();
+            const daysInMonth = new Date(curYear, curMonth + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                const e = document.createElement('div');
+                e.className = 'cal-day empty';
+                grid.appendChild(e);
             }
 
-            if (isToday) cell.classList.add('today');
+            for (let d = 1; d <= daysInMonth; d++) {
+                const cell = document.createElement('div');
+                cell.textContent = d;
+                cell.className = 'cal-day';
 
-            if (selDate && thisDate.getTime() === selDate.getTime()) {
-                cell.classList.add('selected');
-            }
+                const thisDate = new Date(curYear, curMonth, d);
+                const dow = thisDate.getDay();
+                const isPast = thisDate < today;
+                const isWknd = dow === 0 || dow === 6;
+                const isToday = thisDate.getTime() === today.getTime();
 
-            grid.appendChild(cell);
-        }
-    }
-
-    window.schChangeMonth = function(delta) {
-        curMonth += delta;
-        if (curMonth > 11) { curMonth = 0; curYear++; }
-        if (curMonth < 0)  { curMonth = 11; curYear--; }
-        renderCal();
-    };
-
-    /* ── Date selection ───────────────────────────────────── */
-    function selectDate(date, cell) {
-        document.querySelectorAll('#sch-cal-grid .cal-day.selected').forEach(c => c.classList.remove('selected'));
-        cell.classList.add('selected');
-        selDate = date;
-        selTime = null;
-        schGoToStep(2, date);
-    }
-
-    /* ── Time slots ───────────────────────────────────────── */
-    function renderSlots(date) {
-        document.getElementById('sch-date-label').textContent =
-            'Available slots for ' + fmtDate(date);
-        const cont = document.getElementById('sch-slots-container');
-        cont.innerHTML = '';
-        TIME_SLOTS.forEach(slot => {
-            const el = document.createElement('div');
-            el.className   = 'sch-time-slot';
-            el.textContent = slot;
-            el.addEventListener('click', () => {
-                document.querySelectorAll('.sch-time-slot').forEach(s => s.classList.remove('selected'));
-                el.classList.add('selected');
-                selTime = slot;
-                setTimeout(() => schGoToStep(3), 260);
-            });
-            cont.appendChild(el);
-        });
-    }
-
-    /* ── Step navigation ──────────────────────────────────── */
-    window.schGoToStep = function(step, date) {
-        // Step indicators
-        document.querySelectorAll('.booking-step').forEach((s, i) => {
-            s.classList.toggle('active', i < step);
-        });
-
-        const calPanel  = document.getElementById('sch-cal-panel');
-        const timePanel = document.getElementById('sch-time-panel');
-        const detPanel  = document.getElementById('sch-details-panel');
-        const sucPanel  = document.getElementById('sch-success-panel');
-
-        [calPanel, timePanel, detPanel, sucPanel].forEach(p => p.style.display = 'none');
-
-        if (step === 1) {
-            calPanel.style.display = 'block';
-        } else if (step === 2) {
-            calPanel.style.display = 'block';
-            timePanel.style.display = 'flex';
-            renderSlots(date || selDate);
-        } else if (step === 3) {
-            detPanel.style.display = 'flex';
-            // fill summary & hidden fields
-            document.getElementById('sch-summary-text').textContent =
-                selType + ' · ' + fmtDate(selDate) + ' at ' + selTime;
-            document.getElementById('sch-form-date').value     = fmtDate(selDate);
-            document.getElementById('sch-form-time').value     = selTime;
-            document.getElementById('sch-form-type').value     = selType;
-            document.getElementById('sch-form-duration').value = selDur;
-            document.getElementById('sch-form-subject').value  =
-                'Meeting Booking — ' + selType + ' · ' + fmtDate(selDate) + ' at ' + selTime;
-        }
-    };
-
-    /* ── Form submit ──────────────────────────────────────── */
-    document.getElementById('sch-booking-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = document.getElementById('sch-submit-btn');
-        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:schSpin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Confirming…';
-        btn.disabled = true;
-
-        fetch('https://api.web3forms.com/submit', { method:'POST', body: new FormData(this) })
-            .then(r => r.json())
-            .then(r => {
-                if (r.success) {
-                    showSuccess();
+                if (isPast || isWknd) {
+                    cell.classList.add('past');
                 } else {
-                    btn.textContent = '✕ Something went wrong. Try again.';
-                    btn.disabled = false;
+                    cell.classList.add('available');
+                    cell.addEventListener('click', () => selectDate(thisDate, cell));
                 }
-            })
-            .catch(() => {
-                btn.textContent = '✕ Network error. Try again.';
-                btn.disabled = false;
+
+                if (isToday) cell.classList.add('today');
+
+                if (selDate && thisDate.getTime() === selDate.getTime()) {
+                    cell.classList.add('selected');
+                }
+
+                grid.appendChild(cell);
+            }
+        }
+
+        window.schChangeMonth = function (delta) {
+            curMonth += delta;
+            if (curMonth > 11) { curMonth = 0; curYear++; }
+            if (curMonth < 0) { curMonth = 11; curYear--; }
+            renderCal();
+        };
+
+        /* ── Date selection ───────────────────────────────────── */
+        function selectDate(date, cell) {
+            document.querySelectorAll('#sch-cal-grid .cal-day.selected').forEach(c => c.classList.remove('selected'));
+            cell.classList.add('selected');
+            selDate = date;
+            selTime = null;
+            schGoToStep(2, date);
+        }
+
+        /* ── Time slots ───────────────────────────────────────── */
+        function renderSlots(date) {
+            document.getElementById('sch-date-label').textContent =
+                'Available slots for ' + fmtDate(date);
+            const cont = document.getElementById('sch-slots-container');
+            cont.innerHTML = '';
+            TIME_SLOTS.forEach(slot => {
+                const el = document.createElement('div');
+                el.className = 'sch-time-slot';
+                el.textContent = slot;
+                el.addEventListener('click', () => {
+                    document.querySelectorAll('.sch-time-slot').forEach(s => s.classList.remove('selected'));
+                    el.classList.add('selected');
+                    selTime = slot;
+                    setTimeout(() => schGoToStep(3), 260);
+                });
+                cont.appendChild(el);
             });
-    });
+        }
 
-    function showSuccess() {
-        document.getElementById('sch-details-panel').style.display = 'none';
-        const suc = document.getElementById('sch-success-panel');
-        suc.style.display = 'flex';
-        document.getElementById('conf-type').textContent     = selType;
-        document.getElementById('conf-date').textContent     = fmtDate(selDate);
-        document.getElementById('conf-time').textContent     = selTime;
-        document.getElementById('conf-duration').textContent = selDur;
-        document.querySelectorAll('.booking-step').forEach(s => s.classList.add('active'));
-    }
+        /* ── Step navigation ──────────────────────────────────── */
+        window.schGoToStep = function (step, date) {
+            // Step indicators
+            document.querySelectorAll('.booking-step').forEach((s, i) => {
+                s.classList.toggle('active', i < step);
+            });
 
-    window.resetScheduler = function() {
-        selDate = null; selTime = null;
-        selType = 'Intro Call'; selDur = '30 minutes';
-        document.querySelectorAll('.meeting-type-btn').forEach((b,i) => b.classList.toggle('active', i===0));
-        document.getElementById('meta-duration').textContent = '30 minutes';
-        document.getElementById('sch-booking-form').reset();
-        const btn = document.getElementById('sch-submit-btn');
-        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Confirm Booking';
-        btn.disabled = false;
-        document.getElementById('sch-success-panel').style.display = 'none';
-        renderCal();
-        schGoToStep(1);
-    };
+            const calPanel = document.getElementById('sch-cal-panel');
+            const timePanel = document.getElementById('sch-time-panel');
+            const detPanel = document.getElementById('sch-details-panel');
+            const sucPanel = document.getElementById('sch-success-panel');
 
-    /* ── Helpers ──────────────────────────────────────────── */
-    function fmtDate(d) {
-        const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        const mos  = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        return days[d.getDay()] + ', ' + mos[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear();
-    }
+            [calPanel, timePanel, detPanel, sucPanel].forEach(p => p.style.display = 'none');
 
-    /* Spinner keyframe */
-    const s = document.createElement('style');
-    s.textContent = '@keyframes schSpin { to { transform: rotate(360deg); } }';
-    document.head.appendChild(s);
+            if (step === 1) {
+                calPanel.style.display = 'block';
+            } else if (step === 2) {
+                calPanel.style.display = 'block';
+                timePanel.style.display = 'flex';
+                renderSlots(date || selDate);
+            } else if (step === 3) {
+                detPanel.style.display = 'flex';
+                // fill summary & hidden fields
+                document.getElementById('sch-summary-text').textContent =
+                    selType + ' · ' + fmtDate(selDate) + ' at ' + selTime;
+                document.getElementById('sch-form-date').value = fmtDate(selDate);
+                document.getElementById('sch-form-time').value = selTime;
+                document.getElementById('sch-form-type').value = selType;
+                document.getElementById('sch-form-duration').value = selDur;
+                document.getElementById('sch-form-subject').value =
+                    'Meeting Booking — ' + selType + ' · ' + fmtDate(selDate) + ' at ' + selTime;
+            }
+        };
 
-    /* Public init (called when tab first opened) */
-    window.schInit = function() {
-        renderCal();
-        schGoToStep(1);
-    };
+        /* ── Form submit ──────────────────────────────────────── */
+        document.getElementById('sch-booking-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('sch-submit-btn');
+            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:schSpin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Confirming…';
+            btn.disabled = true;
 
-    // If already on #book hash, init immediately
-    if (window.location.hash === '#book') schInit();
-})();
+            fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) })
+                .then(r => r.json())
+                .then(r => {
+                    if (r.success) {
+                        showSuccess();
+                    } else {
+                        btn.textContent = '✕ Something went wrong. Try again.';
+                        btn.disabled = false;
+                    }
+                })
+                .catch(() => {
+                    btn.textContent = '✕ Network error. Try again.';
+                    btn.disabled = false;
+                });
+        });
+
+        function showSuccess() {
+            document.getElementById('sch-details-panel').style.display = 'none';
+            const suc = document.getElementById('sch-success-panel');
+            suc.style.display = 'flex';
+            document.getElementById('conf-type').textContent = selType;
+            document.getElementById('conf-date').textContent = fmtDate(selDate);
+            document.getElementById('conf-time').textContent = selTime;
+            document.getElementById('conf-duration').textContent = selDur;
+            document.querySelectorAll('.booking-step').forEach(s => s.classList.add('active'));
+        }
+
+        window.resetScheduler = function () {
+            selDate = null; selTime = null;
+            selType = 'Intro Call'; selDur = '30 minutes';
+            document.querySelectorAll('.meeting-type-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+            document.getElementById('meta-duration').textContent = '30 minutes';
+            document.getElementById('sch-booking-form').reset();
+            const btn = document.getElementById('sch-submit-btn');
+            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Confirm Booking';
+            btn.disabled = false;
+            document.getElementById('sch-success-panel').style.display = 'none';
+            renderCal();
+            schGoToStep(1);
+        };
+
+        /* ── Helpers ──────────────────────────────────────────── */
+        function fmtDate(d) {
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const mos = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return days[d.getDay()] + ', ' + mos[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear();
+        }
+
+        /* Spinner keyframe */
+        const s = document.createElement('style');
+        s.textContent = '@keyframes schSpin { to { transform: rotate(360deg); } }';
+        document.head.appendChild(s);
+
+        /* Public init (called when tab first opened) */
+        window.schInit = function () {
+            renderCal();
+            schGoToStep(1);
+        };
+
+        // If already on #book hash, init immediately
+        if (window.location.hash === '#book') schInit();
+    })();
 </script>
 
 <?php include 'components/footer.php'; ?>
