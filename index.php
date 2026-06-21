@@ -698,7 +698,6 @@ $status = $_GET['status'] ?? null;
                         track.appendChild(firstClone);
 
                         let currentIndex = 0;
-                        let intervalId = null;
                         let isAnimating = false;
                         const slideCount = images.length;
 
@@ -731,25 +730,9 @@ $status = $_GET['status'] ?? null;
                             }, 600);
                         };
 
-                        const startSlideshow = () => {
-                            if (intervalId) return;
-                            intervalId = setInterval(() => {
-                                currentIndex++;
-                                goToSlide(currentIndex);
-                            }, 2600);
-                        };
-
-                        const stopSlideshow = () => {
-                            if (intervalId) {
-                                clearInterval(intervalId);
-                                intervalId = null;
-                            }
-                        };
-
                         prevBtn.addEventListener('click', (e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            stopSlideshow();
                             if (isAnimating) return;
                             
                             if (currentIndex <= 0) {
@@ -766,26 +749,11 @@ $status = $_GET['status'] ?? null;
                         nextBtn.addEventListener('click', (e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            stopSlideshow();
                             if (!isAnimating) {
                                 currentIndex++;
                                 goToSlide(currentIndex);
                             }
                         });
-
-                        // Start the cycle
-                        startSlideshow();
-
-                        // Pause slideshow when user hovers or taps the parent card
-                        const card = marquee.closest('.timeline-card');
-                        if (card) {
-                            card.addEventListener('mouseenter', stopSlideshow);
-                            card.addEventListener('mouseleave', startSlideshow);
-                            card.addEventListener('touchstart', () => {
-                                if (intervalId) stopSlideshow();
-                                else startSlideshow();
-                            }, { passive: true });
-                        }
                     });
                 };
 
