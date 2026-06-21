@@ -699,24 +699,44 @@ $status = $_GET['status'] ?? null;
 
                         let currentIndex = 0;
                         let intervalId = null;
+                        let isAnimating = false;
                         const slideCount = images.length;
+
+                        // Create navigation buttons
+                        const prevBtn = document.createElement('button');
+                        prevBtn.className = 'marquee-nav-btn marquee-nav-prev';
+                        prevBtn.innerHTML = '&#10094;'; // Left arrow
+
+                        const nextBtn = document.createElement('button');
+                        nextBtn.className = 'marquee-nav-btn marquee-nav-next';
+                        nextBtn.innerHTML = '&#10095;'; // Right arrow
+
+                        marquee.appendChild(prevBtn);
+                        marquee.appendChild(nextBtn);
+
+                        const goToSlide = (index) => {
+                            if (isAnimating) return;
+                            isAnimating = true;
+                            
+                            track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                            track.style.transform = `translate3d(-${index * 100}%, 0, 0)`;
+
+                            setTimeout(() => {
+                                isAnimating = false;
+                                if (index === slideCount) {
+                                    track.style.transition = 'none';
+                                    currentIndex = 0;
+                                    track.style.transform = 'translate3d(0, 0, 0)';
+                                }
+                            }, 600);
+                        };
 
                         const startSlideshow = () => {
                             if (intervalId) return;
                             intervalId = setInterval(() => {
                                 currentIndex++;
-                                track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-                                track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
-
-                                if (currentIndex === slideCount) {
-                                    // Reset to index 0 seamlessly after slide transition finishes
-                                    setTimeout(() => {
-                                        track.style.transition = 'none';
-                                        currentIndex = 0;
-                                        track.style.transform = 'translate3d(0, 0, 0)';
-                                    }, 600);
-                                }
-                            }, 2600); // Stop for 2 seconds (2.0s pause + 0.6s transition)
+                                goToSlide(currentIndex);
+                            }, 2600);
                         };
 
                         const stopSlideshow = () => {
@@ -726,6 +746,33 @@ $status = $_GET['status'] ?? null;
                             }
                         };
 
+                        prevBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            stopSlideshow();
+                            if (isAnimating) return;
+                            
+                            if (currentIndex <= 0) {
+                                track.style.transition = 'none';
+                                currentIndex = slideCount;
+                                track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
+                                // Force reflow
+                                void track.offsetWidth;
+                            }
+                            currentIndex--;
+                            goToSlide(currentIndex);
+                        });
+
+                        nextBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            stopSlideshow();
+                            if (!isAnimating) {
+                                currentIndex++;
+                                goToSlide(currentIndex);
+                            }
+                        });
+
                         // Start the cycle
                         startSlideshow();
 
@@ -734,7 +781,6 @@ $status = $_GET['status'] ?? null;
                         if (card) {
                             card.addEventListener('mouseenter', stopSlideshow);
                             card.addEventListener('mouseleave', startSlideshow);
-                            // Support tap to toggle pause/play on mobile devices
                             card.addEventListener('touchstart', () => {
                                 if (intervalId) stopSlideshow();
                                 else startSlideshow();

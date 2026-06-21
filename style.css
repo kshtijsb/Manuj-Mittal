@@ -2035,6 +2035,38 @@ nav {
                 transform: none !important;
             }
 
+            .marquee-nav-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0, 0, 0, 0.4);
+                color: #fff;
+                border: none;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                transition: background 0.3s ease, opacity 0.3s ease;
+                opacity: 0;
+            }
+            .timeline-card:hover .marquee-nav-btn {
+                opacity: 1;
+            }
+            .marquee-nav-btn:hover {
+                background: rgba(0, 0, 0, 0.8);
+            }
+            .marquee-nav-prev {
+                left: 10px;
+            }
+            .marquee-nav-next {
+                right: 10px;
+            }
+
             .timeline-text {
                 padding: 2.5rem;
                 flex-grow: 1;
