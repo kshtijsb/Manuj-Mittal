@@ -252,9 +252,7 @@ $status = $_GET['status'] ?? null;
             <a href="education.php" class="pillar-card reveal pillar-edu"
                 style="--theme-color: #0047AB; border-top: 6px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
-                <div class="pillar-tag"
-                    style="color: #0047AB; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
-                    Educational Background</div>
+
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Educational Background
                 </h3>
                 <ul class="pillar-list">
@@ -289,9 +287,7 @@ $status = $_GET['status'] ?? null;
             <a href="professional.php" class="pillar-card reveal pillar-prof"
                 style="--theme-color: #C41E3A; border-top: 6px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
-                <div class="pillar-tag"
-                    style="color: #C41E3A; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
-                    Professional Career</div>
+
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Professional Career</h3>
                 <ul class="pillar-list">
                     <li>BNP Paribas - Internship</li>
@@ -318,9 +314,7 @@ $status = $_GET['status'] ?? null;
             <a href="social-responsibility.php" class="pillar-card reveal pillar-social"
                 style="--theme-color: #2E8B57; border-top: 6px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
-                <div class="pillar-tag"
-                    style="color: #2E8B57; font-weight: 800; letter-spacing: 3px; font-size: 0.65rem; margin-bottom: 1.5rem; text-transform: uppercase;">
-                    Social Responsibility</div>
+
                 <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Social Responsibility</h3>
                 <ul class="pillar-list">
                     <li>RYLA Participant - Interact 2013 (Rotary International)</li>
