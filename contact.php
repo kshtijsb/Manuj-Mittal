@@ -1022,7 +1022,7 @@ include 'components/header.php';
                             <circle cx="12" cy="12" r="10" />
                             <polyline points="12 6 12 12 16 14" />
                         </svg>
-                        <span id="meta-duration">30 minutes</span>
+                        <span id="meta-duration">15 minutes</span>
                     </div>
                     <div class="meeting-meta-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1053,15 +1053,15 @@ include 'components/header.php';
                 </div>
 
                 <div class="meeting-types">
-                    <button class="meeting-type-btn active" data-duration="30" data-label="Intro Call"
-                        onclick="selectMeetingType(this)">Intro Call <span class="mt-badge">30 MIN</span></button>
-                    <button class="meeting-type-btn" data-duration="60" data-label="Mentorship Session"
-                        onclick="selectMeetingType(this)">Mentorship Session <span class="mt-badge">60
+                    <button class="meeting-type-btn active" data-duration="15" data-label="Intro Call"
+                        onclick="selectMeetingType(this)">Intro Call <span class="mt-badge">15 MIN</span></button>
+                    <button class="meeting-type-btn" data-duration="60" data-label="Advisor Session"
+                        onclick="selectMeetingType(this)">Advisor Session <span class="mt-badge">60
                             MIN</span></button>
-                    <button class="meeting-type-btn" data-duration="45" data-label="Speaking Inquiry"
-                        onclick="selectMeetingType(this)">Speaking Inquiry <span class="mt-badge">45 MIN</span></button>
-                    <button class="meeting-type-btn" data-duration="30" data-label="General Discussion"
-                        onclick="selectMeetingType(this)">General Discussion <span class="mt-badge">30
+                    <button class="meeting-type-btn" data-duration="15" data-label="Speaking Inquiry"
+                        onclick="selectMeetingType(this)">Speaking Inquiry <span class="mt-badge">15 MIN</span></button>
+                    <button class="meeting-type-btn" data-duration="40" data-label="General Discussion"
+                        onclick="selectMeetingType(this)">General Discussion <span class="mt-badge">40
                             MIN</span></button>
                 </div>
             </aside>
@@ -1242,7 +1242,7 @@ include 'components/header.php';
         let selDate = null;
         let selTime = null;
         let selType = 'Intro Call';
-        let selDur = '30 minutes';
+        let selDur = '15 minutes';
 
         const today = new Date();
         today.setHours(0, 0, 0, 0);
@@ -1410,9 +1410,9 @@ include 'components/header.php';
 
         window.resetScheduler = function () {
             selDate = null; selTime = null;
-            selType = 'Intro Call'; selDur = '30 minutes';
+            selType = 'Intro Call'; selDur = '15 minutes';
             document.querySelectorAll('.meeting-type-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
-            document.getElementById('meta-duration').textContent = '30 minutes';
+            document.getElementById('meta-duration').textContent = '15 minutes';
             document.getElementById('sch-booking-form').reset();
             const btn = document.getElementById('sch-submit-btn');
             btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Confirm Booking';

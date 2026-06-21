@@ -7,22 +7,14 @@ include 'components/header.php';
 <section class="pillar-detail-page professional-page" style="padding: 15vh 0; background: #ffffff; min-height: 100vh;">
     <div class="container" style="max-width: 1000px;">
         
-        <!-- Header: Two-Column Editorial Grid -->
-        <div class="editorial-grid" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 5rem; align-items: center; margin-bottom: 100px;">
-            <div class="editorial-left">
+        <!-- Header: One-Column Editorial Grid -->
+        <div class="editorial-grid" style="display: grid; grid-template-columns: 1fr; gap: 5rem; align-items: center; margin-bottom: 100px;">
+            <div class="editorial-left" style="max-width: 800px; margin: 0 auto;">
                 <div class="side-tag reveal" style="color: #C41E3A; font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block; text-transform: uppercase;">02 / Strategic Leadership</div>
                 <h1 class="reveal" style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 0.95; margin-bottom: 4rem; color: #000; letter-spacing: -2px; font-family: var(--font-serif);">Corporate &<br>Operational Vision</h1>
                 <div class="lead-quote reveal" style="font-size: 1.3rem; font-family: var(--font-serif); color: #333; border-left: 4px solid #C41E3A; padding-left: 2.5rem; font-style: italic; line-height: 1.5; margin-top: 2rem;">
                     "Strategy is not a document; it is a dynamic posture. True execution lies in translating complex financial models and corporate directives into clear, human-centered narratives."
                 </div>
-            </div>
-            
-            <div class="portrait-container reveal" style="position: relative;">
-                <div class="portrait-frame shimmer" style="width: 100%; height: 480px; border-radius: 8px; overflow: hidden; box-shadow: 0 30px 60px rgba(196,30,58,0.08); border: 1px solid rgba(196,30,58,0.05);">
-                    <img src="assets/Professional Journey  India/5.JPG" alt="Manuj Mittal Professional" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
-                </div>
-                <!-- Bevel Corner Styling -->
-                <div style="position: absolute; z-index: -1; top: -15px; right: -15px; width: 80px; height: 80px; border-top: 4px solid #C41E3A; border-right: 4px solid #C41E3A;"></div>
             </div>
         </div>
 

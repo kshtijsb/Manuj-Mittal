@@ -31,7 +31,9 @@ $status = $_GET['status'] ?? null;
                             <!-- BACK: Synopsis + Order Now -->
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
-                                <div class="side-tag" style="margin-bottom: 1rem; color: #000; font-family: 'STZhongsong', var(--font-serif); font-size: 1.2rem; font-weight: bold;">SYNOPSIS
+                                <div class="side-tag"
+                                    style="margin-bottom: 1rem; color: #000; font-family: 'STZhongsong', var(--font-serif); font-size: 1.2rem; font-weight: bold;">
+                                    SYNOPSIS
                                 </div>
                                 <p style="font-size: 0.85rem; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">A
                                     book on upskilling personal life management, featuring thought-provoking quotations
@@ -71,7 +73,9 @@ $status = $_GET['status'] ?? null;
                             <!-- BACK: Bio + biography link -->
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
-                                <div class="side-tag" style="margin-bottom: 1rem; color: #000; font-family: 'STZhongsong', var(--font-serif); font-size: 1.2rem; font-weight: bold;">THE
+                                <div class="side-tag"
+                                    style="margin-bottom: 1rem; color: #000; font-family: 'STZhongsong', var(--font-serif); font-size: 1.2rem; font-weight: bold;">
+                                    THE
                                     NARRATIVE</div>
                                 <p style="font-size: 0.85rem; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
                                     Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth
@@ -368,7 +372,7 @@ $status = $_GET['status'] ?? null;
             </div>
 
             <!-- Milestone 1: Early Life and Family -->
-            <div class="timeline-card" style="--theme-color: #2E8B57;">
+            <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img">
@@ -397,7 +401,7 @@ $status = $_GET['status'] ?? null;
             </div>
 
             <!-- Milestone 2: Education in India -->
-            <div class="timeline-card" style="--theme-color: #C41E3A;">
+            <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img">
@@ -425,7 +429,7 @@ $status = $_GET['status'] ?? null;
             </div>
 
             <!-- Milestone 3: Professional Journey in India -->
-            <div class="timeline-card" style="--theme-color: #0047AB;">
+            <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img">
@@ -482,7 +486,7 @@ $status = $_GET['status'] ?? null;
             </div>
 
             <!-- Milestone 5: Education in the US -->
-            <div class="timeline-card" style="--theme-color: #C41E3A;">
+            <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img">
@@ -509,7 +513,7 @@ $status = $_GET['status'] ?? null;
             </div>
 
             <!-- Milestone 6: Rise in Rotary -->
-            <div class="timeline-card" style="--theme-color: #0047AB;">
+            <div class="timeline-card" style="--theme-color: #2E8B57;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img">
@@ -537,7 +541,7 @@ $status = $_GET['status'] ?? null;
             </div>
 
             <!-- Milestone 7: Professional Journey in the US -->
-            <div class="timeline-card" style="--theme-color: #2E8B57;">
+            <div class="timeline-card" style="--theme-color: #C41E3A;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-img">
@@ -716,7 +720,7 @@ $status = $_GET['status'] ?? null;
                         const goToSlide = (index) => {
                             if (isAnimating) return;
                             isAnimating = true;
-                            
+
                             track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
                             track.style.transform = `translate3d(-${index * 100}%, 0, 0)`;
 
@@ -734,7 +738,7 @@ $status = $_GET['status'] ?? null;
                             e.preventDefault();
                             e.stopPropagation();
                             if (isAnimating) return;
-                            
+
                             if (currentIndex <= 0) {
                                 track.style.transition = 'none';
                                 currentIndex = slideCount;
@@ -838,23 +842,36 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section" style="padding: 4rem 0 0 0; background: transparent; position: relative; overflow: hidden;">
+    <section class="quotes-section"
+        style="padding: 4rem 0 0 0; background: transparent; position: relative; overflow: hidden;">
         <div class="header-marquee" style="padding: 1.5rem 0;">
             <div class="header-marquee-inner">
                 <div class="header-marquee-group">
-                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span
+                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
+                        Youth and Empower Communities for Better Tomorrow"</span>
                     <span class="separator" style="font-size: 1.5rem;">•</span>
-                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span
+                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
+                        Youth and Empower Communities for Better Tomorrow"</span>
                     <span class="separator" style="font-size: 1.5rem;">•</span>
-                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span
+                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
+                        Youth and Empower Communities for Better Tomorrow"</span>
                     <span class="separator" style="font-size: 1.5rem;">•</span>
                 </div>
                 <div class="header-marquee-group" aria-hidden="true">
-                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span
+                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
+                        Youth and Empower Communities for Better Tomorrow"</span>
                     <span class="separator" style="font-size: 1.5rem;">•</span>
-                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span
+                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
+                        Youth and Empower Communities for Better Tomorrow"</span>
                     <span class="separator" style="font-size: 1.5rem;">•</span>
-                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span
+                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
+                        Youth and Empower Communities for Better Tomorrow"</span>
                     <span class="separator" style="font-size: 1.5rem;">•</span>
                 </div>
             </div>
