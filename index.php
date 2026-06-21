@@ -31,7 +31,7 @@ $status = $_GET['status'] ?? null;
                             <!-- BACK: Synopsis + Order Now -->
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
-                                <div class="side-tag" style="margin-bottom: 1rem; color: var(--color-gold);">SYNOPSIS
+                                <div class="side-tag" style="margin-bottom: 1rem; color: #000; font-family: 'STZhongsong', var(--font-serif); font-size: 1.2rem; font-weight: bold;">SYNOPSIS
                                 </div>
                                 <p style="font-size: 0.85rem; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">A
                                     book on upskilling personal life management, featuring thought-provoking quotations
@@ -71,7 +71,7 @@ $status = $_GET['status'] ?? null;
                             <!-- BACK: Bio + biography link -->
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
-                                <div class="side-tag" style="margin-bottom: 1rem; color: var(--color-gold);">THE
+                                <div class="side-tag" style="margin-bottom: 1rem; color: #000; font-family: 'STZhongsong', var(--font-serif); font-size: 1.2rem; font-weight: bold;">THE
                                     NARRATIVE</div>
                                 <p style="font-size: 0.85rem; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
                                     Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth
@@ -788,7 +788,7 @@ $status = $_GET['status'] ?? null;
         <div class="contact-cta-inner"
             style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid rgba(255, 255, 255, 0.5);">
             <div class="side-tag"
-                style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem; font-family: 'STZhongsong', var(--font-serif);">
+                style="color: #000; font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 1.1rem; font-family: 'STZhongsong', var(--font-serif);">
                 Let's Connect
             </div>
             <h2
