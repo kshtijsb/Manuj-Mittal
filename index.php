@@ -838,15 +838,25 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section"
-        style="padding: 4rem 0; background: transparent; position: relative; overflow: hidden;">
-        <div
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
-        </div>
-        <div class="container" style="text-align: center; max-width: 900px; position: relative; z-index: 2;">
-            <div style="width: 100%;">
-                <p style="font-family: var(--font-serif); font-size: 2.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem; color: #000;">
-                    "Skill Youth and Empower Communities for Better Tomorrow"</p>
+    <section class="quotes-section" style="padding: 4rem 0 0 0; background: transparent; position: relative; overflow: hidden;">
+        <div class="header-marquee" style="padding: 1.5rem 0;">
+            <div class="header-marquee-inner">
+                <div class="header-marquee-group">
+                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span class="separator" style="font-size: 1.5rem;">•</span>
+                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span class="separator" style="font-size: 1.5rem;">•</span>
+                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span class="separator" style="font-size: 1.5rem;">•</span>
+                </div>
+                <div class="header-marquee-group" aria-hidden="true">
+                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span class="separator" style="font-size: 1.5rem;">•</span>
+                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span class="separator" style="font-size: 1.5rem;">•</span>
+                    <span style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill Youth and Empower Communities for Better Tomorrow"</span>
+                    <span class="separator" style="font-size: 1.5rem;">•</span>
+                </div>
             </div>
         </div>
     </section>
