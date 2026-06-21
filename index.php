@@ -788,11 +788,11 @@ $status = $_GET['status'] ?? null;
         <div class="contact-cta-inner"
             style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid rgba(255, 255, 255, 0.5);">
             <div class="side-tag"
-                style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem;">
+                style="color: var(--gold); font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 0.75rem; font-family: 'STZhongsong', var(--font-serif);">
                 Let's Connect
             </div>
             <h2
-                style="font-family: var(--font-sans); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 2rem; color: #111; line-height: 1.1;">
+                style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 2rem; color: #111; line-height: 1.1;">
                 Open to connecting<br>and networking forward.
             </h2>
             <p style="font-size: 1.1rem; color: #555; max-width: 500px; margin: 0 auto 3rem auto; line-height: 1.6;">

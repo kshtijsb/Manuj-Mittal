@@ -912,9 +912,9 @@ include 'components/header.php';
             <!-- Left: Info -->
             <div class="contact-info reveal">
                 <div class="side-tag"
-                    style="color: var(--gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block;">
+                    style="color: var(--gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block; font-family: 'STZhongsong', var(--font-serif);">
                     GET IN TOUCH</div>
-                <h1 class="contact-page-h1" style="color: var(--text);">Open to connecting<br>and networking<br>forward.
+                <h1 class="contact-page-h1" style="color: var(--text); font-family: var(--font-serif);">Open to connecting<br>and networking<br>forward.
                 </h1>
 
                 <div class="contact-details" style="margin-top: 6rem;">
