@@ -1,20 +1,53 @@
 <footer
-    style="padding: 4rem 0 2rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); position: relative; z-index: 10;">
-    <div class="container">
-        <!-- Self-Writing Signature -->
-        <div class="signature-container" style="margin-bottom: 4rem;">
+    style="padding: 0; text-align: center; position: relative; z-index: 10;">
+    <div class="container-fluid" style="width: 100%; padding: 0 4vw;">
+        <div class="editorial-footer-grid">
+            <!-- Top Left: MANUJ MITTAL -->
+            <div class="footer-cell cell-1">
+                <div class="author-signature" style="line-height: 1.1; margin: 0; font-size: clamp(2rem, 5vw, 5.5rem); white-space: nowrap;">Manuj Mittal</div>
+            </div>
+            
+            <!-- Top Right: Contact Details -->
+            <div class="footer-cell cell-2">
+                <?php if(basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == ''): ?>
+                    <div class="contact-item" style="margin-bottom: 3rem;">
+                        <h4 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-top: 0; margin-bottom: 1rem; line-height: 1;">Direct Correspondence</h4>
+                        <a href="mailto:author@manujmittal.com" class="editorial-email">author@manujmittal.com</a>
+                    </div>
+                    <div class="contact-item" style="margin-bottom: 3rem;">
+                        <h4 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem;">Based In</h4>
+                        <p style="font-size: 1.2rem; color: var(--text); opacity: 0.9; margin: 0; font-family: var(--font-sans);">Rochester, New York, USA</p>
+                    </div>
+                    <div class="contact-item">
+                        <a href="contact.php" class="btn-editorial-library" style="background: #000; color: var(--gold); padding: 1rem 3rem;">SCHEDULE A MEETING</a>
+                    </div>
+                <?php endif; ?>
+            </div>
 
-            <div class="author-signature">Manuj Mittal</div>
+            <!-- Bottom Left: Copyright & Link -->
+            <div class="footer-cell cell-3">
+                <div>
+                    <a href="store.php" class="btn-editorial-library">THE LIBRARY</a>
+                </div>
+                <div style="padding-top: 2rem;">
+                    <p style="font-size: 0.7rem; color: var(--muted); letter-spacing: 3px; margin: 0; margin-bottom: 0.8rem;">&copy; <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>. ALL STORIES RESERVED.</p>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="privacy.php" style="font-size: 0.65rem; color: var(--muted); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--muted)';">Privacy Policy</a>
+                        <a href="terms.php" style="font-size: 0.65rem; color: var(--muted); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--muted)';">Terms of Service</a>
+                        <a href="cookies.php" style="font-size: 0.65rem; color: var(--muted); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--muted)';">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Right: Social Links -->
+            <div class="footer-cell cell-4">
+                <h4 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1.5rem;">Connect On</h4>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank" class="editorial-social-link">INSTAGRAM</a>
+                    <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="editorial-social-link">LINKEDIN</a>
+                </div>
+            </div>
         </div>
-
-        <div style="margin-bottom: 3rem;">
-            <a href="store.php"
-                style="color: var(--gold); text-decoration: none; font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; border: 1px solid var(--gold); padding: 1rem 3rem; transition: 0.3s; display: inline-block;">THE
-                LIBRARY</a>
-        </div>
-        <p style="font-size: 0.7rem; color: var(--muted); letter-spacing: 3px; margin-bottom: 1rem;">&copy;
-            <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>. ALL STORIES RESERVED.</p>
-
     </div>
 </footer>
 

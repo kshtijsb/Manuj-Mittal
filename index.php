@@ -48,8 +48,8 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
 
-                    <h2
-                        style="font-size: 2.2rem; font-family: var(--font-serif); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                    <h2 class="no-split"
+                        style="font-size: 2.2rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
                         <?php echo $books[0]['title']; ?>
                     </h2>
 
@@ -89,7 +89,7 @@ $status = $_GET['status'] ?? null;
                     </div>
 
                     <h2
-                        style="font-size: 2.2rem; font-family: var(--font-sans); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                        style="font-size: 2.2rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
                         Manuj Mittal<br>(MJ)
                     </h2>
 
@@ -235,7 +235,7 @@ $status = $_GET['status'] ?? null;
     <section id="book" class="mobile-cinematic-book reveal">
         <div class="cinematic-glow"></div>
         <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="cinematic-book-cover">
-        <h2 class="cinematic-title"><?php echo $books[0]['title']; ?></h2>
+        <h2 class="cinematic-title no-split"><?php echo $books[0]['title']; ?></h2>
         <p class="cinematic-subtitle">Featured Work</p>
         <a href="store.php" class="btn-cinematic">Pre-Order Now</a>
     </section>
@@ -353,12 +353,12 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Journey Section: Dynamic Photo Timeline -->
-    <section id="journey" style="padding: 15vh 0; overflow: hidden; background: transparent;">
+    <section id="journey" style="padding: 8vh 0 5vh 0; overflow: hidden; background: transparent;">
 
 
         <div class="container journey-header">
-            <div style="text-align: center; margin-bottom: 8rem;" class="reveal legacy-title-wrapper">
-                <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000;">A
+            <div style="text-align: center; margin-bottom: 3rem;" class="reveal legacy-title-wrapper">
+                <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 0; color: #000;">A
                     Legacy in the Making.</h2>
             </div>
         </div>
@@ -475,7 +475,7 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>Service through Rotaract International</h4>
+                        <h4>Rise in Rotaract South Asia</h4>
                         <ul class="timeline-list">
                             <li>Charter President — Rotaract Club Delhi Central</li>
                             <li>District Rotaract Representative (DRR) — RID 3011 (2016–2017)</li>
@@ -758,6 +758,33 @@ $status = $_GET['status'] ?? null;
                                 goToSlide(currentIndex);
                             }
                         });
+
+                        let autoplayInterval;
+
+                        const startAutoplay = () => {
+                            if (!autoplayInterval) {
+                                autoplayInterval = setInterval(() => {
+                                    if (!isAnimating) {
+                                        currentIndex++;
+                                        goToSlide(currentIndex);
+                                    }
+                                }, 2000);
+                            }
+                        };
+
+                        const stopAutoplay = () => {
+                            if (autoplayInterval) {
+                                clearInterval(autoplayInterval);
+                                autoplayInterval = null;
+                            }
+                        };
+
+                        marquee.addEventListener('mouseenter', stopAutoplay);
+                        marquee.addEventListener('mouseleave', startAutoplay);
+                        marquee.addEventListener('touchstart', stopAutoplay, {passive: true});
+                        marquee.addEventListener('touchend', startAutoplay, {passive: true});
+
+                        startAutoplay();
                     });
                 };
 
@@ -786,36 +813,14 @@ $status = $_GET['status'] ?? null;
 
 
 
-    <!-- Sleek Contact CTA -->
 
-    <section id="contact" class="container reveal contact-cta" style="text-align: center;">
-        <div class="contact-cta-inner"
-            style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid rgba(255, 255, 255, 0.5);">
-            <div class="side-tag"
-                style="color: #000; font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 1.1rem; font-family: 'STZhongsong', var(--font-serif);">
-                Let's Meet?
-            </div>
-            <h2
-                style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 2rem; color: #111; line-height: 1.1;">
-                Open to connecting<br>and networking forward.
-            </h2>
-            <p style="font-size: 1.1rem; color: #555; max-width: 500px; margin: 0 auto 3rem auto; line-height: 1.6;">
-                Whether for speaking engagements, mentorship, or literary inquiries, Manuj is always open to starting a
-                new conversation.
-            </p>
-            <a href="contact.php" class="btn-apple-primary"
-                style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 1.2rem 3rem; border-radius: 0; font-weight: 600; font-size: 1rem;">
-                Schedule a Meeting
-            </a>
-        </div>
-    </section>
     <!-- Impact by the Numbers -->
-    <section class="stats-section container" style="padding: 8vh 0; text-align: center; border-top: 1px solid #eee;">
+    <section class="stats-section container" style="padding: 2vh 0 8vh; text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
 
         <div class="stats-grid"
             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
             <div class="stat-item reveal">
-                <div class="stat-number plus" data-target="15"
+                <div class="stat-number plus" data-target="18"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
                 <div class="stat-label"
@@ -831,7 +836,7 @@ $status = $_GET['status'] ?? null;
                     Days Lived</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-number plus" data-target="150000"
+                <div class="stat-number plus" data-target="180000"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
                 <div class="stat-label"
@@ -843,15 +848,13 @@ $status = $_GET['status'] ?? null;
 
     <!-- Visionary Quotes -->
     <section class="quotes-section"
-        style="padding: 4rem 0 0 0; background: transparent; position: relative; overflow: hidden;">
+        style="padding: 0; background: transparent; position: relative; overflow: hidden;">
         <div style="background: var(--gold); padding: 1.5rem 2rem; text-align: center; width: 100%;">
             <span style="color: #000; font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; line-height: 1.4; display: inline-block;">
                 "Skill Youth and Empower Communities for sustainable Tomorrow"
             </span>
         </div>
     </section>
-
-
 
 </main>
 
