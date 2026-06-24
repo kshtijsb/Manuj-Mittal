@@ -4,7 +4,7 @@ $page_title = "Privacy Policy | " . $author_name;
 include 'components/header.php';
 ?>
 
-<main style="padding-top: 120px; min-height: 80vh; max-width: 800px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem;">
+<main style="font-family: var(--font-sans); padding-top: 120px; min-height: 80vh; max-width: 800px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem;">
     <h1 style="font-family: var(--font-serif); font-size: 3rem; margin-bottom: 2rem;">Privacy Policy</h1>
     <p style="color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem;">
         Last updated: <?php echo date("F d, Y"); ?>

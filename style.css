@@ -1274,8 +1274,8 @@ nav {
     /* Card Wrapper */
     .card-wrapper {
         width: 100%;
-        max-width: 540px;
-        height: 720px;
+        max-width: 620px;
+        height: 820px;
         background: #fff;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
         border: 1px solid rgba(0, 0, 0, 0.06);
@@ -1290,8 +1290,8 @@ nav {
 
     /* Flip Card */
     .flip-card {
-        width: 380px;
-        height: 530px;
+        width: 440px;
+        height: 620px;
         perspective: 1200px;
         cursor: pointer;
         margin-bottom: 2rem;
