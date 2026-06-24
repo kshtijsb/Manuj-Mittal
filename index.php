@@ -18,7 +18,7 @@ $status = $_GET['status'] ?? null;
             <div class="book-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 1.2rem;">
+                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 1.4rem; letter-spacing: 1px;">
                         FEATURED WORK</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
@@ -32,14 +32,16 @@ $status = $_GET['status'] ?? null;
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
                                 <div class="side-tag"
-                                    style="margin-bottom: 1rem; color: #000; font-family: var(--font-sans); font-size: 1.2rem; font-weight: bold;">
+                                    style="margin-bottom: 1rem; color: #000; font-family: var(--font-sans); font-size: 1rem; font-weight: bold; letter-spacing: 1px;">
                                     SYNOPSIS
                                 </div>
                                 <p
                                     style="font-size: 0.85rem; font-family: var(--font-sans); line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
-                                    A
+                                    <br>A
                                     book on upskilling personal life management, featuring thought-provoking quotations
-                                    that address four core pillars essential for success: <strong>Vision</strong>,
+                                    that address four core pillars essential for success and maximising
+                                    performance:</br>
+                                    <strong>Vision</strong>,
                                     <strong>Leadership</strong>, <strong>Growth</strong>, and
                                     <strong>Integrity</strong>.
                                 </p>
@@ -62,7 +64,7 @@ $status = $_GET['status'] ?? null;
             <div class="author-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 1.2rem;">
+                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 1.4rem; letter-spacing: 1px;">
                         THE AUTHOR</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
@@ -76,14 +78,14 @@ $status = $_GET['status'] ?? null;
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
                                 <div class="side-tag"
-                                    style="margin-bottom: 1rem; color: #000; font-family: 'Times New Roman', Times, serif; font-size: 1.2rem; font-weight: bold;">
-                                    THE
+                                    style="margin-bottom: 1rem; color: #000; font-family: var(--font-sans); font-size: 1rem; font-weight: bold; letter-spacing: 1px;">
+
                                     NARRATIVE</div>
                                 <p
-                                    style="font-size: 0.85rem; font-family: 'Times New Roman', Times, serif; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
+                                    style="font-size: 0.85rem; font-family: var(--font-sans); line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
                                     Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth
                                     development through modern management thinking. He distills complex challenges into
-                                    thought-provoking narratives.</p>
+                                    thought-provoking conversations.</p>
                                 <a href="biography.php"
                                     style="font-family: var(--font-sans); background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">FULL
                                     BIOGRAPHY</a>
@@ -364,8 +366,8 @@ $status = $_GET['status'] ?? null;
 
         <div class="container journey-header">
             <div style="text-align: center; margin-bottom: 3rem;" class="reveal legacy-title-wrapper">
-                <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 0; color: #000;">A
-                    LEGACY IN THE MAKING</h2>
+                <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 0; color: #000;">
+                    Legacy in the Making</h2>
             </div>
         </div>
 
@@ -396,11 +398,11 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Family Heritage & Early Life</h4>
                         <ul class="timeline-list">
-                            <li>Family members are engineers, doctors, lawyers and public sector administrators</li>
-                            <li>Father's early career in the USA, built his own automation business in India and is Past
-                                District
-                                Governor with Rotary International</li>
-                            <li>Manuj born on Jan 10 (01.10.1996) &nbsp;<span
+                            <li>Family members are engineers, doctors, lawyers, scholars and have served in public
+                                sector domain</li>
+                            <li>Father is a former USA based professional, 1st generation entrepreneur (Automation
+                                expert) in India and a Past District Governor with Rotary International</li>
+                            <li>Manuj was born on Jan 10, 1996 (01.10.1996)<br><span
                                     class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
                         </ul>
                     </div>
@@ -566,10 +568,10 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Professional Journey in USA</h4>
                         <ul class="timeline-list">
-                            <li>Finance Internships at Boutique Firms</li>
-                            <li>Investor Services at Morgan Stanley, NYC</li>
-                            <li>Career Consultant at Benet Career Management Center, University of Rochester</li>
-                            <li>Leadership Program GA at Student Life, University of Rochester</li>
+                            <li>Leadership Program GA,at University of Rochester, NY</li>
+                            <li>Career Consultant at Benet Management Center, UR</li>
+                            <li>Investor Services (IR) at Morgan Stanley, NYC</li>
+                            <li>Finance (IB / M&A) Internships at Boutique Firms</li>
                         </ul>
                     </div>
                 </div>
@@ -594,10 +596,10 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Awards & Recognition</h4>
                         <ul class="timeline-list">
-                            <li>Excellence in Education - 2.0 Conference USA 2026</li>
+                            <li>Excellence in Education - 2.0 Conference, USA 2026</li>
                             <li>Dean’s List - Simon Business School, NY 2021</li>
-                            <li>Best ‘DRR’ - South Asia 2017</li>
-                            <li>Represented India at International Maths Olympiad, Kazakhstan 2014</li>
+                            <li>Best ‘DRR’ - Rotract South Asia, 2017</li>
+                            <li>Represented India - Maths Olympiad, Kazakhstan 2014</li>
                             <li>District Chess Champion - Rajasthan, India 2011</li>
                         </ul>
                     </div>

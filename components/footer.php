@@ -27,7 +27,7 @@
             <!-- Bottom Left: Copyright & Link -->
             <div class="footer-cell cell-3">
                 <div>
-                    <a href="store.php" class="btn-editorial-library">THE LIBRARY</a>
+                    <a href="store.php" class="btn-editorial-library" style="background: #000; color: #fff;">THE BOOKS</a>
                 </div>
                 <div style="padding-top: 2rem;">
                     <p style="font-size: 0.7rem; color: var(--muted); letter-spacing: 3px; margin: 0; margin-bottom: 0.8rem;">&copy; <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>. ALL STORIES RESERVED.</p>
@@ -54,20 +54,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-
-        // Self-Writing Headlines
-        const writeText = (el) => {
-            const text = el.innerText;
-            el.innerHTML = '';
-            [...text].forEach((char, i) => {
-                const span = document.createElement('span');
-                span.innerText = char;
-                span.style.opacity = '0';
-                span.style.transition = `opacity 0.1s ease ${i * 0.05}s`;
-                el.appendChild(span);
-                setTimeout(() => span.style.opacity = '1', 10);
-            });
-        };
 
         // Theme Toggle Logic
         const themeBtn = document.createElement('div');
@@ -139,10 +125,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    if ((entry.target.tagName === 'H2' || entry.target.tagName === 'H1') && !entry.target.classList.contains('written')) {
-                        writeText(entry.target);
-                        entry.target.classList.add('written');
-                    }
+
                 }
             });
         }, { threshold: 0.2 });

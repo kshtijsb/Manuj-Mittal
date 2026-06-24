@@ -182,7 +182,7 @@ nav {
 }
 
 .logo {
-  font-family: 'Algerian', var(--font-serif);
+  font-family: 'Times New Roman', Times, serif;
   font-size: 2.8rem;
   font-weight: 900;
   color: var(--color-primary);
@@ -2090,6 +2090,9 @@ nav {
                 font-family: var(--font-serif);
                 line-height: 1.3;
                 text-align: center;
+                text-decoration: underline;
+                text-underline-offset: 6px;
+                text-decoration-thickness: 1px;
             }
 
             .timeline-text p {
@@ -2136,7 +2139,7 @@ nav {
 
             .numerology {
                 font-size: 0.78rem;
-                color: var(--gold);
+                color: #000;
                 font-weight: 700;
                 letter-spacing: 1px;
                 opacity: 0.85;
@@ -2350,7 +2353,7 @@ nav {
                 transform: translate3d(-50%, 0, 0);
             }
         }
-        .logo { font-size: 3.2rem; font-weight: 900; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; transition: var(--transition); font-family: 'Algerian', var(--font-serif); line-height: 1; margin: 0; padding: 0; }
+        .logo { font-size: 3.2rem; font-weight: 900; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-decoration: none; transition: var(--transition); font-family: 'Times New Roman', Times, serif; line-height: 1; margin: 0; padding: 0; }
         .nav-book-btn {
             display: inline-flex;
             align-items: center;
@@ -2673,7 +2676,7 @@ nav {
 
 /* --- Extracted from footer.php --- */
 
-                    .author-signature { font-family: 'Algerian', var(--font-serif); text-transform: uppercase; font-weight: 900; letter-spacing: 4px; font-size: 5.5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease; }
+                    .author-signature { font-family: 'Times New Roman', Times, serif; text-transform: uppercase; font-weight: 900; letter-spacing: 4px; font-size: 5.5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease; }
                     @media (max-width: 768px) { .author-signature { font-size: 3.8rem; } }
                 
 /* Horizontal Gallery Fix for 'Cut Assets' */
