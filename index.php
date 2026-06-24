@@ -402,7 +402,7 @@ $status = $_GET['status'] ?? null;
                                 public
                                 sector domains</li>
                             <li>Father is a former USA based professional, 1st generation entrepreneur (Automation
-                                Expert) in Delhi,India <br></bra>and a Past District Governor with Rotary International
+                                Expert) India <br></bra>and a Past District Governor with Rotary International
                             </li>
                             <li>Manuj was born on Jan 10, 1996 (01.10.1996)<br><span
                                     class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
@@ -456,7 +456,7 @@ $status = $_GET['status'] ?? null;
                     </div>
                     <div class="timeline-text">
                         <h4>Professional Journey in India</h4>
-                        <ul class="timeline-list spaced-timeline-list">
+                        <ul class="timeline-list">
                             <li>Risk Advisory (Internal Audit) at Grant Thornton, NCR</li>
                             <li>Business Consulting at Boutique Firm, Delhi</li>
                             <li>M&amp;A advisory at Boutique IB Firm, Delhi</li>
@@ -513,7 +513,7 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>Education in the US</h4>
+                        <h4>Education in the USA</h4>
                         <ul class="timeline-list spaced-timeline-list">
                             <li>Pursuing Doctorate in Education from University of Rochester</li>
                             <li>MBA from Simon Business School, New York</li>
@@ -546,7 +546,7 @@ $status = $_GET['status'] ?? null;
                             <li>Rotaract Representative - RI Assembly, USA 2020</li>
                             <li>Chairman — Rotasia (Youth Conference), Delhi 2020</li>
                             <li>Speaker at International Pre-Convention <br>(USA 2017, Canada 2018, Germany 2019)</li>
-                            <li>Rotary International — Paul Harris Fellow (PHF)</li>
+                            <li>Paul Harris Fellow (PHF) - Rotary International</li>
                         </ul>
                     </div>
                 </div>
@@ -569,7 +569,7 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>Professional Journey in USA</h4>
+                        <h4>Professional Journey in the USA</h4>
                         <ul class="timeline-list">
                             <li>Leadership Program GA at University of Rochester, NY</li>
                             <li>Career Consultant at Benet Management Center, UR</li>
