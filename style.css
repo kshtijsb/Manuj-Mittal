@@ -2375,7 +2375,7 @@ nav {
             background: #fff !important;
             color: #000 !important;
         }
-        .logo:hover { color: #ffffff; }
+        .logo:hover { color: var(--gold); }
         
         .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--gold); font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; transition: color 0.3s ease; }
@@ -2670,7 +2670,7 @@ nav {
 
 /* --- Extracted from footer.php --- */
 
-                    .author-signature { font-family: 'Nothing You Could Do', cursive; font-size: 5.5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease; }
+                    .author-signature { font-family: 'Algerian', var(--font-serif); text-transform: uppercase; font-weight: 900; letter-spacing: 4px; font-size: 5.5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease; }
                     @media (max-width: 768px) { .author-signature { font-size: 3.8rem; } }
                 
 /* Horizontal Gallery Fix for 'Cut Assets' */

@@ -28,7 +28,7 @@
 <body>
     <!-- Premium Preloader -->
     <div id="premium-preloader"
-        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #ffffff; z-index: 999999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.8s; visibility: visible; opacity: 1;">
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #c5a059; z-index: 999999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.8s; visibility: visible; opacity: 1;">
         <img src="assets/manuj%20mittal%20logo.jpeg" alt="Manuj Mittal Logo"
             style="width: 300px; height: auto; opacity: 0; transform: scale(0.9); animation: mmLogoFade 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;">
     </div>

@@ -32,17 +32,17 @@ $status = $_GET['status'] ?? null;
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
                                 <div class="side-tag"
-                                    style="margin-bottom: 1rem; color: #000; font-family: 'STZhongsong', var(--font-serif); font-size: 1.2rem; font-weight: bold;">
+                                    style="margin-bottom: 1rem; color: #000; font-family: var(--font-sans); font-size: 1.2rem; font-weight: bold;">
                                     SYNOPSIS
                                 </div>
-                                <p style="font-size: 0.85rem; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">A
+                                <p style="font-size: 0.85rem; font-family: var(--font-sans); line-height: 1.6; color: #555; margin-bottom: 1.5rem;">A
                                     book on upskilling personal life management, featuring thought-provoking quotations
                                     that address four core pillars essential for success: <strong>Vision</strong>,
                                     <strong>Leadership</strong>, <strong>Growth</strong>, and
                                     <strong>Integrity</strong>.
                                 </p>
                                 <a href="store.php"
-                                    style="background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">ORDER
+                                    style="font-family: var(--font-sans); background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">ORDER
                                     NOW</a>
                             </div>
                         </div>
@@ -74,22 +74,22 @@ $status = $_GET['status'] ?? null;
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
                                 <div class="side-tag"
-                                    style="margin-bottom: 1rem; color: #000; font-family: 'STZhongsong', var(--font-serif); font-size: 1.2rem; font-weight: bold;">
+                                    style="margin-bottom: 1rem; color: #000; font-family: var(--font-sans); font-size: 1.2rem; font-weight: bold;">
                                     THE
                                     NARRATIVE</div>
-                                <p style="font-size: 0.85rem; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
+                                <p style="font-size: 0.85rem; font-family: var(--font-sans); line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
                                     Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth
                                     development through modern management thinking. He distills complex challenges into
                                     thought-provoking narratives.</p>
                                 <a href="biography.php"
-                                    style="background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">FULL
+                                    style="font-family: var(--font-sans); background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">FULL
                                     BIOGRAPHY</a>
                             </div>
                         </div>
                     </div>
 
                     <h2
-                        style="font-size: 2.2rem; font-family: var(--font-serif); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                        style="font-size: 2.2rem; font-family: var(--font-sans); font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
                         Manuj Mittal<br>(MJ)
                     </h2>
 
@@ -244,7 +244,7 @@ $status = $_GET['status'] ?? null;
 
 
     <!-- About Pillars Section (Color Coded) -->
-    <section id="about" class="container" style="padding-top: 15vh;">
+    <section id="about" class="container" style="padding-top: 15vh; max-width: 1400px;">
         <div class="section-header reveal">
             <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000;">Foundation
                 of the Author.</h2>
@@ -257,7 +257,7 @@ $status = $_GET['status'] ?? null;
                 style="--theme-color: #0047AB; border-top: 6px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Educational Background
+                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">Education Background
                 </h3>
                 <ul class="pillar-list">
                     <li>Early Life - Childhood (1996)</li>
@@ -292,7 +292,7 @@ $status = $_GET['status'] ?? null;
                 style="--theme-color: #C41E3A; border-top: 6px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Professional Career</h3>
+                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">Professional Career</h3>
                 <ul class="pillar-list">
                     <li>BNP Paribas - Internship</li>
                     <li>Grant Thornton - Articleship/ Externship (USA)</li>
@@ -319,7 +319,7 @@ $status = $_GET['status'] ?? null;
                 style="--theme-color: #2E8B57; border-top: 6px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text);">Social Responsibility</h3>
+                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">Social Responsibility</h3>
                 <ul class="pillar-list">
                     <li>RYLA Participant - Interact 2013 (Rotary International)</li>
                     <li>Joined Rotaract in 2014 - RC MV (Rotary International)</li>
@@ -793,7 +793,7 @@ $status = $_GET['status'] ?? null;
             style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid rgba(255, 255, 255, 0.5);">
             <div class="side-tag"
                 style="color: #000; font-weight: 800; letter-spacing: 4px; margin-bottom: 1.5rem; display: block; text-transform: uppercase; font-size: 1.1rem; font-family: 'STZhongsong', var(--font-serif);">
-                Let's Connect
+                Let's Meet?
             </div>
             <h2
                 style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 2rem; color: #111; line-height: 1.1;">
@@ -804,8 +804,8 @@ $status = $_GET['status'] ?? null;
                 new conversation.
             </p>
             <a href="contact.php" class="btn-apple-primary"
-                style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 1.2rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1rem;">
-                Get in Touch
+                style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 1.2rem 3rem; border-radius: 0; font-weight: 600; font-size: 1rem;">
+                Schedule a Meeting
             </a>
         </div>
     </section>
@@ -844,37 +844,10 @@ $status = $_GET['status'] ?? null;
     <!-- Visionary Quotes -->
     <section class="quotes-section"
         style="padding: 4rem 0 0 0; background: transparent; position: relative; overflow: hidden;">
-        <div class="header-marquee" style="padding: 1.5rem 0;">
-            <div class="header-marquee-inner">
-                <div class="header-marquee-group">
-                    <span
-                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
-                        Youth and Empower Communities for Better Tomorrow"</span>
-                    <span class="separator" style="font-size: 1.5rem;">•</span>
-                    <span
-                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
-                        Youth and Empower Communities for Better Tomorrow"</span>
-                    <span class="separator" style="font-size: 1.5rem;">•</span>
-                    <span
-                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
-                        Youth and Empower Communities for Better Tomorrow"</span>
-                    <span class="separator" style="font-size: 1.5rem;">•</span>
-                </div>
-                <div class="header-marquee-group" aria-hidden="true">
-                    <span
-                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
-                        Youth and Empower Communities for Better Tomorrow"</span>
-                    <span class="separator" style="font-size: 1.5rem;">•</span>
-                    <span
-                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
-                        Youth and Empower Communities for Better Tomorrow"</span>
-                    <span class="separator" style="font-size: 1.5rem;">•</span>
-                    <span
-                        style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; text-transform: none; padding: 0 4rem;">"Skill
-                        Youth and Empower Communities for Better Tomorrow"</span>
-                    <span class="separator" style="font-size: 1.5rem;">•</span>
-                </div>
-            </div>
+        <div style="background: var(--gold); padding: 1.5rem 2rem; text-align: center; width: 100%;">
+            <span style="color: #000; font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; line-height: 1.4; display: inline-block;">
+                "Skill Youth and Empower Communities for sustainable Tomorrow"
+            </span>
         </div>
     </section>
 
