@@ -456,7 +456,7 @@ $status = $_GET['status'] ?? null;
                     </div>
                     <div class="timeline-text">
                         <h4>Professional Journey in India</h4>
-                        <ul class="timeline-list">
+                        <ul class="timeline-list spaced-timeline-list">
                             <li>Risk Advisory (Internal Audit) at Grant Thornton, NCR</li>
                             <li>Business Consulting at Boutique Firm, Delhi</li>
                             <li>M&amp;A advisory at Boutique IB Firm, Delhi</li>
@@ -487,7 +487,7 @@ $status = $_GET['status'] ?? null;
                     </div>
                     <div class="timeline-text">
                         <h4>Rise in Rotaract South Asia</h4>
-                        <ul class="timeline-list">
+                        <ul class="timeline-list spaced-timeline-list">
                             <li>Charter President — Rotaract Club Delhi Central (2015)</li>
                             <li>District Rotaract Representative (DRR) — RID 3011 (2016–2017)</li>
                             <li>President — Rotaract South Asia MDIO (2019–2020)</li>
@@ -514,10 +514,10 @@ $status = $_GET['status'] ?? null;
                     </div>
                     <div class="timeline-text">
                         <h4>Education in the US</h4>
-                        <ul class="timeline-list">
+                        <ul class="timeline-list spaced-timeline-list">
                             <li>Pursuing Doctorate in Education from University of Rochester</li>
                             <li>MBA from Simon Business School, New York</li>
-                            <li>Master in Finance from Simon Business School, New York</li>
+                            <li>Master in Finance (MsF) from Simon Business School, New York</li>
 
                         </ul>
                     </div>
@@ -543,7 +543,7 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Leadership with Rotary International</h4>
                         <ul class="timeline-list">
-                            <li>Rotaract Representative at RI Assembly, USA 2020</li>
+                            <li>Rotaract Representative - RI Assembly, USA 2020</li>
                             <li>Chairman — Rotasia (Youth Conference), Delhi 2020</li>
                             <li>Speaker at International Pre-Convention <br>(USA 2017, Canada 2018, Germany 2019)</li>
                             <li>Rotary International — Paul Harris Fellow (PHF)</li>
@@ -571,7 +571,7 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Professional Journey in USA</h4>
                         <ul class="timeline-list">
-                            <li>Leadership Program GA,at University of Rochester, NY</li>
+                            <li>Leadership Program GA at University of Rochester, NY</li>
                             <li>Career Consultant at Benet Management Center, UR</li>
                             <li>Investor Services (IR) at Morgan Stanley, NYC</li>
                             <li>Finance (IB / M&A) Internships at Boutique Firms</li>

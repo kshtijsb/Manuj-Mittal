@@ -1970,7 +1970,7 @@ nav {
             /* Card Content Styling */
             .timeline-content {
                 background: #fff;
-                border: 2px solid var(--gold);
+                border: 2px solid var(--theme-color, var(--gold));
                 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
                 border-radius: 12px;
                 overflow: hidden;
@@ -2135,6 +2135,15 @@ nav {
             }
             .timeline-list li:hover::before {
                 transform: translate(4px, -50%);
+            }
+
+            .spaced-timeline-list li {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .spaced-timeline-list li::before {
+                top: 2.2rem;
             }
 
             .numerology {
