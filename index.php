@@ -18,7 +18,7 @@ $status = $_GET['status'] ?? null;
             <div class="book-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: var(--font-serif); font-weight: bold; color: #000; font-size: 1.2rem;">
+                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 1.2rem;">
                         FEATURED WORK</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
@@ -35,7 +35,9 @@ $status = $_GET['status'] ?? null;
                                     style="margin-bottom: 1rem; color: #000; font-family: var(--font-sans); font-size: 1.2rem; font-weight: bold;">
                                     SYNOPSIS
                                 </div>
-                                <p style="font-size: 0.85rem; font-family: var(--font-sans); line-height: 1.6; color: #555; margin-bottom: 1.5rem;">A
+                                <p
+                                    style="font-size: 0.85rem; font-family: var(--font-sans); line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
+                                    A
                                     book on upskilling personal life management, featuring thought-provoking quotations
                                     that address four core pillars essential for success: <strong>Vision</strong>,
                                     <strong>Leadership</strong>, <strong>Growth</strong>, and
@@ -60,7 +62,7 @@ $status = $_GET['status'] ?? null;
             <div class="author-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: var(--font-serif); font-weight: bold; color: #000; font-size: 1.2rem;">
+                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 1.2rem;">
                         THE AUTHOR</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
@@ -74,10 +76,11 @@ $status = $_GET['status'] ?? null;
                             <div class="flip-card-back"
                                 style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; border: 2px solid var(--color-gold); box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-radius: 12px;">
                                 <div class="side-tag"
-                                    style="margin-bottom: 1rem; color: #000; font-family: var(--font-sans); font-size: 1.2rem; font-weight: bold;">
+                                    style="margin-bottom: 1rem; color: #000; font-family: 'Times New Roman', Times, serif; font-size: 1.2rem; font-weight: bold;">
                                     THE
                                     NARRATIVE</div>
-                                <p style="font-size: 0.85rem; font-family: var(--font-sans); line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
+                                <p
+                                    style="font-size: 0.85rem; font-family: 'Times New Roman', Times, serif; line-height: 1.6; color: #555; margin-bottom: 1.5rem;">
                                     Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth
                                     development through modern management thinking. He distills complex challenges into
                                     thought-provoking narratives.</p>
@@ -247,7 +250,7 @@ $status = $_GET['status'] ?? null;
     <section id="about" class="container" style="padding-top: 15vh; max-width: 1400px;">
         <div class="section-header reveal">
             <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000;">Foundation
-                of the Author.</h2>
+                of the Author</h2>
         </div>
 
 
@@ -257,7 +260,8 @@ $status = $_GET['status'] ?? null;
                 style="--theme-color: #0047AB; border-top: 6px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">Education Background
+                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">
+                    Education Background
                 </h3>
                 <ul class="pillar-list">
                     <li>Early Life - Childhood (1996)</li>
@@ -292,7 +296,8 @@ $status = $_GET['status'] ?? null;
                 style="--theme-color: #C41E3A; border-top: 6px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">Professional Career</h3>
+                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">
+                    Professional Career</h3>
                 <ul class="pillar-list">
                     <li>BNP Paribas - Internship</li>
                     <li>Grant Thornton - Articleship/ Externship (USA)</li>
@@ -319,7 +324,8 @@ $status = $_GET['status'] ?? null;
                 style="--theme-color: #2E8B57; border-top: 6px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">Social Responsibility</h3>
+                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">Social
+                    Responsibility</h3>
                 <ul class="pillar-list">
                     <li>RYLA Participant - Interact 2013 (Rotary International)</li>
                     <li>Joined Rotaract in 2014 - RC MV (Rotary International)</li>
@@ -359,7 +365,7 @@ $status = $_GET['status'] ?? null;
         <div class="container journey-header">
             <div style="text-align: center; margin-bottom: 3rem;" class="reveal legacy-title-wrapper">
                 <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 0; color: #000;">A
-                    Legacy in the Making.</h2>
+                    LEGACY IN THE MAKING</h2>
             </div>
         </div>
 
@@ -371,7 +377,7 @@ $status = $_GET['status'] ?? null;
                 <div class="timeline-progress-horizontal"></div>
             </div>
 
-            <!-- Milestone 1: Early Life and Family -->
+            <!-- Milestone 1: Early Life and Family Heritage -->
             <div class="timeline-card" style="--theme-color: #0047AB;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -388,10 +394,11 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>Early Life and Family</h4>
+                        <h4>Family Heritage & Early Life</h4>
                         <ul class="timeline-list">
-                            <li>Family members are engineers, doctors, lawyers and public sector administrators </li>
-                            <li>Father early career in USA, build his own business in India and is Past District
+                            <li>Family members are engineers, doctors, lawyers and public sector administrators</li>
+                            <li>Father's early career in the USA, built his own automation business in India and is Past
+                                District
                                 Governor with Rotary International</li>
                             <li>Manuj born on Jan 10 (01.10.1996) &nbsp;<span
                                     class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
@@ -463,7 +470,7 @@ $status = $_GET['status'] ?? null;
                             <div class="timeline-marquee-track">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final1.jpg" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final2.JPG" alt="Rotaract">
-                                <img src="assets/Rise%20in%20Rotaract/0_Final3%20(Add%20to%20top%20left%20corner).jpg"
+                                <img src="assets/Rise%20in%20Rotaract/0_Final3%20%28Add%20to%20top%20left%20corner%29.jpg"
                                     alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final3.JPG" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final4.JPG" alt="Rotaract">
@@ -529,7 +536,7 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>Service and Leadership with Rotary International</h4>
+                        <h4>Leadership with Rotary International</h4>
                         <ul class="timeline-list">
                             <li>Rotaract Representative at RI Assembly, USA 2020</li>
                             <li>Chairman — Rotasia Delhi 2020</li>
@@ -557,7 +564,7 @@ $status = $_GET['status'] ?? null;
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <h4>USA Professional Journey</h4>
+                        <h4>Professional Journey in USA</h4>
                         <ul class="timeline-list">
                             <li>Finance Internships at Boutique Firms</li>
                             <li>Investor Services at Morgan Stanley, NYC</li>
@@ -587,11 +594,11 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Awards & Recognition</h4>
                         <ul class="timeline-list">
-                            <li>District Chess Champion - Rajasthan, India 2011</li>
-                            <li>Represented India at International Maths Olympiad, Kazakhstan 2014</li>
-                            <li>Best ‘DRR’ - South Asia 2017</li>
-                            <li>Dean’s List - Simon Business School, NY 2021</li>
                             <li>Excellence in Education - 2.0 Conference USA 2026</li>
+                            <li>Dean’s List - Simon Business School, NY 2021</li>
+                            <li>Best ‘DRR’ - South Asia 2017</li>
+                            <li>Represented India at International Maths Olympiad, Kazakhstan 2014</li>
+                            <li>District Chess Champion - Rajasthan, India 2011</li>
                         </ul>
                     </div>
                 </div>
@@ -781,8 +788,8 @@ $status = $_GET['status'] ?? null;
 
                         marquee.addEventListener('mouseenter', stopAutoplay);
                         marquee.addEventListener('mouseleave', startAutoplay);
-                        marquee.addEventListener('touchstart', stopAutoplay, {passive: true});
-                        marquee.addEventListener('touchend', startAutoplay, {passive: true});
+                        marquee.addEventListener('touchstart', stopAutoplay, { passive: true });
+                        marquee.addEventListener('touchend', startAutoplay, { passive: true });
 
                         startAutoplay();
                     });
@@ -815,7 +822,8 @@ $status = $_GET['status'] ?? null;
 
 
     <!-- Impact by the Numbers -->
-    <section class="stats-section container" style="padding: 2vh 0 8vh; text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
+    <section class="stats-section container"
+        style="padding: 2vh 0 8vh; text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
 
         <div class="stats-grid"
             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
@@ -847,14 +855,17 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section"
-        style="padding: 0; background: transparent; position: relative; overflow: hidden;">
-        <div style="background: var(--gold); padding: 1.5rem 2rem; text-align: center; width: 100%;">
-            <span style="color: #000; font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; line-height: 1.4; display: inline-block;">
-                "Skill Youth and Empower Communities for sustainable Tomorrow"
+    <section class="quotes-section" style="padding: 0; background: transparent; position: relative; overflow: hidden;">
+        <div
+            style="background: var(--gold); padding: 1.5rem 2rem; text-align: center; width: 100%; overflow: hidden; white-space: nowrap;">
+            <span
+                style="color: #000; font-family: var(--font-sans); font-size: clamp(0.7rem, 1.6vw, 2.5rem); font-style: regular; line-height: 1.4; display: inline-block;">
+                &bull; Let’s upskill the younger generations and empower our communities for a better and sustainable
+                future &bull;
             </span>
         </div>
     </section>
+
 
 </main>
 
