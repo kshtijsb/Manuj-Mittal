@@ -398,10 +398,12 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Family Heritage & Early Life</h4>
                         <ul class="timeline-list">
-                            <li>Family members are engineers, doctors, lawyers, scholars and have served in public
-                                sector domain</li>
+                            <li>Family members are engineers, doctors, lawyers, scholars <br>and have served in multiple
+                                public
+                                sector domains</li>
                             <li>Father is a former USA based professional, 1st generation entrepreneur (Automation
-                                expert) in India and a Past District Governor with Rotary International</li>
+                                Expert) in Delhi,India <br></bra>and a Past District Governor with Rotary International
+                            </li>
                             <li>Manuj was born on Jan 10, 1996 (01.10.1996)<br><span
                                     class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
                         </ul>
@@ -455,9 +457,9 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Professional Journey in India</h4>
                         <ul class="timeline-list">
-                            <li>Risk Advisory (Internal Audit) at Grant Thornton</li>
-                            <li>Consulting at Boutique Firm</li>
-                            <li>M&amp;A at Boutique IB Firm</li>
+                            <li>Risk Advisory (Internal Audit) at Grant Thornton, NCR</li>
+                            <li>Business Consulting at Boutique Firm, Delhi</li>
+                            <li>M&amp;A advisory at Boutique IB Firm, Delhi</li>
                         </ul>
                     </div>
                 </div>
@@ -486,7 +488,7 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Rise in Rotaract South Asia</h4>
                         <ul class="timeline-list">
-                            <li>Charter President — Rotaract Club Delhi Central</li>
+                            <li>Charter President — Rotaract Club Delhi Central (2015)</li>
                             <li>District Rotaract Representative (DRR) — RID 3011 (2016–2017)</li>
                             <li>President — Rotaract South Asia MDIO (2019–2020)</li>
                         </ul>
@@ -513,9 +515,10 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Education in the US</h4>
                         <ul class="timeline-list">
-                            <li>Master in Finance (MSF) — Simon Business School, NY</li>
-                            <li>Master in Business Administration (MBA) — Simon Business School, NY</li>
-                            <li>Doctorate in Education (Ed.D) — Warner School, University of Rochester</li>
+                            <li>Pursuing Doctorate in Education from University of Rochester</li>
+                            <li>MBA from Simon Business School, New York</li>
+                            <li>Master in Finance from Simon Business School, New York</li>
+
                         </ul>
                     </div>
                 </div>
@@ -541,8 +544,8 @@ $status = $_GET['status'] ?? null;
                         <h4>Leadership with Rotary International</h4>
                         <ul class="timeline-list">
                             <li>Rotaract Representative at RI Assembly, USA 2020</li>
-                            <li>Chairman — Rotasia Delhi 2020</li>
-                            <li>Speaker at International Pre-Convention (USA 2017, Canada 2018, Germany 2019)</li>
+                            <li>Chairman — Rotasia (Youth Conference), Delhi 2020</li>
+                            <li>Speaker at International Pre-Convention <br>(USA 2017, Canada 2018, Germany 2019)</li>
                             <li>Rotary International — Paul Harris Fellow (PHF)</li>
                         </ul>
                     </div>
