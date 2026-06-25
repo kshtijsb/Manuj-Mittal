@@ -1797,7 +1797,7 @@ nav {
             }
             .pillar-list li {
                 font-size: 0.9rem;
-                color: #555;
+                color: var(--theme-color);
                 line-height: 1.5;
                 padding: 0.35rem 0 0.35rem 1.2rem;
                 position: relative;
@@ -2783,46 +2783,8 @@ nav {
 }
 
 /* ============================================================
-   EDITORIAL FOOTER GRID
+   EDITORIAL FOOTER STYLES
 ============================================================ */
-.editorial-footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0;
-}
-
-.footer-cell {
-    padding: 5rem 3rem;
-}
-
-.cell-1 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.cell-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    text-align: right;
-}
-
-.cell-3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-}
-
-.cell-4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    text-align: right;
-}
 
 .editorial-email {
     font-size: 1.8rem;
@@ -2884,14 +2846,6 @@ nav {
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    .editorial-footer-grid {
-        grid-template-columns: 1fr;
-    }
-    .footer-cell {
-        padding: 3rem 1.5rem;
-    }
-}
 
 /* View Transitions for Immersive Navigation */
 @media (prefers-reduced-motion: no-preference) {
@@ -2921,4 +2875,24 @@ nav {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Global Black Footer */
+footer {
+    background-color: #000 !important;
+}
+footer .author-signature, 
+footer h4, 
+footer p, 
+footer .editorial-email, 
+footer .editorial-social-link,
+footer a {
+    color: #fff !important;
+}
+footer .author-signature {
+    color: var(--gold) !important;
+}
+footer .btn-editorial-library {
+    background-color: var(--gold) !important;
+    color: #000 !important;
 }

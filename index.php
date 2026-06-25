@@ -98,6 +98,7 @@ $status = $_GET['status'] ?? null;
                         Manuj Mittal<br>(MJ)
                     </h2>
 
+
                 </div>
             </div>
 
@@ -242,7 +243,7 @@ $status = $_GET['status'] ?? null;
         <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="cinematic-book-cover">
         <h2 class="cinematic-title no-split"><?php echo $books[0]['title']; ?></h2>
         <p class="cinematic-subtitle">Featured Work</p>
-        <a href="store.php" class="btn-cinematic">Pre-Order Now</a>
+        <a href="store.php" class="btn-cinematic">Order Now</a>
     </section>
 
     <!-- Executive Mobile Layout Logic -->
@@ -259,11 +260,12 @@ $status = $_GET['status'] ?? null;
         <div class="about-pillars">
             <!-- Education: Blue -->
             <a href="education.php" class="pillar-card reveal pillar-edu"
-                style="--theme-color: #0047AB; border-top: 6px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #0047AB; border-top: 12px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">
-                    Education Background
+                <h3
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--theme-color); white-space: nowrap; text-align: center;">
+                    Educational Background
                 </h3>
                 <ul class="pillar-list">
                     <li>Early Life - Childhood (1996)</li>
@@ -295,10 +297,11 @@ $status = $_GET['status'] ?? null;
 
             <!-- Profession: Red -->
             <a href="professional.php" class="pillar-card reveal pillar-prof"
-                style="--theme-color: #C41E3A; border-top: 6px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #C41E3A; border-top: 12px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">
+                <h3
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--theme-color); white-space: nowrap; text-align: center;">
                     Professional Career</h3>
                 <ul class="pillar-list">
                     <li>BNP Paribas - Internship</li>
@@ -323,10 +326,12 @@ $status = $_GET['status'] ?? null;
 
             <!-- Social Responsibility: Green -->
             <a href="social-responsibility.php" class="pillar-card reveal pillar-social"
-                style="--theme-color: #2E8B57; border-top: 6px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #2E8B57; border-top: 12px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
-                <h3 style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--text); white-space: nowrap;">Social
+                <h3
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--theme-color); white-space: nowrap; text-align: center;">
+                    Social
                     Responsibility</h3>
                 <ul class="pillar-list">
                     <li>RYLA Participant - Interact 2013 (Rotary International)</li>
@@ -402,7 +407,7 @@ $status = $_GET['status'] ?? null;
                                 public
                                 sector domains</li>
                             <li>Father is a former USA based professional, 1st generation entrepreneur (Automation
-                                Expert) India <br></bra>and a Past District Governor with Rotary International
+                                Expert) in India <br>and a Past District Governor with Rotary International
                             </li>
                             <li>Manuj was born on Jan 10, 1996 (01.10.1996)<br><span
                                     class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
@@ -488,9 +493,9 @@ $status = $_GET['status'] ?? null;
                     <div class="timeline-text">
                         <h4>Rise in Rotaract South Asia</h4>
                         <ul class="timeline-list spaced-timeline-list">
-                            <li>Charter President — Rotaract Club Delhi Central (2015)</li>
-                            <li>District Rotaract Representative (DRR) — RID 3011 (2016–2017)</li>
-                            <li>President — Rotaract South Asia MDIO (2019–2020)</li>
+                            <li>Charter President - Rotaract Club Delhi Central (2015)</li>
+                            <li>District Rotaract Representative (DRR) - RID 3011 (2016–2017)</li>
+                            <li>President - Rotaract South Asia MDIO (2019–2020)</li>
                         </ul>
                     </div>
                 </div>
@@ -544,7 +549,7 @@ $status = $_GET['status'] ?? null;
                         <h4>Leadership with Rotary International</h4>
                         <ul class="timeline-list">
                             <li>Rotaract Representative - RI Assembly, USA 2020</li>
-                            <li>Chairman — Rotasia (Youth Conference), Delhi 2020</li>
+                            <li>Chairman - Rotasia (Youth Conference), Delhi 2020</li>
                             <li>Speaker at International Pre-Convention <br>(USA 2017, Canada 2018, Germany 2019)</li>
                             <li>Paul Harris Fellow (PHF) - Rotary International</li>
                         </ul>
@@ -860,13 +865,14 @@ $status = $_GET['status'] ?? null;
     </section>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section" style="padding: 0; background: transparent; position: relative; overflow: hidden;">
+    <section class="quotes-section"
+        style="padding: 0; background: transparent; position: relative; overflow: hidden; display: flex; justify-content: center;">
         <div
-            style="background: var(--gold); padding: 1.5rem 2rem; text-align: center; width: 100%; overflow: hidden; white-space: nowrap;">
+            style="background: var(--gold); padding: 0.5rem 2rem; text-align: center; width: 100%; overflow: hidden; white-space: nowrap;">
             <span
-                style="color: #000; font-family: var(--font-sans); font-size: clamp(0.7rem, 1.6vw, 2.5rem); font-style: regular; line-height: 1.4; display: inline-block;">
-                &bull; Let’s upskill the younger generations and empower our communities for a better and sustainable
-                future &bull;
+                style="color: #000; font-family: var(--font-sans); font-size: clamp(0.6rem, 1vw, 1.2rem); font-weight: 700; letter-spacing: 2px; line-height: 1.4; display: inline-block; text-transform: uppercase;">
+                &bull; <span style="margin: 0 0.5rem;">Let’s upskill the younger generations and empower our communities
+                    for a better and sustainable future</span> &bull;
             </span>
         </div>
     </section>

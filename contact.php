@@ -13,61 +13,7 @@ include 'components/header.php';
         min-height: 100vh;
     }
 
-    /* Section tabs */
-    .contact-tabs {
-        display: flex;
-        gap: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        margin-bottom: 4rem;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 1rem;
-    }
 
-    [data-theme="dark"] .contact-tabs {
-        border-color: rgba(255, 255, 255, 0.07);
-    }
-
-    .contact-tab {
-        padding: 1rem 0;
-        margin-right: 3rem;
-        font-size: 0.7rem;
-        font-weight: 800;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: #bbb;
-        border-bottom: 2px solid transparent;
-        margin-bottom: -1px;
-        cursor: pointer;
-        background: none;
-        border-left: none;
-        border-right: none;
-        border-top: none;
-        font-family: var(--font-sans);
-        transition: all 0.25s ease;
-    }
-
-    .contact-tab.active {
-        color: #000;
-        border-bottom: 2px solid #000;
-    }
-
-    [data-theme="dark"] .contact-tab.active {
-        color: var(--gold);
-        border-bottom-color: var(--gold);
-    }
-
-    /* ============================================================
-       TAB PANELS
-    ============================================================ */
-    .tab-panel {
-        display: none;
-    }
-
-    .tab-panel.active {
-        display: block;
-    }
 
     /* ─── SEND MESSAGE PANEL ─── */
     .contact-page-grid {
@@ -897,16 +843,10 @@ include 'components/header.php';
 
 <section class="contact-page">
 
-    <!-- ── Tabs ─────────────────────────────────────── -->
-    <div class="contact-tabs">
-        <button class="contact-tab active" id="tab-msg" onclick="switchTab('msg')">Send a Message</button>
-        <button class="contact-tab" id="tab-mtg" onclick="switchTab('mtg')">Book a Meeting</button>
-    </div>
-
     <!-- ══════════════════════════════════════════════
-         TAB 1 — SEND A MESSAGE
+         SEND A MESSAGE
     ══════════════════════════════════════════════ -->
-    <div class="tab-panel active" id="panel-msg">
+    <div id="panel-msg" style="margin-bottom: 8rem; display: none;">
         <div class="contact-page-grid">
 
             <!-- Left: Info -->
@@ -914,7 +854,8 @@ include 'components/header.php';
                 <div class="side-tag"
                     style="color: #000; font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block; font-size: 1.1rem; font-family: 'STZhongsong', var(--font-serif);">
                     GET IN TOUCH</div>
-                <h1 class="contact-page-h1" style="color: var(--text); font-family: var(--font-serif);">Open to connecting<br>and networking<br>forward.
+                <h1 class="contact-page-h1" style="color: var(--text); font-family: var(--font-serif);">Open to
+                    connecting<br>and networking<br>forward.
                 </h1>
 
                 <div class="contact-details" style="margin-top: 6rem;">
@@ -931,7 +872,7 @@ include 'components/header.php';
                         <h4
                             style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">
                             Based In</h4>
-                        <p style="font-size: 1.2rem; color: var(--text); opacity: 0.85;">Rochester, New York, USA</p>
+                        <p style="font-size: 1.2rem; color: var(--text); opacity: 0.85;">New York, USA</p>
                     </div>
 
                     <div class="contact-item">
@@ -951,8 +892,6 @@ include 'components/header.php';
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
             <!-- Right: Form -->
@@ -1000,22 +939,30 @@ include 'components/header.php';
                         style="background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 3px; cursor: pointer; transition: 0.3s; margin-top: 1rem; font-family: var(--font-sans);">
                         SEND MESSAGE
                     </button>
+                    <button type="button"
+                        onclick="document.getElementById('panel-msg').style.display='none'; document.getElementById('panel-mtg').style.display='block'; window.scrollTo({top: 0, behavior: 'smooth'});"
+                        style="background: transparent; color: #000; border: 1px solid #000; padding: 1.5rem; font-weight: 800; letter-spacing: 3px; cursor: pointer; transition: 0.3s; font-family: var(--font-sans);">
+                        BACK TO SCHEDULER
+                    </button>
                 </form>
             </div>
         </div>
     </div><!-- /panel-msg -->
 
     <!-- ══════════════════════════════════════════════
-         TAB 2 — BOOK A MEETING (SCHEDULER)
+         BOOK A MEETING (SCHEDULER)
     ══════════════════════════════════════════════ -->
-    <div class="tab-panel" id="panel-mtg">
+    <div id="panel-mtg" style="max-width: 1000px; margin: 0 auto; padding: 0 1rem;">
+        <div class="side-tag"
+            style="color: #000; font-weight: 800; letter-spacing: 8px; margin-bottom: 3rem; display: block; font-size: 1.1rem; font-family: 'STZhongsong', var(--font-serif); text-align: center;">
+            SCHEDULE AN APPOINTMENT</div>
         <div class="scheduler-grid">
 
             <!-- Left: Host info + meeting types -->
             <aside class="host-panel">
                 <div class="host-avatar">MM</div>
                 <div class="host-name">Manuj Mittal</div>
-                <div class="host-title">Doctorate Researcher · Global Leader</div>
+                <div class="host-title">Doctorate Researcher · <br>Community Builder</div>
 
                 <div class="meeting-meta">
                     <div class="meeting-meta-item">
@@ -1042,7 +989,7 @@ include 'components/header.php';
                             <line x1="8" y1="2" x2="8" y2="6" />
                             <line x1="3" y1="10" x2="21" y2="10" />
                         </svg>
-                        <span>Mon – Fri, 9 AM – 5 PM IST</span>
+                        <span>Mon – Fri, 10 AM – 4 PM EST</span>
                     </div>
                     <div class="meeting-meta-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1057,14 +1004,25 @@ include 'components/header.php';
                 <div class="meeting-types">
                     <button class="meeting-type-btn active" data-duration="15" data-label="Intro Call"
                         onclick="selectMeetingType(this)">Intro Call <span class="mt-badge">15 MIN</span></button>
-                    <button class="meeting-type-btn" data-duration="60" data-label="Advisor Session"
-                        onclick="selectMeetingType(this)">Advisor Session <span class="mt-badge">60
-                            MIN</span></button>
-                    <button class="meeting-type-btn" data-duration="15" data-label="Speaking Inquiry"
-                        onclick="selectMeetingType(this)">Speaking Inquiry <span class="mt-badge">15 MIN</span></button>
+                    <button class="meeting-type-btn" data-duration="15" data-label="Speaker Inquiry"
+                        onclick="selectMeetingType(this)">Speaker Inquiry <span class="mt-badge">15 MIN</span></button>
                     <button class="meeting-type-btn" data-duration="40" data-label="General Discussion"
                         onclick="selectMeetingType(this)">General Discussion <span class="mt-badge">40
                             MIN</span></button>
+                    <button class="meeting-type-btn" data-duration="60" data-label="Advisor Session"
+                        onclick="selectMeetingType(this)">Advisory Session <span class="mt-badge">60
+                            MIN</span></button>
+                    <button class="meeting-type-btn" type="button"
+                        onclick="document.getElementById('panel-mtg').style.display='none'; document.getElementById('panel-msg').style.display='block'; window.scrollTo({top: 0, behavior: 'smooth'});"
+                        style="display: flex; align-items: center; justify-content: space-between;">
+                        Send a Message <span class="mt-badge" style="background: transparent; color: inherit;"><svg
+                                width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg></span>
+                    </button>
                 </div>
             </aside>
 
@@ -1209,27 +1167,6 @@ include 'components/header.php';
 </section>
 
 <script>
-    /* ============================================================
-       TAB SWITCHER
-    ============================================================ */
-    function switchTab(tab) {
-        document.querySelectorAll('.contact-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        document.getElementById('tab-' + tab).classList.add('active');
-        document.getElementById('panel-' + tab).classList.add('active');
-
-        // Init scheduler on first open
-        if (tab === 'mtg' && !window._schInitialised) {
-            schInit();
-            window._schInitialised = true;
-        }
-    }
-
-    // Open to "Book a Meeting" tab if hash present
-    if (window.location.hash === '#book') {
-        switchTab('mtg');
-    }
-
     /* ============================================================
        SCHEDULER
     ============================================================ */
@@ -1436,14 +1373,17 @@ include 'components/header.php';
         s.textContent = '@keyframes schSpin { to { transform: rotate(360deg); } }';
         document.head.appendChild(s);
 
-        /* Public init (called when tab first opened) */
+        /* Public init */
         window.schInit = function () {
             renderCal();
             schGoToStep(1);
         };
 
-        // If already on #book hash, init immediately
-        if (window.location.hash === '#book') schInit();
+        // Initialize immediately
+        schInit();
+        if (window.location.hash === '#book') {
+            document.getElementById('panel-mtg').scrollIntoView({ behavior: 'smooth' });
+        }
     })();
 </script>
 

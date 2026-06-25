@@ -19,6 +19,14 @@ $books = [
         "desc" => "Your most ambitious work. A journey through the echoes of forgotten memories and lost civilizations.",
         "image" => "book cover.jpeg",
         "status" => "available"
+    ],
+    [
+        "id" => "flip-the-script",
+        "title" => "Flip the Script",
+        "tag" => "Upcoming Release",
+        "meta" => "Scheduled launch October 2027",
+        "desc" => "Scheduled launch October 2027.",
+        "status" => "coming-soon"
     ]
 ];
 ?>
