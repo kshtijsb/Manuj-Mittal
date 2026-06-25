@@ -303,6 +303,116 @@
         <span>Contact</span>
     </a>
 </nav>
+
+<!-- Cookie Consent Banner -->
+<style>
+    #cookie-banner {
+        display: none;
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0a0a0a;
+        border: 1px solid rgba(197, 160, 89, 0.3);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        padding: 1.5rem 2rem;
+        border-radius: 8px;
+        z-index: 99999;
+        align-items: center;
+        gap: 2rem;
+        max-width: 90vw;
+        width: max-content;
+        color: var(--text);
+        font-family: var(--font-sans);
+    }
+    @media (max-width: 600px) {
+        #cookie-banner {
+            flex-direction: column;
+            text-align: center;
+            bottom: 5rem; /* Above mobile nav */
+            padding: 1.5rem;
+            gap: 1.5rem;
+        }
+    }
+    #cookie-banner .cookie-text {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        line-height: 1.5;
+    }
+    #cookie-banner .cookie-text a {
+        color: var(--gold);
+        text-decoration: underline;
+    }
+    #cookie-banner .cookie-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-shrink: 0;
+    }
+    #cookie-banner .btn-accept {
+        background: var(--gold);
+        color: #000;
+        border: 1px solid var(--gold);
+        padding: 0.8rem 1.5rem;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    #cookie-banner .btn-accept:hover {
+        background: transparent;
+        color: var(--gold);
+    }
+    #cookie-banner .btn-decline {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 0.8rem 1.5rem;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    #cookie-banner .btn-decline:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+    }
+</style>
+
+<div id="cookie-banner">
+    <div class="cookie-text">
+        We use cookies to enhance your browsing experience and analyze site traffic.<br>
+        By continuing to use our site, you agree to our <a href="cookies.php">Cookie Policy</a>.
+    </div>
+    <div class="cookie-buttons">
+        <button class="btn-decline" id="btn-decline">Decline</button>
+        <button class="btn-accept" id="btn-accept">Accept</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    if (!localStorage.getItem('cookieConsent')) {
+        document.getElementById('cookie-banner').style.display = 'flex';
+    }
+
+    document.getElementById('btn-accept').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+    });
+
+    document.getElementById('btn-decline').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'declined');
+        document.getElementById('cookie-banner').style.display = 'none';
+    });
+});
+</script>
+
 </body>
 
 </html>
