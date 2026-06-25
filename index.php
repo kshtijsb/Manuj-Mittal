@@ -18,7 +18,7 @@ $status = $_GET['status'] ?? null;
             <div class="book-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 1.4rem; letter-spacing: 1px;">
+                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1rem, 2vw, 1.4rem); letter-spacing: 1px;">
                         FEATURED WORK</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
@@ -53,7 +53,7 @@ $status = $_GET['status'] ?? null;
                     </div>
 
                     <h2 class="no-split"
-                        style="font-size: 2.2rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                        style="font-size: clamp(1.5rem, 3vw, 2.2rem); font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
                         <?php echo $books[0]['title']; ?>
                     </h2>
 
@@ -64,7 +64,7 @@ $status = $_GET['status'] ?? null;
             <div class="author-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 1.4rem; letter-spacing: 1px;">
+                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1rem, 2vw, 1.4rem); letter-spacing: 1px;">
                         THE AUTHOR</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
@@ -94,7 +94,7 @@ $status = $_GET['status'] ?? null;
                     </div>
 
                     <h2
-                        style="font-size: 2.2rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
+                        style="font-size: clamp(1.5rem, 3vw, 2.2rem); font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
                         Manuj Mittal<br>(MJ)
                     </h2>
 
@@ -264,7 +264,7 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--theme-color); white-space: nowrap; text-align: center;">
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center;">
                     Educational Background
                 </h3>
                 <ul class="pillar-list">
@@ -301,7 +301,7 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--theme-color); white-space: nowrap; text-align: center;">
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center;">
                     Professional Career</h3>
                 <ul class="pillar-list">
                     <li>BNP Paribas - Internship</li>
@@ -330,7 +330,7 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: var(--theme-color); white-space: nowrap; text-align: center;">
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center;">
                     Social
                     Responsibility</h3>
                 <ul class="pillar-list">
@@ -835,30 +835,29 @@ $status = $_GET['status'] ?? null;
     <section class="stats-section container"
         style="padding: 2vh 0 8vh; text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
 
-        <div class="stats-grid"
-            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6vw;">
-            <div class="stat-item reveal" style="flex: 1 1 250px; max-width: 300px;">
+        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; width: 100%; max-width: 1200px; margin: 0 auto; align-items: center;">
+            <div class="stat-item reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; left: 3rem;">
                 <div class="stat-number plus" data-target="18"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
-                    0</div>
+                    18</div>
                 <div class="stat-label"
-                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
+                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase; text-align: center;">
                     Countries Travelled</div>
             </div>
-            <div class="stat-item reveal" style="flex: 1 1 250px; max-width: 300px;">
+            <div class="stat-item reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <div class="stat-number plus" data-target="10000"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
-                    0</div>
+                    10,000</div>
                 <div class="stat-label"
-                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
+                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase; text-align: center;">
                     Days Lived</div>
             </div>
-            <div class="stat-item reveal" style="flex: 1 1 250px; max-width: 300px;">
+            <div class="stat-item reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <div class="stat-number plus" data-target="180000"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
-                    0</div>
+                    180,000</div>
                 <div class="stat-label"
-                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
+                    style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase; text-align: center;">
                     Lives Impacted</div>
             </div>
         </div>
@@ -870,9 +869,10 @@ $status = $_GET['status'] ?? null;
         <div
             style="background: var(--gold); padding: 0.5rem 2rem; text-align: center; width: 100%; overflow: hidden; white-space: nowrap;">
             <span
-                style="color: #000; font-family: var(--font-sans); font-size: clamp(0.6rem, 1vw, 1.2rem); font-weight: 700; letter-spacing: 2px; line-height: 1.4; display: inline-block; text-transform: uppercase;">
-                <span style="margin: 0 0.5rem;">Let’s upskill the younger generations and empower our communities
-                    for a better and sustainable future</span>
+                style="color: #000; font-family: var(--font-sans); font-size: clamp(0.6rem, 1vw, 1.2rem); font-weight: 700; letter-spacing: 1px; line-height: 1.4; display: inline-block; text-transform: uppercase;">
+                <span style="margin: 0 0.5rem; word-spacing: 0.25em;">" Let’s upskill the younger generations and empower our
+                    communities for a better and sustainable future
+                    "</span>
             </span>
         </div>
     </section>

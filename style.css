@@ -1260,7 +1260,7 @@ nav {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 5rem 4rem;
+        padding: clamp(1.5rem, 4vw, 5rem) clamp(1rem, 3vw, 4rem);
     }
 
     .author-side {
@@ -1268,14 +1268,14 @@ nav {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 5rem 4rem;
+        padding: clamp(1.5rem, 4vw, 5rem) clamp(1rem, 3vw, 4rem);
     }
 
     /* Card Wrapper */
     .card-wrapper {
         width: 100%;
         max-width: 620px;
-        height: 820px;
+        height: auto;
         background: #fff;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
         border: 1px solid rgba(0, 0, 0, 0.06);
@@ -1285,13 +1285,14 @@ nav {
         align-items: center;
         justify-content: space-between;
         text-align: center;
-        padding: 2.5rem;
+        padding: clamp(1.5rem, 3vw, 2.5rem);
     }
 
     /* Flip Card */
     .flip-card {
-        width: 440px;
-        height: 620px;
+        width: 100%;
+        max-width: 440px;
+        aspect-ratio: 440 / 620;
         perspective: 1200px;
         cursor: pointer;
         margin-bottom: 2rem;
@@ -1429,7 +1430,8 @@ nav {
         }
 
         .hero-split {
-            display: none !important;
+            display: flex !important;
+            flex-direction: column;
         }
 
         .side {

@@ -1,104 +1,90 @@
 <footer
     style="text-align: left; position: relative; z-index: 10; background-color: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px;">
     <div class="container-fluid"
-        style="width: 100%; margin: 0 auto; padding: 4rem 4vw 2rem; background-color: transparent;">
+        style="width: 100%; margin: 0 auto; padding: 3.5rem 4vw 1rem; background-color: transparent;">
 
         <!-- Main Footer Content -->
-        <div class="footer-main-grid">
+        <!-- Main Footer Content -->
+        <div
+            style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem;">
 
-            <!-- Signature -->
-            <div class="footer-signature">
-                <div class="author-signature"
-                    style="line-height: 1; margin: 0; font-size: clamp(3rem, 7vw, 5rem); color: var(--gold); white-space: nowrap;">
-                    Manuj Mittal</div>
-            </div>
-
-            <!-- Explore -->
-            <div class="footer-explore">
-                <h4
-                    style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1.5rem 0; display: inline-block; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">
-                    Explore
-                </h4>
-                <div style="display: grid; grid-template-columns: max-content max-content; gap: 0.8rem 3rem;">
-                    <a href="index.php"
-                        style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s; display: flex; align-items: center; gap: 8px;"
-                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';"><span
-                            style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold);"></span>Home</a>
-                    <a href="biography.php"
-                        style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s; display: flex; align-items: center; gap: 8px;"
-                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';"><span
-                            style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold);"></span>About
-                        MJ</a>
-                    <a href="store.php"
-                        style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s; display: flex; align-items: center; gap: 8px;"
-                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';"><span
-                            style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold);"></span>Books</a>
-                    <a href="contact.php"
-                        style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s; display: flex; align-items: center; gap: 8px;"
-                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';"><span
-                            style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold);"></span>Contact
-                        Us</a>
-                </div>
-            </div>
-
-            <!-- Based In -->
-            <div class="footer-based-in">
-                <h4
-                    style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1.5rem 0; display: inline-block; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">
-                    Based In
-                </h4>
-                <p
-                    style="font-size: 1rem; color: var(--text); opacity: 0.9; margin: 0 0 2rem 0; font-family: var(--font-sans);">
-                    New York, USA
-                </p>
-                <h4
-                    style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1.5rem 0; display: inline-block; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">
-                    Connect Us
-                </h4>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-                        target="_blank" aria-label="LinkedIn"
-                        style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border: 1px solid var(--gold); border-radius: 4px; color: var(--gold); transition: all 0.3s;"
-                        onmouseover="this.style.background='rgba(197, 160, 89, 0.1)'; this.style.transform='translateY(-2px)';"
-                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
-                        aria-label="Instagram"
-                        style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border: 1px solid var(--gold); border-radius: 4px; color: var(--gold); transition: all 0.3s;"
-                        onmouseover="this.style.background='rgba(197, 160, 89, 0.1)'; this.style.transform='translateY(-2px)';"
-                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Buttons -->
-            <div class="footer-buttons">
-                <?php if (basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == ''): ?>
-                    <a href="contact.php"
-                        style="background: transparent; color: var(--gold); border: 1px solid var(--gold); padding: 1.2rem 2rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; width: 100%; text-align: center; display: inline-block; text-decoration: none; text-transform: uppercase; transition: all 0.3s;"
-                        onmouseover="this.style.background='var(--gold)'; this.style.color='#000';"
-                        onmouseout="this.style.background='transparent'; this.style.color='var(--gold)';">
-                        Book a Meeting
-                    </a>
-                <?php endif; ?>
-                <a href="store.php"
-                    style="background: transparent; color: var(--gold); border: 1px solid var(--gold); padding: 1.2rem 2rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; width: 100%; text-align: center; display: inline-block; text-decoration: none; text-transform: uppercase; transition: all 0.3s;"
-                    onmouseover="this.style.background='var(--gold)'; this.style.color='#000';"
-                    onmouseout="this.style.background='transparent'; this.style.color='var(--gold)';">
-                    Visit our Library
+            <!-- Left Side: Signature -->
+            <div style="flex: 1; min-width: 300px;">
+                <a href="index.php" style="text-decoration: none; display: inline-block;">
+                    <div class="author-signature"
+                        style="line-height: 1; margin: 0; font-size: clamp(3rem, 7vw, 5rem); color: var(--gold); white-space: nowrap; opacity: 1 !important; transition: none !important;">
+                        Manuj Mittal</div>
                 </a>
             </div>
 
+            <!-- Right Side: Buttons & Based In -->
+            <div
+                style="flex: 1; min-width: 300px; max-width: 600px; display: flex; flex-direction: column; gap: 1.5rem; margin-top: -1rem;">
+
+                <!-- Buttons (Stretched) -->
+                <div style="display: flex; gap: 1.5rem; width: 100%;">
+                    <?php if (basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == ''): ?>
+                        <a href="contact.php"
+                            style="flex: 1; background: var(--gold); color: #000 !important; border: 1px solid var(--gold); padding: 1.2rem 1rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; text-align: center; text-decoration: none; text-transform: uppercase; font-family: var(--font-sans); word-spacing: 0.25em; letter-spacing: 1px;">
+                            Book a Meeting
+                        </a>
+                    <?php endif; ?>
+                    <a href="store.php"
+                        style="flex: 1; background: var(--gold); color: #000 !important; border: 1px solid var(--gold); padding: 1.2rem 1rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; text-align: center; text-decoration: none; text-transform: uppercase; font-family: var(--font-sans); word-spacing: 0.25em; letter-spacing: 1px;">
+                        Visit our Library
+                    </a>
+                </div>
+
+                <!-- Based In & Socials (Under Buttons) -->
+                <div
+                    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 1.5rem; width: 100%;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span
+                            style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0;">
+                            Based In
+                        </span>
+                        <span
+                            style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0;">
+                            New York, USA
+                        </span>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <style>
+                            .footer-social-glow {
+                                color: var(--gold) !important;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                text-decoration: none !important;
+                            }
+
+                            .footer-social-glow svg {
+                                transition: all 0.3s ease;
+                            }
+
+                            .footer-social-glow:hover svg {
+                                filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.9));
+                                transform: scale(1.15);
+                            }
+                        </style>
+                        <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                            target="_blank" aria-label="LinkedIn" class="footer-social-glow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3.5 15.5H6.38V9.82h2.12v7.68zm-1.06-8.73h-.01c-.71 0-1.17-.49-1.17-1.1 0-.62.48-1.1 1.2-1.1.72 0 1.17.48 1.18 1.1 0 .61-.47 1.1-1.2 1.1zm9.44 8.73h-2.12v-4.11c0-1.03-.37-1.74-1.29-1.74-.71 0-1.13.48-1.32.94-.07.17-.09.41-.09.66v4.25h-2.12s.03-6.96 0-7.68h2.12v1.09c.28-.43.78-1.04 1.89-1.04 1.38 0 2.42.91 2.42 2.85v4.78z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
+                            aria-label="Instagram" class="footer-social-glow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.32 14.5c0 .66-.54 1.2-1.2 1.2H8.88c-.66 0-1.2-.54-1.2-1.2V9.5c0-.66.54-1.2 1.2-1.2h7.24c.66 0 1.2.54 1.2 1.2v7zM12 10.3c-1.49 0-2.7 1.21-2.7 2.7s1.21 2.7 2.7 2.7 2.7-1.21 2.7-2.7-1.21-2.7-2.7-2.7zm0 4.2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm2.8-3.7c-.33 0-.6-.27-.6-.6s.27-.6.6-.6.6.27.6.6-.27.6-.6.6z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Bottom Section: Legal & Copyright -->
@@ -314,7 +300,7 @@
         transform: translateX(-50%);
         background: #0a0a0a;
         border: 1px solid rgba(197, 160, 89, 0.3);
-        box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         padding: 1.5rem 2rem;
         border-radius: 8px;
         z-index: 99999;
@@ -325,29 +311,35 @@
         color: #ffffff;
         font-family: var(--font-sans);
     }
+
     @media (max-width: 600px) {
         #cookie-banner {
             flex-direction: column;
             text-align: center;
-            bottom: 5rem; /* Above mobile nav */
+            bottom: 5rem;
+            /* Above mobile nav */
             padding: 1.5rem;
             gap: 1.5rem;
         }
     }
+
     #cookie-banner .cookie-text {
         font-size: 0.9rem;
         opacity: 0.9;
         line-height: 1.5;
     }
+
     #cookie-banner .cookie-text a {
         color: var(--gold);
         text-decoration: underline;
     }
+
     #cookie-banner .cookie-buttons {
         display: flex;
         gap: 1rem;
         flex-shrink: 0;
     }
+
     #cookie-banner .btn-accept {
         background: var(--gold);
         color: #000;
@@ -361,14 +353,16 @@
         cursor: pointer;
         transition: all 0.3s;
     }
+
     #cookie-banner .btn-accept:hover {
         background: transparent;
         color: var(--gold);
     }
+
     #cookie-banner .btn-decline {
         background: transparent;
         color: #fff;
-        border: 1px solid rgba(255,255,255,0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         padding: 0.8rem 1.5rem;
         font-weight: bold;
         font-size: 0.8rem;
@@ -378,6 +372,7 @@
         cursor: pointer;
         transition: all 0.3s;
     }
+
     #cookie-banner .btn-decline:hover {
         border-color: var(--gold);
         color: var(--gold);
@@ -396,21 +391,21 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    if (!localStorage.getItem('cookieConsent')) {
-        document.getElementById('cookie-banner').style.display = 'flex';
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
 
-    document.getElementById('btn-accept').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-    });
+        document.getElementById('btn-accept').addEventListener('click', function () {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
 
-    document.getElementById('btn-decline').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'declined');
-        document.getElementById('cookie-banner').style.display = 'none';
+        document.getElementById('btn-decline').addEventListener('click', function () {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
     });
-});
 </script>
 
 </body>
