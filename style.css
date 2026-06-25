@@ -1428,8 +1428,7 @@ nav {
         }
 
         .hero-split {
-            display: flex !important;
-            flex-direction: column;
+            display: none !important;
         }
 
         .side {
@@ -1616,7 +1615,7 @@ nav {
         animation: slideInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
     }
 
-
+    
                 .hero-mobile {
                     display: none;
                 }
