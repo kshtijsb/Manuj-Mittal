@@ -322,7 +322,7 @@
         gap: 2rem;
         max-width: 90vw;
         width: max-content;
-        color: var(--text);
+        color: #ffffff;
         font-family: var(--font-sans);
     }
     @media (max-width: 600px) {
