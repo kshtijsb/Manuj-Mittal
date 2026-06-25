@@ -18,8 +18,8 @@ $status = $_GET['status'] ?? null;
             <div class="book-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1rem, 2vw, 1.4rem); letter-spacing: 1px;">
-                        FEATURED WORK</div>
+                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none;">
+                        Featured Work</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
                         <div class="flip-card-inner">
@@ -64,8 +64,8 @@ $status = $_GET['status'] ?? null;
             <div class="author-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1rem, 2vw, 1.4rem); letter-spacing: 1px;">
-                        THE AUTHOR</div>
+                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none;">
+                        The Author</div>
 
                     <div class="flip-card" style="margin-bottom: 1rem;">
                         <div class="flip-card-inner">
@@ -242,7 +242,7 @@ $status = $_GET['status'] ?? null;
         <div class="cinematic-glow"></div>
         <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="cinematic-book-cover">
         <h2 class="cinematic-title no-split"><?php echo $books[0]['title']; ?></h2>
-        <p class="cinematic-subtitle">Featured Work</p>
+        <p class="cinematic-subtitle">Featured work</p>
         <a href="store.php" class="btn-cinematic">Order Now</a>
     </section>
 
@@ -252,8 +252,8 @@ $status = $_GET['status'] ?? null;
     <!-- About Pillars Section (Color Coded) -->
     <section id="about" class="container" style="padding-top: 15vh; max-width: 1400px;">
         <div class="section-header reveal">
-            <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000;">Foundation
-                of the Author</h2>
+            <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000;">Pillars of
+                the Foundation</h2>
         </div>
 
 
