@@ -223,21 +223,23 @@ include 'components/header.php';
         align-items: center;
         gap: 12px;
         padding: 16px 36px;
-        background: white;
-        color: var(--text-main);
+        background: #000;
+        color: var(--gold);
         text-decoration: none;
-        border-radius: 50px;
+        border-radius: 0;
         font-weight: 600;
         font-size: 1rem;
         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid rgba(0,0,0,0.05);
+        border: 1px solid var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     .btn-back:hover {
-        background: var(--theme-primary);
-        color: white;
+        background: var(--gold);
+        color: #000;
         transform: translateY(-4px);
-        box-shadow: 0 15px 30px var(--theme-glow-strong);
+        box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3);
     }
     .btn-back svg {
         transition: transform 0.3s ease;
@@ -361,7 +363,7 @@ include 'components/header.php';
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Back to Pillars
+                Back to Foundation
             </a>
         </div>
 

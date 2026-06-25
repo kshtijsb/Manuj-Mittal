@@ -23,12 +23,10 @@
 
                 <!-- Buttons (Stretched) -->
                 <div style="display: flex; gap: 1.5rem; width: 100%;">
-                    <?php if (basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == ''): ?>
                         <a href="contact.php"
                             style="flex: 1; background: var(--gold); color: #000 !important; border: 1px solid var(--gold); padding: 1.2rem 1rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; text-align: center; text-decoration: none; text-transform: uppercase; font-family: var(--font-sans); word-spacing: 0.25em; letter-spacing: 1px;">
                             Book a Meeting
                         </a>
-                    <?php endif; ?>
                     <a href="store.php"
                         style="flex: 1; background: var(--gold); color: #000 !important; border: 1px solid var(--gold); padding: 1.2rem 1rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; text-align: center; text-decoration: none; text-transform: uppercase; font-family: var(--font-sans); word-spacing: 0.25em; letter-spacing: 1px;">
                         Visit our Library
@@ -150,7 +148,7 @@
 
         const statObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
-                animateStats();
+                // animateStats(); removed to keep static numbers
                 statObserver.disconnect();
             }
         }, { threshold: 0.5 });

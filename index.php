@@ -264,7 +264,7 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center;">
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px;">
                     Educational Background
                 </h3>
                 <ul class="pillar-list">
@@ -286,7 +286,7 @@ $status = $_GET['status'] ?? null;
                     <li>Co-Chair: HE Students Association</li>
                 </ul>
                 <div class="pillar-link"
-                    style="margin-top: 1.5rem; background: rgba(0,71,171,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #0047AB; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    style="margin: 1.5rem auto 0; background: rgba(0,71,171,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #0047AB; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: flex; width: fit-content; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
                     Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -301,7 +301,7 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center;">
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px;">
                     Professional Career</h3>
                 <ul class="pillar-list">
                     <li>BNP Paribas - Internship</li>
@@ -315,7 +315,7 @@ $status = $_GET['status'] ?? null;
                     <li>Leadership Programs GA - UR (Rochester,USA)</li>
                 </ul>
                 <div class="pillar-link"
-                    style="margin-top: 1.5rem; background: rgba(196,30,58,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #C41E3A; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    style="margin: 1.5rem auto 0; background: rgba(196,30,58,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #C41E3A; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: flex; width: fit-content; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
                     Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -330,7 +330,7 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center;">
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px;">
                     Social
                     Responsibility</h3>
                 <ul class="pillar-list">
@@ -352,7 +352,7 @@ $status = $_GET['status'] ?? null;
                     <li>Simon Business School, NY- Alumni</li>
                 </ul>
                 <div class="pillar-link"
-                    style="margin-top: 1.5rem; background: rgba(46,139,87,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #2E8B57; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    style="margin: 1.5rem auto 0; background: rgba(46,139,87,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #2E8B57; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: flex; width: fit-content; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
                     Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -407,7 +407,7 @@ $status = $_GET['status'] ?? null;
                                 public
                                 sector domains</li>
                             <li>Father is a former USA based professional, 1st generation entrepreneur (Automation
-                                Expert) in India <br>and a Past District Governor with Rotary International
+                                Expert) in India and a <br>Past District Governor with Rotary International
                             </li>
                             <li>Manuj was born on Jan 10, 1996 (01.10.1996)<br><span
                                     class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
@@ -437,7 +437,7 @@ $status = $_GET['status'] ?? null;
                         <ul class="timeline-list">
                             <li>Early schooling from Mayo College, Ajmer</li>
                             <li>B. Commerce in Accounting & Finance, Delhi</li>
-                            <li>ICAI (Chartered Accountant) — Intermediate</li>
+                            <li>ICAI (Chartered Accountant) — IPCC</li>
                             <li>Honorary Doctorate in Leadership & Social Work</li>
                         </ul>
                     </div>
@@ -835,8 +835,10 @@ $status = $_GET['status'] ?? null;
     <section class="stats-section container"
         style="padding: 2vh 0 8vh; text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
 
-        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; width: 100%; max-width: 1200px; margin: 0 auto; align-items: center;">
-            <div class="stat-item reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; left: 3rem;">
+        <div class="stats-grid"
+            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; width: 100%; max-width: 1200px; margin: 0 auto; align-items: center;">
+            <div class="stat-item reveal"
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; left: 3rem;">
                 <div class="stat-number plus" data-target="18"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     18</div>
@@ -844,7 +846,8 @@ $status = $_GET['status'] ?? null;
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase; text-align: center;">
                     Countries Travelled</div>
             </div>
-            <div class="stat-item reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="stat-item reveal"
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <div class="stat-number plus" data-target="10000"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     10,000</div>
@@ -852,7 +855,8 @@ $status = $_GET['status'] ?? null;
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase; text-align: center;">
                     Days Lived</div>
             </div>
-            <div class="stat-item reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="stat-item reveal"
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <div class="stat-number plus" data-target="180000"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     180,000</div>
@@ -870,7 +874,8 @@ $status = $_GET['status'] ?? null;
             style="background: var(--gold); padding: 0.5rem 2rem; text-align: center; width: 100%; overflow: hidden; white-space: nowrap;">
             <span
                 style="color: #000; font-family: var(--font-sans); font-size: clamp(0.6rem, 1vw, 1.2rem); font-weight: 700; letter-spacing: 1px; line-height: 1.4; display: inline-block; text-transform: uppercase;">
-                <span style="margin: 0 0.5rem; word-spacing: 0.25em;">" Let’s upskill the younger generations and empower our
+                <span style="margin: 0 0.5rem; word-spacing: 0.25em;">" Let’s upskill the younger generations and
+                    empower our
                     communities for a better and sustainable future
                     "</span>
             </span>
