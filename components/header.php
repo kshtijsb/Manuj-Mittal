@@ -164,30 +164,34 @@
 
                     <li class="nav-social-icons"
                         style="display: flex; gap: 15px; align-items: center; margin-left: 15px;">
+                        <style>
+                            .nav-social-glow {
+                                color: var(--gold);
+                                display: flex;
+                                align-items: center;
+                                text-decoration: none !important;
+                            }
+                            .nav-links .nav-social-glow::after {
+                                display: none !important;
+                            }
+                            .nav-social-glow svg {
+                                transition: all 0.3s ease;
+                            }
+                            .nav-social-glow:hover svg {
+                                filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.9));
+                                transform: scale(1.15);
+                            }
+                        </style>
                         <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-                            target="_blank" aria-label="LinkedIn"
-                            style="color: var(--gold); display: flex; align-items: center; transition: transform 0.3s;"
-                            onmouseover="this.style.transform='scale(1.1)';"
-                            onmouseout="this.style.transform='scale(1)';">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                                </path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
+                            target="_blank" aria-label="LinkedIn" class="nav-social-glow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3.5 15.5H6.38V9.82h2.12v7.68zm-1.06-8.73h-.01c-.71 0-1.17-.49-1.17-1.1 0-.62.48-1.1 1.2-1.1.72 0 1.17.48 1.18 1.1 0 .61-.47 1.1-1.2 1.1zm9.44 8.73h-2.12v-4.11c0-1.03-.37-1.74-1.29-1.74-.71 0-1.13.48-1.32.94-.07.17-.09.41-.09.66v4.25h-2.12s.03-6.96 0-7.68h2.12v1.09c.28-.43.78-1.04 1.89-1.04 1.38 0 2.42.91 2.42 2.85v4.78z"/>
                             </svg>
                         </a>
                         <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
-                            aria-label="Instagram"
-                            style="color: var(--gold); display: flex; align-items: center; transition: transform 0.3s;"
-                            onmouseover="this.style.transform='scale(1.1)';"
-                            onmouseout="this.style.transform='scale(1)';">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            aria-label="Instagram" class="nav-social-glow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.32 14.5c0 .66-.54 1.2-1.2 1.2H8.88c-.66 0-1.2-.54-1.2-1.2V9.5c0-.66.54-1.2 1.2-1.2h7.24c.66 0 1.2.54 1.2 1.2v7zM12 10.3c-1.49 0-2.7 1.21-2.7 2.7s1.21 2.7 2.7 2.7 2.7-1.21 2.7-2.7-1.21-2.7-2.7-2.7zm0 4.2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm2.8-3.7c-.33 0-.6-.27-.6-.6s.27-.6.6-.6.6.27.6.6-.27.6-.6.6z"/>
                             </svg>
                         </a>
                     </li>

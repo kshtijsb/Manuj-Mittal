@@ -270,7 +270,7 @@ $status = $_GET['status'] ?? null;
                 <ul class="pillar-list">
                     <li>Early Life - Childhood (1996)</li>
                     <li>Mayo College (Boarding School) at Age 12 (2008)</li>
-                    <li>Chess Champion @Age 15 (WazirChand Trophy)</li>
+                    <li>Chess Champion at Age 15 (WazirChand Trophy)</li>
                     <li>High School: Science (PCM)</li>
                     <li>IMO (Represented India) in Kazakhstan</li>
                     <li>Pursued CA (US CPA Equivalent) from Delhi, India</li>
@@ -836,8 +836,8 @@ $status = $_GET['status'] ?? null;
         style="padding: 2vh 0 8vh; text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
 
         <div class="stats-grid"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
-            <div class="stat-item reveal">
+            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6vw;">
+            <div class="stat-item reveal" style="flex: 1 1 250px; max-width: 300px;">
                 <div class="stat-number plus" data-target="18"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
@@ -845,7 +845,7 @@ $status = $_GET['status'] ?? null;
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
                     Countries Travelled</div>
             </div>
-            <div class="stat-item reveal">
+            <div class="stat-item reveal" style="flex: 1 1 250px; max-width: 300px;">
                 <div class="stat-number plus" data-target="10000"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
@@ -853,7 +853,7 @@ $status = $_GET['status'] ?? null;
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">
                     Days Lived</div>
             </div>
-            <div class="stat-item reveal">
+            <div class="stat-item reveal" style="flex: 1 1 250px; max-width: 300px;">
                 <div class="stat-number plus" data-target="180000"
                     style="font-size: 5.5rem; font-weight: 800; color: #000; margin-bottom: 1rem; letter-spacing: -2px;">
                     0</div>
@@ -871,8 +871,8 @@ $status = $_GET['status'] ?? null;
             style="background: var(--gold); padding: 0.5rem 2rem; text-align: center; width: 100%; overflow: hidden; white-space: nowrap;">
             <span
                 style="color: #000; font-family: var(--font-sans); font-size: clamp(0.6rem, 1vw, 1.2rem); font-weight: 700; letter-spacing: 2px; line-height: 1.4; display: inline-block; text-transform: uppercase;">
-                &bull; <span style="margin: 0 0.5rem;">Let’s upskill the younger generations and empower our communities
-                    for a better and sustainable future</span> &bull;
+                <span style="margin: 0 0.5rem;">Let’s upskill the younger generations and empower our communities
+                    for a better and sustainable future</span>
             </span>
         </div>
     </section>

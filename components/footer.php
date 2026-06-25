@@ -1,100 +1,102 @@
 <footer
     style="text-align: left; position: relative; z-index: 10; background-color: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px;">
     <div class="container-fluid"
-        style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 4rem 4vw 2rem; background-color: transparent;">
+        style="width: 100%; margin: 0 auto; padding: 4rem 4vw 2rem; background-color: transparent;">
 
-        <!-- Top Section: Signature -->
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <div class="author-signature"
-                style="line-height: 1; margin: 0; font-size: clamp(3rem, 8vw, 8rem); white-space: nowrap; color: var(--gold);">
-                Manuj Mittal</div>
-        </div>
+        <!-- Main Footer Content -->
+        <div class="footer-main-grid">
 
-        <!-- Middle Section: Columns -->
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; margin-bottom: 3rem;">
-
-            <!-- Links Column -->
-            <div style="flex: 1; min-width: 150px;">
-                <h4
-                    style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-top: 0; margin-bottom: 1rem;">
-                    Explore</h4>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
-                    <li><a href="index.php"
-                            style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s;"
-                            onmouseover="this.style.color='var(--gold)';"
-                            onmouseout="this.style.color='var(--text)';">Home</a></li>
-                    <li><a href="store.php"
-                            style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s;"
-                            onmouseover="this.style.color='var(--gold)';"
-                            onmouseout="this.style.color='var(--text)';">Books</a></li>
-                    <li><a href="biography.php"
-                            style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s;"
-                            onmouseover="this.style.color='var(--gold)';"
-                            onmouseout="this.style.color='var(--text)';">About MJ</a></li>
-                    <li><a href="contact.php"
-                            style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s;"
-                            onmouseover="this.style.color='var(--gold)';"
-                            onmouseout="this.style.color='var(--text)';">Contact Us</a></li>
-                </ul>
+            <!-- Signature -->
+            <div class="footer-signature">
+                <div class="author-signature"
+                    style="line-height: 1; margin: 0; font-size: clamp(3rem, 7vw, 5rem); color: var(--gold); white-space: nowrap;">
+                    Manuj Mittal</div>
             </div>
 
-            <!-- Based In Column -->
-            <div style="flex: 1; min-width: 150px;">
+            <!-- Explore -->
+            <div class="footer-explore">
                 <h4
-                    style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-top: 0; margin-bottom: 1rem;">
-                    Based In</h4>
+                    style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1.5rem 0; display: inline-block; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">
+                    Explore
+                </h4>
+                <div style="display: grid; grid-template-columns: max-content max-content; gap: 0.8rem 3rem;">
+                    <a href="index.php"
+                        style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s; display: flex; align-items: center; gap: 8px;"
+                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';"><span
+                            style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold);"></span>Home</a>
+                    <a href="biography.php"
+                        style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s; display: flex; align-items: center; gap: 8px;"
+                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';"><span
+                            style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold);"></span>About
+                        MJ</a>
+                    <a href="store.php"
+                        style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s; display: flex; align-items: center; gap: 8px;"
+                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';"><span
+                            style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold);"></span>Books</a>
+                    <a href="contact.php"
+                        style="color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s; display: flex; align-items: center; gap: 8px;"
+                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';"><span
+                            style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold);"></span>Contact
+                        Us</a>
+                </div>
+            </div>
+
+            <!-- Based In -->
+            <div class="footer-based-in">
+                <h4
+                    style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1.5rem 0; display: inline-block; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">
+                    Based In
+                </h4>
                 <p
-                    style="font-size: 1.1rem; color: var(--text); opacity: 0.9; margin: 0; font-family: var(--font-sans); line-height: 1.6;">
+                    style="font-size: 1rem; color: var(--text); opacity: 0.9; margin: 0 0 2rem 0; font-family: var(--font-sans);">
                     New York, USA
                 </p>
-            </div>
-
-            <!-- Socials Column -->
-            <div style="flex: 1; min-width: 150px;">
                 <h4
-                    style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-top: 0; margin-bottom: 1rem;">
-                    Connect On</h4>
-                <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                    style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1.5rem 0; display: inline-block; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">
+                    Connect Us
+                </h4>
+                <div style="display: flex; gap: 1rem;">
                     <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-                        target="_blank"
-                        style="color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s;"
-                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                            </path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
+                        target="_blank" aria-label="LinkedIn"
+                        style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border: 1px solid var(--gold); border-radius: 4px; color: var(--gold); transition: all 0.3s;"
+                        onmouseover="this.style.background='rgba(197, 160, 89, 0.1)'; this.style.transform='translateY(-2px)';"
+                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
-                        LinkedIn
                     </a>
                     <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
-                        style="color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s;"
-                        onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--text)';">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        aria-label="Instagram"
+                        style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border: 1px solid var(--gold); border-radius: 4px; color: var(--gold); transition: all 0.3s;"
+                        onmouseover="this.style.background='rgba(197, 160, 89, 0.1)'; this.style.transform='translateY(-2px)';"
+                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                         </svg>
-                        Instagram
                     </a>
                 </div>
             </div>
 
-            <!-- Action Column -->
-            <div
-                style="flex: 1.5; min-width: 220px; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+            <!-- Buttons -->
+            <div class="footer-buttons">
                 <?php if (basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == ''): ?>
-                    <a href="contact.php" class="btn-editorial-library"
-                        style="background: var(--gold); color: #000; padding: 1.2rem 2rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; width: 100%; text-align: center; display: inline-block;">BOOK
-                        AN APPOINTMENT</a>
+                    <a href="contact.php"
+                        style="background: transparent; color: var(--gold); border: 1px solid var(--gold); padding: 1.2rem 2rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; width: 100%; text-align: center; display: inline-block; text-decoration: none; text-transform: uppercase; transition: all 0.3s;"
+                        onmouseover="this.style.background='var(--gold)'; this.style.color='#000';"
+                        onmouseout="this.style.background='transparent'; this.style.color='var(--gold)';">
+                        Book a Meeting
+                    </a>
                 <?php endif; ?>
-                <a href="store.php" class="btn-editorial-library"
-                    style="background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 1.2rem 2rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; width: 100%; text-align: center; display: inline-block; transition: all 0.3s;"
-                    onmouseover="this.style.borderColor='var(--gold)'; this.style.color='var(--gold)';"
-                    onmouseout="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.color='#fff';">VISIT OUR
-                    LIBRARY</a>
+                <a href="store.php"
+                    style="background: transparent; color: var(--gold); border: 1px solid var(--gold); padding: 1.2rem 2rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; width: 100%; text-align: center; display: inline-block; text-decoration: none; text-transform: uppercase; transition: all 0.3s;"
+                    onmouseover="this.style.background='var(--gold)'; this.style.color='#000';"
+                    onmouseout="this.style.background='transparent'; this.style.color='var(--gold)';">
+                    Visit our Library
+                </a>
             </div>
 
         </div>
