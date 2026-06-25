@@ -18,10 +18,10 @@ $status = $_GET['status'] ?? null;
             <div class="book-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none;">
+                        style="margin-bottom: 0.5rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none;">
                         Featured Work</div>
 
-                    <div class="flip-card" style="margin-bottom: 1rem;">
+                    <div class="flip-card" style="margin-bottom: 0.5rem;">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>"
@@ -64,10 +64,10 @@ $status = $_GET['status'] ?? null;
             <div class="author-side">
                 <div class="card-wrapper">
                     <div class="side-tag"
-                        style="margin-bottom: 1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none;">
+                        style="margin-bottom: 0.5rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none;">
                         The Author</div>
 
-                    <div class="flip-card" style="margin-bottom: 1rem;">
+                    <div class="flip-card" style="margin-bottom: 0.5rem;">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <img src="assets/author main.jpg" alt="Manuj Mittal"

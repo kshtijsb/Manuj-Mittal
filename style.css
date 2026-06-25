@@ -1284,7 +1284,7 @@ nav {
         align-items: center;
         justify-content: space-between;
         text-align: center;
-        padding: clamp(1.5rem, 3vw, 2.5rem);
+        padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem);
     }
 
     /* Flip Card */
