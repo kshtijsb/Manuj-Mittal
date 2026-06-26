@@ -70,7 +70,7 @@ $status = $_GET['status'] ?? null;
                     <div class="flip-card" style="margin-bottom: 0.5rem;">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="assets/author main.jpg" alt="Manuj Mittal"
+                                <img src="assets/author_main_web.jpg" alt="Manuj Mittal"
                                     style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                             </div>
 
@@ -224,7 +224,7 @@ $status = $_GET['status'] ?? null;
         <!-- Apple Executive Mobile Hero -->
         <div class="hero-mobile">
 
-            <img src="assets/author main.jpg" alt="Manuj Mittal" class="hero-mobile-portrait">
+            <img src="assets/author_main_web.jpg" alt="Manuj Mittal" class="hero-mobile-portrait">
             <h1 class="hero-mobile-title">Manuj Mittal.</h1>
             <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into
                 thought-provoking narratives.</p>
@@ -479,9 +479,7 @@ $status = $_GET['status'] ?? null;
                             <div class="timeline-marquee-track">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final1.jpg" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final2.JPG" alt="Rotaract">
-                                <img src="assets/Rise%20in%20Rotaract/0_Final3%20%28Add%20to%20top%20left%20corner%29.jpg"
-                                    alt="Rotaract">
-                                <img src="assets/Rise%20in%20Rotaract/0_Final3.JPG" alt="Rotaract">
+                                <img src="assets/Rise%20in%20Rotaract/0_FInal3.jpg" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final4.JPG" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final5.JPG" alt="Rotaract">
                                 <img src="assets/Rise%20in%20Rotaract/0_Final6.JPG" alt="Rotaract">
@@ -539,7 +537,7 @@ $status = $_GET['status'] ?? null;
                                 <img src="assets/Rise%20in%20Rotary/0_Final1.JPG" alt="Rotary">
                                 <img src="assets/Rise%20in%20Rotary/0_Final2.JPG" alt="Rotary">
                                 <img src="assets/Rise%20in%20Rotary/0_Final3.JPG" alt="Rotary">
-                                <img src="assets/Rise%20in%20Rotary/0_Final4.jpg" alt="Rotary">
+                                <img src="assets/Rise%20in%20Rotary/0_Final4%20-%20Edited.jpg" alt="Rotary">
                                 <img src="assets/Rise%20in%20Rotary/0_Final5.JPG" alt="Rotary">
                                 <img src="assets/Rise%20in%20Rotary/0_Final6.JPG" alt="Rotary">
                             </div>
@@ -550,7 +548,7 @@ $status = $_GET['status'] ?? null;
                         <ul class="timeline-list">
                             <li>Rotaract Representative - RI Assembly, USA 2020</li>
                             <li>Chairman - Rotasia (Youth Conference), Delhi 2020</li>
-                            <li>Speaker at International Pre-Convention <br>(USA 2017, Canada 2018, Germany 2019)</li>
+                            <li>Speaker at International Conventions <br>(USA 2017, Canada 2018, Germany 2019)</li>
                             <li>Paul Harris Fellow (PHF) - Rotary International</li>
                         </ul>
                     </div>

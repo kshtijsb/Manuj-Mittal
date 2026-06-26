@@ -1,83 +1,259 @@
-<footer
-    style="text-align: left; position: relative; z-index: 10; background-color: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px;">
-    <div class="container-fluid"
-        style="width: 100%; margin: 0 auto; padding: 3.5rem 4vw 1rem; background-color: transparent;">
+<style>
+    /* Footer Base Styles */
+    .footer-wrapper {
+        text-align: left;
+        position: relative;
+        z-index: 10;
+        background-color: #050505;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+    .footer-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 3.5rem 4vw 1rem;
+        background-color: transparent;
+    }
+    
+    /* Layout */
+    .footer-main-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .footer-left {
+        flex: 1;
+        min-width: 300px;
+    }
+    .footer-signature {
+        line-height: 1;
+        margin: 0;
+        font-size: clamp(3rem, 7vw, 5rem);
+        font-family: 'Times New Roman', Times, serif;
+        color: var(--gold);
+        white-space: nowrap;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+    .footer-right {
+        flex: 1;
+        min-width: 300px;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: -1rem;
+    }
+    
+    /* Buttons */
+    .footer-btn-group {
+        display: flex;
+        gap: 1.5rem;
+        width: 100%;
+    }
+    .footer-btn {
+        flex: 1;
+        background: var(--gold);
+        color: #000 !important;
+        border: 1px solid var(--gold);
+        padding: 1.2rem 1rem;
+        font-size: 0.85rem;
+        border-radius: 4px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: var(--font-sans);
+        word-spacing: 0.25em;
+        letter-spacing: 1px;
+    }
+    
+    /* Meta (Location & Socials) */
+    .footer-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        width: 100%;
+    }
+    .footer-location {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .footer-location span {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        font-weight: bold;
+        color: var(--gold);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    .footer-socials {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    .footer-social-glow {
+        color: var(--gold) !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none !important;
+    }
+    .footer-social-glow svg {
+        transition: all 0.3s ease;
+    }
+    .footer-social-glow:hover svg {
+        filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.9));
+        transform: scale(1.15);
+    }
+    
+    /* Legal Section */
+    .footer-legal-row {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .footer-copyright {
+        font-size: 0.75rem;
+        color: var(--muted);
+        letter-spacing: 2px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    .footer-legal-links {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+    .footer-legal-link {
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-decoration: none;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: color 0.3s;
+    }
+    .footer-legal-link:hover {
+        color: var(--gold);
+    }
+
+    /* Tablet Redesign */
+    @media (max-width: 1100px) and (min-width: 769px) {
+        .footer-main-row {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+        .footer-left {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .footer-right {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 0;
+            align-items: center;
+        }
+        .footer-meta-row {
+            justify-content: center;
+        }
+    }
+
+    /* Mobile Redesign */
+    @media (max-width: 768px) {
+        .footer-main-row {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+        .footer-left {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .footer-right {
+            min-width: 100%;
+            max-width: 100%;
+            margin-top: 0;
+            align-items: center;
+        }
+        .footer-btn-group {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .footer-meta-row {
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .footer-location {
+            justify-content: center;
+        }
+        .footer-legal-row {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 1rem;
+        }
+        .footer-legal-links {
+            justify-content: center;
+            gap: 1rem;
+        }
+    }
+</style>
+
+<footer class="footer-wrapper">
+    <div class="footer-container">
 
         <!-- Main Footer Content -->
-        <!-- Main Footer Content -->
-        <div
-            style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem;">
+        <div class="footer-main-row">
 
             <!-- Left Side: Signature -->
-            <div style="flex: 1; min-width: 300px;">
+            <div class="footer-left">
                 <a href="index.php" style="text-decoration: none; display: inline-block;">
-                    <div class="author-signature"
-                        style="line-height: 1; margin: 0; font-size: clamp(3rem, 7vw, 5rem); color: var(--gold); white-space: nowrap; opacity: 1 !important; transition: none !important;">
-                        Manuj Mittal</div>
+                    <div class="author-signature footer-signature">Manuj Mittal</div>
                 </a>
             </div>
 
             <!-- Right Side: Buttons & Based In -->
-            <div
-                style="flex: 1; min-width: 300px; max-width: 600px; display: flex; flex-direction: column; gap: 1.5rem; margin-top: -1rem;">
+            <div class="footer-right">
 
                 <!-- Buttons (Stretched) -->
-                <div style="display: flex; gap: 1.5rem; width: 100%;">
-                        <a href="contact.php"
-                            style="flex: 1; background: var(--gold); color: #000 !important; border: 1px solid var(--gold); padding: 1.2rem 1rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; text-align: center; text-decoration: none; text-transform: uppercase; font-family: var(--font-sans); word-spacing: 0.25em; letter-spacing: 1px;">
-                            Book a Meeting
-                        </a>
-                    <a href="store.php"
-                        style="flex: 1; background: var(--gold); color: #000 !important; border: 1px solid var(--gold); padding: 1.2rem 1rem; font-size: 0.85rem; border-radius: 4px; font-weight: bold; text-align: center; text-decoration: none; text-transform: uppercase; font-family: var(--font-sans); word-spacing: 0.25em; letter-spacing: 1px;">
-                        Visit our Library
-                    </a>
+                <div class="footer-btn-group">
+                    <a href="contact.php" class="footer-btn">Book a Meeting</a>
+                    <a href="store.php" class="footer-btn">Visit our Library</a>
                 </div>
 
                 <!-- Based In & Socials (Under Buttons) -->
-                <div
-                    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 1.5rem; width: 100%;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <span
-                            style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0;">
-                            Based In
-                        </span>
-                        <span
-                            style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0;">
-                            New York, USA
-                        </span>
+                <div class="footer-meta-row">
+                    <div class="footer-location">
+                        <span>Based In</span>
+                        <span>New York, USA</span>
                     </div>
 
-                    <div style="display: flex; gap: 1rem; align-items: center;">
-                        <style>
-                            .footer-social-glow {
-                                color: var(--gold) !important;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                text-decoration: none !important;
-                            }
-
-                            .footer-social-glow svg {
-                                transition: all 0.3s ease;
-                            }
-
-                            .footer-social-glow:hover svg {
-                                filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.9));
-                                transform: scale(1.15);
-                            }
-                        </style>
-                        <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-                            target="_blank" aria-label="LinkedIn" class="footer-social-glow">
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" aria-label="LinkedIn" class="footer-social-glow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3.5 15.5H6.38V9.82h2.12v7.68zm-1.06-8.73h-.01c-.71 0-1.17-.49-1.17-1.1 0-.62.48-1.1 1.2-1.1.72 0 1.17.48 1.18 1.1 0 .61-.47 1.1-1.2 1.1zm9.44 8.73h-2.12v-4.11c0-1.03-.37-1.74-1.29-1.74-.71 0-1.13.48-1.32.94-.07.17-.09.41-.09.66v4.25h-2.12s.03-6.96 0-7.68h2.12v1.09c.28-.43.78-1.04 1.89-1.04 1.38 0 2.42.91 2.42 2.85v4.78z" />
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3.5 15.5H6.38V9.82h2.12v7.68zm-1.06-8.73h-.01c-.71 0-1.17-.49-1.17-1.1 0-.62.48-1.1 1.2-1.1.72 0 1.17.48 1.18 1.1 0 .61-.47 1.1-1.2 1.1zm9.44 8.73h-2.12v-4.11c0-1.03-.37-1.74-1.29-1.74-.71 0-1.13.48-1.32.94-.07.17-.09.41-.09.66v4.25h-2.12s.03-6.96 0-7.68h2.12v1.09c.28-.43.78-1.04 1.89-1.04 1.38 0 2.42.91 2.42 2.85v4.78z" />
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
-                            aria-label="Instagram" class="footer-social-glow">
+                        <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank" aria-label="Instagram" class="footer-social-glow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.32 14.5c0 .66-.54 1.2-1.2 1.2H8.88c-.66 0-1.2-.54-1.2-1.2V9.5c0-.66.54-1.2 1.2-1.2h7.24c.66 0 1.2.54 1.2 1.2v7zM12 10.3c-1.49 0-2.7 1.21-2.7 2.7s1.21 2.7 2.7 2.7 2.7-1.21 2.7-2.7-1.21-2.7-2.7-2.7zm0 4.2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm2.8-3.7c-.33 0-.6-.27-.6-.6s.27-.6.6-.6.6.27.6.6-.27.6-.6.6z" />
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.32 14.5c0 .66-.54 1.2-1.2 1.2H8.88c-.66 0-1.2-.54-1.2-1.2V9.5c0-.66.54-1.2 1.2-1.2h7.24c.66 0 1.2.54 1.2 1.2v7zM12 10.3c-1.49 0-2.7 1.21-2.7 2.7s1.21 2.7 2.7 2.7 2.7-1.21 2.7-2.7-1.21-2.7-2.7-2.7zm0 4.2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm2.8-3.7c-.33 0-.6-.27-.6-.6s.27-.6.6-.6.6.27.6.6-.27.6-.6.6z" />
                             </svg>
                         </a>
                     </div>
@@ -86,25 +262,14 @@
         </div>
 
         <!-- Bottom Section: Legal & Copyright -->
-        <div
-            style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
-            <p
-                style="font-size: 0.75rem; color: var(--muted); letter-spacing: 2px; margin: 0; text-transform: uppercase;">
+        <div class="footer-legal-row">
+            <p class="footer-copyright">
                 &copy; <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>. ALL STORIES RESERVED.
             </p>
-            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                <a href="privacy.php"
-                    style="font-size: 0.7rem; color: var(--muted); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s;"
-                    onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--muted)';">Privacy
-                    Policy</a>
-                <a href="terms.php"
-                    style="font-size: 0.7rem; color: var(--muted); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s;"
-                    onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--muted)';">Terms of
-                    Service</a>
-                <a href="cookies.php"
-                    style="font-size: 0.7rem; color: var(--muted); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s;"
-                    onmouseover="this.style.color='var(--gold)';" onmouseout="this.style.color='var(--muted)';">Cookie
-                    Policy</a>
+            <div class="footer-legal-links">
+                <a href="privacy.php" class="footer-legal-link">Privacy Policy</a>
+                <a href="terms.php" class="footer-legal-link">Terms of Service</a>
+                <a href="cookies.php" class="footer-legal-link">Cookie Policy</a>
             </div>
         </div>
 
@@ -114,19 +279,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-
-        // Theme Toggle Logic
-        const themeBtn = document.createElement('div');
-        themeBtn.className = 'theme-toggle';
-        themeBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18z M12,8c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4S14.2,8,12,8z M12,4V2 M12,22v-2 M17.7,6.3l1.4-1.4 M4.9,19.1l1.4-1.4 M20,12h2 M2,12h2 M17.7,17.7l1.4,1.4 M4.9,4.9l1.4,1.4" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
-        document.body.appendChild(themeBtn);
-
-        themeBtn.onclick = () => {
-            const body = document.documentElement;
-            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        };
 
         // Stat Counter Animation
         const animateStats = () => {

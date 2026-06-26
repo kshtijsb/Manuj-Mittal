@@ -55,6 +55,18 @@
   box-sizing: border-box;
 }
 
+/* Fluid Element Scaling on Desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  html {
+    font-size: calc(100vw / 90);
+  }
+}
+@media (min-width: 1441px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 html, body {
   background-image: 
     radial-gradient(circle at center, var(--color-bg-center) 0%, var(--color-bg-edge) 100%),

@@ -6,6 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
     <title><?php echo $page_title ?? "Manuj Mittal | Storyteller"; ?></title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Manuj Mittal | Storyteller, Author & Leader">
+    <meta name="description" content="Explore the legacy of Manuj Mittal – Published Author, Doctorate Researcher, Financial Services Provider, and Global Community Leader.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manujmittal.com/">
+    <meta property="og:title" content="Manuj Mittal | Storyteller, Author & Leader">
+    <meta property="og:description" content="Explore the legacy of Manuj Mittal – Published Author, Doctorate Researcher, Financial Services Provider, and Global Community Leader.">
+    <meta property="og:image" content="https://manujmittal.com/assets/author_main_web.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://manujmittal.com/">
+    <meta property="twitter:title" content="Manuj Mittal | Storyteller, Author & Leader">
+    <meta property="twitter:description" content="Explore the legacy of Manuj Mittal – Published Author, Doctorate Researcher, Financial Services Provider, and Global Community Leader.">
+    <meta property="twitter:image" content="https://manujmittal.com/assets/author_main_web.jpg">
+
+    <!-- Google Analytics 4 (Placeholder) -->
+    <!-- TODO: Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000000'/%3E%3Ctext x='50%25' y='65%25' font-family='Cormorant Garamond, Georgia, serif' font-size='52' font-weight='bold' fill='%23c5a059' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E">
@@ -64,7 +94,7 @@
                     <li class="hide-on-mobile"><a href="index.php">Home</a></li>
 
                     <li class="nav-dropdown-wrapper hide-on-mobile">
-                        <a href="index.php#about" class="dropdown-trigger">About MJ <svg class="dropdown-arrow"
+                        <a href="index.php#about" class="dropdown-trigger">About <span style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em;">MJ</span> <svg class="dropdown-arrow"
                                 width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M1 1l4 4 4-4" />
@@ -76,7 +106,7 @@
                         </ul>
                     </li>
 
-                    <li class="show-on-mobile" style="display: none;"><a href="biography.php">About MJ</a></li>
+                    <li class="show-on-mobile" style="display: none;"><a href="biography.php">About <span style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em;">MJ</span></a></li>
 
                     <li class="hide-on-mobile"><a href="store.php">Books</a></li>
 
