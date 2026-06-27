@@ -310,7 +310,7 @@ include 'components/header.php';
                                 <a href="<?php echo $book['amazon_url']; ?>" target="_blank" class="btn-buy" style="display: block; width: 100%; max-width: 400px; text-align: center; text-decoration: none; box-sizing: border-box;">BUY ON AMAZON</a>
                             <?php endif; ?>
                         <?php else: ?>
-                            <a href="index.php#contact" class="join-waitlist-btn">INQUIRE FOR RELEASE</a>
+                            <a href="index#contact" class="join-waitlist-btn">INQUIRE FOR RELEASE</a>
                         <?php endif; ?>
                     </div>
                 </div>

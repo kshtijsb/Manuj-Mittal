@@ -224,7 +224,7 @@
 
             <!-- Left Side: Signature -->
             <div class="footer-left">
-                <a href="index.php" style="text-decoration: none; display: inline-block;">
+                <a href="index" style="text-decoration: none; display: inline-block;">
                     <div class="author-signature footer-signature">Manuj Mittal</div>
                 </a>
             </div>
@@ -234,8 +234,8 @@
 
                 <!-- Buttons (Stretched) -->
                 <div class="footer-btn-group">
-                    <a href="contact.php" class="footer-btn">Book a Meeting</a>
-                    <a href="store.php" class="footer-btn">Visit our Library</a>
+                    <a href="contact" class="footer-btn">Book a Meeting</a>
+                    <a href="store" class="footer-btn">Visit our Library</a>
                 </div>
 
                 <!-- Based In & Socials (Under Buttons) -->
@@ -267,9 +267,9 @@
                 &copy; <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>. ALL STORIES RESERVED.
             </p>
             <div class="footer-legal-links">
-                <a href="privacy.php" class="footer-legal-link">Privacy Policy</a>
-                <a href="terms.php" class="footer-legal-link">Terms of Service</a>
-                <a href="cookies.php" class="footer-legal-link">Cookie Policy</a>
+                <a href="privacy" class="footer-legal-link">Privacy Policy</a>
+                <a href="terms" class="footer-legal-link">Terms of Service</a>
+                <a href="cookies" class="footer-legal-link">Cookie Policy</a>
             </div>
         </div>
 
@@ -416,14 +416,14 @@
     });
 </script>
 <nav class="mobile-bottom-nav">
-    <a href="index.php" class="mobile-nav-item">
+    <a href="index" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
             <polyline points="9 22 9 12 15 12 15 22"></polyline>
         </svg>
         <span>Home</span>
     </a>
-    <a href="index.php#about" class="mobile-nav-item">
+    <a href="index#about" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
             <polyline points="2 17 12 22 22 17"></polyline>
@@ -431,7 +431,7 @@
         </svg>
         <span>About MJ</span>
     </a>
-    <a href="contact.php" class="mobile-nav-item">
+    <a href="contact" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
@@ -532,7 +532,7 @@
 <div id="cookie-banner">
     <div class="cookie-text">
         We use cookies to enhance your browsing experience and analyze site traffic.<br>
-        By continuing to use our site, you agree to our <a href="cookies.php">Cookie Policy</a>.
+        By continuing to use our site, you agree to our <a href="cookies">Cookie Policy</a>.
     </div>
     <div class="cookie-buttons">
         <button class="btn-decline" id="btn-decline">Decline</button>

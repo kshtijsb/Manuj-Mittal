@@ -45,7 +45,7 @@ $status = $_GET['status'] ?? null;
                                     <strong>Leadership</strong>, <strong>Growth</strong>, and
                                     <strong>Integrity</strong>.
                                 </p>
-                                <a href="store.php"
+                                <a href="store"
                                     style="font-family: var(--font-sans); background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">ORDER
                                     NOW</a>
                             </div>
@@ -86,7 +86,7 @@ $status = $_GET['status'] ?? null;
                                     Manuj Mittal (MJ) is a writer and youth leader dedicated to advancing youth
                                     development through modern management thinking. He distills complex challenges into
                                     thought-provoking conversations.</p>
-                                <a href="biography.php"
+                                <a href="biography"
                                     style="font-family: var(--font-sans); background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">FULL
                                     BIOGRAPHY</a>
                             </div>
@@ -230,8 +230,8 @@ $status = $_GET['status'] ?? null;
                 thought-provoking narratives.</p>
 
             <div class="hero-mobile-buttons">
-                <a href="biography.php" class="btn-apple-primary">Read Full Story</a>
-                <a href="store.php" class="btn-apple-secondary">The New Book</a>
+                <a href="biography" class="btn-apple-primary">Read Full Story</a>
+                <a href="store" class="btn-apple-secondary">The New Book</a>
             </div>
         </div>
     </section>
@@ -243,7 +243,7 @@ $status = $_GET['status'] ?? null;
         <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="cinematic-book-cover">
         <h2 class="cinematic-title no-split"><?php echo $books[0]['title']; ?></h2>
         <p class="cinematic-subtitle">Featured work</p>
-        <a href="store.php" class="btn-cinematic">Order Now</a>
+        <a href="store" class="btn-cinematic">Order Now</a>
     </section>
 
     <!-- Executive Mobile Layout Logic -->
@@ -259,7 +259,7 @@ $status = $_GET['status'] ?? null;
 
         <div class="about-pillars">
             <!-- Education: Blue -->
-            <a href="education.php" class="pillar-card reveal pillar-edu"
+            <a href="education" class="pillar-card reveal pillar-edu"
                 style="--theme-color: #0047AB; border-top: 12px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
@@ -296,7 +296,7 @@ $status = $_GET['status'] ?? null;
             </a>
 
             <!-- Profession: Red -->
-            <a href="professional.php" class="pillar-card reveal pillar-prof"
+            <a href="professional" class="pillar-card reveal pillar-prof"
                 style="--theme-color: #C41E3A; border-top: 12px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
@@ -325,7 +325,7 @@ $status = $_GET['status'] ?? null;
             </a>
 
             <!-- Social Responsibility: Green -->
-            <a href="social-responsibility.php" class="pillar-card reveal pillar-social"
+            <a href="social-responsibility" class="pillar-card reveal pillar-social"
                 style="--theme-color: #2E8B57; border-top: 12px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 

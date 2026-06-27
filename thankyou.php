@@ -106,7 +106,7 @@ $order_id = $_GET['orderID'] ?? 'MNJ-' . strtoupper(bin2hex(random_bytes(4)));
             </div>
         </div>
 
-        <a href="index.php" class="return-link">Return to Home</a>
+        <a href="index" class="return-link">Return to Home</a>
     </div>
 </main>
 
