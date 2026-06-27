@@ -7,13 +7,14 @@ include 'components/header.php';
 
 
 <style>
-    .store-hero { 
+    .store-hero {
         position: relative;
-        text-align: center; 
-        padding: 8vh 0 2vh; 
-        background: #fff; 
+        text-align: center;
+        padding: 8vh 0 2vh;
+        background: #fff;
         overflow: hidden;
     }
+
     .store-hero::before {
         content: '';
         position: absolute;
@@ -26,18 +27,22 @@ include 'components/header.php';
         filter: blur(40px);
         z-index: 0;
     }
-    .store-hero h1, .store-hero p {
+
+    .store-hero h1,
+    .store-hero p {
         position: relative;
         z-index: 1;
     }
-    .store-hero h1 { 
-        font-family: 'Times New Roman', Times, serif; 
-        font-size: clamp(2.5rem, 5vw, 4rem); 
-        margin-bottom: 1rem; 
-        color: #000; 
+
+    .store-hero h1 {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        margin-bottom: 1rem;
+        color: #000;
         text-transform: none;
         line-height: 1.1;
     }
+
     .store-hero p {
         font-family: var(--font-sans);
         color: #555;
@@ -46,56 +51,97 @@ include 'components/header.php';
         font-size: 0.9rem;
         font-weight: bold;
     }
-    
-    .product-grid { display: flex; flex-direction: column; gap: 10vh; padding-bottom: 15vh; }
-    .product-item { 
-        display: grid; 
-        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); 
-        gap: 6rem; 
-        align-items: start; 
+
+    .product-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10vh;
+        padding-bottom: 15vh;
+    }
+
+    .product-item {
+        display: grid;
+        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+        gap: 6rem;
+        align-items: start;
         padding: 5rem;
         background: #fff;
         border-radius: 16px;
-        border: 1px solid rgba(0,0,0,0.06);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.04);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
         transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     }
-    .product-item:hover { 
-        transform: translateY(-5px); 
-        box-shadow: 0 40px 100px rgba(0,0,0,0.08); 
+
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
     }
 
-    .book-spotlight { 
-        position: relative; 
-        width: 100%; 
+    .book-spotlight {
+        position: relative;
+        width: 100%;
         max-width: 380px;
         margin: 0;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
         border-radius: 6px;
         overflow: hidden;
     }
-    .book-art { width: 100%; height: auto; display: block; border: 2px solid var(--color-gold); }
 
-    .product-info h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 1.5rem; color: #000; font-family: 'Times New Roman', Times, serif; line-height: 1.1; white-space: nowrap; letter-spacing: -1px; }
-    .product-meta { font-size: 0.8rem; font-weight: 800; color: var(--color-gold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 2rem; font-family: var(--font-sans); }
-    .product-desc { font-size: 1.15rem; color: #555; margin-bottom: 1.5rem; line-height: 1.8; font-family: var(--font-sans); }
+    .book-art {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 2px solid var(--color-gold);
+    }
 
-    .btn-buy { 
-        background: #000; 
-        color: #fff; 
-        padding: 1.2rem 4rem; 
-        border: none; 
-        border-radius: 50px;
-        font-weight: 700; 
-        letter-spacing: 2px; 
-        text-transform: uppercase; 
-        font-size: 0.9rem; 
-        cursor: pointer; 
+    .product-info h2 {
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        margin-bottom: 1.5rem;
+        color: #000;
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1.1;
+        white-space: nowrap;
+        letter-spacing: -1px;
+    }
+
+    .product-meta {
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: var(--color-gold);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        font-family: var(--font-sans);
+    }
+
+    .product-desc {
+        font-size: 1.15rem;
+        color: #555;
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-family: var(--font-sans);
+    }
+
+    .btn-buy {
+        background: #000;
+        color: #fff;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 0;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        cursor: pointer;
         transition: 0.4s;
         display: inline-block;
         font-family: var(--font-sans);
     }
-    .btn-buy:hover { background: var(--color-gold); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3); color: #fff;}
+
+    .btn-buy:hover {
+        background: var(--color-gold);
+        color: #000;
+    }
 
     .buy-action {
         display: flex;
@@ -127,9 +173,11 @@ include 'components/header.php';
         gap: 1rem;
         margin-bottom: 1rem;
     }
+
     .format-btn:nth-child(3):last-child {
         grid-column: 1 / -1;
     }
+
     .format-btn {
         background: #fafafa;
         border: 2px solid transparent;
@@ -145,21 +193,26 @@ include 'components/header.php';
         gap: 0.4rem;
         user-select: none;
     }
+
     .format-btn:hover:not(.disabled) {
         background: #f0f0f0;
     }
+
     .format-btn.active {
         background: #fff;
         border-color: #000;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     }
+
     .format-btn.active .format-title {
         color: #000;
     }
+
     .format-btn.active .format-price {
         color: #000;
         font-weight: bold;
     }
+
     .format-title {
         font-family: var(--font-sans);
         font-weight: 700;
@@ -169,6 +222,7 @@ include 'components/header.php';
         color: #777;
         transition: color 0.3s;
     }
+
     .format-price {
         font-family: var(--font-sans);
         font-weight: 500;
@@ -176,6 +230,7 @@ include 'components/header.php';
         color: #999;
         transition: color 0.3s;
     }
+
     .format-btn.disabled {
         opacity: 0.5;
         cursor: not-allowed;
@@ -183,18 +238,21 @@ include 'components/header.php';
 
     .join-waitlist-btn {
         background: #000;
-        color: white;
-        padding: 1.2rem 4rem;
-        border-radius: 50px;
+        color: #fff;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 0;
         font-weight: 700;
-        text-decoration: none;
-        font-size: 0.9rem;
         letter-spacing: 2px;
+        font-size: 0.8rem;
+        cursor: pointer;
         transition: 0.4s;
-        text-align: center;
+        display: inline-block;
+        text-decoration: none;
         font-family: var(--font-sans);
         text-transform: uppercase;
     }
+
     .join-waitlist-btn:hover {
         background: var(--color-gold);
         transform: translateY(-3px);
@@ -202,23 +260,55 @@ include 'components/header.php';
     }
 
     @media (max-width: 1024px) {
-        .product-item { grid-template-columns: 1fr; gap: 4rem; padding: 3rem; text-align: center; }
-        .book-spotlight { max-width: 320px; }
-        .buy-action { align-items: center; }
-        .price-tag { justify-content: center; }
-        .format-btn-grid { width: 100%; max-width: 400px; }
+        .product-item {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .book-spotlight {
+            max-width: 320px;
+        }
+
+        .buy-action {
+            align-items: center;
+        }
+
+        .price-tag {
+            justify-content: center;
+        }
+
+        .format-btn-grid {
+            width: 100%;
+            max-width: 400px;
+        }
     }
+
     @media (max-width: 768px) {
-        .store-hero { padding: 15vh 1.5rem 8vh; }
-        .product-grid { gap: 6vh; padding-bottom: 8vh; }
-        .product-item { padding: 2rem; border-radius: 12px; }
-        .format-btn-grid { grid-template-columns: 1fr; }
+        .store-hero {
+            padding: 15vh 1.5rem 8vh;
+        }
+
+        .product-grid {
+            gap: 6vh;
+            padding-bottom: 8vh;
+        }
+
+        .product-item {
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .format-btn-grid {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
 <main class="container">
     <div class="store-hero">
-        <h1>The Literary Store</h1>
+        <h1>The Library</h1>
         <p>Acquire your own piece of the legend.</p>
     </div>
 
@@ -227,8 +317,28 @@ include 'components/header.php';
             <div class="product-item reveal">
                 <div class="book-spotlight">
                     <?php if ($book['status'] === 'coming-soon'): ?>
-                        <div style="background: #000; height: 450px; display: flex; align-items: center; justify-content: center;">
-                            <div style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-gold); letter-spacing: 4px; border: 2px solid var(--color-gold); padding: 1.5rem; transform: rotate(-10deg);">COMING SOON</div>
+                        <div
+                            style="background: linear-gradient(135deg, #fdfdfd 0%, #e6e6e6 100%); height: 450px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc; border-radius: 5px 15px 15px 5px; position: relative; padding: 2rem; text-align: center; box-sizing: border-box; box-shadow: inset 20px 0 30px rgba(0,0,0,0.08), inset 2px 0 5px rgba(255,255,255,1), 1px 0 0 #eee, 2px 0 0 #e5e5e5, 3px 0 0 #ddd, 4px 0 0 #d5d5d5, 5px 0 0 #ccc, 6px 0 0 #c5c5c5, 20px 20px 40px rgba(0,0,0,0.2);">
+
+                            <!-- Premium Spine effect -->
+                            <div
+                                style="position: absolute; left: 0; top: 0; bottom: 0; width: 35px; background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.0) 40%, rgba(255,255,255,0.6) 70%, rgba(0,0,0,0.08) 100%); border-right: 1px solid rgba(0,0,0,0.05); border-radius: 4px 0 0 4px; z-index: 1;">
+                            </div>
+
+                            <!-- Gold border inset framing -->
+                            <div
+                                style="position: absolute; left: 45px; top: 15px; right: 15px; bottom: 15px; border: 2px solid var(--color-gold); opacity: 0.6; pointer-events: none; border-radius: 4px; z-index: 1;">
+                            </div>
+
+                            <h3
+                                style="position: relative; z-index: 2; font-family: 'Times New Roman', Times, serif; font-size: 2.8rem; color: #111; margin-bottom: 4rem; margin-top: -3rem; line-height: 1.1; text-shadow: 1px 1px 0 rgba(255,255,255,0.8); max-width: 80%; text-align: center;">
+                                <?php echo $book['title']; ?>
+                            </h3>
+
+                            <!-- Original styled coming soon, just moved lower -->
+                            <div
+                                style="position: absolute; z-index: 3; bottom: 5.5rem; left: calc(50% + 15px); font-family: var(--font-serif); font-size: 1.3rem; color: #000; font-weight: bold; letter-spacing: 4px; padding: 0.5rem 1rem; border: 2px solid #000; transform: translateX(-50%) rotate(-10deg); white-space: nowrap;">
+                                COMING SOON</div>
                         </div>
                     <?php else: ?>
                         <img src="<?php echo $book['image']; ?>" alt="<?php echo $book['title']; ?>" class="book-art">
@@ -241,40 +351,48 @@ include 'components/header.php';
                     <div class="buy-action">
                         <?php if ($book['status'] === 'available' && isset($book['formats'])): ?>
                             <div class="format-selection">
-                                <label style="display: block; font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; color: #999; margin-bottom: 1.5rem; text-transform: uppercase;">Choose Edition</label>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; color: #999; margin-bottom: 1.5rem; text-transform: uppercase;">Choose
+                                    Edition</label>
                                 <div class="format-btn-grid" id="format-grid-<?php echo $book['id']; ?>">
-                                    <?php 
+                                    <?php
                                     $first = true;
                                     $count = 0;
-                                    foreach($book['formats'] as $key => $f): 
+                                    foreach ($book['formats'] as $key => $f):
                                         $count++;
                                         $activeClass = $first ? 'active' : '';
-                                    ?>
-                                        <div class="format-btn <?php echo $activeClass; ?>" onclick="selectFormat('<?php echo $book['id']; ?>', this, '<?php echo $f['price']; ?>', '<?php echo htmlspecialchars($f['label'], ENT_QUOTES); ?>', '<?php echo isset($f['url']) ? $f['url'] : (isset($book['amazon_url']) ? $book['amazon_url'] : ''); ?>')">
+                                        ?>
+                                        <div class="format-btn <?php echo $activeClass; ?>"
+                                            onclick="selectFormat('<?php echo $book['id']; ?>', this, '<?php echo $f['price']; ?>', '<?php echo htmlspecialchars($f['label'], ENT_QUOTES); ?>', '<?php echo isset($f['url']) ? $f['url'] : (isset($book['amazon_url']) ? $book['amazon_url'] : ''); ?>')">
                                             <span class="format-title"><?php echo ucfirst($key); ?></span>
                                             <span class="format-price">$<?php echo $f['price']; ?></span>
                                         </div>
-                                     <?php 
+                                        <?php
                                         $first = false;
-                                    endforeach; 
+                                    endforeach;
                                     ?>
                                 </div>
-                                <p id="format-label-<?php echo $book['id']; ?>" style="font-size: 0.8rem; color: #888; font-style: italic; margin-top: 0.5rem; min-height: 1.5rem;">
-                                    <?php 
-                                        $firstKey = array_key_first($book['formats']);
-                                        echo $book['formats'][$firstKey]['label']; 
+                                <p id="format-label-<?php echo $book['id']; ?>"
+                                    style="font-size: 0.8rem; color: #888; font-style: italic; margin-top: 0.5rem; min-height: 1.5rem;">
+                                    <?php
+                                    $firstKey = array_key_first($book['formats']);
+                                    echo $book['formats'][$firstKey]['label'];
                                     ?>
                                 </p>
                             </div>
 
                             <div class="price-tag">
-                                <span class="price" id="display-price-<?php echo $book['id']; ?>">$<?php echo $book['formats'][$firstKey]['price']; ?></span>
+                                <span class="price"
+                                    id="display-price-<?php echo $book['id']; ?>">$<?php echo $book['formats'][$firstKey]['price']; ?></span>
                             </div>
 
-                            <!-- Buy on Amazon Button -->
-                            <?php if(isset($book['amazon_url'])): ?>
+                            <!-- Buy Button -->
+                            <?php if (isset($book['amazon_url'])): ?>
                                 <?php $initialUrl = isset($book['formats'][$firstKey]['url']) ? $book['formats'][$firstKey]['url'] : $book['amazon_url']; ?>
-                                <a href="<?php echo $initialUrl; ?>" target="_blank" class="btn-buy" id="buy-btn-<?php echo $book['id']; ?>" style="display: block; width: 100%; text-align: center; text-decoration: none; box-sizing: border-box;">BUY ON AMAZON</a>
+                                <a href="<?php echo $initialUrl; ?>" target="_blank" class="btn-buy"
+                                    id="buy-btn-<?php echo $book['id']; ?>"
+                                    style="display: block; width: 100%; text-align: center; text-decoration: none; box-sizing: border-box;">ORDER
+                                    NOW</a>
                             <?php endif; ?>
 
                             <script>
@@ -283,13 +401,13 @@ include 'components/header.php';
                                     const grid = document.getElementById('format-grid-' + bookId);
                                     const buttons = grid.querySelectorAll('.format-btn');
                                     buttons.forEach(btn => btn.classList.remove('active'));
-                                    
+
                                     // Add active class to clicked button
                                     btnElement.classList.add('active');
-                                    
+
                                     // Update price and label
                                     document.getElementById('display-price-' + bookId).innerText = '$' + price;
-                                    
+
                                     const labelElement = document.getElementById('format-label-' + bookId);
                                     if (labelElement) {
                                         labelElement.innerText = label;
@@ -306,11 +424,15 @@ include 'components/header.php';
                             <div class="price-tag" style="margin-bottom: 2.5rem;">
                                 <span class="price"><?php echo $book['price'] ?? "TBD"; ?></span>
                             </div>
-                            <?php if(isset($book['amazon_url'])): ?>
-                                <a href="<?php echo $book['amazon_url']; ?>" target="_blank" class="btn-buy" style="display: block; width: 100%; max-width: 400px; text-align: center; text-decoration: none; box-sizing: border-box;">BUY ON AMAZON</a>
+                            <?php if (isset($book['amazon_url'])): ?>
+                                <a href="<?php echo $book['amazon_url']; ?>" target="_blank" class="btn-buy"
+                                    style="display: block; width: 100%; max-width: 400px; text-align: center; text-decoration: none; box-sizing: border-box;">BUY
+                                    ON AMAZON</a>
                             <?php endif; ?>
                         <?php else: ?>
-                            <a href="index#contact" class="join-waitlist-btn">INQUIRE FOR RELEASE</a>
+                            <a href="contact" class="join-waitlist-btn"
+                                style="display: block; width: 100%; text-align: center; text-decoration: none; box-sizing: border-box;">STAY
+                                TUNED FOR MORE INFORMATION</a>
                         <?php endif; ?>
                     </div>
                 </div>

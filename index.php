@@ -71,7 +71,7 @@ $status = $_GET['status'] ?? null;
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <img src="assets/author_main_web.jpg" alt="Manuj Mittal"
-                                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                                    style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center;">
                             </div>
 
                             <!-- BACK: Bio + biography link -->
@@ -865,20 +865,7 @@ $status = $_GET['status'] ?? null;
         </div>
     </section>
 
-    <!-- Visionary Quotes -->
-    <section class="quotes-section"
-        style="padding: 0; background: transparent; position: relative; overflow: hidden; display: flex; justify-content: center;">
-        <div
-            style="background: var(--gold); padding: 0.5rem 2rem; text-align: center; width: 100%; overflow: hidden; white-space: nowrap;">
-            <span
-                style="color: #000; font-family: var(--font-sans); font-size: clamp(0.6rem, 1vw, 1.2rem); font-weight: 700; letter-spacing: 1px; line-height: 1.4; display: inline-block; text-transform: uppercase;">
-                <span style="margin: 0 0.5rem; word-spacing: 0.25em;">" Let’s upskill the younger generations and
-                    empower our
-                    communities for a better and sustainable future
-                    "</span>
-            </span>
-        </div>
-    </section>
+    <!-- Visionary Quotes (Moved to footer) -->
 
 
 </main>
