@@ -1982,7 +1982,7 @@ nav {
             /* Card Content Styling */
             .timeline-content {
                 background: #fff;
-                border: 1px solid rgba(0, 0, 0, 0.06);
+                border: 1px solid var(--theme-color, var(--gold));
                 border-bottom: 12px solid var(--theme-color, var(--gold));
                 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
                 border-radius: 12px;

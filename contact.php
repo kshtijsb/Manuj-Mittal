@@ -912,7 +912,7 @@ include 'components/header.php';
                     <button class="meeting-type-btn" data-duration="60" data-label="Advisor Session"
                         onclick="selectMeetingType(this)">Advisory Session <span class="mt-badge">60
                             MIN</span></button>
-                    <button id="btn-send-msg" class="meeting-type-btn" type="button" onclick="resetScheduler()"
+                    <button id="btn-send-msg" class="meeting-type-btn" type="button" onclick="showMsgForm()"
                         style="display: flex; align-items: center; justify-content: space-between;">
                         Write a Message <span class="mt-badge" style="background: transparent; color: inherit;"><svg
                                 width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -995,7 +995,7 @@ include 'components/header.php';
 
                     <form action="https://api.web3forms.com/submit" method="POST"
                         style="display: flex; flex-direction: column; gap: 2rem;">
-                        <input type="hidden" name="access_key" value="64485f2f-6a99-4da8-8e58-ce77d9357983">
+                        <input type="hidden" name="access_key" value="b80cae60-4225-495b-9125-d3609ca825d9">
                         <input type="hidden" name="subject" value="New Inquiry from Contact Page">
                         <input type="hidden" name="_captcha" value="false">
 
@@ -1056,7 +1056,7 @@ include 'components/header.php';
 
                     <form id="sch-booking-form" action="https://api.web3forms.com/submit" method="POST"
                         style="display:flex;flex-direction:column;gap:1.5rem;">
-                        <input type="hidden" name="access_key" value="64485f2f-6a99-4da8-8e58-ce77d9357983">
+                        <input type="hidden" name="access_key" value="b80cae60-4225-495b-9125-d3609ca825d9">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="subject" id="sch-form-subject" value="New Meeting Booking">
                         <input type="hidden" name="meeting_date" id="sch-form-date">
@@ -1320,6 +1320,17 @@ include 'components/header.php';
         }
 
 
+
+
+        window.showMsgForm = function () {
+            selDate = null; selTime = null;
+            selType = null; selDur = null;
+            document.querySelectorAll('.meeting-type-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('meta-duration').textContent = '—';
+            document.getElementById('sch-success-panel').style.display = 'none';
+            schGoToStep(1);
+            renderCal();
+        };
 
         window.resetScheduler = function () {
             selDate = null; selTime = null;

@@ -4,6 +4,47 @@ $page_title = "Biography | Manuj Mittal";
 include 'components/header.php';
 ?>
 
+<style>
+    /* Back Button */
+    .cta-container {
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 36px;
+        background: #000;
+        color: var(--color-gold, #c5a059);
+        text-decoration: none;
+        border-radius: 0;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid var(--color-gold, #c5a059);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn-back:hover {
+        background: var(--color-gold, #c5a059);
+        color: #000;
+        transform: translateY(-4px);
+        box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3);
+    }
+
+    .btn-back svg {
+        transition: transform 0.3s ease;
+    }
+
+    .btn-back:hover svg {
+        transform: translateX(-4px);
+    }
+</style>
+
 <section class="biography-page" style="padding: 15vh 0; background: #fff;">
     <div class="container" style="max-width: 1000px;">
 
@@ -100,8 +141,18 @@ include 'components/header.php';
             </div>
 
 
-
         </div>
+
+        <!-- CTA -->
+        <div class="cta-container">
+            <a href="index.php" class="btn-back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
     </div>
 </section>
 

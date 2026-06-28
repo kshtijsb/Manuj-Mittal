@@ -262,7 +262,7 @@ $status = $_GET['status'] ?? null;
         <div class="about-pillars">
             <!-- Education: Blue -->
             <a href="education" class="pillar-card reveal pillar-edu"
-                style="--theme-color: #0047AB; border-top: 12px solid #0047AB; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #0047AB; border: 1px solid var(--theme-color); border-top: 12px solid var(--theme-color); position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
                 <h3
@@ -286,7 +286,7 @@ $status = $_GET['status'] ?? null;
 
             <!-- Profession: Red -->
             <a href="professional" class="pillar-card reveal pillar-prof"
-                style="--theme-color: #C41E3A; border-top: 12px solid #C41E3A; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #C41E3A; border: 1px solid var(--theme-color); border-top: 12px solid var(--theme-color); position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
                 <h3
@@ -311,7 +311,7 @@ $status = $_GET['status'] ?? null;
 
             <!-- Social Responsibility: Green -->
             <a href="social-responsibility" class="pillar-card reveal pillar-social"
-                style="--theme-color: #2E8B57; border-top: 12px solid #2E8B57; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
+                style="--theme-color: #2E8B57; border: 1px solid var(--theme-color); border-top: 12px solid var(--theme-color); position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit;">
 
 
                 <h3
@@ -382,8 +382,8 @@ $status = $_GET['status'] ?? null;
                             <li>Father is a former USA based professional, 1st generation entrepreneur (Automation
                                 Expert) in India and a <br>Past District Governor with Rotary International
                             </li>
-                            <li>Manuj was born on Jan 10, 1996 (01.10.1996)<br><span
-                                    class="numerology">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
+                            <li>Manuj was born on Jan 10, 1996 (01.10.1996) <span class="numerology"
+                                    style="margin-left: 85px;">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
                         </ul>
                     </div>
                 </div>
