@@ -175,33 +175,49 @@
     /* Mobile Redesign */
     @media (max-width: 768px) {
         .footer-container {
-            padding-bottom: 110px; /* Spacer for mobile bottom nav so we don't scroll into empty body */
+            padding-top: 4rem;
+            padding-bottom: 120px; /* Spacer for mobile bottom nav so we don't scroll into empty body */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 80vh; /* Takes up a good portion of the iPhone screen */
+            justify-content: center;
         }
         .footer-main-row {
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            gap: 1.5rem;
+            gap: 2.5rem;
+            width: 100%;
         }
         .footer-left {
             min-width: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
         .footer-signature {
             font-size: clamp(3rem, 10vw, 4rem);
             margin-bottom: 0.5rem;
+            text-align: center;
         }
         .footer-right {
             min-width: 100%;
             max-width: 100%;
+            display: flex;
+            flex-direction: column;
             margin-top: 0;
             align-items: center;
-            gap: 1rem;
+            justify-content: center;
+            gap: 2rem;
         }
         .footer-btn-group {
+            display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
             width: 100%;
         }
         .footer-btn {
@@ -213,91 +229,56 @@
             letter-spacing: 1px;
             color: #fff !important;
             width: auto;
+            text-align: center;
             text-decoration: underline;
             text-underline-offset: 4px;
             text-decoration-color: var(--gold);
         }
         .footer-meta-row {
+            display: flex;
             justify-content: center;
+            align-items: center;
             flex-direction: column;
             gap: 1.5rem;
             margin-top: 1rem;
+            width: 100%;
         }
         .footer-location {
             display: none;
         }
         .footer-legal-row {
+            display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
             gap: 1rem;
-            padding-top: 2rem;
+            padding-top: 3rem;
+            width: 100%;
         }
         .footer-legal-links {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
             gap: 1rem;
         }
     }
 </style>
 
-    <!-- Visionary Quotes -->
-    <style>
-        .quotes-section {
-            padding: 0; background: transparent; position: relative; overflow: hidden; display: flex; justify-content: center; z-index: 20;
-        }
-        .quote-bar {
-            background: var(--gold); padding: 1rem 1.5rem; text-align: center; width: 100%;
-        }
-        .marquee-track {
-            display: inline-block;
-        }
-        .quote-text {
-            color: #000; font-family: var(--font-sans); font-size: 1rem; font-weight: 800; letter-spacing: 1px; line-height: 1.5; display: inline-block; text-transform: uppercase;
-        }
-        .quote-text.copy {
-            display: none; /* Hide duplicate on desktop */
-        }
-
-        /* Mobile Continuous Marquee Override */
-        @media (max-width: 992px) {
-            .quote-bar {
-                padding: 0.4rem 0; /* Reduced height */
-                overflow: hidden;
-                white-space: nowrap;
-                display: flex;
-            }
-            .marquee-track {
-                display: flex;
-                flex-shrink: 0;
-                align-items: center;
-                animation: scrollMarquee 20s linear infinite;
-            }
-            .quote-text {
-                font-size: 0.8rem;
-                display: inline-block;
-                padding-right: 2rem; /* Gap before it repeats */
-            }
-            .quote-text.copy {
-                display: inline-block; /* Show duplicate on mobile for seamless loop */
-            }
-            @keyframes scrollMarquee {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-            }
-        }
-    </style>
-    <section class="quotes-section">
-        <div class="quote-bar">
-            <div class="marquee-track">
-                <span class="quote-text">
-                    "Let’s upskill the younger generations and empower our communities for a better and sustainable future"
-                </span>
-                <span class="quote-text copy">
-                    "Let’s upskill the younger generations and empower our communities for a better and sustainable future"
-                </span>
+    <!-- Visionary Quotes (Styled as Marquee matching Header) -->
+    <div class="header-marquee" style="position: relative; z-index: 20;">
+        <div class="header-marquee-inner">
+            <div class="header-marquee-group">
+                <span>"Let’s upskill the younger generations and empower our communities for a better and sustainable future"</span>
+                <span>"Let’s upskill the younger generations and empower our communities for a better and sustainable future"</span>
+            </div>
+            <div class="header-marquee-group" aria-hidden="true">
+                <span>"Let’s upskill the younger generations and empower our communities for a better and sustainable future"</span>
+                <span>"Let’s upskill the younger generations and empower our communities for a better and sustainable future"</span>
             </div>
         </div>
-    </section>
+    </div>
 
 <footer class="footer-wrapper">
     <div class="footer-container">
@@ -487,7 +468,7 @@
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
         </svg>
-        <span>Book</span>
+        <span>Books</span>
     </a>
     <a href="contact.php" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

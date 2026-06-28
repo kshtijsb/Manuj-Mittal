@@ -2913,7 +2913,8 @@ nav {
         box-sizing: border-box !important;
     }
     
-    .join-waitlist-btn {
+    .join-waitlist-btn,
+    .btn-buy {
         width: 100% !important;
         justify-content: center !important;
         padding: 1.2rem !important;
