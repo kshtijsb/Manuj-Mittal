@@ -239,7 +239,7 @@
 
             <!-- Left Side: Signature -->
             <div class="footer-left">
-                <a href="index" style="text-decoration: none; display: inline-block;">
+                <a href="index.php" style="text-decoration: none; display: inline-block;">
                     <div class="author-signature footer-signature">Manuj Mittal</div>
                 </a>
             </div>
@@ -249,8 +249,8 @@
 
                 <!-- Buttons (Stretched) -->
                 <div class="footer-btn-group">
-                    <a href="contact" class="footer-btn">Book a Meeting</a>
-                    <a href="store" class="footer-btn">Visit our Library</a>
+                    <a href="contact.php" class="footer-btn">Book a Meeting</a>
+                    <a href="store.php" class="footer-btn">Visit our Library</a>
                 </div>
 
                 <!-- Based In & Socials (Under Buttons) -->
@@ -400,7 +400,7 @@
     });
 </script>
 <nav class="mobile-bottom-nav">
-    <a href="index" class="mobile-nav-item">
+    <a href="index.php" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
             <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -415,7 +415,7 @@
         </svg>
         <span>About MJ</span>
     </a>
-    <a href="contact" class="mobile-nav-item">
+    <a href="contact.php" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>

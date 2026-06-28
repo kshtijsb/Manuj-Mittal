@@ -82,7 +82,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index" class="logo" style="text-decoration: none; transition: none; pointer-events: auto;">MANUJ MITTAL</a>
+                <a href="index.php" class="logo" style="text-decoration: none; transition: none; pointer-events: auto;">MANUJ MITTAL</a>
                 <button class="menu-toggle">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -91,7 +91,7 @@
                     </svg>
                 </button>
                 <ul class="nav-links">
-                    <li class="hide-on-mobile"><a href="index">Home</a></li>
+                    <li class="hide-on-mobile"><a href="index.php">Home</a></li>
 
                     <li class="nav-dropdown-wrapper hide-on-mobile">
                         <a href="index#about" class="dropdown-trigger">About <span style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em;">MJ</span> <svg class="dropdown-arrow"
@@ -100,17 +100,17 @@
                                 <path d="M1 1l4 4 4-4" />
                             </svg></a>
                         <ul class="nav-dropdown">
-                            <li><a href="education">Educational Background</a></li>
-                            <li><a href="professional">Professional Career</a></li>
-                            <li><a href="social-responsibility">Social Responsibility</a></li>
+                            <li><a href="education.php">Educational Background</a></li>
+                            <li><a href="professional.php">Professional Career</a></li>
+                            <li><a href="social-responsibility.php">Social Responsibility</a></li>
                         </ul>
                     </li>
 
-                    <li class="show-on-mobile" style="display: none;"><a href="biography">About <span style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em;">MJ</span></a></li>
+                    <li class="show-on-mobile" style="display: none;"><a href="biography.php">About <span style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em;">MJ</span></a></li>
 
-                    <li class="hide-on-mobile"><a href="store">Books</a></li>
+                    <li class="hide-on-mobile"><a href="store.php">Books</a></li>
 
-                    <li class="hide-on-mobile"><a href="contact">Contact Us</a></li>
+                    <li class="hide-on-mobile"><a href="contact.php">Contact Us</a></li>
 
                     <li class="nav-social-icons"
                         style="display: flex; gap: 15px; align-items: center; margin-left: 15px;">

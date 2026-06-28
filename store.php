@@ -308,7 +308,7 @@ include 'components/header.php';
 
 <main class="container">
     <div class="store-hero">
-        <h1>Our Library</h1>
+        <h1>Library</h1>
         <p>Acquire your own piece of the Jewel.</p>
     </div>
 

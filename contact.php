@@ -824,13 +824,13 @@ include 'components/header.php';
         padding: 0.9rem 2.2rem;
         background: #000;
         color: #fff;
-        border-radius: 50px;
+        border-radius: 0;
         font-weight: 700;
         font-size: 0.85rem;
         letter-spacing: 1px;
         transition: all 0.25s ease;
         cursor: pointer;
-        border: none;
+        border: 1px solid var(--gold);
         font-family: var(--font-sans);
     }
 
@@ -897,7 +897,7 @@ include 'components/header.php';
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                             <polyline points="22,6 12,13 2,6" />
                         </svg>
-                        <span>Confimation sent to your email <br>Zoom link to follow</span>
+                        <span>Confimation and Zoom link to be sent on you email</span>
                     </div>
                 </div>
 
@@ -986,7 +986,8 @@ include 'components/header.php';
                         style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 2rem; color: var(--text);">
                         Write a Message</h2>
 
-                    <div id="general-msg-success" style="display: none; background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
+                    <div id="general-msg-success"
+                        style="display: none; background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
                         Message sent successfully! We will get back to you soon.
                     </div>
 
@@ -995,6 +996,7 @@ include 'components/header.php';
                         <input type="hidden" name="access_key" value="768f4eff-35e7-4e1a-b6ec-d84d0862a4a0">
                         <input type="hidden" name="subject" value="New Inquiry from Contact Page">
                         <input type="hidden" name="_captcha" value="false">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                             <div class="input-group">
@@ -1055,6 +1057,7 @@ include 'components/header.php';
                         style="display:flex;flex-direction:column;gap:1.5rem;">
                         <input type="hidden" name="access_key" value="768f4eff-35e7-4e1a-b6ec-d84d0862a4a0">
                         <input type="hidden" name="_captcha" value="false">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         <input type="hidden" name="subject" id="sch-form-subject" value="New Meeting Booking">
                         <input type="hidden" name="meeting_date" id="sch-form-date">
                         <input type="hidden" name="meeting_time" id="sch-form-time">
