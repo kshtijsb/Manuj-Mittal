@@ -986,14 +986,11 @@ include 'components/header.php';
                         style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 2rem; color: var(--text);">
                         Write a Message</h2>
 
-                    <?php if (isset($_GET['success']) && $_GET['success'] == '1'): ?>
-                        <div
-                            style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
-                            Message sent successfully! We will get back to you soon.
-                        </div>
-                    <?php endif; ?>
+                    <div id="general-msg-success" style="display: none; background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
+                        Message sent successfully! We will get back to you soon.
+                    </div>
 
-                    <form action="https://api.web3forms.com/submit" method="POST"
+                    <form id="general-message-form" action="https://api.web3forms.com/submit" method="POST"
                         style="display: flex; flex-direction: column; gap: 2rem;">
                         <input type="hidden" name="access_key" value="b80cae60-4225-495b-9125-d3609ca825d9">
                         <input type="hidden" name="subject" value="New Inquiry from Contact Page">
@@ -1286,6 +1283,30 @@ include 'components/header.php';
         };
 
         /* ── Form submit ──────────────────────────────────────── */
+        document.getElementById('general-message-form')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = 'SENDING...';
+            btn.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) })
+                .then(r => r.json())
+                .then(r => {
+                    if (r.success) {
+                        this.style.display = 'none';
+                        document.getElementById('general-msg-success').style.display = 'block';
+                    } else {
+                        btn.innerHTML = '✕ ERROR. TRY AGAIN';
+                        btn.disabled = false;
+                    }
+                })
+                .catch(() => {
+                    btn.innerHTML = '✕ NETWORK ERROR';
+                    btn.disabled = false;
+                });
+        });
+
         document.getElementById('sch-booking-form').addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = document.getElementById('sch-submit-btn');
