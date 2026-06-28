@@ -56,8 +56,6 @@ include 'components/header.php';
     .hero-wrapper {
         text-align: center;
         margin-bottom: 80px;
-        opacity: 0;
-        animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     .hero-tagline {
         display: inline-flex;
@@ -76,13 +74,15 @@ include 'components/header.php';
         backdrop-filter: blur(10px);
     }
     .hero-title {
-        font-size: clamp(3rem, 8vw, 5rem);
+        font-size: clamp(1.5rem, 5vw, 3rem);
         font-weight: 800;
         color: var(--text-main);
         line-height: 1.05;
-        letter-spacing: -0.03em;
+        letter-spacing: 4px;
         margin-bottom: 32px;
         font-family: 'Times New Roman', Times, serif;
+        text-transform: uppercase;
+        white-space: nowrap;
     }
     .hero-quote {
         font-size: 1.4rem;
@@ -98,14 +98,17 @@ include 'components/header.php';
     .article-content {
         max-width: 800px;
         margin: 0 auto 80px;
-        opacity: 0;
-        animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
     }
     .article-text {
         font-size: 1.15rem;
         line-height: 1.8;
         color: var(--text-muted);
         margin-bottom: 2rem;
+        text-align: justify;
+    }
+
+    .article-content p:not(:first-child) {
+        text-indent: 3rem;
     }
     .article-text strong {
         color: var(--text-main);
@@ -127,8 +130,6 @@ include 'components/header.php';
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 24px;
-        opacity: 0;
-        animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
     }
     .bento-card {
         background: var(--card-bg);
@@ -215,8 +216,6 @@ include 'components/header.php';
     .cta-container {
         text-align: center;
         margin-top: 80px;
-        opacity: 0;
-        animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
     }
     .btn-back {
         display: inline-flex;
@@ -248,8 +247,7 @@ include 'components/header.php';
         transform: translateX(-4px);
     }
 
-    @keyframes slideUpFade {
-        from { opacity: 0; transform: translateY(50px); }
+    
         to { opacity: 1; transform: translateY(0); }
     }
 </style>
@@ -266,96 +264,25 @@ include 'components/header.php';
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 Global Impact
             </div>
-            <h1 class="hero-title">Civic Duty & Youth Empowerment</h1>
-            <p class="hero-quote">
-                "Leadership is not a privilege of position; it is a debt we pay to our communities. Inspiring and building the next generation is the ultimate standard of service."
-            </p>
+            <h1 class="hero-title">SOCIAL RESPONSIBILITY</h1>
         </div>
 
         <!-- Editorial Content -->
         <div class="article-content">
-            <p class="article-text" style="font-size: 1.35rem; color: #222;">
-                <span class="drop-cap">T</span>rue leadership is measured by its service to society. Beyond professional accomplishments, Manuj Mittal's journey is defined by a deep-seated commitment to civic responsibility, youth mentorship, and community-driven impact.
+            <p class="article-text" style="font-size: 1.25rem; color: #222;">
+                <span class="drop-cap">MJ's</span> journey has been defined by a lifelong commitment to serving our communities. Guided by Rotary International's philosophy of ‘Service Above Self’, he began serving through Interact before joining Rotaract in 2014. Over the following decade, he assumed progressively larger leadership responsibilities while working to empower young leaders, strengthen communities, and foster international collaboration.
             </p>
             <p class="article-text">
-                Through his extensive association with <strong>Rotary International</strong> and <strong>Rotaract</strong>, Manuj has initiated, directed, and completed numerous community development projects across India and the United States. His work focus centers on leveraging structured organization and administrative efficiency to maximize social outcomes, whether building local educational pathways or orchestrating regional collaboration programs.
+                His leadership journey included serving as Charter President of a Rotaract club, District Rotaract Representative, and ultimately President of the Rotaract South Asia Multi-District Information Organization. In these capacities, he collaborated with leaders across eight countries, supporting one of the world’s largest youth volunteer networks and contributing to initiatives that impacted nearly 200,000 Rotaractors throughout South Asia.
             </p>
             <p class="article-text">
-                Manuj is particularly dedicated to bridging mentorship gaps for aspiring young leaders. Through speaking, writing, and direct coaching, he helps students and early-career professionals develop a principled approach to power, ambition, and ethical leadership, encouraging independent critical thinking in civic and personal contexts.
+                MJ's leadership also extended onto the global stage, where he represented India as a youth speaker at Rotary International Conventions (Rotaract Pre-Conventions) in Atlanta 2017, Toronto 2018, and Hamburg 2019, as well as at the Rotary International Assembly in San Diego 2020. These international experiences strengthened his commitment to cross-cultural collaboration, ethical leadership, and sustainable community development. His contributions have been recognized through the ‘ROAR’ Best District Rotaract Representative (DRR) Award, features in Rotary publications, and recognition as a Paul Harris Fellow (RI).
+            </p>
+            <p class="article-text">
+                Today, his vision of service continues beyond volunteer leadership. Through mentoring students, contributing to higher education, authoring books, and advocating for experiential learning, he seeks to inspire individuals to unlock their potential and create lasting social impact. His leadership philosophy centers on empowering others, fostering lifelong learning, and building communities where leadership is measured not by titles held, but by the positive difference created in the lives of others.
             </p>
         </div>
 
-        <!-- Bento Grid -->
-        <div class="bento-grid">
-            
-            <div class="bento-card col-span-12 card-featured">
-                <h3 class="card-title" style="font-size: 2.2rem; font-style: italic; font-weight: 400; max-width: 800px; margin: 0 auto 16px;">
-                    "The most durable change starts from the ground up, built on a foundation of trust, empathy, and collaborative effort."
-                </h3>
-                <p style="text-transform: uppercase; letter-spacing: 3px; opacity: 0.7; font-size: 0.85rem; font-weight: 600;">Service Philosophy</p>
-            </div>
-            
-            <div class="bento-card col-span-6">
-                <div class="card-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                </div>
-                <h3 class="card-title">Civic Leadership</h3>
-                <p class="card-text" style="margin-bottom: 8px;"><strong>Rotary & Rotaract</strong></p>
-                <p class="card-text" style="font-size: 1rem;">Served in various leadership roles to coordinate service campaigns, foster global understanding, and fund community initiatives.</p>
-            </div>
-
-            <div class="bento-card col-span-6">
-                <div class="card-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                </div>
-                <h3 class="card-title">Development</h3>
-                <p class="card-text" style="margin-bottom: 8px;"><strong>Youth Mentorship</strong></p>
-                <p class="card-text" style="font-size: 1rem;">Leading workshops and personal strategy sessions to empower students with critical management and leadership thinking.</p>
-            </div>
-
-            <div class="bento-card col-span-12" style="flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 32px;">
-                    <div class="card-icon" style="margin-bottom: 0;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                    </div>
-                    <h3 class="card-title" style="margin-bottom: 0;">Areas of Action</h3>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
-                    <div style="padding: 32px; background: rgba(255,255,255,0.4); border-radius: 24px; border: 1px solid rgba(255,255,255,0.6); transition: all 0.3s;">
-                        <strong style="display: block; margin-bottom: 12px; color: var(--text-main); font-size: 1.15rem;">Next-Gen Leadership Training</strong>
-                        <p class="card-text" style="font-size: 1rem;">Establishing frameworks that nurture moral leadership and integrity among students.</p>
-                    </div>
-                    <div style="padding: 32px; background: rgba(255,255,255,0.4); border-radius: 24px; border: 1px solid rgba(255,255,255,0.6); transition: all 0.3s;">
-                        <strong style="display: block; margin-bottom: 12px; color: var(--text-main); font-size: 1.15rem;">Community Outreach</strong>
-                        <p class="card-text" style="font-size: 1rem;">Structuring sustainable service campaigns in educational development and economic literacy.</p>
-                    </div>
-                    <div style="padding: 32px; background: rgba(255,255,255,0.4); border-radius: 24px; border: 1px solid rgba(255,255,255,0.6); transition: all 0.3s;">
-                        <strong style="display: block; margin-bottom: 12px; color: var(--text-main); font-size: 1.15rem;">Global Collaborations</strong>
-                        <p class="card-text" style="font-size: 1rem;">Connecting youth leaders across borders to collaborate on solving regional development issues.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
         <!-- CTA -->
         <div class="cta-container">

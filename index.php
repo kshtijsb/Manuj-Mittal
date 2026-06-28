@@ -16,9 +16,9 @@ $status = $_GET['status'] ?? null;
 
             <!-- LEFT: Book Side -->
             <div class="book-side">
-                <div class="card-wrapper">
+                <div class="card-wrapper" style="transform: translateY(-3rem);">
                     <div class="side-tag"
-                        style="margin-bottom: 0.5rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none;">
+                        style="margin-bottom: 0.5rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px;">
                         Featured Work</div>
 
                     <div class="flip-card" style="margin-bottom: 0.5rem;">
@@ -62,9 +62,9 @@ $status = $_GET['status'] ?? null;
 
             <!-- RIGHT: Author Side -->
             <div class="author-side">
-                <div class="card-wrapper">
+                <div class="card-wrapper" style="transform: translateY(-3rem);">
                     <div class="side-tag"
-                        style="margin-bottom: 0.5rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none;">
+                        style="margin-bottom: 0.5rem; font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.4rem, 2.8vw, 1.96rem); letter-spacing: 1px; text-transform: none; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px;">
                         The Author</div>
 
                     <div class="flip-card" style="margin-bottom: 0.5rem;">
@@ -252,8 +252,10 @@ $status = $_GET['status'] ?? null;
     <!-- About Pillars Section (Color Coded) -->
     <section id="about" class="container" style="padding-top: 15vh; max-width: 1400px;">
         <div class="section-header reveal">
-            <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000;">Pillars of
-                the Foundation</h2>
+            <h2
+                style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 2rem; color: #000; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px;">
+                Foundation of
+                the Author</h2>
         </div>
 
 
@@ -264,26 +266,13 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px;">
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; text-decoration-color: var(--theme-color);">
                     Educational Background
                 </h3>
                 <ul class="pillar-list">
-                    <li>Early Life - Childhood (1996)</li>
-                    <li>Mayo College (Boarding School) at Age 12 (2008)</li>
-                    <li>Chess Champion at Age 15 (WazirChand Trophy)</li>
-                    <li>High School: Science (PCM)</li>
-                    <li>IMO (Represented India) in Kazakhstan</li>
-                    <li>Pursued CA (US CPA Equivalent) from Delhi, India</li>
-                    <li>IT Trainings and Soft Skills Programming</li>
-                    <li>B. Com 2017 - IGNOU, India</li>
-                    <li>Ms Finance 2020 - USA (Left India at age 23 in 2019)</li>
-                    <li>MBA (Finance) 2021 - Simon Business School, USA</li>
-                    <li>Dean’s List</li>
-                    <li>Networking Coaching</li>
-                    <li>Pursuing Doctor of Education (HE Administration)</li>
-                    <li>Award: Education 2.0 (Las Vegas)</li>
-                    <li>Graduating 2027</li>
-                    <li>Co-Chair: HE Students Association</li>
+                    <li>Committed to lifelong learning through research, leadership, <br>and global experiences.</li>
+                    <li>Built a multidisciplinary expertise across finance, business, and higher education.</li>
+                    <li>Earned B.Commerce, Ms Finance, MBA, and is currently a doctoral candidate.</li>
                 </ul>
                 <div class="pillar-link"
                     style="margin: 1.5rem auto 0; background: rgba(0,71,171,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #0047AB; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: flex; width: fit-content; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
@@ -301,18 +290,14 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px;">
-                    Professional Career</h3>
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; text-decoration-color: var(--theme-color);">
+                    Professional Career
+                </h3>
                 <ul class="pillar-list">
-                    <li>BNP Paribas - Internship</li>
-                    <li>Grant Thornton - Articleship/ Externship (USA)</li>
-                    <li>Boutique Investment Banking (Delhi, India)</li>
-                    <li>Boutique M&amp;A (NY, USA)</li>
-                    <li>Morgan Stanley (Manhattan, USA)</li>
-                    <li>CPA, Firm (NY, USA)</li>
-                    <li>Career Advisor /AD - UR (Rochester,USA)</li>
-                    <li>Award: Education 2.0 (Las Vegas)</li>
-                    <li>Leadership Programs GA - UR (Rochester,USA)</li>
+                    <li>Brings cross-sector experience from Auditing, Consulting, Investment Banking (IR), and Higher
+                        Education.</li>
+                    <li>Worked with global leaders and reputed MNCs across India and the United States.</li>
+                    <li>Coaches students through advising, leadership, and experiential learning methods.</li>
                 </ul>
                 <div class="pillar-link"
                     style="margin: 1.5rem auto 0; background: rgba(196,30,58,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #C41E3A; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: flex; width: fit-content; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
@@ -330,26 +315,13 @@ $status = $_GET['status'] ?? null;
 
 
                 <h3
-                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px;">
-                    Social
-                    Responsibility</h3>
+                    style="font-size: 1.65rem; margin-bottom: 1.5rem; color: #000; white-space: nowrap; text-align: center; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; text-decoration-color: var(--theme-color);">
+                    Social Responsibility
+                </h3>
                 <ul class="pillar-list">
-                    <li>RYLA Participant - Interact 2013 (Rotary International)</li>
-                    <li>Joined Rotaract in 2014 - RC MV (Rotary International)</li>
-                    <li>Charter President - RC Delhi Central (2015-16)</li>
-                    <li>RI Convention - Atlanta 2017</li>
-                    <li>District Rotaract Representative (2016-17)</li>
-                    <li>RI Convention - Toronto 2018</li>
-                    <li>RI Convention - Hamburg 2019</li>
-                    <li>RSA ROAR ‘Best DRR’ Award</li>
-                    <li>President - Rotaract South Asia MDIO (2019-2020)</li>
-                    <li>8 Countries, xDistricts, #200,000 Rotaractors</li>
-                    <li>Chairman - Rotasia Delhi 2020 (Conference)</li>
-                    <li><strong>At Present:</strong></li>
-                    <li>RI Member and Rotaract Alumni</li>
-                    <li>Mayo Alumni North America (MACANA)- Member</li>
-                    <li>ICAI, NY- Member</li>
-                    <li>Simon Business School, NY- Alumni</li>
+                    <li>Dedicated over a decade to Rotaract South Asia (Rotary International) and youth leadership.</li>
+                    <li>Empowered thousands of young leaders and volunteers through service and mentorship.</li>
+                    <li>Advances social impact through education, writing, and community building.</li>
                 </ul>
                 <div class="pillar-link"
                     style="margin: 1.5rem auto 0; background: rgba(46,139,87,0.1); padding: 0.75rem 1.25rem; border-radius: 4px; color: #2E8B57; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: flex; width: fit-content; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
@@ -371,7 +343,8 @@ $status = $_GET['status'] ?? null;
 
         <div class="container journey-header">
             <div style="text-align: center; margin-bottom: 3rem;" class="reveal legacy-title-wrapper">
-                <h2 style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 0; color: #000;">
+                <h2
+                    style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 0; color: #000; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px;">
                     Legacy in the Making</h2>
             </div>
         </div>
@@ -851,7 +824,7 @@ $status = $_GET['status'] ?? null;
                     10,000</div>
                 <div class="stat-label"
                     style="letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); font-weight: 800; text-transform: uppercase; text-align: center;">
-                    Days Lived</div>
+                    Days Experienced</div>
             </div>
             <div class="stat-item reveal"
                 style="display: flex; flex-direction: column; align-items: center; justify-content: center;">

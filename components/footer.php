@@ -347,40 +347,9 @@
 
         document.querySelectorAll('.pillar-card, #contact').forEach(el => moodObserver.observe(el));
 
-        // Universal Reveal Logic
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
 
-                }
-            });
-        }, { threshold: 0.2 });
 
-        document.querySelectorAll('.reveal, h1, h2, .author-signature').forEach(el => {
-            if (el.classList.contains('author-signature')) {
-                const sigObserver = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) el.style.opacity = '1';
-                }, { threshold: 0.5 });
-                sigObserver.observe(el);
-            } else {
-                revealObserver.observe(el);
-            }
-        });
 
-        // Page Flip Simulation on Click
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (link.href.includes(window.location.origin) && !link.href.includes('#')) {
-                    e.preventDefault();
-                    document.body.style.transition = 'transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s';
-                    document.body.style.transformOrigin = 'left center';
-                    document.body.style.transform = 'rotateY(-20deg) scale(0.9)';
-                    document.body.style.opacity = '0';
-                    setTimeout(() => window.location.href = link.href, 800);
-                }
-            });
-        });
 
         // Developer Easter Egg
         let secretKeys = [];

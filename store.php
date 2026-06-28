@@ -63,7 +63,7 @@ include 'components/header.php';
         display: grid;
         grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
         gap: 6rem;
-        align-items: start;
+        align-items: center;
         padding: 5rem;
         background: #fff;
         border-radius: 16px;
@@ -308,8 +308,8 @@ include 'components/header.php';
 
 <main class="container">
     <div class="store-hero">
-        <h1>The Library</h1>
-        <p>Acquire your own piece of the legend.</p>
+        <h1>Our Library</h1>
+        <p>Acquire your own piece of the Jewel.</p>
     </div>
 
     <div class="product-grid">
@@ -331,8 +331,8 @@ include 'components/header.php';
                             </div>
 
                             <h3
-                                style="position: relative; z-index: 2; font-family: 'Times New Roman', Times, serif; font-size: 2.8rem; color: #111; margin-bottom: 4rem; margin-top: -3rem; line-height: 1.1; text-shadow: 1px 1px 0 rgba(255,255,255,0.8); max-width: 80%; text-align: center;">
-                                <?php echo $book['title']; ?>
+                                style="position: relative; left: 15px; z-index: 2; font-family: 'Times New Roman', Times, serif; font-size: 1.8rem; color: #111; margin-bottom: 4rem; margin-top: -3rem; line-height: 1.2; text-shadow: 1px 1px 0 rgba(255,255,255,0.8); max-width: 80%; text-align: center; word-wrap: break-word;">
+                                <?php echo isset($book['cover_title']) ? $book['cover_title'] : $book['title']; ?>
                             </h3>
 
                             <!-- Original styled coming soon, just moved lower -->

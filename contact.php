@@ -87,6 +87,10 @@ include 'components/header.php';
         width: 100%;
     }
 
+    .input-group textarea {
+        padding: 0.5rem 0;
+    }
+
     [data-theme="dark"] .input-group input,
     [data-theme="dark"] .input-group select,
     [data-theme="dark"] .input-group textarea {
@@ -159,7 +163,7 @@ include 'components/header.php';
     }
 
     .host-name {
-        font-family: var(--font-serif);
+        font-family: 'Times New Roman', Times, serif;
         font-size: 1.5rem;
         font-weight: 900;
         color: #000;
@@ -843,111 +847,7 @@ include 'components/header.php';
 
 <section class="contact-page">
 
-    <!-- ══════════════════════════════════════════════
-         SEND A MESSAGE
-    ══════════════════════════════════════════════ -->
-    <div id="panel-msg" style="margin-bottom: 8rem; display: none;">
-        <div class="contact-page-grid">
 
-            <!-- Left: Info -->
-            <div class="contact-info reveal">
-                <div class="side-tag"
-                    style="color: #000; font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block; font-size: 1.1rem; font-family: 'STZhongsong', var(--font-serif);">
-                    GET IN TOUCH</div>
-                <h1 class="contact-page-h1" style="color: var(--text); font-family: var(--font-serif);">Open to
-                    connecting<br>and networking<br>forward.
-                </h1>
-
-                <div class="contact-details" style="margin-top: 6rem;">
-                    <div class="contact-item" style="margin-bottom: 3rem;">
-                        <h4
-                            style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">
-                            Direct Correspondence</h4>
-                        <a href="mailto:author@manujmittal.com"
-                            style="font-size: 1.5rem; color: var(--text); text-decoration: none; font-family: var(--font-serif); border-bottom: 1px solid rgba(197,160,89,0.2); padding-bottom: 5px;">
-                            author@manujmittal.com</a>
-                    </div>
-
-                    <div class="contact-item" style="margin-bottom: 3rem;">
-                        <h4
-                            style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">
-                            Based In</h4>
-                        <p style="font-size: 1.2rem; color: var(--text); opacity: 0.85;">New York, USA</p>
-                    </div>
-
-                    <div class="contact-item">
-                        <h4
-                            style="font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;">
-                            Connect On</h4>
-                        <div style="display: flex; gap: 1.5rem;">
-                            <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
-                                style="font-size: 0.8rem; color: var(--text); letter-spacing: 2px; font-weight: 800; opacity: 0.7; transition: 0.3s;"
-                                onmouseover="this.style.opacity='1';this.style.color='var(--gold)';"
-                                onmouseout="this.style.opacity='0.7';this.style.color='var(--text)';">INSTAGRAM</a>
-                            <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-                                target="_blank"
-                                style="font-size: 0.8rem; color: var(--text); letter-spacing: 2px; font-weight: 800; opacity: 0.7; transition: 0.3s;"
-                                onmouseover="this.style.opacity='1';this.style.color='var(--gold)';"
-                                onmouseout="this.style.opacity='0.7';this.style.color='var(--text)';">LINKEDIN</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: Form -->
-            <div class="contact-form-box reveal">
-                <?php if (isset($_GET['success']) && $_GET['success'] == '1'): ?>
-                    <div
-                        style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
-                        Message sent successfully! We will get back to you soon.
-                    </div>
-                <?php endif; ?>
-
-                <form action="https://api.web3forms.com/submit" method="POST"
-                    style="display: flex; flex-direction: column; gap: 2.5rem;">
-                    <input type="hidden" name="access_key" value="64485f2f-6a99-4da8-8e58-ce77d9357983">
-                    <input type="hidden" name="subject" value="New Inquiry from Contact Page">
-                    <input type="hidden" name="_captcha" value="false">
-
-                    <div class="input-group">
-                        <label>Full Name</label>
-                        <input type="text" name="name" placeholder="John Doe" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Email Address</label>
-                        <input type="email" name="email" placeholder="john@example.com" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Inquiry Type</label>
-                        <select name="type" style="appearance: none;">
-                            <option value="Speaking">Speaking Engagement</option>
-                            <option value="Mentorship">Mentorship Inquiry</option>
-                            <option value="Business">Book Order / Business</option>
-                            <option value="General">General Message</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Your Message</label>
-                        <textarea name="message" rows="4" placeholder="How can we collaborate?" style="resize: none;"
-                            required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary"
-                        style="background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 3px; cursor: pointer; transition: 0.3s; margin-top: 1rem; font-family: var(--font-sans);">
-                        SEND MESSAGE
-                    </button>
-                    <button type="button"
-                        onclick="document.getElementById('panel-msg').style.display='none'; document.getElementById('panel-mtg').style.display='block'; window.scrollTo({top: 0, behavior: 'smooth'});"
-                        style="background: transparent; color: #000; border: 1px solid #000; padding: 1.5rem; font-weight: 800; letter-spacing: 3px; cursor: pointer; transition: 0.3s; font-family: var(--font-sans);">
-                        BACK TO SCHEDULER
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div><!-- /panel-msg -->
 
     <!-- ══════════════════════════════════════════════
          BOOK A MEETING (SCHEDULER)
@@ -955,13 +855,13 @@ include 'components/header.php';
     <div id="panel-mtg" style="max-width: 1000px; margin: 0 auto; padding: 0 1rem;">
         <div class="side-tag"
             style="color: #000; font-weight: 800; letter-spacing: 8px; margin-bottom: 3rem; display: block; font-size: 1.1rem; font-family: 'STZhongsong', var(--font-serif); text-align: center;">
-            SCHEDULE AN APPOINTMENT</div>
+            "Open to connecting and networking forward"</div>
         <div class="scheduler-grid">
 
             <!-- Left: Host info + meeting types -->
             <aside class="host-panel">
-                <div class="host-avatar">MM</div>
-                <div class="host-name">Manuj Mittal</div>
+                <img src="assets/author meeting.jpg" class="host-avatar" alt="Manuj Mittal" style="object-fit: cover;">
+                <div class="host-name">Manuj Mittal (MJ)</div>
                 <div class="host-title">Doctorate Researcher · <br>Community Builder</div>
 
                 <div class="meeting-meta">
@@ -997,25 +897,24 @@ include 'components/header.php';
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                             <polyline points="22,6 12,13 2,6" />
                         </svg>
-                        <span>Zoom link to follow</span>
+                        <span>Confimation sent to your email <br>Zoom link to follow</span>
                     </div>
                 </div>
 
                 <div class="meeting-types">
-                    <button class="meeting-type-btn active" data-duration="15" data-label="Intro Call"
+                    <button class="meeting-type-btn" data-duration="15" data-label="Intro Call"
                         onclick="selectMeetingType(this)">Intro Call <span class="mt-badge">15 MIN</span></button>
                     <button class="meeting-type-btn" data-duration="15" data-label="Speaker Inquiry"
                         onclick="selectMeetingType(this)">Speaker Inquiry <span class="mt-badge">15 MIN</span></button>
-                    <button class="meeting-type-btn" data-duration="40" data-label="General Discussion"
-                        onclick="selectMeetingType(this)">General Discussion <span class="mt-badge">40
+                    <button class="meeting-type-btn" data-duration="30" data-label="General Discussion"
+                        onclick="selectMeetingType(this)">General Discussion <span class="mt-badge">30
                             MIN</span></button>
                     <button class="meeting-type-btn" data-duration="60" data-label="Advisor Session"
                         onclick="selectMeetingType(this)">Advisory Session <span class="mt-badge">60
                             MIN</span></button>
-                    <button class="meeting-type-btn" type="button"
-                        onclick="document.getElementById('panel-mtg').style.display='none'; document.getElementById('panel-msg').style.display='block'; window.scrollTo({top: 0, behavior: 'smooth'});"
+                    <button id="btn-send-msg" class="meeting-type-btn" type="button" onclick="resetScheduler()"
                         style="display: flex; align-items: center; justify-content: space-between;">
-                        Send a Message <span class="mt-badge" style="background: transparent; color: inherit;"><svg
+                        Write a Message <span class="mt-badge" style="background: transparent; color: inherit;"><svg
                                 width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
@@ -1064,6 +963,8 @@ include 'components/header.php';
                         <div class="cal-weekday">Sa</div>
                     </div>
                     <div class="calendar-grid" id="sch-cal-grid"></div>
+
+
                 </div>
 
                 <!-- Step 2: Time slots -->
@@ -1077,6 +978,59 @@ include 'components/header.php';
                     </button>
                     <div class="sch-time-label" id="sch-date-label">Choose a time</div>
                     <div class="sch-time-slots-grid" id="sch-slots-container"></div>
+                </div>
+
+                <!-- General Message Form -->
+                <div id="sch-msg-form">
+                    <h2
+                        style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 2rem; color: var(--text);">
+                        Write a Message</h2>
+
+                    <?php if (isset($_GET['success']) && $_GET['success'] == '1'): ?>
+                        <div
+                            style="background: #d4edda; color: #155724; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem; font-weight: 600;">
+                            Message sent successfully! We will get back to you soon.
+                        </div>
+                    <?php endif; ?>
+
+                    <form action="https://api.web3forms.com/submit" method="POST"
+                        style="display: flex; flex-direction: column; gap: 2rem;">
+                        <input type="hidden" name="access_key" value="64485f2f-6a99-4da8-8e58-ce77d9357983">
+                        <input type="hidden" name="subject" value="New Inquiry from Contact Page">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div class="input-group">
+                                <label>Full Name</label>
+                                <input type="text" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Email Address</label>
+                                <input type="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Subject</label>
+                            <select name="type" style="appearance: none;">
+                                <option value="Speaking">Speaking Engagement</option>
+                                <option value="Mentorship">Mentorship Inquiry</option>
+                                <option value="Business">Book Order / Business</option>
+                                <option value="General">General Message</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Your Message</label>
+                            <textarea name="message" rows="4" placeholder="How can we collaborate?"
+                                style="resize: none;" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary"
+                            style="background: #000; color: #fff; border: none; padding: 1.5rem; font-weight: 800; letter-spacing: 3px; cursor: pointer; transition: 0.3s; margin-top: 1rem; font-family: var(--font-sans); width: 100%; border-radius: 0;">
+                            SEND
+                        </button>
+                    </form>
                 </div>
 
                 <!-- Step 3: Details form -->
@@ -1163,7 +1117,6 @@ include 'components/header.php';
             </div><!-- /booking-panel -->
         </div><!-- /scheduler-grid -->
     </div><!-- /panel-mtg -->
-
 </section>
 
 <script>
@@ -1173,27 +1126,31 @@ include 'components/header.php';
     (function () {
         const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'];
-        const TIME_SLOTS = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
-            '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'];
+        const TIME_SLOTS = ['10:00 AM', '11:00 AM', '12:00 PM',
+            '02:00 PM', '03:00 PM', '04:00 PM'];
 
         let curYear = new Date().getFullYear();
         let curMonth = new Date().getMonth();
         let selDate = null;
         let selTime = null;
-        let selType = 'Intro Call';
-        let selDur = '15 minutes';
+        let selType = null;
+        let selDur = null;
 
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
         /* ── Meeting type picker ──────────────────────────────── */
+
         window.selectMeetingType = function (btn) {
             document.querySelectorAll('.meeting-type-btn').forEach(b => b.classList.remove('active'));
+
             btn.classList.add('active');
             selType = btn.dataset.label;
             selDur = btn.dataset.duration + ' minutes';
             document.getElementById('meta-duration').textContent = selDur;
+            schGoToStep(1);
         };
+
 
         /* ── Calendar render ──────────────────────────────────── */
         function renderCal() {
@@ -1280,6 +1237,7 @@ include 'components/header.php';
         }
 
         /* ── Step navigation ──────────────────────────────────── */
+
         window.schGoToStep = function (step, date) {
             // Step indicators
             document.querySelectorAll('.booking-step').forEach((s, i) => {
@@ -1288,10 +1246,23 @@ include 'components/header.php';
 
             const calPanel = document.getElementById('sch-cal-panel');
             const timePanel = document.getElementById('sch-time-panel');
+            const msgPanel = document.getElementById('sch-msg-form');
             const detPanel = document.getElementById('sch-details-panel');
             const sucPanel = document.getElementById('sch-success-panel');
+            const stepIndicator = document.querySelector('.booking-steps');
 
-            [calPanel, timePanel, detPanel, sucPanel].forEach(p => p.style.display = 'none');
+            [calPanel, timePanel, detPanel, sucPanel, msgPanel].forEach(p => { if (p) p.style.display = 'none'; });
+
+            const btnSendMsg = document.getElementById('btn-send-msg');
+            if (!selType) {
+                if (stepIndicator) stepIndicator.style.display = 'none';
+                if (msgPanel) msgPanel.style.display = 'block';
+                if (btnSendMsg) btnSendMsg.style.display = 'none';
+                return;
+            } else {
+                if (stepIndicator) stepIndicator.style.display = 'flex';
+                if (btnSendMsg) btnSendMsg.style.display = 'flex';
+            }
 
             if (step === 1) {
                 calPanel.style.display = 'block';
@@ -1300,6 +1271,7 @@ include 'components/header.php';
                 timePanel.style.display = 'flex';
                 renderSlots(date || selDate);
             } else if (step === 3) {
+
                 detPanel.style.display = 'flex';
                 // fill summary & hidden fields
                 document.getElementById('sch-summary-text').textContent =
@@ -1347,19 +1319,24 @@ include 'components/header.php';
             document.querySelectorAll('.booking-step').forEach(s => s.classList.add('active'));
         }
 
+
+
         window.resetScheduler = function () {
             selDate = null; selTime = null;
-            selType = 'Intro Call'; selDur = '15 minutes';
-            document.querySelectorAll('.meeting-type-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
-            document.getElementById('meta-duration').textContent = '15 minutes';
-            document.getElementById('sch-booking-form').reset();
-            const btn = document.getElementById('sch-submit-btn');
-            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Confirm Booking';
-            btn.disabled = false;
             document.getElementById('sch-success-panel').style.display = 'none';
+            const introBtn = document.querySelector('.meeting-type-btn[data-label="Intro Call"]');
+            if (introBtn) {
+                selectMeetingType(introBtn);
+            } else {
+                selType = null; selDur = null;
+                document.querySelectorAll('.meeting-type-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById('meta-duration').textContent = '—';
+                schGoToStep(1);
+            }
             renderCal();
-            schGoToStep(1);
         };
+
+
 
         /* ── Helpers ──────────────────────────────────────────── */
         function fmtDate(d) {
@@ -1373,11 +1350,18 @@ include 'components/header.php';
         s.textContent = '@keyframes schSpin { to { transform: rotate(360deg); } }';
         document.head.appendChild(s);
 
+
         /* Public init */
         window.schInit = function () {
             renderCal();
-            schGoToStep(1);
+            const introBtn = document.querySelector('.meeting-type-btn[data-label="Intro Call"]');
+            if (introBtn) {
+                selectMeetingType(introBtn);
+            } else {
+                schGoToStep(1);
+            }
         };
+
 
         // Initialize immediately
         schInit();

@@ -1080,6 +1080,9 @@ nav {
         background-image: linear-gradient(white, white), linear-gradient(to right, var(--color-primary), var(--color-gold));
         background-origin: border-box;
         background-clip: padding-box, border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .pillar-card:hover {
@@ -1800,17 +1803,16 @@ nav {
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                max-height: 200px;
-                overflow: hidden;
-                -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-                mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-                transition: max-height 0.5s ease;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
             }
             .pillar-list li {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
                 color: var(--theme-color);
-                line-height: 1.5;
-                padding: 0.35rem 0 0.35rem 1.2rem;
+                line-height: 1.4;
+                padding: 0.5rem 0 0.5rem 1.4rem;
                 position: relative;
                 border-bottom: 1px solid rgba(0,0,0,0.05);
             }
@@ -1821,15 +1823,14 @@ nav {
                 content: '❯';
                 position: absolute;
                 left: 0;
-                top: 50%;
-                transform: translateY(-50%);
+                top: 0.65rem;
                 font-size: 0.75rem;
                 font-weight: 800;
                 color: var(--theme-color);
                 transition: transform 0.3s ease;
             }
             .pillar-list li:hover::before {
-                transform: translate(4px, -50%);
+                transform: translateX(4px);
             }
         
 
@@ -1981,7 +1982,8 @@ nav {
             /* Card Content Styling */
             .timeline-content {
                 background: #fff;
-                border: 2px solid var(--theme-color, var(--gold));
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                border-bottom: 12px solid var(--theme-color, var(--gold));
                 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
                 border-radius: 12px;
                 overflow: hidden;
@@ -2103,6 +2105,8 @@ nav {
                 text-align: center;
                 text-decoration: underline;
                 text-underline-offset: 4px;
+                text-decoration-thickness: 1px;
+                text-decoration-color: var(--theme-color);
             }
 
             .timeline-text p {
@@ -2143,15 +2147,14 @@ nav {
                 content: '❯';
                 position: absolute;
                 left: 0;
-                top: 50%;
-                transform: translateY(-50%);
+                top: 0.95rem;
                 font-size: 0.75rem;
                 font-weight: 800;
                 color: var(--theme-color, var(--gold));
                 transition: transform 0.3s ease;
             }
             .timeline-list li:hover::before {
-                transform: translate(4px, -50%);
+                transform: translateX(4px);
             }
 
 
@@ -2161,6 +2164,7 @@ nav {
                 font-weight: 700;
                 letter-spacing: 1px;
                 opacity: 0.85;
+                margin-left: 2.5rem;
             }
 
             /* Responsive overrides for Timeline */
@@ -2678,8 +2682,8 @@ nav {
         .coming-soon-text { font-family: var(--font-serif); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 5px; transform: rotate(-15deg); border: 2px solid var(--gold); padding: 1rem; }
         
         .btn-text { font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 8px; transition: 0.3s; }
-        .reveal { opacity: 0; transform: translateY(50px); transition: var(--transition); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal { transition: none; }
+        .reveal.active { }
 
         /* Theme Toggle Fix */
         .theme-toggle {
@@ -2735,7 +2739,7 @@ nav {
 
 /* --- Extracted from footer.php --- */
 
-                    .author-signature { font-family: 'Times New Roman', Times, serif; text-transform: uppercase; font-weight: 900; letter-spacing: 4px; font-size: 5.5rem; color: var(--gold); opacity: 0; transition: opacity 2s ease; }
+                    .author-signature { font-family: 'Times New Roman', Times, serif; text-transform: uppercase; font-weight: 900; letter-spacing: 4px; font-size: 5.5rem; color: var(--gold); }
                     @media (max-width: 768px) { .author-signature { font-size: 3.8rem; } }
                 
 /* Horizontal Gallery Fix for 'Cut Assets' */
@@ -2897,36 +2901,6 @@ nav {
     color: #fff;
 }
 
-
-/* View Transitions for Immersive Navigation */
-@media (prefers-reduced-motion: no-preference) {
-  @view-transition {
-    navigation: auto;
-  }
-}
-
-::view-transition-old(root) {
-  animation: 0.3s ease-in both fade-out;
-}
-
-::view-transition-new(root) {
-  animation: 0.4s cubic-bezier(0.19, 1, 0.22, 1) both fade-slide-up;
-}
-
-@keyframes fade-out {
-  to { opacity: 0; }
-}
-
-@keyframes fade-slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* Global Black Footer */
 footer {

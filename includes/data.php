@@ -6,7 +6,7 @@ $developer_name = "Kshitij Bhilare";
 $books = [
     [
         "id" => "eternal-archive",
-        "title" => "Personal Operating System ©",
+        "title" => "PERSONAL <Br>OPERATING SYSTEM ©",
         "tag" => "Latest Release",
         "meta" => "Philosophical Fiction",
         "price_start" => "$5.23",
@@ -17,13 +17,14 @@ $books = [
             "amazon Kindle" => ["price" => "5.23", "label" => "Digital Edition for Kindle", "url" => "https://www.amazon.com/dp/B0H2RZTJC8"],
             "apple iBOOK" => ["price" => "5.23", "label" => "Digital Edition for Apple Devices", "url" => "http://books.apple.com/us/book/id6785050847"]
         ],
-        "desc" => "Book on upskilling personal life management. A series of thought provoking reflective quotations to help you maximize your performance!",
+        "desc" => "Book on upskilling personal life management. A series of thought provoking reflective quotations to help you maximize your performance.",
         "image" => "book cover.jpeg",
         "status" => "available"
     ],
     [
         "id" => "flip-the-script",
-        "title" => "Flip the Script",
+        "title" => "FLIP THE SCRIPT",
+        "cover_title" => "REIMAGINE EDUCATION",
         "tag" => "Upcoming Release",
         "meta" => "Scheduled launch September 2026",
         "desc" => "Scheduled launch September 2026.",
