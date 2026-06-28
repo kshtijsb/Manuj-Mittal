@@ -1493,10 +1493,10 @@ nav {
             padding: 4rem 0 !important;
         }
         #about {
-            padding: 4rem 0 1rem 0 !important;
+            display: none !important;
         }
         #journey {
-            padding: 1rem 0 4rem 0 !important;
+            display: none !important;
         }
 
         .side-tag {
@@ -1639,11 +1639,11 @@ nav {
         @media (max-width: 992px) {
             .minimal-mobile-hero {
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 padding: 4rem 1.5rem 5rem;
-                gap: 1.5rem;
+                gap: 4rem;
                 width: 100%;
                 background: transparent;
             }
@@ -1652,8 +1652,9 @@ nav {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                flex: 1;
                 text-align: center;
+                width: 100%;
+                max-width: 320px;
             }
 
             .minimal-img {
@@ -1661,8 +1662,15 @@ nav {
                 aspect-ratio: 3/4;
                 object-fit: cover;
                 border-radius: 8px;
+                border: 2px solid var(--gold);
                 margin-bottom: 1.5rem;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            }
+
+            .minimal-book-cover {
+                aspect-ratio: auto !important;
+                object-fit: contain !important;
+                height: auto !important;
             }
 
             .minimal-name {
@@ -1673,6 +1681,11 @@ nav {
                 line-height: 1.1;
                 margin-bottom: 1.5rem;
                 letter-spacing: -0.5px;
+            }
+            
+            .minimal-book-title {
+                font-size: 1.15rem; /* Reduced to fit "PERSONAL OPERATING SYSTEM ©" on 2 lines */
+                letter-spacing: 0;
             }
 
             .btn-minimal-tactile {
@@ -2569,12 +2582,12 @@ nav {
             .menu-toggle { display: none !important; }
             .menu-toggle.active svg { stroke: #fff; }
             
-            nav { padding: 0.2rem 0 !important; }
+            nav { padding: 0.2rem 0 !important; position: relative; justify-content: center !important; }
             .header-marquee { padding: 0.2rem 0 !important; }
             
             /* Make the horizontal navbar visible on mobile with limited items */
-            .logo { font-size: 2.2rem; letter-spacing: 0px; white-space: nowrap; }
-            .nav-links { display: flex !important; gap: 0.5rem; align-items: center; margin-left: auto; }
+            .logo { font-size: 2.2rem; letter-spacing: 0px; white-space: nowrap; text-align: center; margin: 0 auto; z-index: 10; }
+            .nav-links { display: flex !important; gap: 0.5rem; align-items: center; position: absolute; right: 15px; margin-left: 0; z-index: 5; }
             .nav-links a { font-size: 0.9rem; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0px; color: var(--gold); font-weight: 800; text-decoration: none; white-space: nowrap; }
             .nav-social-btn svg { width: 14px; height: 14px; }
             
@@ -2806,6 +2819,136 @@ nav {
 .btn-editorial-library:hover {
     background: var(--gold);
     color: #fff;
+}
+
+
+/* ========================================= */
+/* ULTRA-MODERN MOBILE INNER PAGES REDESIGN  */
+/* ========================================= */
+@media (max-width: 992px) {
+    /* 1. Reset massive paddings and margins globally */
+    .biography-page, 
+    .pillar-detail-page, 
+    .store-page, 
+    .contact-cta, 
+    .hero, 
+    section {
+        padding: 4rem 1.2rem 3rem 1.2rem !important;
+    }
+    
+    .quotes-section {
+        padding: 0 !important;
+    }
+    
+    /* 2. Grid to Stacked Container overrides */
+    .bio-header-grid, 
+    .page-header-grid, 
+    .store-layout, 
+    .contact-grid, 
+    .scheduler-grid,
+    .product-item,
+    .bento-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        margin-bottom: 2rem !important;
+        padding: 1.5rem !important;
+    }
+
+    /* Override padding for bento grids specifically so they don't look boxed if they shouldn't be */
+    .bento-grid {
+        padding: 0 !important;
+    }
+    
+    .bento-card {
+        padding: 2rem !important;
+    }
+
+    /* 3. Typography normalization for small screens */
+    h1 {
+        font-size: clamp(2.2rem, 8vw, 3rem) !important;
+        line-height: 1.15 !important;
+        margin-bottom: 1.5rem !important;
+        white-space: normal !important;
+    }
+    
+    .bio-intro-lead {
+        padding-left: 1rem !important;
+        font-size: 1.1rem !important;
+        border-left-width: 3px !important;
+    }
+    
+    .bio-intro-lead span {
+        padding-left: 0 !important;
+        display: inline !important;
+    }
+
+    /* 4. Full-width edge-to-edge images */
+    .bio-portrait-frame, 
+    .header-image-wrapper, 
+    .book-cover-wrapper, 
+    .contact-image-wrapper {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 4/5 !important;
+        border-width: 1px !important;
+        border-radius: 8px !important;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
+    }
+
+    /* 5. Tactile, thumb-friendly buttons */
+    .btn-back, 
+    .btn, 
+    .join-waitlist-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 1.2rem !important;
+        border-radius: 50px !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+        box-sizing: border-box !important;
+    }
+    
+    .cta-container {
+        margin-top: 2rem !important;
+        width: 100% !important;
+    }
+
+    /* 6. Contact page specific */
+    .host-panel {
+        padding: 1.5rem !important;
+    }
+    
+    .host-profile {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1rem !important;
+    }
+    
+    .host-avatar {
+        margin: 0 auto !important;
+    }
+    
+    /* 7. Store page */
+    .store-book-title {
+        font-size: 2rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    .book-spotlight {
+        max-width: 100% !important;
+    }
+
+    /* 8. Misc overrides */
+    .side-tag {
+        margin-bottom: 1rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
 }
 
 

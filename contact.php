@@ -507,7 +507,12 @@ include 'components/header.php';
 
     @media (max-width: 600px) {
         .sch-time-slots-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .sch-time-slot {
+            padding: 1.2rem 0.5rem;
+            font-size: 1rem;
         }
     }
 
@@ -843,6 +848,187 @@ include 'components/header.php';
     .btn-back-contact:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+    
+    /* ═════════ APP-LIKE MOBILE REDESIGN ═════════ */
+    @media (max-width: 992px) {
+        .contact-page {
+            text-align: left;
+            padding-top: 2rem !important;
+        }
+        
+        /* Minimal Host Panel (Stacked) */
+        .host-panel {
+            display: flex;
+            flex-direction: column !important;
+            align-items: center;
+            justify-content: center;
+            text-align: center !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 0 2rem 0 !important;
+            margin-bottom: 0 !important;
+            width: 100%;
+        }
+        
+        .host-avatar {
+            width: 90px !important;
+            height: 90px !important;
+            margin: 0 auto 1rem auto !important;
+        }
+        
+        .host-title {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem !important;
+        }
+        
+        .host-name {
+            font-size: 1.8rem !important;
+            margin: 0 0 0.5rem 0 !important;
+        }
+        
+        /* Hide bulky meta info */
+        .meeting-meta {
+            display: none !important;
+        }
+        
+        /* Stacked Meeting Types */
+        .meeting-types {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Sleek tactile buttons */
+        .meeting-type-btn {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            min-height: 60px;
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            text-align: left !important;
+            padding: 1.2rem !important;
+            font-size: 1.1rem !important;
+            border-radius: 12px !important; /* Slightly rounded square */
+            background: #fff !important;
+            color: #222 !important;
+            border: 1px solid #eee !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+            margin: 0 auto;
+            white-space: normal;
+            word-wrap: break-word;
+            box-sizing: border-box;
+        }
+        
+        .meeting-type-btn .mt-badge {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            background: rgba(0,0,0,0.05);
+            color: #000 !important; /* Black when not selected */
+            border-radius: 6px;
+        }
+        
+        .meeting-type-btn.active .mt-badge {
+            color: var(--gold) !important; /* Gold when tapped */
+            background: rgba(197, 160, 89, 0.1) !important;
+        }
+        
+        [data-theme="dark"] .meeting-type-btn {
+            background: rgba(255, 255, 255, 0.05) !important;
+            color: #eee !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        [data-theme="dark"] .meeting-type-btn .mt-badge {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        
+        /* General Layout alignment */
+        .sch-cal-header {
+            justify-content: space-between;
+        }
+        .sch-panel-title, #sch-date-label, #general-message-form h2 {
+            text-align: left !important;
+            font-size: 1.5rem !important;
+        }
+        
+        /* Calendar styling */
+        .calendar-grid {
+            border: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            gap: 0.5rem;
+        }
+        .cal-day {
+            border-radius: 50%;
+            aspect-ratio: 1;
+            border: none !important;
+            background: #f9f9f9;
+        }
+        [data-theme="dark"] .cal-day {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        /* Time Slots */
+        .sch-time-slots-grid {
+            justify-content: space-between;
+        }
+        .sch-time-slot {
+            flex: 1 1 45%;
+            border-radius: 12px;
+        }
+        
+        /* Soft Forms */
+        #general-message-form {
+            align-items: flex-start;
+        }
+        .input-group label, .sch-form-label {
+            text-align: left;
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .input-group input, .input-group select, .input-group textarea,
+        .sch-form-field input, .sch-form-field textarea {
+            border: none !important;
+            border-radius: 12px !important;
+            background: #f4f4f4 !important;
+            padding: 1rem !important;
+            font-size: 1rem;
+            width: 100%;
+        }
+        [data-theme="dark"] .input-group input, [data-theme="dark"] .input-group select, [data-theme="dark"] .input-group textarea,
+        [data-theme="dark"] .sch-form-field input, [data-theme="dark"] .sch-form-field textarea {
+            background: rgba(255,255,255,0.05) !important;
+            color: #fff;
+        }
+        .input-group input:focus, .input-group select:focus, .input-group textarea:focus,
+        .sch-form-field input:focus, .sch-form-field textarea:focus {
+            box-shadow: 0 0 0 2px var(--gold) !important;
+            outline: none;
+        }
+        
+        /* Make form full width */
+        #general-message-form > div {
+            display: flex !important;
+            flex-direction: column;
+            gap: 1.5rem !important;
+            width: 100%;
+        }
+        
+        .btn-primary, #sch-submit-btn {
+            border-radius: 12px !important;
+            margin-top: 1rem !important;
+            width: 100%;
+        }
     }
 </style>
 

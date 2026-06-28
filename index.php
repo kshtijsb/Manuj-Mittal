@@ -232,8 +232,8 @@ $status = $_GET['status'] ?? null;
             
             <!-- Right: Book -->
             <div class="minimal-col">
-                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="minimal-img" style="border-radius: 2px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1);">
-                <h2 class="minimal-name"><?php echo $books[0]['title']; ?></h2>
+                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="minimal-img minimal-book-cover" style="border-radius: 2px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1);">
+                <h2 class="minimal-name minimal-book-title"><?php echo $books[0]['title']; ?></h2>
                 <a href="store.php" class="btn-minimal-tactile">Order Book</a>
             </div>
         </div>
