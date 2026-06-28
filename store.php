@@ -304,6 +304,12 @@ include 'components/header.php';
             padding: 2vh 1.5rem 0vh;
         }
 
+        .store-hero h1 {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
+        }
+
         .product-desc {
             font-size: 0.85rem;
             white-space: normal;

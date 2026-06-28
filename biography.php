@@ -53,10 +53,10 @@ include 'components/header.php';
             style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 6rem; align-items: center; margin-bottom: 120px;">
 
             <div class="bio-header-left">
-                <div class="side-tag reveal"
-                    style="color: var(--color-gold); font-weight: 800; letter-spacing: 8px; margin-bottom: 2rem; display: block;">
+                <div class="side-tag reveal bio-title-mobile"
+                    style="color: #000; font-weight: bold; letter-spacing: 0px; margin-bottom: 2rem; display: block; font-family: 'Times New Roman', Times, serif; font-size: clamp(2.5rem, 8vw, 4rem) !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">
                     ABOUT THE AUTHOR</div>
-                <h1 class="reveal"
+                <h1 class="reveal bio-name-mobile-hide"
                     style="font-size: clamp(3rem, 5vw, 4.2rem); line-height: 1.05; margin-bottom: 4rem; color: #000; letter-spacing: -2px; font-family: 'Times New Roman', Times, serif; white-space: nowrap;">
                     Manuj Mittal
                 </h1>
