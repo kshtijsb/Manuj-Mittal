@@ -1,4 +1,10 @@
 RewriteEngine On
+
+# Redirect .php URLs to clean URLs (301 permanent)
+RewriteCond %{THE_REQUEST} \.php[\s?/] [NC]
+RewriteRule ^(.+)\.php$ /$1 [R=301,L,NC]
+
+# Serve clean URLs from .php files
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
