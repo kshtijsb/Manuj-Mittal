@@ -992,7 +992,7 @@ include 'components/header.php';
 
                     <form id="general-message-form" action="https://api.web3forms.com/submit" method="POST"
                         style="display: flex; flex-direction: column; gap: 2rem;">
-                        <input type="hidden" name="access_key" value="b80cae60-4225-495b-9125-d3609ca825d9">
+                        <input type="hidden" name="access_key" value="768f4eff-35e7-4e1a-b6ec-d84d0862a4a0">
                         <input type="hidden" name="subject" value="New Inquiry from Contact Page">
                         <input type="hidden" name="_captcha" value="false">
 
@@ -1053,7 +1053,7 @@ include 'components/header.php';
 
                     <form id="sch-booking-form" action="https://api.web3forms.com/submit" method="POST"
                         style="display:flex;flex-direction:column;gap:1.5rem;">
-                        <input type="hidden" name="access_key" value="b80cae60-4225-495b-9125-d3609ca825d9">
+                        <input type="hidden" name="access_key" value="768f4eff-35e7-4e1a-b6ec-d84d0862a4a0">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="subject" id="sch-form-subject" value="New Meeting Booking">
                         <input type="hidden" name="meeting_date" id="sch-form-date">
@@ -1290,14 +1290,18 @@ include 'components/header.php';
             btn.innerHTML = 'SENDING...';
             btn.disabled = true;
 
-            fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) })
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(this)
+            })
                 .then(r => r.json())
                 .then(r => {
                     if (r.success) {
                         this.style.display = 'none';
                         document.getElementById('general-msg-success').style.display = 'block';
                     } else {
-                        btn.innerHTML = '✕ ERROR. TRY AGAIN';
+                        btn.innerHTML = '✕ ' + (r.message || 'ERROR. TRY AGAIN');
                         btn.disabled = false;
                     }
                 })
@@ -1313,13 +1317,17 @@ include 'components/header.php';
             btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:schSpin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Confirming…';
             btn.disabled = true;
 
-            fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) })
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(this)
+            })
                 .then(r => r.json())
                 .then(r => {
                     if (r.success) {
                         showSuccess();
                     } else {
-                        btn.textContent = '✕ Something went wrong. Try again.';
+                        btn.textContent = '✕ ' + (r.message || 'Something went wrong. Try again.');
                         btn.disabled = false;
                     }
                 })
