@@ -175,12 +175,12 @@
     /* Mobile Redesign */
     @media (max-width: 768px) {
         .footer-container {
-            padding-top: 4rem;
-            padding-bottom: 120px; /* Spacer for mobile bottom nav so we don't scroll into empty body */
+            padding-top: 2rem;
+            padding-bottom: 80px; /* Spacer for mobile bottom nav so we don't scroll into empty body */
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 80vh; /* Takes up a good portion of the iPhone screen */
+            min-height: auto;
             justify-content: center;
         }
         .footer-main-row {
@@ -188,7 +188,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            gap: 2.5rem;
+            gap: 1.5rem;
             width: 100%;
         }
         .footer-left {
@@ -210,14 +210,14 @@
             margin-top: 0;
             align-items: center;
             justify-content: center;
-            gap: 2rem;
+            gap: 1rem;
         }
         .footer-btn-group {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 1.2rem;
+            gap: 2rem;
             width: 100%;
         }
         .footer-btn {
