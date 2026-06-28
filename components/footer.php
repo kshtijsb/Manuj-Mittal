@@ -263,6 +263,11 @@
             align-items: center;
             gap: 1rem;
         }
+        
+        .mobile-break-copyright { display: inline; }
+        @media (max-width: 768px) {
+            .mobile-break-copyright { display: block; content: ""; height: 4px; }
+        }
     }
 </style>
 
@@ -321,7 +326,7 @@
         <!-- Bottom Section: Legal & Copyright -->
         <div class="footer-legal-row">
             <p class="footer-copyright">
-                &copy; <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>. ALL STORIES RESERVED.
+                &copy; <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>.<span class="mobile-break-copyright"> </span>ALL STORIES RESERVED.
             </p>
             <div class="footer-legal-links">
                 <a href="privacy" class="footer-legal-link">Privacy Policy</a>

@@ -64,9 +64,9 @@ include 'components/header.php';
                 <div class="bio-intro-lead reveal"
                     style="font-size: 1.6rem; font-family: var(--font-serif); color: #000; border-left: 4px solid var(--color-gold); padding-left: 3rem; font-style: italic; line-height: 1.8;">
                     <span style="display: block;">"Leadership is not defined by age,</span>
-                    <span style="display: block; padding-left: 5rem;">but is shaped by our attitude.</span>
-                    <span style="display: block;">It is not determined by titles,</span>
-                    <span style="display: block; padding-left: 5rem;">but by the decisions we make."</span>
+                    <span class="quote-indent" style="display: block;"><br>but is shaped by our attitude.</span>
+                    <span style="display: block;"><br>It is not determined by titles,</span>
+                    <span class="quote-indent" style="display: block;"><br>but by the decisions we make."</span>
                 </div>
             </div>
 

@@ -230,6 +230,13 @@ include 'components/header.php';
         transition: color 0.3s;
     }
 
+    @media (max-width: 768px) {
+        .ibook-fix {
+            text-transform: none;
+            display: inline-block;
+        }
+    }
+
     .format-price {
         font-family: var(--font-sans);
         font-weight: 500;
@@ -295,6 +302,12 @@ include 'components/header.php';
     @media (max-width: 768px) {
         .store-hero {
             padding: 2vh 1.5rem 0vh;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            white-space: normal;
+            text-align: center;
         }
 
         .product-grid {
@@ -371,7 +384,13 @@ include 'components/header.php';
                                         ?>
                                         <div class="format-btn <?php echo $activeClass; ?>"
                                             onclick="selectFormat('<?php echo $book['id']; ?>', this, '<?php echo $f['price']; ?>', '<?php echo htmlspecialchars($f['label'], ENT_QUOTES); ?>', '<?php echo isset($f['url']) ? $f['url'] : (isset($book['amazon_url']) ? $book['amazon_url'] : ''); ?>')">
-                                            <span class="format-title"><?php echo ucfirst($key); ?></span>
+                                            <span class="format-title">
+                                                <?php 
+                                                    $title_str = ucfirst($key);
+                                                    $title_str = str_replace('iBOOK', '<span class="ibook-fix">iBOOK</span>', $title_str);
+                                                    echo $title_str; 
+                                                ?>
+                                            </span>
                                             <span class="format-price">$<?php echo $f['price']; ?></span>
                                         </div>
                                         <?php

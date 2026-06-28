@@ -1674,7 +1674,7 @@ nav {
             }
 
             .minimal-name {
-                font-family: var(--font-serif);
+                font-family: 'Times New Roman', Times, serif;
                 font-size: 1.4rem;
                 font-weight: 800;
                 color: #000 !important;
@@ -2609,6 +2609,11 @@ nav {
         .btn-text { font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 8px; transition: 0.3s; }
         .reveal { transition: none; }
         .reveal.active { }
+        
+        .quote-indent { padding-left: 5rem; }
+        @media (max-width: 768px) {
+            .quote-indent { padding-left: 0; }
+        }
 
         /* Theme Toggle Fix */
         .theme-toggle {
