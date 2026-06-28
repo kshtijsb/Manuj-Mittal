@@ -27,7 +27,7 @@ $books = [
         "cover_title" => "CHAPTER",
         "tag" => "Upcoming Release",
         "meta" => "Scheduled launch in September 2026",
-        "desc" => "Scheduled launch in September 2026.",
+        "desc" => "Scheduled launch in <br>September 2026.",
         "status" => "coming-soon"
     ]
 ];
