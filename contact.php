@@ -150,6 +150,7 @@ include 'components/header.php';
         width: 64px;
         height: 64px;
         border-radius: 50%;
+        border: 2px solid var(--gold);
         background: linear-gradient(135deg, var(--gold), #B6862C);
         display: flex;
         align-items: center;
