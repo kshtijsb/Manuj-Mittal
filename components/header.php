@@ -152,31 +152,12 @@
                     </li>
             </nav>
         </div>
-        <div class="header-marquee">
-            <div class="header-marquee-inner">
-                <div class="header-marquee-group">
-                    <span>Published Author</span>
-                    <span class="separator">•</span>
-                    <span>Doctorate Researcher (Higher Education)</span>
-                    <span class="separator">•</span>
-                    <span>Financial Services Provider</span>
-                    <span class="separator">•</span>
-                    <span>Career Strategy Advisor (Consultant)</span>
-                    <span class="separator">•</span>
-                    <span>Community Builder</span>
-                    <span class="separator">•</span>
-                </div>
-                <div class="header-marquee-group" aria-hidden="true">
-                    <span>Published Author</span>
-                    <span class="separator">•</span>
-                    <span>Doctorate Researcher (Higher Education)</span>
-                    <span class="separator">•</span>
-                    <span>Financial Services Provider</span>
-                    <span class="separator">•</span>
-                    <span>Career Strategy Advisor (Consultant)</span>
-                    <span class="separator">•</span>
-                    <span>Community Builder</span>
-                    <span class="separator">•</span>
+        <div class="header-marquee" style="justify-content: center;">
+            <div class="header-marquee-inner" style="animation: none; width: 100%; justify-content: center;">
+                <div class="header-marquee-group" style="min-width: auto; justify-content: center;">
+                    <span class="separator" style="margin-right: 1rem;">•</span>
+                    <span style="padding: 0;">Published Author</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
                 </div>
             </div>
         </div>

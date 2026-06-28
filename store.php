@@ -10,7 +10,7 @@ include 'components/header.php';
     .store-hero {
         position: relative;
         text-align: center;
-        padding: 8vh 0 2vh;
+        padding: 2vh 0 0vh;
         background: #fff;
         overflow: hidden;
     }
@@ -294,7 +294,7 @@ include 'components/header.php';
 
     @media (max-width: 768px) {
         .store-hero {
-            padding: 10vh 1.5rem 3vh;
+            padding: 2vh 1.5rem 0vh;
         }
 
         .product-grid {

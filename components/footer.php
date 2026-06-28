@@ -266,18 +266,11 @@
     }
 </style>
 
-    <!-- Visionary Quotes (Styled as Marquee matching Header) -->
-    <div class="header-marquee" style="position: relative; z-index: 20;">
-        <div class="header-marquee-inner">
-            <div class="header-marquee-group">
-                <span>"Let’s upskill the younger generations and empower our communities for a better and sustainable future"</span>
-                <span>"Let’s upskill the younger generations and empower our communities for a better and sustainable future"</span>
-            </div>
-            <div class="header-marquee-group" aria-hidden="true">
-                <span>"Let’s upskill the younger generations and empower our communities for a better and sustainable future"</span>
-                <span>"Let’s upskill the younger generations and empower our communities for a better and sustainable future"</span>
-            </div>
-        </div>
+    <!-- Visionary Quotes (Static 3-line format) -->
+    <div class="quote-bar" style="background: var(--gold); padding: 1.5rem; text-align: center; width: 100%; position: relative; z-index: 20;">
+        <span style="color: #000; font-family: var(--font-sans); font-size: 1rem; font-weight: 800; letter-spacing: 1px; line-height: 1.6; display: inline-block; text-transform: uppercase; max-width: 500px; margin: 0 auto;">
+            "Let’s upskill the younger generations and empower our communities for a better and sustainable future"
+        </span>
     </div>
 
 <footer class="footer-wrapper">

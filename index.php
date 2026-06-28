@@ -95,7 +95,7 @@ $status = $_GET['status'] ?? null;
 
                     <h2
                         style="font-size: clamp(1.5rem, 3vw, 2.2rem); font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000000; margin-bottom: 0; line-height: 1.1; text-transform: uppercase;">
-                        Manuj Mittal<br>(MJ)
+                        Manuj Mittal (MJ)
                     </h2>
 
 
