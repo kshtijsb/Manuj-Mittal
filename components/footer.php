@@ -273,8 +273,8 @@
 
                 <!-- Buttons (Stretched) -->
                 <div class="footer-btn-group">
-                    <a href="contact.php" class="footer-btn">Book a Meeting</a>
                     <a href="store.php" class="footer-btn">Visit our Library</a>
+                    <a href="contact.php" class="footer-btn">Book a Meeting</a>
                 </div>
 
                 <!-- Based In & Socials (Under Buttons) -->
