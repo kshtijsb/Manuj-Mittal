@@ -248,34 +248,54 @@
         .quote-bar {
             background: var(--gold); padding: 1rem 1.5rem; text-align: center; width: 100%;
         }
+        .marquee-track {
+            display: inline-block;
+        }
         .quote-text {
             color: #000; font-family: var(--font-sans); font-size: 1rem; font-weight: 800; letter-spacing: 1px; line-height: 1.5; display: inline-block; text-transform: uppercase;
         }
+        .quote-text.copy {
+            display: none; /* Hide duplicate on desktop */
+        }
 
-        /* Mobile Marquee Override */
+        /* Mobile Continuous Marquee Override */
         @media (max-width: 992px) {
             .quote-bar {
                 padding: 0.4rem 0; /* Reduced height */
                 overflow: hidden;
                 white-space: nowrap;
+                display: flex;
+            }
+            .marquee-track {
+                display: flex;
+                flex-shrink: 0;
+                align-items: center;
+                animation: scrollMarquee 20s linear infinite;
             }
             .quote-text {
                 font-size: 0.8rem;
                 display: inline-block;
-                animation: scrollMarquee 15s linear infinite;
-                padding-left: 100%;
+                padding-right: 2rem; /* Gap before it repeats */
+            }
+            .quote-text.copy {
+                display: inline-block; /* Show duplicate on mobile for seamless loop */
             }
             @keyframes scrollMarquee {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(-100%); }
+                100% { transform: translateX(-50%); }
             }
         }
     </style>
     <section class="quotes-section">
         <div class="quote-bar">
-            <span class="quote-text">
-                "Let’s upskill the younger generations and empower our communities for a better and sustainable future"
-            </span>
+            <div class="marquee-track">
+                <span class="quote-text">
+                    "Let’s upskill the younger generations and empower our communities for a better and sustainable future"
+                </span>
+                <span class="quote-text copy">
+                    "Let’s upskill the younger generations and empower our communities for a better and sustainable future"
+                </span>
+            </div>
         </div>
     </section>
 

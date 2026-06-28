@@ -180,28 +180,35 @@ include 'components/header.php';
 
     .format-btn {
         background: #fafafa;
-        border: 2px solid transparent;
-        padding: 1.2rem 1rem;
-        border-radius: 12px;
+        border: 1px solid #eaeaea;
+        padding: 0.8rem 0.5rem; /* Smaller padding */
+        border-radius: 8px;
         text-align: center;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 0.4rem;
+        gap: 0.2rem;
         user-select: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     }
 
     .format-btn:hover:not(.disabled) {
-        background: #f0f0f0;
+        background: #fdfdfd;
+        border-color: #ddd;
+    }
+    
+    .format-btn:active:not(.disabled) {
+        transform: translateY(2px);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
     }
 
     .format-btn.active {
         background: #fff;
         border-color: #000;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
     }
 
     .format-btn.active .format-title {
@@ -287,7 +294,7 @@ include 'components/header.php';
 
     @media (max-width: 768px) {
         .store-hero {
-            padding: 15vh 1.5rem 8vh;
+            padding: 10vh 1.5rem 3vh;
         }
 
         .product-grid {
@@ -301,7 +308,8 @@ include 'components/header.php';
         }
 
         .format-btn-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
         }
     }
 </style>
