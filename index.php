@@ -225,7 +225,7 @@ $status = $_GET['status'] ?? null;
         <div class="minimal-mobile-hero">
             <!-- Book (First on mobile now) -->
             <div class="minimal-col">
-                <div style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.8rem, 6vw, 2.5rem) !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">FEATURED WORK</div>
+                <div style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 2.0rem !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">FEATURED WORK</div>
                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="minimal-img minimal-book-cover" style="border-radius: 2px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1);">
                 <h2 class="minimal-name minimal-book-title"><?php echo $books[0]['title']; ?></h2>
                 <a href="store.php" class="btn-minimal-tactile">Order Book</a>
@@ -233,7 +233,7 @@ $status = $_GET['status'] ?? null;
             
             <!-- Author (Second on mobile now) -->
             <div class="minimal-col">
-                <div style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: clamp(1.8rem, 6vw, 2.5rem) !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">THE AUTHOR</div>
+                <div style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 2.0rem !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">THE AUTHOR</div>
                 <img src="assets/author_main_web.jpg" alt="Manuj Mittal" class="minimal-img">
                 <h2 class="minimal-name">Manuj Mittal (MJ)</h2>
                 <a href="biography.php" class="btn-minimal-tactile">Read Bio</a>

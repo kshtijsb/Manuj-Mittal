@@ -152,7 +152,46 @@
                     </li>
             </nav>
         </div>
-        <div class="header-marquee" style="justify-content: center;">
+        <!-- Desktop Marquee -->
+        <style>
+            .desktop-marquee { display: flex; }
+            .mobile-marquee { display: none !important; }
+            @media (max-width: 768px) {
+                .desktop-marquee { display: none !important; }
+                .mobile-marquee { display: flex !important; }
+            }
+        </style>
+        <div class="header-marquee desktop-marquee">
+            <div class="header-marquee-inner">
+                <div class="header-marquee-group">
+                    <span class="separator" style="margin-right: 1rem;">•</span>
+                    <span style="padding: 0;">Published author</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
+                    <span style="padding: 0;">Doctorate Researcher (Higher Education)</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
+                    <span style="padding: 0;">Financial Services Provider</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
+                    <span style="padding: 0;">Career Strategy Advisor (Consultant)</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
+                    <span style="padding: 0;">Community Builder</span>
+                </div>
+                <div class="header-marquee-group" aria-hidden="true">
+                    <span class="separator" style="margin-right: 1rem;">•</span>
+                    <span style="padding: 0;">Published author</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
+                    <span style="padding: 0;">Doctorate Researcher (Higher Education)</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
+                    <span style="padding: 0;">Financial Services Provider</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
+                    <span style="padding: 0;">Career Strategy Advisor (Consultant)</span>
+                    <span class="separator" style="margin-left: 1rem;">•</span>
+                    <span style="padding: 0;">Community Builder</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Marquee -->
+        <div class="header-marquee mobile-marquee" style="justify-content: center;">
             <div class="header-marquee-inner" style="animation: none; width: 100%; justify-content: center;">
                 <div class="header-marquee-group" style="min-width: auto; justify-content: center;">
                     <span class="separator" style="margin-right: 1rem;">•</span>

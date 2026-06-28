@@ -271,10 +271,61 @@
     }
 </style>
 
-    <!-- Visionary Quotes (Static 3-line format) -->
-    <div class="quote-bar" style="background: var(--gold); padding: 1.5rem; text-align: center; width: 100%; position: relative; z-index: 20;">
-        <span style="color: #000; font-family: var(--font-sans); font-size: 1rem; font-weight: 800; letter-spacing: 1px; line-height: 1.6; display: inline-block; text-transform: uppercase; max-width: 500px; margin: 0 auto;">
-            "Let’s upskill the younger generations and empower our communities for a better and sustainable future"
+    <!-- Visionary Quotes Marquee -->
+    <style>
+        .quote-bar-desktop { display: block; }
+        .quote-bar-mobile { display: none; }
+        @media (max-width: 768px) {
+            .quote-bar-desktop { display: none !important; }
+            .quote-bar-mobile { display: block !important; }
+        }
+        .quote-marquee-inner {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 30s linear infinite;
+        }
+        .quote-marquee-group {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+        .quote-marquee-group span {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            padding: 0 2.5rem;
+        }
+        .quote-bar-desktop:hover .quote-marquee-inner {
+            animation-play-state: paused;
+        }
+    </style>
+
+    <!-- Desktop: Scrolling marquee -->
+    <div class="quote-bar quote-bar-desktop" style="background: var(--gold); padding: 0.6rem 0; width: 100%; position: relative; z-index: 20; overflow: hidden;">
+        <div class="quote-marquee-inner">
+            <div class="quote-marquee-group">
+                <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and sustainable future&rdquo;</span>
+                <span style="opacity:0.4;">&bull;</span>
+                <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and sustainable future&rdquo;</span>
+                <span style="opacity:0.4;">&bull;</span>
+            </div>
+            <div class="quote-marquee-group" aria-hidden="true">
+                <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and sustainable future&rdquo;</span>
+                <span style="opacity:0.4;">&bull;</span>
+                <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and sustainable future&rdquo;</span>
+                <span style="opacity:0.4;">&bull;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile: Static centered -->
+    <div class="quote-bar quote-bar-mobile" style="background: var(--gold); padding: 1.5rem; text-align: center; width: 100%; position: relative; z-index: 20;">
+        <span style="color: #000; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 800; letter-spacing: 1px; line-height: 1.6; display: inline-block; text-transform: uppercase; max-width: 500px; margin: 0 auto;">
+            "Let's upskill the younger generations and empower our communities for a better and sustainable future"
         </span>
     </div>
 
