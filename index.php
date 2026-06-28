@@ -221,29 +221,22 @@ $status = $_GET['status'] ?? null;
             }
         </script>
 
-        <!-- Apple Executive Mobile Hero -->
-        <div class="hero-mobile">
-
-            <img src="assets/author_main_web.jpg" alt="Manuj Mittal" class="hero-mobile-portrait">
-            <h1 class="hero-mobile-title">Manuj Mittal.</h1>
-            <p class="hero-mobile-desc">Writer, youth leader, and visionary distilling complex challenges into
-                thought-provoking narratives.</p>
-
-            <div class="hero-mobile-buttons">
-                <a href="biography" class="btn-apple-primary">Read Full Story</a>
-                <a href="store" class="btn-apple-secondary">The New Book</a>
+        <!-- Minimal Side-by-Side Mobile Hero -->
+        <div class="minimal-mobile-hero">
+            <!-- Left: Author -->
+            <div class="minimal-col">
+                <img src="assets/author_main_web.jpg" alt="Manuj Mittal" class="minimal-img">
+                <h2 class="minimal-name">Manuj Mittal</h2>
+                <a href="biography.php" class="btn-minimal-tactile">Read Bio</a>
+            </div>
+            
+            <!-- Right: Book -->
+            <div class="minimal-col">
+                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="minimal-img" style="border-radius: 2px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1);">
+                <h2 class="minimal-name"><?php echo $books[0]['title']; ?></h2>
+                <a href="store.php" class="btn-minimal-tactile">Order Book</a>
             </div>
         </div>
-    </section>
-
-    <!-- Cinematic Mobile Book Reveal (Mid-Scroll) -->
-
-    <section id="book" class="mobile-cinematic-book reveal">
-        <div class="cinematic-glow"></div>
-        <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="cinematic-book-cover">
-        <h2 class="cinematic-title no-split"><?php echo $books[0]['title']; ?></h2>
-        <p class="cinematic-subtitle">Featured work</p>
-        <a href="store" class="btn-cinematic">Order Now</a>
     </section>
 
     <!-- Executive Mobile Layout Logic -->

@@ -1631,165 +1631,69 @@ nav {
     }
 
     
-                .hero-mobile {
-                    display: none;
-                }
-
-                @media (max-width: 992px) {
-                    .hero-mobile {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        padding: 4rem 2rem 5rem;
-                        text-align: center;
-                        width: 100%;
-                        background: transparent;
-                    }
-
-                    .hero-mobile-title {
-                        font-family: var(--font-sans);
-                        font-size: 3.8rem;
-                        font-weight: 800;
-                        letter-spacing: -2px;
-                        color: #000 !important;
-                        line-height: 1;
-                        margin-bottom: 2rem;
-                    }
-
-                    .hero-mobile-portrait {
-                        width: 220px;
-                        height: 280px;
-                        object-fit: cover;
-                        object-position: center;
-                        border-radius: 20px;
-                        margin-bottom: 2rem;
-                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-                    }
-
-                    .hero-mobile-desc {
-                        font-family: var(--font-sans);
-                        font-size: 1.15rem;
-                        color: var(--color-text-muted);
-                        font-weight: 400;
-                        line-height: 1.6;
-                        margin-bottom: 3rem;
-                    }
-
-                    .hero-mobile-buttons {
-                        display: flex;
-                        flex-direction: column;
-                        width: 100%;
-                        gap: 1rem;
-                    }
-
-                    .btn-apple-primary {
-                        background: var(--color-text);
-                        color: var(--color-bg);
-                        text-align: center;
-                        padding: 1.2rem;
-                        border-radius: 50px;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        text-decoration: none;
-                        width: 100%;
-                        letter-spacing: 0;
-                    }
-
-                    .btn-apple-secondary {
-                        background: transparent;
-                        color: var(--color-text);
-                        border: 2px solid var(--color-text-muted);
-                        text-align: center;
-                        padding: 1.2rem;
-                        border-radius: 50px;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        text-decoration: none;
-                        width: 100%;
-                        letter-spacing: 0;
-                    }
-                }
-            
-
-        .mobile-cinematic-book {
+        /* Minimal Mobile Home Page Redesign */
+        .minimal-mobile-hero {
             display: none;
         }
 
         @media (max-width: 992px) {
-            .mobile-cinematic-book {
+            .minimal-mobile-hero {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 4rem 1.5rem 5rem;
+                gap: 1.5rem;
+                width: 100%;
+                background: transparent;
+            }
+
+            .minimal-col {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                background: transparent;
-                padding: 6rem 2rem;
+                flex: 1;
                 text-align: center;
-                width: 100%;
-                position: relative;
-                overflow: hidden;
             }
 
-            .cinematic-glow {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 300px;
-                height: 400px;
-                background: radial-gradient(circle, rgba(197, 160, 89, 0.2) 0%, transparent 70%);
-                filter: blur(40px);
-                z-index: 1;
-            }
-
-            .cinematic-book-cover {
+            .minimal-img {
                 width: 100%;
-                max-width: 260px;
-                height: auto;
-                aspect-ratio: 2/3;
+                aspect-ratio: 3/4;
                 object-fit: cover;
-                border-radius: 4px;
-                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
-                position: relative;
-                z-index: 2;
-                margin-bottom: 2.5rem;
+                border-radius: 8px;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             }
 
-            .cinematic-title {
-                color: var(--color-text);
+            .minimal-name {
                 font-family: var(--font-serif);
-                font-size: 2.4rem;
-                line-height: 1.1;
-                margin-bottom: 1rem;
-                position: relative;
-                z-index: 2;
-            }
-
-            .cinematic-subtitle {
-                color: var(--color-text-muted);
-                font-family: 'STZhongsong', var(--font-serif);
-                font-weight: bold;
-                font-size: 0.85rem;
-                margin-bottom: 3rem;
-                position: relative;
-                z-index: 2;
-                letter-spacing: 3px;
-                text-transform: none;
+                font-size: 1.4rem;
                 font-weight: 800;
+                color: #000 !important;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+                letter-spacing: -0.5px;
             }
 
-            .btn-cinematic {
-                background: var(--color-text);
-                color: var(--color-bg);
+            .btn-minimal-tactile {
+                background: #000;
+                color: #fff;
                 text-align: center;
-                padding: 1.2rem;
+                padding: 0.6rem 1.2rem;
                 border-radius: 50px;
-                font-size: 1rem;
+                font-size: 0.75rem;
                 font-weight: 700;
                 text-decoration: none;
-                width: 100%;
-                max-width: 260px;
-                position: relative;
-                z-index: 2;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border: 1px solid #333;
+                display: inline-block;
+                transition: transform 0.2s, background 0.2s;
+            }
+
+            .btn-minimal-tactile:active {
+                transform: scale(0.95);
+                background: #222;
             }
         }
     
@@ -1815,6 +1719,7 @@ nav {
                 padding: 0.5rem 0 0.5rem 1.4rem;
                 position: relative;
                 border-bottom: 1px solid rgba(0,0,0,0.05);
+                text-align: left;
             }
             .pillar-list li:last-child {
                 border-bottom: none;
@@ -2134,6 +2039,7 @@ nav {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                text-align: left;
             }
 
             .timeline-list li:last-child {
@@ -2188,6 +2094,10 @@ nav {
                     font-size: 0.95rem;
                     padding: 0.35rem 0 0.35rem 1.2rem;
                     height: auto;
+                    text-align: left;
+                }
+                .timeline-list li::before {
+                    top: 0.35rem;
                 }
             }
         
