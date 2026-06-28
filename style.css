@@ -1684,8 +1684,13 @@ nav {
             }
             
             .minimal-book-title {
-                font-size: 1.15rem; /* Reduced to fit "PERSONAL OPERATING SYSTEM ©" on 2 lines */
-                letter-spacing: 0;
+                font-family: 'Times New Roman', Times, serif !important;
+                font-size: clamp(1.8rem, 3.5vw, 2.8rem) !important;
+                color: #000 !important;
+                line-height: 1.1 !important;
+                white-space: nowrap !important;
+                letter-spacing: -1px !important;
+                margin-bottom: 1.5rem !important;
             }
 
             .btn-minimal-tactile {
@@ -2660,7 +2665,7 @@ nav {
 /* --- Extracted from footer.php --- */
 
                     .author-signature { font-family: 'Times New Roman', Times, serif; text-transform: uppercase; font-weight: 900; letter-spacing: 4px; font-size: 5.5rem; color: var(--gold); }
-                    @media (max-width: 768px) { .author-signature { font-size: 3.8rem; } }
+                    @media (max-width: 768px) { .author-signature { font-size: clamp(2rem, 11vw, 3.8rem); } }
                 
 /* Horizontal Gallery Fix for 'Cut Assets' */
 .about-pillars::after {

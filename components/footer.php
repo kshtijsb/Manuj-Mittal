@@ -241,12 +241,39 @@
 </style>
 
     <!-- Visionary Quotes -->
-    <section class="quotes-section"
-        style="padding: 0; background: transparent; position: relative; overflow: hidden; display: flex; justify-content: center; z-index: 20;">
-        <div
-            style="background: var(--gold); padding: 1rem 1.5rem; text-align: center; width: 100%;">
-            <span
-                style="color: #000; font-family: var(--font-sans); font-size: clamp(0.75rem, 3vw, 1.2rem); font-weight: 800; letter-spacing: 1px; line-height: 1.5; display: inline-block; text-transform: uppercase;">
+    <style>
+        .quotes-section {
+            padding: 0; background: transparent; position: relative; overflow: hidden; display: flex; justify-content: center; z-index: 20;
+        }
+        .quote-bar {
+            background: var(--gold); padding: 1rem 1.5rem; text-align: center; width: 100%;
+        }
+        .quote-text {
+            color: #000; font-family: var(--font-sans); font-size: 1rem; font-weight: 800; letter-spacing: 1px; line-height: 1.5; display: inline-block; text-transform: uppercase;
+        }
+
+        /* Mobile Marquee Override */
+        @media (max-width: 992px) {
+            .quote-bar {
+                padding: 0.4rem 0; /* Reduced height */
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            .quote-text {
+                font-size: 0.8rem;
+                display: inline-block;
+                animation: scrollMarquee 15s linear infinite;
+                padding-left: 100%;
+            }
+            @keyframes scrollMarquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-100%); }
+            }
+        }
+    </style>
+    <section class="quotes-section">
+        <div class="quote-bar">
+            <span class="quote-text">
                 "Let’s upskill the younger generations and empower our communities for a better and sustainable future"
             </span>
         </div>
@@ -428,25 +455,19 @@
         </svg>
         <span>Home</span>
     </a>
-    <a href="education.php" class="mobile-nav-item">
+    <a href="biography.php" class="mobile-nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>About MJ</span>
+    </a>
+    <a href="store.php" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
         </svg>
-        <span>Education</span>
-    </a>
-    <a href="professional.php" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-        </svg>
-        <span>Career</span>
-    </a>
-    <a href="social-responsibility.php" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-        </svg>
-        <span>Social</span>
+        <span>Book</span>
     </a>
     <a href="contact.php" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
