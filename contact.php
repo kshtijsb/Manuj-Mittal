@@ -854,8 +854,8 @@ include 'components/header.php';
     ══════════════════════════════════════════════ -->
     <div id="panel-mtg" style="max-width: 1000px; margin: 0 auto; padding: 0 1rem;">
         <div class="side-tag"
-            style="color: #000; font-weight: 800; letter-spacing: 8px; margin-bottom: 3rem; display: block; font-size: 1.1rem; font-family: 'STZhongsong', var(--font-serif); text-align: center;">
-            "Open to connecting and networking forward"</div>
+            style="color: #000; margin-bottom: 3rem; display: block; font-size: clamp(2.5rem, 5vw, 4rem); font-family: 'Times New Roman', Times, serif; text-align: center;">
+            Let's connect</div>
         <div class="scheduler-grid">
 
             <!-- Left: Host info + meeting types -->

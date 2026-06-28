@@ -308,8 +308,7 @@ include 'components/header.php';
 
 <main class="container">
     <div class="store-hero">
-        <h1>Library</h1>
-        <p>Acquire your own piece of the Jewel.</p>
+        <h1>LIBRARY</h1>
     </div>
 
     <div class="product-grid">
@@ -331,13 +330,13 @@ include 'components/header.php';
                             </div>
 
                             <h3
-                                style="position: relative; left: 15px; z-index: 2; font-family: 'Times New Roman', Times, serif; font-size: 1.8rem; color: #111; margin-bottom: 4rem; margin-top: -3rem; line-height: 1.2; text-shadow: 1px 1px 0 rgba(255,255,255,0.8); max-width: 80%; text-align: center; word-wrap: break-word;">
+                                style="position: relative; left: 15px; z-index: 2; font-family: 'Times New Roman', Times, serif; font-size: 1.8rem; color: #111; margin-bottom: 4rem; margin-top: -6rem; line-height: 1.2; text-shadow: 1px 1px 0 rgba(255,255,255,0.8); max-width: 80%; text-align: center; word-wrap: break-word;">
                                 <?php echo isset($book['cover_title']) ? $book['cover_title'] : $book['title']; ?>
                             </h3>
 
                             <!-- Original styled coming soon, just moved lower -->
                             <div
-                                style="position: absolute; z-index: 3; bottom: 5.5rem; left: calc(50% + 15px); font-family: var(--font-serif); font-size: 1.3rem; color: #000; font-weight: bold; letter-spacing: 4px; padding: 0.5rem 1rem; border: 2px solid #000; transform: translateX(-50%) rotate(-10deg); white-space: nowrap;">
+                                style="position: absolute; z-index: 3; bottom: 8.5rem; left: calc(50% + 15px); font-family: var(--font-serif); font-size: 1.3rem; color: #000; font-weight: bold; letter-spacing: 4px; padding: 0.5rem 1rem; border: 2px solid #000; transform: translateX(-50%) rotate(-10deg); white-space: nowrap;">
                                 COMING SOON</div>
                         </div>
                     <?php else: ?>
@@ -381,11 +380,6 @@ include 'components/header.php';
                                 </p>
                             </div>
 
-                            <div class="price-tag">
-                                <span class="price"
-                                    id="display-price-<?php echo $book['id']; ?>">$<?php echo $book['formats'][$firstKey]['price']; ?></span>
-                            </div>
-
                             <!-- Buy Button -->
                             <?php if (isset($book['amazon_url'])): ?>
                                 <?php $initialUrl = isset($book['formats'][$firstKey]['url']) ? $book['formats'][$firstKey]['url'] : $book['amazon_url']; ?>
@@ -405,9 +399,7 @@ include 'components/header.php';
                                     // Add active class to clicked button
                                     btnElement.classList.add('active');
 
-                                    // Update price and label
-                                    document.getElementById('display-price-' + bookId).innerText = '$' + price;
-
+                                    // Update label
                                     const labelElement = document.getElementById('format-label-' + bookId);
                                     if (labelElement) {
                                         labelElement.innerText = label;
@@ -421,9 +413,7 @@ include 'components/header.php';
                                 }
                             </script>
                         <?php elseif ($book['status'] === 'available'): ?>
-                            <div class="price-tag" style="margin-bottom: 2.5rem;">
-                                <span class="price"><?php echo $book['price'] ?? "TBD"; ?></span>
-                            </div>
+
                             <?php if (isset($book['amazon_url'])): ?>
                                 <a href="<?php echo $book['amazon_url']; ?>" target="_blank" class="btn-buy"
                                     style="display: block; width: 100%; max-width: 400px; text-align: center; text-decoration: none; box-sizing: border-box;">BUY

@@ -24,10 +24,10 @@ $books = [
     [
         "id" => "flip-the-script",
         "title" => "FLIP THE SCRIPT",
-        "cover_title" => "RE-IMAGINE EDUCATION",
+        "cover_title" => "CHAPTER",
         "tag" => "Upcoming Release",
-        "meta" => "Scheduled launch September 2026",
-        "desc" => "Scheduled launch September 2026.",
+        "meta" => "Scheduled launch in September 2026",
+        "desc" => "Scheduled launch in September 2026.",
         "status" => "coming-soon"
     ]
 ];

@@ -10,7 +10,7 @@ include 'components/header.php';
         --theme-secondary: #f43f5e;
         --theme-glow: rgba(225, 29, 72, 0.15);
         --theme-glow-strong: rgba(225, 29, 72, 0.4);
-        --bg-main: #f8fafc;
+        --bg-main: #ffffff;
         --card-bg: rgba(255, 255, 255, 0.7);
         --text-main: #0f172a;
         --text-muted: #475569;
@@ -35,6 +35,7 @@ include 'components/header.php';
         z-index: 0;
         animation: floatBlob 15s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
+        display: none !important;
     }
 
     .blob-1 {

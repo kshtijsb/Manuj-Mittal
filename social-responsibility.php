@@ -10,7 +10,7 @@ include 'components/header.php';
         --theme-secondary: #34d399;
         --theme-glow: rgba(16, 185, 129, 0.15);
         --theme-glow-strong: rgba(16, 185, 129, 0.4);
-        --bg-main: #f8fafc;
+        --bg-main: #ffffff;
         --card-bg: rgba(255, 255, 255, 0.7);
         --text-main: #0f172a;
         --text-muted: #475569;
@@ -35,6 +35,7 @@ include 'components/header.php';
         z-index: 0;
         animation: floatBlob 15s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
+        display: none !important;
     }
     .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--theme-glow); }
     .blob-2 { bottom: 10%; right: -10%; width: 40vw; height: 40vw; background: rgba(52, 211, 153, 0.1); animation-delay: -5s; }

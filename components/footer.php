@@ -174,40 +174,55 @@
 
     /* Mobile Redesign */
     @media (max-width: 768px) {
+        .footer-container {
+            padding-bottom: 110px; /* Spacer for mobile bottom nav so we don't scroll into empty body */
+        }
         .footer-main-row {
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         .footer-left {
             min-width: 100%;
             display: flex;
             justify-content: center;
         }
+        .footer-signature {
+            font-size: clamp(3.5rem, 12vw, 5rem);
+            margin-bottom: 0.5rem;
+        }
         .footer-right {
             min-width: 100%;
             max-width: 100%;
             margin-top: 0;
             align-items: center;
+            gap: 2rem;
         }
         .footer-btn-group {
             flex-direction: column;
             gap: 1rem;
+            width: 100%;
+        }
+        .footer-btn {
+            width: 100%;
+            padding: 1.2rem;
         }
         .footer-meta-row {
             justify-content: center;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         .footer-location {
             justify-content: center;
+            margin-bottom: 0.5rem;
         }
         .footer-legal-row {
             flex-direction: column;
             justify-content: center;
             text-align: center;
             gap: 1rem;
+            padding-top: 2rem;
         }
         .footer-legal-links {
             justify-content: center;
