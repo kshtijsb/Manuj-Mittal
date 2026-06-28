@@ -2285,7 +2285,7 @@ nav {
             color: #000000;
             opacity: 0.5;
             padding: 0;
-            font-size: 0.8rem;
+            font-size: inherit; /* Matches the 0.7rem of the span */
         }
 
         .header-marquee:hover .header-marquee-inner {
