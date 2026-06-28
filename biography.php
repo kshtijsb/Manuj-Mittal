@@ -54,7 +54,7 @@ include 'components/header.php';
 
             <div class="bio-header-left">
                 <div class="side-tag reveal bio-title-mobile"
-                    style="color: #000; font-weight: bold; letter-spacing: 0px; margin-bottom: 2rem; display: block; font-family: 'Times New Roman', Times, serif; font-size: clamp(2.5rem, 8vw, 4rem) !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">
+                    style="color: #000; font-weight: bold; letter-spacing: 0px; margin-bottom: 2rem; display: block; font-family: 'Times New Roman', Times, serif; font-size: clamp(1.8rem, 6vw, 2.5rem) !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">
                     ABOUT THE AUTHOR</div>
                 <h1 class="reveal bio-name-mobile-hide"
                     style="font-size: clamp(3rem, 5vw, 4.2rem); line-height: 1.05; margin-bottom: 4rem; color: #000; letter-spacing: -2px; font-family: 'Times New Roman', Times, serif; white-space: nowrap;">
