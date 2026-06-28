@@ -2665,7 +2665,7 @@ nav {
 /* --- Extracted from footer.php --- */
 
                     .author-signature { font-family: 'Times New Roman', Times, serif; text-transform: uppercase; font-weight: 900; letter-spacing: 4px; font-size: 5.5rem; color: var(--gold); }
-                    @media (max-width: 768px) { .author-signature { font-size: clamp(2rem, 11vw, 3.8rem); } }
+                    @media (max-width: 768px) { .author-signature { font-size: 2.2rem; text-align: center; } }
                 
 /* Horizontal Gallery Fix for 'Cut Assets' */
 .about-pillars::after {

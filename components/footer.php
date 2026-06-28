@@ -198,7 +198,7 @@
             align-items: center;
         }
         .footer-signature {
-            font-size: clamp(3rem, 10vw, 4rem);
+            font-size: 2.2rem;
             margin-bottom: 0.5rem;
             text-align: center;
         }
