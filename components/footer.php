@@ -172,103 +172,163 @@
         }
     }
 
-    /* Mobile Redesign */
+    /* Mobile Redesign — Ultra-Compact Sleek Strip */
     @media (max-width: 768px) {
+
+        .footer-wrapper {
+            background-image: none;
+            background-color: #000;
+        }
+
         .footer-container {
-            padding-top: 2rem;
-            padding-bottom: 80px; /* Spacer for mobile bottom nav so we don't scroll into empty body */
+            padding: 1.2rem 1.5rem 90px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             min-height: auto;
-            justify-content: center;
+            gap: 0;
         }
+
+        /* Row 1: Signature left, socials right */
         .footer-main-row {
-            flex-direction: column;
+            display: flex;
+            flex-direction: row;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 1.5rem;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            gap: 0;
             width: 100%;
+            margin-bottom: 0;
+            padding-bottom: 0.9rem;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
+
         .footer-left {
-            min-width: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            min-width: auto;
+            flex: 1;
         }
+
         .footer-signature {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            text-align: center;
+            font-size: 1.4rem;
+            margin: 0;
+            line-height: 1;
+            white-space: nowrap;
         }
+
+        /* Right: collapse to just socials inline */
         .footer-right {
-            min-width: 100%;
-            max-width: 100%;
             display: flex;
-            flex-direction: column;
-            margin-top: 0;
+            flex-direction: row;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
             gap: 1rem;
+            min-width: auto;
+            max-width: none;
+            flex: 1;
+            margin-top: 0;
         }
+
+        /* Hide the buttons from the main row — show in row 2 */
         .footer-btn-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1.2rem;
-            width: 100%;
+            display: none;
         }
-        .footer-btn {
-            background: transparent !important;
-            border: none !important;
-            padding: 0.5rem !important;
-            font-size: 1.1rem;
-            text-transform: none;
-            letter-spacing: 1px;
-            color: #fff !important;
-            width: auto;
-            text-align: center;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            text-decoration-color: var(--gold);
-        }
+
         .footer-meta-row {
             display: flex;
-            justify-content: center;
+            flex-direction: row;
+            justify-content: flex-end;
             align-items: center;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 1rem;
-            width: 100%;
+            gap: 0.8rem;
+            margin-top: 0;
+            width: auto;
         }
+
         .footer-location {
             display: none;
         }
+
+        .footer-social-glow svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Row 2: Links side by side */
         .footer-legal-row {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
-            padding-top: 3rem;
+            align-items: stretch;
+            border-top: none;
+            padding-top: 0;
+            gap: 0;
             width: 100%;
         }
+
+        /* Inject the action links as a row */
+        .footer-legal-row::before {
+            content: '';
+            display: block;
+        }
+
+        .footer-copyright {
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 1.5px;
+            text-align: center;
+            padding-top: 0.7rem;
+            margin: 0;
+        }
+
         .footer-legal-links {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
+            padding: 0.7rem 0 0;
+            border-top: none;
+            flex-wrap: nowrap;
         }
-        
-        .mobile-break-copyright { display: inline; }
-        @media (max-width: 768px) {
-            .mobile-break-copyright { display: block; content: ""; height: 4px; }
+
+        .footer-legal-link {
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 1px;
+        }
+
+        .mobile-break-copyright { display: none; }
+    }
+
+    /* Mobile action links row — injected between footer rows */
+    @media (max-width: 768px) {
+        .footer-action-links-mobile {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            width: 100%;
+        }
+        .footer-action-link-mobile {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: var(--gold);
+            text-decoration-thickness: 1px;
+            letter-spacing: 0.5px;
         }
     }
+    @media (min-width: 769px) {
+        .footer-action-links-mobile {
+            display: none;
+        }
+    }
+
 </style>
 
     <!-- Visionary Quotes Marquee -->
@@ -374,10 +434,16 @@
             </div>
         </div>
 
+        <!-- Mobile-only action links row -->
+        <div class="footer-action-links-mobile">
+            <a href="store" class="footer-action-link-mobile">Visit our Library</a>
+            <a href="contact" class="footer-action-link-mobile">Book a Meeting</a>
+        </div>
+
         <!-- Bottom Section: Legal & Copyright -->
         <div class="footer-legal-row">
             <p class="footer-copyright">
-                &copy; <?php echo date("Y"); ?> <?php echo strtoupper($author_name); ?>.<span class="mobile-break-copyright"> </span>ALL STORIES RESERVED.
+                <?php echo date("Y"); ?><sup style="font-size:0.6em; vertical-align:super; line-height:0;">&copy;</sup> <?php echo strtoupper($author_name); ?>.<span class="mobile-break-copyright"> </span>ALL STORIES RESERVED.
             </p>
             <div class="footer-legal-links">
                 <a href="privacy" class="footer-legal-link">Privacy Policy</a>

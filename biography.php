@@ -136,7 +136,7 @@ include 'components/header.php';
                 <p style="margin-bottom: 2rem;">
                     Manuj believes leadership is not defined by age, but is shaped by out attitude. It is not determined
                     by
-                    titles but by the decisions we makes.
+                    titles but by the decisions we make.
                 </p>
                 <p style="margin-bottom: 2rem;">
                     With professional experience at Grant Thornton and Morgan Stanley, leadership involvement with
