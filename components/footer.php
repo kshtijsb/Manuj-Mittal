@@ -8,13 +8,14 @@
         background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
         background-size: 40px 40px;
     }
+
     .footer-container {
         width: 100%;
         margin: 0 auto;
         padding: 3.5rem 4vw 1rem;
         background-color: transparent;
     }
-    
+
     /* Layout */
     .footer-main-row {
         display: flex;
@@ -24,10 +25,12 @@
         gap: 1.5rem;
         margin-bottom: 1.5rem;
     }
+
     .footer-left {
         flex: 1;
         min-width: 300px;
     }
+
     .footer-signature {
         line-height: 1;
         margin: 0;
@@ -38,6 +41,7 @@
         opacity: 1 !important;
         transition: none !important;
     }
+
     .footer-right {
         flex: 1;
         min-width: 300px;
@@ -47,13 +51,14 @@
         gap: 1.5rem;
         margin-top: -1rem;
     }
-    
+
     /* Buttons */
     .footer-btn-group {
         display: flex;
         gap: 1.5rem;
         width: 100%;
     }
+
     .footer-btn {
         flex: 1;
         background: var(--gold);
@@ -70,7 +75,7 @@
         word-spacing: 0.25em;
         letter-spacing: 1px;
     }
-    
+
     /* Meta (Location & Socials) */
     .footer-meta-row {
         display: flex;
@@ -80,11 +85,13 @@
         gap: 1.5rem;
         width: 100%;
     }
+
     .footer-location {
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
+
     .footer-location span {
         font-family: var(--font-sans);
         font-size: 0.85rem;
@@ -94,11 +101,13 @@
         text-transform: uppercase;
         margin: 0;
     }
+
     .footer-socials {
         display: flex;
         gap: 1rem;
         align-items: center;
     }
+
     .footer-social-glow {
         color: var(--gold) !important;
         display: flex;
@@ -106,17 +115,19 @@
         justify-content: center;
         text-decoration: none !important;
     }
+
     .footer-social-glow svg {
         transition: all 0.3s ease;
     }
+
     .footer-social-glow:hover svg {
         filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.9));
         transform: scale(1.15);
     }
-    
+
     /* Legal Section */
     .footer-legal-row {
-        border-top: 1px solid rgba(255,255,255,0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 1.5rem;
         display: flex;
         flex-wrap: wrap;
@@ -124,6 +135,7 @@
         align-items: center;
         gap: 1.5rem;
     }
+
     .footer-copyright {
         font-size: 0.75rem;
         color: var(--muted);
@@ -131,11 +143,13 @@
         margin: 0;
         text-transform: uppercase;
     }
+
     .footer-legal-links {
         display: flex;
         gap: 1.5rem;
         flex-wrap: wrap;
     }
+
     .footer-legal-link {
         font-size: 0.7rem;
         color: var(--muted);
@@ -144,6 +158,7 @@
         text-transform: uppercase;
         transition: color 0.3s;
     }
+
     .footer-legal-link:hover {
         color: var(--gold);
     }
@@ -156,17 +171,20 @@
             text-align: center;
             gap: 2rem;
         }
+
         .footer-left {
             min-width: 100%;
             display: flex;
             justify-content: center;
         }
+
         .footer-right {
             width: 100%;
             max-width: 600px;
             margin-top: 0;
             align-items: center;
         }
+
         .footer-meta-row {
             justify-content: center;
         }
@@ -273,7 +291,7 @@
 
         .footer-copyright {
             font-size: 0.6rem;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255, 255, 255, 0.3);
             letter-spacing: 1.5px;
             text-align: center;
             padding-top: 0.7rem;
@@ -293,11 +311,13 @@
 
         .footer-legal-link {
             font-size: 0.6rem;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255, 255, 255, 0.35);
             letter-spacing: 1px;
         }
 
-        .mobile-break-copyright { display: none; }
+        .mobile-break-copyright {
+            display: none;
+        }
     }
 
     /* Mobile action links row — injected between footer rows */
@@ -312,6 +332,7 @@
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
             width: 100%;
         }
+
         .footer-action-link-mobile {
             font-family: var(--font-sans);
             font-size: 0.85rem;
@@ -323,71 +344,93 @@
             letter-spacing: 0.5px;
         }
     }
+
     @media (min-width: 769px) {
         .footer-action-links-mobile {
             display: none;
         }
     }
-
 </style>
 
-    <!-- Visionary Quotes Marquee -->
-    <style>
-        .quote-bar-desktop { display: block; }
-        .quote-bar-mobile { display: none; }
-        @media (max-width: 768px) {
-            .quote-bar-desktop { display: none !important; }
-            .quote-bar-mobile { display: block !important; }
-        }
-        .quote-marquee-inner {
-            display: flex;
-            width: max-content;
-            animation: marquee-scroll 30s linear infinite;
-        }
-        .quote-marquee-group {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-        }
-        .quote-marquee-group span {
-            font-family: var(--font-sans);
-            font-size: 0.85rem;
-            font-weight: 800;
-            color: #000;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            white-space: nowrap;
-            padding: 0 2.5rem;
-        }
-        .quote-bar-desktop:hover .quote-marquee-inner {
-            animation-play-state: paused;
-        }
-    </style>
+<!-- Visionary Quotes Marquee -->
+<style>
+    .quote-bar-desktop {
+        display: block;
+    }
 
-    <!-- Desktop: Scrolling marquee -->
-    <div class="quote-bar quote-bar-desktop" style="background: var(--gold); padding: 0.6rem 0; width: 100%; position: relative; z-index: 20; overflow: hidden;">
-        <div class="quote-marquee-inner">
-            <div class="quote-marquee-group">
-                <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and sustainable future&rdquo;</span>
-                <span style="opacity:0.4;">&bull;</span>
-                <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and sustainable future&rdquo;</span>
-                <span style="opacity:0.4;">&bull;</span>
-            </div>
-            <div class="quote-marquee-group" aria-hidden="true">
-                <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and sustainable future&rdquo;</span>
-                <span style="opacity:0.4;">&bull;</span>
-                <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and sustainable future&rdquo;</span>
-                <span style="opacity:0.4;">&bull;</span>
-            </div>
+    .quote-bar-mobile {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .quote-bar-desktop {
+            display: none !important;
+        }
+
+        .quote-bar-mobile {
+            display: block !important;
+        }
+    }
+
+    .quote-marquee-inner {
+        display: flex;
+        width: max-content;
+        animation: marquee-scroll 30s linear infinite;
+    }
+
+    .quote-marquee-group {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .quote-marquee-group span {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        white-space: nowrap;
+        padding: 0 2.5rem;
+    }
+
+    .quote-bar-desktop:hover .quote-marquee-inner {
+        animation-play-state: paused;
+    }
+</style>
+
+<!-- Desktop: Scrolling marquee -->
+<div class="quote-bar quote-bar-desktop"
+    style="background: var(--gold); padding: 0.6rem 0; width: 100%; position: relative; z-index: 20; overflow: hidden;">
+    <div class="quote-marquee-inner">
+        <div class="quote-marquee-group">
+            <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and
+                sustainable future&rdquo;</span>
+            <span style="opacity:0.4;">&bull;</span>
+            <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and
+                sustainable future&rdquo;</span>
+            <span style="opacity:0.4;">&bull;</span>
+        </div>
+        <div class="quote-marquee-group" aria-hidden="true">
+            <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and
+                sustainable future&rdquo;</span>
+            <span style="opacity:0.4;">&bull;</span>
+            <span>&ldquo;Let&rsquo;s upskill the younger generations and empower our communities for a better and
+                sustainable future&rdquo;</span>
+            <span style="opacity:0.4;">&bull;</span>
         </div>
     </div>
+</div>
 
-    <!-- Mobile: Static centered -->
-    <div class="quote-bar quote-bar-mobile" style="background: var(--gold); padding: 1.5rem; text-align: center; width: 100%; position: relative; z-index: 20;">
-        <span style="color: #000; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 800; letter-spacing: 1px; line-height: 1.6; display: inline-block; text-transform: uppercase; max-width: 500px; margin: 0 auto;">
-            "Let's upskill the younger generations and empower our communities for a better and sustainable future"
-        </span>
-    </div>
+<!-- Mobile: Static centered -->
+<div class="quote-bar quote-bar-mobile"
+    style="background: var(--gold); padding: 1.5rem; text-align: center; width: 100%; position: relative; z-index: 20;">
+    <span
+        style="color: #000; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 800; letter-spacing: 1px; line-height: 1.6; display: inline-block; text-transform: uppercase; max-width: 500px; margin: 0 auto;">
+        "Let's upskill the younger generations and empower our communities for a better and sustainable future"
+    </span>
+</div>
 
 <footer class="footer-wrapper">
     <div class="footer-container">
@@ -419,14 +462,18 @@
                     </div>
 
                     <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" aria-label="LinkedIn" class="footer-social-glow">
+                        <a href="https://www.linkedin.com/in/manujmittal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                            target="_blank" aria-label="LinkedIn" class="footer-social-glow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3.5 15.5H6.38V9.82h2.12v7.68zm-1.06-8.73h-.01c-.71 0-1.17-.49-1.17-1.1 0-.62.48-1.1 1.2-1.1.72 0 1.17.48 1.18 1.1 0 .61-.47 1.1-1.2 1.1zm9.44 8.73h-2.12v-4.11c0-1.03-.37-1.74-1.29-1.74-.71 0-1.13.48-1.32.94-.07.17-.09.41-.09.66v4.25h-2.12s.03-6.96 0-7.68h2.12v1.09c.28-.43.78-1.04 1.89-1.04 1.38 0 2.42.91 2.42 2.85v4.78z" />
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3.5 15.5H6.38V9.82h2.12v7.68zm-1.06-8.73h-.01c-.71 0-1.17-.49-1.17-1.1 0-.62.48-1.1 1.2-1.1.72 0 1.17.48 1.18 1.1 0 .61-.47 1.1-1.2 1.1zm9.44 8.73h-2.12v-4.11c0-1.03-.37-1.74-1.29-1.74-.71 0-1.13.48-1.32.94-.07.17-.09.41-.09.66v4.25h-2.12s.03-6.96 0-7.68h2.12v1.09c.28-.43.78-1.04 1.89-1.04 1.38 0 2.42.91 2.42 2.85v4.78z" />
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank" aria-label="Instagram" class="footer-social-glow">
+                        <a href="https://www.instagram.com/manuj523?igsh=Z3BtcTRhZDJvbXlx" target="_blank"
+                            aria-label="Instagram" class="footer-social-glow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.32 14.5c0 .66-.54 1.2-1.2 1.2H8.88c-.66 0-1.2-.54-1.2-1.2V9.5c0-.66.54-1.2 1.2-1.2h7.24c.66 0 1.2.54 1.2 1.2v7zM12 10.3c-1.49 0-2.7 1.21-2.7 2.7s1.21 2.7 2.7 2.7 2.7-1.21 2.7-2.7-1.21-2.7-2.7-2.7zm0 4.2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm2.8-3.7c-.33 0-.6-.27-.6-.6s.27-.6.6-.6.6.27.6.6-.27.6-.6.6z" />
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.32 14.5c0 .66-.54 1.2-1.2 1.2H8.88c-.66 0-1.2-.54-1.2-1.2V9.5c0-.66.54-1.2 1.2-1.2h7.24c.66 0 1.2.54 1.2 1.2v7zM12 10.3c-1.49 0-2.7 1.21-2.7 2.7s1.21 2.7 2.7 2.7 2.7-1.21 2.7-2.7-1.21-2.7-2.7-2.7zm0 4.2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm2.8-3.7c-.33 0-.6-.27-.6-.6s.27-.6.6-.6.6.27.6.6-.27.6-.6.6z" />
                             </svg>
                         </a>
                     </div>
@@ -443,7 +490,9 @@
         <!-- Bottom Section: Legal & Copyright -->
         <div class="footer-legal-row">
             <p class="footer-copyright">
-                <?php echo date("Y"); ?><sup style="font-size:0.6em; vertical-align:super; line-height:0;">&copy;</sup> <?php echo strtoupper($author_name); ?>.<span class="mobile-break-copyright"> </span>ALL STORIES RESERVED.
+                <?php echo date("Y"); ?><sup style="font-size:0.6em; vertical-align:super; line-height:0;">&copy;</sup>
+                <?php echo strtoupper($author_name); ?>.<span class="mobile-break-copyright"> </span><br>ALL STORIES
+                RESERVED.
             </p>
             <div class="footer-legal-links">
                 <a href="privacy" class="footer-legal-link">Privacy Policy</a>
@@ -565,28 +614,32 @@
 </script>
 <nav class="mobile-bottom-nav">
     <a href="index" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
             <polyline points="9 22 9 12 15 12 15 22"></polyline>
         </svg>
         <span>Home</span>
     </a>
     <a href="biography" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
         </svg>
         <span>About MJ</span>
     </a>
     <a href="store" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
         </svg>
         <span>Books</span>
     </a>
     <a href="contact" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
         </svg>
