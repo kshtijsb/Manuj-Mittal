@@ -134,7 +134,7 @@ include 'components/header.php';
                     thought-provoking quotations that reflect both principle and practice.
                 </p>
                 <p style="margin-bottom: 2rem;">
-                    Manuj believes leadership is not defined by age, but is shaped by out attitude. It is not determined
+                    Manuj believes leadership is not defined by age, but is shaped by our attitude. It is not determined
                     by
                     titles but by the decisions we make.
                 </p>
