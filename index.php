@@ -11,27 +11,33 @@ $status = $_GET['status'] ?? null;
 
 
 <style>
-@media (max-width: 768px) {
-    /* ── Remove massive gap between hero cards and gold bar ── */
-    #about.container {
-        padding-top: 1.5rem !important;
+    @media (max-width: 768px) {
+
+        /* ── Remove massive gap between hero cards and gold bar ── */
+        #about.container {
+            padding-top: 1.5rem !important;
+        }
+
+        .about-pillars {
+            gap: 0.8rem !important;
+        }
+
+        #journey {
+            padding-top: 1.5rem !important;
+            padding-bottom: 2rem !important;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.5rem, 6vw, 2rem) !important;
+            margin-bottom: 1rem !important;
+        }
+
+        /* Stat numbers section tighten */
+        .stats-row,
+        .stat-block {
+            padding: 1.5rem 0 !important;
+        }
     }
-    .about-pillars {
-        gap: 0.8rem !important;
-    }
-    #journey {
-        padding-top: 1.5rem !important;
-        padding-bottom: 2rem !important;
-    }
-    .section-header h2 {
-        font-size: clamp(1.5rem, 6vw, 2rem) !important;
-        margin-bottom: 1rem !important;
-    }
-    /* Stat numbers section tighten */
-    .stats-row, .stat-block {
-        padding: 1.5rem 0 !important;
-    }
-}
 </style>
 
 <main>
@@ -250,15 +256,21 @@ $status = $_GET['status'] ?? null;
         <div class="minimal-mobile-hero">
             <!-- Book (First on mobile now) -->
             <div class="minimal-col">
-                <div style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 2.0rem !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">FEATURED WORK</div>
-                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="minimal-img minimal-book-cover" style="border-radius: 2px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1);">
+                <div
+                    style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 2.0rem !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">
+                    FEATURED WORK</div>
+                <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>"
+                    class="minimal-img minimal-book-cover"
+                    style="border-radius: 2px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1);">
                 <h2 class="minimal-name minimal-book-title"><?php echo $books[0]['title']; ?></h2>
                 <a href="store" class="btn-minimal-tactile">Order Book</a>
             </div>
-            
+
             <!-- Author (Second on mobile now) -->
             <div class="minimal-col">
-                <div style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 2.0rem !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">THE AUTHOR</div>
+                <div
+                    style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 2.0rem !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">
+                    THE AUTHOR</div>
                 <img src="assets/author_main_web.jpg" alt="Manuj Mittal" class="minimal-img">
                 <h2 class="minimal-name">Manuj Mittal (MJ)</h2>
                 <a href="biography" class="btn-minimal-tactile">Read Bio</a>
@@ -367,9 +379,22 @@ $status = $_GET['status'] ?? null;
                     style="font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 0; color: #000; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px;">
                     Legacy in the Making</h2>
             </div>
+
+            <div class="timeline-controls">
+                <button class="timeline-arrow prev-arrow" aria-label="Previous card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="timeline-arrow next-arrow" aria-label="Next card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
         </div>
-
-
 
         <div class="timeline-container">
             <!-- Horizontal Timeline Line -->
@@ -402,8 +427,14 @@ $status = $_GET['status'] ?? null;
                             <li>Father is a former USA based professional, 1st generation entrepreneur (Automation
                                 Expert) in India and a <br>Past District Governor with Rotary International
                             </li>
-                            <li>Manuj was born on Jan 10, 1996 (01.10.1996) <span class="numerology"
-                                    style="margin-left: 85px;">〈1+1+1+9+9+6=27〉〈2+7=9〉</span></li>
+                            <li>
+                                <div style="display: flex; flex-direction: column; width: 100%;">
+                                    <span>Manuj was born on Jan 10, 1996 (01.10.1996)</span>
+                                    <div class="numerology"
+                                        style="margin-top: 4px; margin-left: 80px; text-align: left;">
+                                        〈1+1+1+9+9+6=27〉〈2+7=9〉</div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -805,6 +836,28 @@ $status = $_GET['status'] ?? null;
 
                 if (timelineContainer) {
                     timelineContainer.addEventListener('scroll', updateTimeline);
+
+                    // Arrow button controls
+                    const prevArrow = document.querySelector('.prev-arrow');
+                    const nextArrow = document.querySelector('.next-arrow');
+
+                    if (prevArrow && nextArrow) {
+                        const scrollAmount = window.innerWidth > 1024 ? 482 : 372; // Desktop card 450 + 32 gap, Mobile 340 + 32 gap
+
+                        prevArrow.addEventListener('click', () => {
+                            timelineContainer.scrollBy({
+                                left: -scrollAmount,
+                                behavior: 'smooth'
+                            });
+                        });
+
+                        nextArrow.addEventListener('click', () => {
+                            timelineContainer.scrollBy({
+                                left: scrollAmount,
+                                behavior: 'smooth'
+                            });
+                        });
+                    }
                 }
 
                 // Initial run after layout calculations are ready
