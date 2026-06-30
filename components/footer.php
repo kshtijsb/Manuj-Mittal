@@ -620,46 +620,56 @@
     </div>
     <a href="biography" class="apt-link apt-link-bio">
         <div class="apt-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
             </svg>
         </div>
         <div class="apt-link-text">
             <span class="apt-link-label">Biography</span>
-            <span class="apt-link-sub">Who is Manuj Mittal?</span>
+
         </div>
-        <svg class="apt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <svg class="apt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
     </a>
     <a href="education" class="apt-link">
         <div class="apt-link-icon apt-icon-blue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                 <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
             </svg>
         </div>
         <div class="apt-link-text">
             <span class="apt-link-label">Educational Background</span>
-            <span class="apt-link-sub">Academic Journey</span>
+
         </div>
-        <svg class="apt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <svg class="apt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
     </a>
     <a href="professional" class="apt-link">
         <div class="apt-link-icon apt-icon-green">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                 <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
             </svg>
         </div>
         <div class="apt-link-text">
             <span class="apt-link-label">Professional Career</span>
-            <span class="apt-link-sub">Morgan Stanley &amp; Grant Thornton</span>
+
         </div>
-        <svg class="apt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <svg class="apt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
     </a>
     <a href="social-responsibility" class="apt-link">
         <div class="apt-link-icon apt-icon-purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                 <circle cx="9" cy="7" r="4"></circle>
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -668,9 +678,11 @@
         </div>
         <div class="apt-link-text">
             <span class="apt-link-label">Social Responsibility</span>
-            <span class="apt-link-sub">Rotary, Rotaract &amp; Community</span>
+
         </div>
-        <svg class="apt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <svg class="apt-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
     </a>
 </div>
 <!-- Tray Backdrop -->
@@ -691,11 +703,14 @@
         display: none;
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,0.45);
+        background: rgba(0, 0, 0, 0.45);
         z-index: 9998;
         backdrop-filter: blur(2px);
     }
-    .apt-backdrop.open { display: block; }
+
+    .apt-backdrop.open {
+        display: block;
+    }
 
     /* ── Tray ── */
     .about-pillar-tray {
@@ -709,9 +724,10 @@
         z-index: 9999;
         transform: translateY(110%);
         transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 -8px 40px rgba(0,0,0,0.15);
+        box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15);
         will-change: transform;
     }
+
     .about-pillar-tray.open {
         transform: translateY(0);
     }
@@ -722,8 +738,9 @@
         justify-content: space-between;
         align-items: center;
         padding: 1.2rem 1.5rem 0.8rem;
-        border-bottom: 1px solid rgba(0,0,0,0.07);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     }
+
     .apt-title {
         font-family: 'Times New Roman', Times, serif;
         font-size: 1.2rem;
@@ -731,8 +748,9 @@
         color: #000;
         letter-spacing: 0.5px;
     }
+
     .apt-close {
-        background: rgba(0,0,0,0.06);
+        background: rgba(0, 0, 0, 0.06);
         border: none;
         width: 30px;
         height: 30px;
@@ -753,30 +771,59 @@
         gap: 1rem;
         padding: 1rem 1.5rem;
         text-decoration: none;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         transition: background 0.15s;
     }
-    .apt-link:last-child { border-bottom: none; }
-    .apt-link:active { background: rgba(0,0,0,0.03); }
+
+    .apt-link:last-child {
+        border-bottom: none;
+    }
+
+    .apt-link:active {
+        background: rgba(0, 0, 0, 0.03);
+    }
 
     /* ── Icon circle ── */
     .apt-link-icon {
         width: 42px;
         height: 42px;
         border-radius: 12px;
-        background: rgba(197,160,89,0.12);
+        background: rgba(197, 160, 89, 0.12);
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
     }
-    .apt-link-icon svg { width: 20px; height: 20px; stroke: var(--gold); }
-    .apt-icon-blue { background: rgba(0,71,171,0.1); }
-    .apt-icon-blue svg { stroke: #0047AB; }
-    .apt-icon-green { background: rgba(0,128,64,0.1); }
-    .apt-icon-green svg { stroke: #008040; }
-    .apt-icon-purple { background: rgba(100,60,160,0.1); }
-    .apt-icon-purple svg { stroke: #643CA0; }
+
+    .apt-link-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--gold);
+    }
+
+    .apt-icon-blue {
+        background: rgba(0, 71, 171, 0.1);
+    }
+
+    .apt-icon-blue svg {
+        stroke: #0047AB;
+    }
+
+    .apt-icon-green {
+        background: rgba(0, 128, 64, 0.1);
+    }
+
+    .apt-icon-green svg {
+        stroke: #008040;
+    }
+
+    .apt-icon-purple {
+        background: rgba(100, 60, 160, 0.1);
+    }
+
+    .apt-icon-purple svg {
+        stroke: #643CA0;
+    }
 
     /* ── Text ── */
     .apt-link-text {
@@ -785,6 +832,7 @@
         gap: 2px;
         flex: 1;
     }
+
     .apt-link-label {
         font-family: var(--font-sans);
         font-size: 0.9rem;
@@ -792,6 +840,7 @@
         color: #111;
         letter-spacing: 0.2px;
     }
+
     .apt-link-sub {
         font-family: var(--font-sans);
         font-size: 0.72rem;
@@ -800,60 +849,76 @@
     }
 
     /* ── Chevron ── */
-    .apt-arrow { width: 16px; height: 16px; stroke: #ccc; flex-shrink: 0; }
+    .apt-arrow {
+        width: 16px;
+        height: 16px;
+        stroke: #ccc;
+        flex-shrink: 0;
+    }
 
     /* Active state highlight for the nav button */
-    .mobile-nav-about-btn.tray-open { color: var(--gold) !important; }
-    .mobile-nav-about-btn.tray-open svg { stroke: var(--gold); }
-    .mobile-nav-about-btn.tray-open span { color: var(--gold); }
+    .mobile-nav-about-btn.tray-open {
+        color: var(--gold) !important;
+    }
+
+    .mobile-nav-about-btn.tray-open svg {
+        stroke: var(--gold);
+    }
+
+    .mobile-nav-about-btn.tray-open span {
+        color: var(--gold);
+    }
 
     /* ── Only show on mobile ── */
     @media (min-width: 769px) {
+
         .about-pillar-tray,
-        .apt-backdrop { display: none !important; }
+        .apt-backdrop {
+            display: none !important;
+        }
     }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.getElementById('mobileAboutBtn');
-    var tray = document.getElementById('aboutPillarTray');
-    var backdrop = document.getElementById('aptBackdrop');
-    var closeBtn = document.getElementById('aptClose');
-    if (!btn || !tray) return;
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('mobileAboutBtn');
+        var tray = document.getElementById('aboutPillarTray');
+        var backdrop = document.getElementById('aptBackdrop');
+        var closeBtn = document.getElementById('aptClose');
+        if (!btn || !tray) return;
 
-    function openTray() {
-        tray.classList.add('open');
-        backdrop.classList.add('open');
-        btn.classList.add('tray-open');
-        btn.setAttribute('aria-expanded', 'true');
-        tray.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
+        function openTray() {
+            tray.classList.add('open');
+            backdrop.classList.add('open');
+            btn.classList.add('tray-open');
+            btn.setAttribute('aria-expanded', 'true');
+            tray.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
 
-    function closeTray() {
-        tray.classList.remove('open');
-        backdrop.classList.remove('open');
-        btn.classList.remove('tray-open');
-        btn.setAttribute('aria-expanded', 'false');
-        tray.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
+        function closeTray() {
+            tray.classList.remove('open');
+            backdrop.classList.remove('open');
+            btn.classList.remove('tray-open');
+            btn.setAttribute('aria-expanded', 'false');
+            tray.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
 
-    btn.addEventListener('click', function() {
-        tray.classList.contains('open') ? closeTray() : openTray();
+        btn.addEventListener('click', function () {
+            tray.classList.contains('open') ? closeTray() : openTray();
+        });
+
+        closeBtn.addEventListener('click', closeTray);
+        backdrop.addEventListener('click', closeTray);
+
+        // Close on swipe down
+        var startY = 0;
+        tray.addEventListener('touchstart', function (e) { startY = e.touches[0].clientY; }, { passive: true });
+        tray.addEventListener('touchend', function (e) {
+            if (e.changedTouches[0].clientY - startY > 60) closeTray();
+        }, { passive: true });
     });
-
-    closeBtn.addEventListener('click', closeTray);
-    backdrop.addEventListener('click', closeTray);
-
-    // Close on swipe down
-    var startY = 0;
-    tray.addEventListener('touchstart', function(e) { startY = e.touches[0].clientY; }, {passive:true});
-    tray.addEventListener('touchend', function(e) {
-        if (e.changedTouches[0].clientY - startY > 60) closeTray();
-    }, {passive:true});
-});
 </script>
 
 <nav class="mobile-bottom-nav">
@@ -865,7 +930,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </svg>
         <span>Home</span>
     </a>
-    <button class="mobile-nav-item mobile-nav-about-btn" id="mobileAboutBtn" aria-expanded="false" aria-controls="aboutPillarTray">
+    <button class="mobile-nav-item mobile-nav-about-btn" id="mobileAboutBtn" aria-expanded="false"
+        aria-controls="aboutPillarTray">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
