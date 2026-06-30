@@ -53,6 +53,16 @@
     <script src="https://unpkg.com/swup@4"></script>
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZQ6GY4RMZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JZQ6GY4RMZ');
+    </script>
 </head>
 
 <body>
