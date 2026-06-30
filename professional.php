@@ -780,108 +780,32 @@ include 'components/header.php';
                 .lightbox-next { right: 0.3rem; padding: 0.5rem 0.7rem; }
             }
 
-            /* ── Mobile: hide masonry, show card deck ── */
-            @media (max-width: 768px) {
-                .gallery-masonry { display: none !important; }
-                .gallery-filter-bar { display: none !important; }
-
-                .mobile-deck {
-                    display: block;
-                    position: relative;
-                    width: 100%;
-                    user-select: none;
-                }
-                .mobile-deck-track {
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
-                    overflow: hidden;
-                    border-radius: 12px;
-                }
-                .mobile-deck-slide {
-                    min-width: 100%;
-                    flex-shrink: 0;
-                    position: relative;
-                    background: #111;
-                    border-radius: 12px;
-                    overflow: hidden;
-                    display: none;
-                }
-                .mobile-deck-slide.active { display: block; }
-                .mobile-deck-slide img {
-                    width: 100%;
-                    max-height: 65vw;
-                    object-fit: cover;
-                    display: block;
-                    border-radius: 12px 12px 0 0;
-                }
-                .mobile-deck-info {
-                    background: #000;
-                    padding: 0.8rem 1rem;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    border-radius: 0 0 12px 12px;
-                }
-                .mobile-deck-category {
-                    font-family: var(--font-sans);
-                    font-size: 0.72rem;
-                    font-weight: 700;
-                    color: var(--gold);
-                    text-transform: uppercase;
-                    letter-spacing: 1.5px;
-                }
-                .mobile-deck-counter {
-                    font-family: var(--font-sans);
-                    font-size: 0.7rem;
-                    color: rgba(255,255,255,0.4);
-                    letter-spacing: 1px;
-                }
-                .mobile-deck-nav {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1.5rem;
-                    margin-top: 1rem;
-                }
-                .mobile-deck-btn {
-                    background: #000;
-                    color: #fff;
-                    border: none;
-                    width: 44px;
-                    height: 44px;
-                    border-radius: 50%;
-                    font-size: 1.2rem;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: background 0.2s, transform 0.15s;
-                }
-                .mobile-deck-btn:active { transform: scale(0.92); background: #333; }
-                .mobile-deck-btn:disabled { opacity: 0.25; pointer-events: none; }
-                .mobile-deck-dots {
-                    display: flex;
-                    gap: 6px;
-                    align-items: center;
-                }
-                .mobile-deck-dot {
-                    width: 6px;
-                    height: 6px;
-                    border-radius: 50%;
-                    background: rgba(0,0,0,0.18);
-                    transition: background 0.25s, transform 0.25s;
-                }
-                .mobile-deck-dot.active {
-                    background: var(--gold);
-                    transform: scale(1.4);
-                }
-                /* Mobile: section label smaller */
-                .page-gallery-title { font-size: 1.6rem; }
-            }
-            @media (min-width: 769px) {
-                .mobile-deck { display: none !important; }
-            }
+            /* ── Mobile: Instagram-style grid ── */
+@media (max-width: 768px) {
+    .gallery-masonry { 
+        display: grid !important; 
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 4px !important;
+        columns: auto !important;
+    }
+    .gallery-item {
+        margin-bottom: 0 !important;
+        aspect-ratio: 1/1 !important;
+        overflow: hidden;
+    }
+    .gallery-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    .gallery-filter-bar { display: none !important; }
+    .mobile-deck { display: none !important; }
+    .gallery-item-overlay { display: none !important; }
+    .page-gallery-title { font-size: 1.6rem; }
+}
+@media (min-width: 769px) {
+    .mobile-deck { display: none !important; }
+}
         </style>
 
         <!-- Lightbox HTML -->
