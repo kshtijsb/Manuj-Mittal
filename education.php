@@ -320,6 +320,166 @@ include 'components/header.php';
     }
 </style>
 
+<style>
+/* ═══════════════════════════════════════
+   OPTION 4 — Mobile: Compact Single-Column
+   Minimal spacing, maximum content density
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* ── Page top/bottom padding ── */
+    .biography-page,
+    .pillar-detail-page {
+        padding-top: 70px !important;
+        padding-bottom: 40px !important;
+    }
+
+    /* ── Container side padding ── */
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        max-width: 100% !important;
+    }
+
+    /* ── Biography: single column hero ── */
+    .bio-header-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* Biography photo: full width, taller crop */
+    .bio-header-grid img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 55vw !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+        border-radius: 6px !important;
+    }
+
+    /* Biography title alignment */
+    .bio-header-left h1,
+    .bio-header-left .side-tag {
+        text-align: left !important;
+    }
+
+    /* Biography quote/lead text */
+    .bio-intro-lead {
+        font-size: 1rem !important;
+        padding-left: 0.8rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    /* Biography body text */
+    .biography-page p,
+    .bio-body p {
+        font-size: 0.95rem !important;
+        line-height: 1.75 !important;
+        margin-bottom: 0.9rem !important;
+    }
+
+    /* ── Pillar pages: glass card ── */
+    .glass-container {
+        padding: 0.9rem !important;
+        border-radius: 6px !important;
+        margin-bottom: 1.2rem !important;
+    }
+
+    /* ── Pillar page title section ── */
+    .page-title-section,
+    .pillar-detail-page .container > div:first-child {
+        margin-bottom: 1rem !important;
+        padding-bottom: 0.8rem !important;
+    }
+
+    /* ── Article text ── */
+    .article-text {
+        font-size: 0.95rem !important;
+        line-height: 1.75 !important;
+        margin-bottom: 0.9rem !important;
+        color: #222 !important;
+    }
+
+    /* ── Article content wrapper ── */
+    .article-content {
+        margin-bottom: 1rem !important;
+    }
+
+    /* ── Section headings ── */
+    .pillar-detail-page h1,
+    .pillar-detail-page h2,
+    .pillar-detail-page h3 {
+        font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    /* ── Biography headings ── */
+    .biography-page h1,
+    .biography-page h2 {
+        font-size: clamp(1.4rem, 5.5vw, 1.9rem) !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    /* ── Tags / labels ── */
+    .section-tag,
+    .page-tag {
+        font-size: 0.7rem !important;
+        letter-spacing: 1.5px !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* ── Timeline / cards ── */
+    .timeline-section,
+    .cards-section {
+        gap: 1rem !important;
+    }
+
+    /* ── Stat/highlight blocks ── */
+    .stat-row,
+    .highlights-row {
+        gap: 0.8rem !important;
+        margin: 1rem 0 !important;
+    }
+
+    /* ── CTA / back button ── */
+    .cta-container {
+        margin-top: 1.2rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+
+    .btn-back {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 12px 1rem !important;
+        font-size: 0.82rem !important;
+    }
+
+    /* ── Gallery section ── */
+    .bio-gallery-section,
+    .page-gallery-section {
+        margin-top: 2rem !important;
+        padding-top: 1.5rem !important;
+    }
+
+    /* ── Pillar hero area ── */
+    .pillar-detail-page > .container {
+        padding-top: 0 !important;
+    }
+
+    /* ── General margin resets ── */
+    section + section {
+        margin-top: 0 !important;
+    }
+
+    /* ── Ambient blobs: hide on mobile ── */
+    .ambient-blob { display: none !important; }
+}
+</style>
+
 <section class="pillar-detail-page">
     <div class="ambient-blob blob-1"></div>
     <div class="ambient-blob blob-2"></div>
@@ -370,6 +530,639 @@ include 'components/header.php';
                 and the belief that education is a powerful catalyst for creating positive societal impact.
             </p>
         </div>
+
+
+        <!-- Education Photo Gallery -->
+        <div class="page-gallery-section">
+            <div class="page-gallery-header">
+                <h2 class="page-gallery-title">Photo Library</h2>
+                <p class="page-gallery-sub">Early Life &amp; Academic Journey</p>
+            </div>
+            <div class="gallery-filter-bar">
+                <button class="gallery-filter-btn active" data-filter="all">All</button>
+                <button class="gallery-filter-btn" data-filter="early-life">Early Life &amp; Family</button>
+                <button class="gallery-filter-btn" data-filter="edu-india">Education in India</button>
+                <button class="gallery-filter-btn" data-filter="edu-us">Education in the US</button>
+            </div>
+            <div class="gallery-masonry">
+                <div class="gallery-item" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final1.jpg" alt="Early Life" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Early Life &amp; Family</span></div>
+                </div>                <div class="gallery-item" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final2.JPG" alt="Early Life" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Early Life &amp; Family</span></div>
+                </div>                <div class="gallery-item" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final3.JPG" alt="Early Life" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Early Life &amp; Family</span></div>
+                </div>                <div class="gallery-item" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final4.JPG" alt="Early Life" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Early Life &amp; Family</span></div>
+                </div>                <div class="gallery-item" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final5.jpg" alt="Early Life" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Early Life &amp; Family</span></div>
+                </div>                <div class="gallery-item" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final6.jpg" alt="Early Life" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Early Life &amp; Family</span></div>
+                </div>                <div class="gallery-item" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final1.jpg" alt="Education India" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in India</span></div>
+                </div>                <div class="gallery-item" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final2.JPG" alt="Education India" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in India</span></div>
+                </div>                <div class="gallery-item" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final3.JPG" alt="Education India" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in India</span></div>
+                </div>                <div class="gallery-item" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final4.jpeg" alt="Education India" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in India</span></div>
+                </div>                <div class="gallery-item" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final5.jpg" alt="Education India" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in India</span></div>
+                </div>                <div class="gallery-item" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final6.JPG" alt="Education India" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in India</span></div>
+                </div>                <div class="gallery-item" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final1.jpg" alt="Education US" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in the US</span></div>
+                </div>                <div class="gallery-item" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final2.jpg" alt="Education US" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in the US</span></div>
+                </div>                <div class="gallery-item" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final3.jpg" alt="Education US" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in the US</span></div>
+                </div>                <div class="gallery-item" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final4.jpg" alt="Education US" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in the US</span></div>
+                </div>                <div class="gallery-item" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final5.JPG" alt="Education US" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in the US</span></div>
+                </div>                <div class="gallery-item" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final6.jpg" alt="Education US" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Education in the US</span></div>
+                </div>
+            </div>
+            <!-- Mobile Swipeable Card Deck -->
+            <div class="mobile-deck" id="mobileDeck">
+                <div class="mobile-deck-track">
+                <div class="mobile-deck-slide" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final1.jpg" alt="Early Life &amp; Family" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Early Life &amp; Family</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final2.JPG" alt="Early Life &amp; Family" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Early Life &amp; Family</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final3.JPG" alt="Early Life &amp; Family" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Early Life &amp; Family</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final4.JPG" alt="Early Life &amp; Family" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Early Life &amp; Family</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final5.jpg" alt="Early Life &amp; Family" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Early Life &amp; Family</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="early-life" data-caption="Early Life &amp; Family">
+                    <img src="assets/Early life and family/0_Final6.jpg" alt="Early Life &amp; Family" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Early Life &amp; Family</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final1.jpg" alt="Education in India" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in India</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final2.JPG" alt="Education in India" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in India</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final3.JPG" alt="Education in India" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in India</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final4.jpeg" alt="Education in India" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in India</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final5.jpg" alt="Education in India" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in India</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-india" data-caption="Education in India">
+                    <img src="assets/Education in India/0_Final6.JPG" alt="Education in India" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in India</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final1.jpg" alt="Education in the US" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in the US</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final2.jpg" alt="Education in the US" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in the US</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final3.jpg" alt="Education in the US" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in the US</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final4.jpg" alt="Education in the US" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in the US</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final5.JPG" alt="Education in the US" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in the US</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                <div class="mobile-deck-slide" data-category="edu-us" data-caption="Education in the US">
+                    <img src="assets/Education in the US/0_Final6.jpg" alt="Education in the US" loading="lazy">
+                    <div class="mobile-deck-info">
+                        <span class="mobile-deck-category">Education in the US</span>
+                        <span class="mobile-deck-counter"></span>
+                    </div>
+                </div>
+                </div>
+                <div class="mobile-deck-nav">
+                    <button class="mobile-deck-btn" id="mobileDeckPrev" aria-label="Previous">&#8592;</button>
+                    <div class="mobile-deck-dots" id="mobileDeckDots"></div>
+                    <button class="mobile-deck-btn" id="mobileDeckNext" aria-label="Next">&#8594;</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Gallery CSS -->
+        <style>
+            .page-gallery-section {
+                margin-top: 6rem;
+                padding-top: 4rem;
+                border-top: 1px solid rgba(0,0,0,0.08);
+            }
+            .page-gallery-header { text-align: center; margin-bottom: 2.5rem; }
+            .page-gallery-title {
+                font-family: 'Times New Roman', Times, serif;
+                font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+                color: #000;
+                font-weight: bold;
+                text-decoration: underline;
+                text-underline-offset: 6px;
+                text-decoration-thickness: 2px;
+                text-transform: uppercase;
+                margin-bottom: 0.4rem;
+            }
+            .page-gallery-sub {
+                font-family: var(--font-sans);
+                font-size: 0.85rem;
+                color: #888;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+            .gallery-filter-bar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.6rem;
+                margin-bottom: 2.5rem;
+            }
+            .gallery-filter-btn {
+                background: transparent;
+                border: 1px solid rgba(0,0,0,0.15);
+                color: #555;
+                padding: 0.45rem 1.1rem;
+                border-radius: 50px;
+                font-family: var(--font-sans);
+                font-size: 0.78rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+            .gallery-filter-btn:hover,
+            .gallery-filter-btn.active {
+                background: #000;
+                color: var(--gold);
+                border-color: #000;
+            }
+            .gallery-masonry {
+                columns: 3;
+                column-gap: 12px;
+            }
+            @media (max-width: 900px) { .gallery-masonry { columns: 2; } }
+            @media (max-width: 540px) { .gallery-masonry { columns: 2; column-gap: 8px; } }
+            .gallery-item {
+                break-inside: avoid;
+                position: relative;
+                margin-bottom: 12px;
+                border-radius: 8px;
+                overflow: hidden;
+                cursor: pointer;
+                background: #f0f0f0;
+            }
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+                display: block;
+                transition: transform 0.4s ease;
+            }
+            .gallery-item:hover img { transform: scale(1.04); }
+            .gallery-item-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                display: flex;
+                align-items: flex-end;
+                padding: 0.8rem;
+            }
+            .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+            .gallery-item-overlay span {
+                font-family: var(--font-sans);
+                font-size: 0.72rem;
+                font-weight: 700;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            .gallery-item.g-hidden { display: none; }
+            .gallery-lightbox {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.92);
+                z-index: 9999;
+                justify-content: center;
+                align-items: center;
+            }
+            .gallery-lightbox.open { display: flex; }
+            .lightbox-inner {
+                max-width: 90vw;
+                max-height: 88vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            #lightboxImg {
+                max-width: 90vw;
+                max-height: 80vh;
+                object-fit: contain;
+                border-radius: 6px;
+                box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            }
+            .lightbox-caption {
+                font-family: var(--font-sans);
+                font-size: 0.78rem;
+                color: rgba(255,255,255,0.55);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-align: center;
+                margin: 0;
+            }
+            .lightbox-close {
+                position: fixed; top: 1.2rem; right: 1.5rem;
+                background: none; border: none; color: #fff;
+                font-size: 2.2rem; cursor: pointer; line-height: 1;
+                opacity: 0.7; transition: opacity 0.2s; z-index: 10000;
+            }
+            .lightbox-close:hover { opacity: 1; }
+            .lightbox-prev, .lightbox-next {
+                position: fixed; top: 50%; transform: translateY(-50%);
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.2);
+                color: #fff; font-size: 1.5rem;
+                padding: 0.8rem 1rem; cursor: pointer;
+                border-radius: 6px; transition: background 0.2s; z-index: 10000;
+            }
+            .lightbox-prev { left: 1rem; }
+            .lightbox-next { right: 1rem; }
+            .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.2); }
+            @media (max-width: 600px) {
+                .lightbox-prev { left: 0.3rem; padding: 0.5rem 0.7rem; }
+                .lightbox-next { right: 0.3rem; padding: 0.5rem 0.7rem; }
+            }
+
+            /* ── Mobile: hide masonry, show card deck ── */
+            @media (max-width: 768px) {
+                .gallery-masonry { display: none !important; }
+                .gallery-filter-bar { display: none !important; }
+
+                .mobile-deck {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    user-select: none;
+                }
+                .mobile-deck-track {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 12px;
+                }
+                .mobile-deck-slide {
+                    min-width: 100%;
+                    flex-shrink: 0;
+                    position: relative;
+                    background: #111;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    display: none;
+                }
+                .mobile-deck-slide.active { display: block; }
+                .mobile-deck-slide img {
+                    width: 100%;
+                    max-height: 65vw;
+                    object-fit: cover;
+                    display: block;
+                    border-radius: 12px 12px 0 0;
+                }
+                .mobile-deck-info {
+                    background: #000;
+                    padding: 0.8rem 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 0 0 12px 12px;
+                }
+                .mobile-deck-category {
+                    font-family: var(--font-sans);
+                    font-size: 0.72rem;
+                    font-weight: 700;
+                    color: var(--gold);
+                    text-transform: uppercase;
+                    letter-spacing: 1.5px;
+                }
+                .mobile-deck-counter {
+                    font-family: var(--font-sans);
+                    font-size: 0.7rem;
+                    color: rgba(255,255,255,0.4);
+                    letter-spacing: 1px;
+                }
+                .mobile-deck-nav {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1.5rem;
+                    margin-top: 1rem;
+                }
+                .mobile-deck-btn {
+                    background: #000;
+                    color: #fff;
+                    border: none;
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background 0.2s, transform 0.15s;
+                }
+                .mobile-deck-btn:active { transform: scale(0.92); background: #333; }
+                .mobile-deck-btn:disabled { opacity: 0.25; pointer-events: none; }
+                .mobile-deck-dots {
+                    display: flex;
+                    gap: 6px;
+                    align-items: center;
+                }
+                .mobile-deck-dot {
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: rgba(0,0,0,0.18);
+                    transition: background 0.25s, transform 0.25s;
+                }
+                .mobile-deck-dot.active {
+                    background: var(--gold);
+                    transform: scale(1.4);
+                }
+                /* Mobile: section label smaller */
+                .page-gallery-title { font-size: 1.6rem; }
+            }
+            @media (min-width: 769px) {
+                .mobile-deck { display: none !important; }
+            }
+        </style>
+
+        <!-- Lightbox HTML -->
+        <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+            <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+            <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#8594;</button>
+            <div class="lightbox-inner">
+                <img src="" alt="" id="lightboxImg">
+                <p class="lightbox-caption" id="lightboxCaption"></p>
+            </div>
+        </div>
+
+        <!-- Gallery JS -->
+        <script>
+        (function() {
+            var items = [], currentIdx = 0;
+            function getVisible() { return Array.from(document.querySelectorAll('.gallery-item:not(.g-hidden)')); }
+            function openLightbox(idx) {
+                items = getVisible(); currentIdx = idx;
+                showSlide(currentIdx);
+                document.getElementById('galleryLightbox').classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                document.getElementById('galleryLightbox').classList.remove('open');
+                document.body.style.overflow = '';
+            }
+            function showSlide(idx) {
+                var item = items[idx];
+                var img = item.querySelector('img');
+                document.getElementById('lightboxImg').src = img.src;
+                document.getElementById('lightboxImg').alt = img.alt;
+                document.getElementById('lightboxCaption').textContent = item.getAttribute('data-caption') || '';
+            }
+            document.querySelectorAll('.gallery-item').forEach(function(el) {
+                el.addEventListener('click', function() { openLightbox(getVisible().indexOf(el)); });
+            });
+            document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('lightboxPrev').addEventListener('click', function() {
+                currentIdx = (currentIdx - 1 + items.length) % items.length; showSlide(currentIdx);
+            });
+            document.getElementById('lightboxNext').addEventListener('click', function() {
+                currentIdx = (currentIdx + 1) % items.length; showSlide(currentIdx);
+            });
+            document.getElementById('galleryLightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('galleryLightbox').classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') { currentIdx = (currentIdx - 1 + items.length) % items.length; showSlide(currentIdx); }
+                if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % items.length; showSlide(currentIdx); }
+            });
+            document.querySelectorAll('.gallery-filter-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.gallery-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var filter = btn.getAttribute('data-filter');
+                    document.querySelectorAll('.gallery-item').forEach(function(item) {
+                        item.classList.toggle('g-hidden', filter !== 'all' && item.getAttribute('data-category') !== filter);
+                    });
+                });
+            });
+        })();
+
+            // ── Mobile swipeable card deck ──
+            (function() {
+                var allSlides = Array.from(document.querySelectorAll('.mobile-deck-slide'));
+                var visibleSlides = allSlides.slice();
+                var current = 0;
+
+                function update() {
+                    visibleSlides.forEach(function(s, i) {
+                        s.classList.toggle('active', i === current);
+                    });
+                    // Dots
+                    var dots = document.querySelectorAll('.mobile-deck-dot');
+                    dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+                    // Counter
+                    var counterEl = document.getElementById('mobileDeckCounter');
+                    if (counterEl) counterEl.textContent = (current + 1) + ' / ' + visibleSlides.length;
+                    // Buttons
+                    var prev = document.getElementById('mobileDeckPrev');
+                    var next = document.getElementById('mobileDeckNext');
+                    if (prev) prev.disabled = current === 0;
+                    if (next) next.disabled = current >= visibleSlides.length - 1;
+                }
+
+                function buildDots() {
+                    var container = document.getElementById('mobileDeckDots');
+                    if (!container) return;
+                    container.innerHTML = '';
+                    var max = Math.min(visibleSlides.length, 12);
+                    for (var i = 0; i < max; i++) {
+                        var d = document.createElement('div');
+                        d.className = 'mobile-deck-dot' + (i === current ? ' active' : '');
+                        (function(idx) {
+                            d.addEventListener('click', function() { current = idx; update(); });
+                        })(i);
+                        container.appendChild(d);
+                    }
+                }
+
+                var prev = document.getElementById('mobileDeckPrev');
+                var next = document.getElementById('mobileDeckNext');
+                if (prev) prev.addEventListener('click', function() { if (current > 0) { current--; update(); } });
+                if (next) next.addEventListener('click', function() { if (current < visibleSlides.length - 1) { current++; update(); } });
+
+                // Touch swipe
+                var deck = document.getElementById('mobileDeck');
+                if (deck) {
+                    var startX = 0, startY = 0, isH = null;
+                    deck.addEventListener('touchstart', function(e) {
+                        startX = e.touches[0].clientX;
+                        startY = e.touches[0].clientY;
+                        isH = null;
+                    }, {passive: true});
+                    deck.addEventListener('touchmove', function(e) {
+                        var dx = e.touches[0].clientX - startX;
+                        var dy = e.touches[0].clientY - startY;
+                        if (isH === null) isH = Math.abs(dx) > Math.abs(dy);
+                        if (isH) e.preventDefault();
+                    }, {passive: false});
+                    deck.addEventListener('touchend', function(e) {
+                        if (!isH) return;
+                        var dx = e.changedTouches[0].clientX - startX;
+                        if (dx < -40 && current < visibleSlides.length - 1) { current++; update(); }
+                        else if (dx > 40 && current > 0) { current--; update(); }
+                    }, {passive: true});
+
+                    // Tap to open lightbox
+                    deck.addEventListener('click', function(e) {
+                        if (Math.abs(e.changedTouches ? 0 : 0) < 5) {
+                            var slide = visibleSlides[current];
+                            if (!slide) return;
+                            var img = slide.querySelector('img');
+                            var caption = slide.getAttribute('data-caption') || '';
+                            var lb = document.getElementById('galleryLightbox');
+                            if (lb) {
+                                document.getElementById('lightboxImg').src = img.src;
+                                document.getElementById('lightboxImg').alt = img.alt;
+                                document.getElementById('lightboxCaption').textContent = caption;
+                                lb.classList.add('open');
+                                document.body.style.overflow = 'hidden';
+                            }
+                        }
+                    });
+                }
+
+                // Sync filter with deck
+                document.querySelectorAll('.gallery-filter-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        var filter = btn.getAttribute('data-filter');
+                        allSlides.forEach(function(s) {
+                            var show = filter === 'all' || s.getAttribute('data-category') === filter;
+                            s.style.display = show ? '' : 'none';
+                        });
+                        visibleSlides = allSlides.filter(function(s) { return s.style.display !== 'none'; });
+                        current = 0;
+                        buildDots();
+                        update();
+                    });
+                });
+
+                buildDots();
+                update();
+            })();
+        </script>
 
         <!-- CTA -->
         <div class="cta-container">

@@ -2280,13 +2280,20 @@ nav {
             letter-spacing: 2px;
             padding: 0 3rem;
             white-space: nowrap;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
         }
 
         .header-marquee-group .separator {
             color: #000000;
             opacity: 0.5;
             padding: 0;
-            font-size: inherit; /* Matches the 0.7rem of the span */
+            font-size: 0.65rem;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+            transform: translateY(-1px); /* Slight nudge up to center visually */
         }
 
         .header-marquee:hover .header-marquee-inner {
@@ -3012,4 +3019,99 @@ footer .author-signature {
 footer .btn-editorial-library {
     background-color: var(--gold) !important;
     color: #000 !important;
+}
+
+
+/* ═══════════════════════════════════════
+   GLOBAL MOBILE SPACING TIGHTENER
+   Applied across all pages on mobile
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* ── Core section padding ── */
+    section {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    /* ── Container side padding ── */
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* ── Hero section ── */
+    .hero {
+        padding-top: 5rem !important;
+        padding-bottom: 2rem !important;
+        min-height: auto !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.8rem, 7vw, 2.8rem) !important;
+        margin-bottom: 0.8rem !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero p,
+    .hero-description {
+        font-size: 0.92rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* ── Section titles ── */
+    .section-title,
+    h2 {
+        font-size: clamp(1.4rem, 6vw, 2rem) !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    /* ── General paragraph spacing ── */
+    p { margin-bottom: 0.85rem !important; }
+
+    /* ── Grid gaps ── */
+    .about-grid,
+    .cards-grid,
+    .timeline-grid {
+        gap: 1.2rem !important;
+    }
+
+    /* ── Newsletter form ── */
+    .newsletter-form {
+        padding: 1.2rem !important;
+    }
+
+    /* ── Footer action links ── */
+    .footer-action-links-mobile {
+        padding: 0.6rem 0 !important;
+    }
+
+    /* ── Quote bar mobile ── */
+    .quote-bar-mobile {
+        padding: 0.8rem 1rem !important;
+    }
+
+    /* ── Marquee header ── */
+    .header-marquee {
+        padding: 0.4rem 0 !important;
+    }
+}
+
+/* ── Hero height fix: remove 100vh on mobile (kills white gap) ── */
+@media (max-width: 768px) {
+    .hero {
+        height: auto !important;
+        min-height: auto !important;
+        padding-top: 70px !important;
+        padding-bottom: 1rem !important;
+    }
+    .hero-split {
+        min-height: auto !important;
+        height: auto !important;
+        display: none !important; /* desktop hero hidden on mobile */
+    }
+    .minimal-mobile-hero {
+        padding-bottom: 0.5rem !important;
+    }
 }

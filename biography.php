@@ -45,6 +45,169 @@ include 'components/header.php';
     }
 </style>
 
+<style>
+    /* ═══════════════════════════════════════
+   OPTION 4 — Mobile: Compact Single-Column
+   Minimal spacing, maximum content density
+═══════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+        /* ── Page top/bottom padding ── */
+        .biography-page,
+        .pillar-detail-page {
+            padding-top: 70px !important;
+            padding-bottom: 40px !important;
+        }
+
+        /* ── Container side padding ── */
+        .container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            max-width: 100% !important;
+        }
+
+        /* ── Biography: single column hero ── */
+        .bio-header-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 1rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        /* Biography photo: full width, taller crop */
+        .bio-header-grid img {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: 55vw !important;
+            object-fit: cover !important;
+            object-position: top center !important;
+            border-radius: 6px !important;
+        }
+
+        /* Biography title alignment — center on mobile */
+        .bio-header-left h1,
+        .bio-header-left .side-tag,
+        .bio-title-mobile {
+            text-align: center !important;
+        }
+
+        /* Biography quote/lead text */
+        .bio-intro-lead {
+            font-size: 1rem !important;
+            padding-left: 0.8rem !important;
+            line-height: 1.65 !important;
+            margin-bottom: 0.8rem !important;
+        }
+
+        /* Biography body text */
+        .biography-page p,
+        .bio-body p {
+            font-size: 0.95rem !important;
+            line-height: 1.75 !important;
+            margin-bottom: 0.9rem !important;
+        }
+
+        /* ── Pillar pages: glass card ── */
+        .glass-container {
+            padding: 0.9rem !important;
+            border-radius: 6px !important;
+            margin-bottom: 1.2rem !important;
+        }
+
+        /* ── Pillar page title section ── */
+        .page-title-section,
+        .pillar-detail-page .container>div:first-child {
+            margin-bottom: 1rem !important;
+            padding-bottom: 0.8rem !important;
+        }
+
+        /* ── Article text ── */
+        .article-text {
+            font-size: 0.95rem !important;
+            line-height: 1.75 !important;
+            margin-bottom: 0.9rem !important;
+            color: #222 !important;
+        }
+
+        /* ── Article content wrapper ── */
+        .article-content {
+            margin-bottom: 1rem !important;
+        }
+
+        /* ── Section headings ── */
+        .pillar-detail-page h1,
+        .pillar-detail-page h2,
+        .pillar-detail-page h3 {
+            font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
+            line-height: 1.2 !important;
+            margin-bottom: 0.6rem !important;
+        }
+
+        /* ── Biography headings ── */
+        .biography-page h1,
+        .biography-page h2 {
+            font-size: clamp(1.4rem, 5.5vw, 1.9rem) !important;
+            margin-bottom: 0.6rem !important;
+        }
+
+        /* ── Tags / labels ── */
+        .section-tag,
+        .page-tag {
+            font-size: 0.7rem !important;
+            letter-spacing: 1.5px !important;
+            margin-bottom: 0.5rem !important;
+        }
+
+        /* ── Timeline / cards ── */
+        .timeline-section,
+        .cards-section {
+            gap: 1rem !important;
+        }
+
+        /* ── Stat/highlight blocks ── */
+        .stat-row,
+        .highlights-row {
+            gap: 0.8rem !important;
+            margin: 1rem 0 !important;
+        }
+
+        /* ── CTA / back button ── */
+        .cta-container {
+            margin-top: 1.2rem !important;
+            margin-bottom: 1.2rem !important;
+        }
+
+        .btn-back {
+            width: 100% !important;
+            justify-content: center !important;
+            padding: 12px 1rem !important;
+            font-size: 0.82rem !important;
+        }
+
+        /* ── Gallery section ── */
+        .bio-gallery-section,
+        .page-gallery-section {
+            margin-top: 2rem !important;
+            padding-top: 1.5rem !important;
+        }
+
+        /* ── Pillar hero area ── */
+        .pillar-detail-page>.container {
+            padding-top: 0 !important;
+        }
+
+        /* ── General margin resets ── */
+        section+section {
+            margin-top: 0 !important;
+        }
+
+        /* ── Ambient blobs: hide on mobile ── */
+        .ambient-blob {
+            display: none !important;
+        }
+    }
+</style>
+
 <section class="biography-page" style="padding: 15vh 0; background: #fff;">
     <div class="container" style="max-width: 1000px;">
 
@@ -68,6 +231,18 @@ include 'components/header.php';
                             text-transform: uppercase !important;
                         }
                     }
+
+                    @media (max-width: 768px) {
+                        .bio-title-mobile {
+                            text-align: center !important;
+                            letter-spacing: 3px !important;
+                            margin-bottom: 1rem !important;
+                        }
+
+                        .bio-header-left h1 {
+                            text-align: center !important;
+                        }
+                    }
                 </style>
                 <div class="side-tag reveal bio-title-mobile"
                     style="color: var(--color-gold); font-weight: bold; letter-spacing: 8px; margin-bottom: 2rem; display: block;">
@@ -87,9 +262,25 @@ include 'components/header.php';
             </div>
 
             <div class="bio-portrait-container reveal" style="position: relative;">
+                <style>
+                    @media (max-width: 768px) {
+                        .bio-portrait-frame {
+                            height: auto !important;
+                        }
+
+                        .bio-portrait-img {
+                            height: auto !important;
+                            width: 100% !important;
+                            aspect-ratio: 3/4;
+                            object-fit: cover !important;
+                            object-position: top center !important;
+                            display: block !important;
+                        }
+                    }
+                </style>
                 <div class="bio-portrait-frame"
                     style="width: 100%; height: 500px; border-radius: 4px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.1); border: 2px solid var(--color-gold);">
-                    <img src="assets/author_main_web.jpg" alt="Manuj Mittal"
+                    <img src="assets/author_main_web.jpg" alt="Manuj Mittal" class="bio-portrait-img"
                         style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center;">
                 </div>
                 <!-- Decorative Element -->
@@ -158,6 +349,7 @@ include 'components/header.php';
 
 
         </div>
+
 
         <!-- CTA -->
         <div class="cta-container">

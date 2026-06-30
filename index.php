@@ -9,6 +9,31 @@ $status = $_GET['status'] ?? null;
 
 
 
+
+<style>
+@media (max-width: 768px) {
+    /* ── Remove massive gap between hero cards and gold bar ── */
+    #about.container {
+        padding-top: 1.5rem !important;
+    }
+    .about-pillars {
+        gap: 0.8rem !important;
+    }
+    #journey {
+        padding-top: 1.5rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .section-header h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+        margin-bottom: 1rem !important;
+    }
+    /* Stat numbers section tighten */
+    .stats-row, .stat-block {
+        padding: 1.5rem 0 !important;
+    }
+}
+</style>
+
 <main>
     <!-- Split Hero Section -->
     <section id="home" class="hero">
@@ -45,7 +70,7 @@ $status = $_GET['status'] ?? null;
                                     <strong>Leadership</strong>, <strong>Growth</strong>, and
                                     <strong>Integrity</strong>.
                                 </p>
-                                <a href="store"
+                                <a href="library"
                                     style="font-family: var(--font-sans); background: #000; color: #fff; padding: 0.8rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; display: inline-block;">ORDER
                                     NOW</a>
                             </div>
@@ -228,7 +253,7 @@ $status = $_GET['status'] ?? null;
                 <div style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: #000; font-size: 2.0rem !important; margin-bottom: 0.5rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-transform: uppercase;">FEATURED WORK</div>
                 <img src="book cover.jpeg" alt="<?php echo $books[0]['title']; ?>" class="minimal-img minimal-book-cover" style="border-radius: 2px; box-shadow: 2px 4px 10px rgba(0,0,0,0.1);">
                 <h2 class="minimal-name minimal-book-title"><?php echo $books[0]['title']; ?></h2>
-                <a href="store" class="btn-minimal-tactile">Order Book</a>
+                <a href="library" class="btn-minimal-tactile">Order Book</a>
             </div>
             
             <!-- Author (Second on mobile now) -->
