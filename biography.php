@@ -220,7 +220,8 @@ include 'components/header.php';
                     @media (max-width: 992px) {
                         .bio-header-left .bio-title-mobile {
                             font-family: 'Times New Roman', Times, serif !important;
-                            font-size: 2.0rem !important;
+                            font-size: clamp(1.2rem, 7vw, 1.6rem) !important;
+                            white-space: nowrap !important;
                             color: #000 !important;
                             font-weight: bold !important;
                             letter-spacing: 0px !important;
