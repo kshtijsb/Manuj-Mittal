@@ -450,7 +450,7 @@
 
                 <!-- Buttons (Stretched) -->
                 <div class="footer-btn-group">
-                    <a href="library" class="footer-btn">Visit our Library</a>
+                    <a href="store" class="footer-btn">Visit our Library</a>
                     <a href="contact" class="footer-btn">Book a Meeting</a>
                 </div>
 
@@ -483,7 +483,7 @@
 
         <!-- Mobile-only action links row -->
         <div class="footer-action-links-mobile">
-            <a href="library" class="footer-action-link-mobile">Visit our Library</a>
+            <a href="store" class="footer-action-link-mobile">Visit our Library</a>
             <a href="contact" class="footer-action-link-mobile">Book a Meeting</a>
         </div>
 
@@ -873,7 +873,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </svg>
         <span>About MJ</span>
     </button>
-    <a href="library" class="mobile-nav-item">
+    <a href="store" class="mobile-nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>

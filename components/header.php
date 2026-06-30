@@ -118,7 +118,7 @@
 
                     <li class="show-on-mobile" style="display: none;"><a href="biography">About <span style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em;">MJ</span></a></li>
 
-                    <li class="hide-on-mobile"><a href="library">Books</a></li>
+                    <li class="hide-on-mobile"><a href="store">Books</a></li>
 
                     <li class="hide-on-mobile"><a href="contact">Contact Us</a></li>
 
